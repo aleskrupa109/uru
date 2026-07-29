@@ -5,9 +5,9 @@ from build import cmt
 C = [("Vyhrazené stavby", "vyhrazene-stavby/index.html")]
 
 ROZCESTNIK = """
-<p class="hint" style="color:#5b6674">Pořadí dlaždic odpovídá pořadí položek v levém submenu podstránek.""" + cmt(12, "Zajistit, aby pořadí dlaždic odpovídalo pořadí v levém submenu na navazujících stránkách.") + """</p>
+<p class="hint" style="color:#717171">Pořadí dlaždic odpovídá pořadí položek v levém submenu podstránek.""" + cmt(12, "Zajistit, aby pořadí dlaždic odpovídalo pořadí v levém submenu na navazujících stránkách.") + """</p>
 <div class="grid g3" style="margin-top:18px">
-  <a class="card" href="{{r}}vyhrazene-stavby/co-meni-novela.html" style="border-color:#2372c4">
+  <a class="card" href="{{r}}vyhrazene-stavby/co-meni-novela.html" style="box-shadow:0 0 0 2px #2362A2 inset">
     <span class="order">1 / novinka</span>
     <h3>Co změní novela SZ""" + cmt(11, "Doplnit dlaždici „Co změní novela SZ\" jako první.") + """</h3>
     <p>Přehled všech změn na jednom místě: rozsah vyhrazených staveb, průběh řízení, rozpracovaná řízení a nové formuláře.</p></a>

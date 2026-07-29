@@ -265,7 +265,7 @@ KONZULTACNI = """
   </div>
   <div class="row" style="margin-top:14px">
     <div class="field" style="flex:1;min-width:100%"><label for="k4">Popis situace, dotčené ustanovení a dosavadní postup</label>
-      <textarea id="k4" rows="5" style="font:inherit;padding:10px;border:1px solid #d6dde5;border-radius:6px"></textarea></div>
+      <textarea id="k4" rows="5" style="font:inherit;padding:10px;border:1px solid #D8DEE5;border-radius:6px"></textarea></div>
   </div>
   <div class="btn-row"><button class="btn" type="button">Odeslat dotaz</button></div>
   <p class="hint">Formulář se odesílá do spisové služby úřadu a je mu přiděleno číslo jednací.</p>
@@ -287,7 +287,7 @@ TISIC_SEZNAM = """
   <div class="searchrow">
     <input type="search" id="tq" placeholder="Hledat…"
       oninput="var q=this.value.toLowerCase();document.querySelectorAll('[data-h]').forEach(function(d){d.style.display=d.textContent.toLowerCase().indexOf(q)>-1?'':'none'})">
-    <select id="tscope" style="font:inherit;padding:9px;border:1px solid #d6dde5;border-radius:6px">
+    <select id="tscope" style="font:inherit;padding:9px;border:1px solid #D8DEE5;border-radius:6px">
       <option>Hledat v názvech hesel</option>
       <option>Hledat v hesle i v odpovědích</option>
     </select>

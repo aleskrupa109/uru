@@ -119,7 +119,7 @@ def rel(depth):
 
 
 def icon():
-    return ('<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">'
+    return ('<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">'
             '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg>')
 
 
@@ -137,12 +137,12 @@ def render_nav(active, r):
         if key == active:
             cls.append("active")
         out.append(f'<li class="{" ".join(cls)}">')
-        caret = '<span class="caret"></span>' if items else ""
+        caret = ('<svg class="caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg>') if items else ""
         out.append(f'<a href="{r}{href}">{label}{caret}</a>')
         if items:
             out.append('<div class="dropdown"><div class="wrap"><div class="cols">')
             for t, h, d in items:
-                out.append(f'<a href="{r}{h}"><strong>{t}</strong><small>{d}</small></a>')
+                out.append(f'<a href="{r}{h}" title="{d}">{t}</a>')
             out.append('</div></div></div>')
         out.append('</li>')
     out.append('</ul></div></nav>')
@@ -224,19 +224,23 @@ TPL = """<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title} — Úřad rozvoje území</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
 <link rel="stylesheet" href="{r}assets/uru.css">
 </head>
 <body>
 {mockbar}
 <header class="site-header"><div class="wrap">
 <a class="brand" href="{r}index.html">
-<svg width="30" height="34" viewBox="0 0 30 34" fill="#12365f"><path d="M15 1l13 6v10c0 8-5.5 13.5-13 16C7.5 30.5 2 25 2 17V7z"/></svg>
+<svg width="30" height="34" viewBox="0 0 30 34" fill="#1D3C5D"><path d="M15 1l13 6v10c0 8-5.5 13.5-13 16C7.5 30.5 2 25 2 17V7z"/></svg>
 <span>Úřad rozvoje území</span></a>
 <form class="header-search" role="search" action="{r}vyhledavani.html">
 <input type="search" name="q" placeholder="Hledejte v názvu, obsahu i v přílohách (PDF)…" aria-label="Vyhledávání">
 <button type="submit" aria-label="Hledat">&#128269;</button>
 </form>
-<span class="header-note">Prohledáváme i obsah PDF{c98}</span>
+<span class="cmt" title="Zapracovaná připomínka č. 98: vyhledávací pole uvádí, že se prohledává i obsah příloh (PDF).">98</span>
+<span class="header-toggle" aria-hidden="true"></span>
 </div></header>
 {nav}
 {banner}

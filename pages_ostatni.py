@@ -137,7 +137,7 @@ do spisové služby úřadu a je mu přiděleno číslo jednací.</p>
   </div>
   <div class="row" style="margin-top:14px">
     <div class="field" style="flex:1;min-width:100%"><label for="a6">Motivační text</label>
-      <textarea id="a6" rows="5" style="font:inherit;padding:10px;border:1px solid #d6dde5;border-radius:6px"></textarea></div>
+      <textarea id="a6" rows="5" style="font:inherit;padding:10px;border:1px solid #D8DEE5;border-radius:6px"></textarea></div>
   </div>
   <p style="margin:14px 0 0"><label><input type="checkbox"> Souhlasím se zpracováním osobních údajů pro účely výběrového řízení.</label></p>
   <div class="btn-row"><button class="btn" type="button">Odeslat přihlášku</button>
@@ -198,7 +198,7 @@ ORG = """
   <tr><td>Odbor metodiky</td><td>Metodická stanoviska a konzultační středisko</td><td><a href="{{r}}metodicka-podpora/kontakty-na-metodiky.html">kontakt</a></td></tr>
   <tr><td>Odbor provozu a digitalizace</td><td>Informační systémy a spisová služba</td><td><a href="{{r}}kontakty.html">kontakt</a></td></tr>
 </table>
-<p class="hint" style="color:#5b6674">Kontaktní údaje se zobrazují z centrální stránky Kontakty, která je jediným zdrojem dat.""" + cmt(92, "Určit jeden zdroj kontaktních dat a pravidlo, co se kde zobrazuje.") + """</p>
+<p class="hint" style="color:#717171">Kontaktní údaje se zobrazují z centrální stránky Kontakty, která je jediným zdrojem dat.""" + cmt(92, "Určit jeden zdroj kontaktních dat a pravidlo, co se kde zobrazuje.") + """</p>
 """
 
 MEDIA = """
@@ -227,7 +227,7 @@ POVINNE = """
   <li><a href="#o9">Předpisy</a></li><li><a href="#o10">Úhrady za informace</a></li>
   <li><a href="#o11">Výroční zprávy</a></li><li><a href="#o12">Veřejné zakázky</a></li>
 </ol></div>
-<p class="hint" style="color:#5b6674">Položky označené odkazem mají vlastní podstránku, ostatní jsou uvedené přímo zde.""" + cmt(89, "Doplnit, které z položek mají vlastní podstránku a které jsou jen odstavcem.") + """</p>
+<p class="hint" style="color:#717171">Položky označené odkazem mají vlastní podstránku, ostatní jsou uvedené přímo zde.""" + cmt(89, "Doplnit, které z položek mají vlastní podstránku a které jsou jen odstavcem.") + """</p>
 
 <h2 id="o1">Název</h2><p>Úřad rozvoje území</p>
 <h2 id="o2">Důvod a způsob založení</h2><p>Zřízen zákonem, vznik transformací DESÚ.</p>

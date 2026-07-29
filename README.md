@@ -56,6 +56,34 @@ hromadným zásahům (změna navigace, patičky, přidání sekce). **Pozor:** `
 `.html` soubory. Pokud upravuješ texty přímo v HTML, build už nespouštěj, nebo změny nejdřív
 přenes do `pages_*.py`.
 
+## Vizuál
+
+Barvy, rozměry a proporce jsou odměřené přímo z návrhu designu (rám 1440 px), ne odhadnuté.
+Všechny jsou v `assets/uru.css` jako proměnné v `:root`, takže přemapování na novou verzi
+design systému gov je změna na jednom místě.
+
+| Token | Hodnota | Kde v návrhu |
+|---|---|---|
+| `--primary` | `#2362A2` | infobanner, ikony dlaždic, tlačítka, aktivní prvky |
+| `--primary-dark` | `#1E5086` | odkazy v hlavní navigaci a v levém submenu |
+| `--primary-deep` | `#1D3C5D` | patička |
+| `--hairline` | `#C5DBF2` | linka pod hlavičkou |
+| `--ink` | `#262626` | nadpisy i běžný text |
+| `--bg` | `#F6F6F6` | pozadí stránky |
+| `--wrap` | `1152px` | obsahový sloupec (okraje 144 px při rámu 1440) |
+| `--gutter` | `24px` | mezera mezi dlaždicemi (4 x 270 px + 3 x 24 px = 1152) |
+| `--header-h` / `--nav-h` | `72px` / `64px` | výška hlavičky a navigace |
+
+Písmo je **Roboto** (standard design systému gov), načítané z Google Fonts se systémovým
+zálohovým řetězcem. Návrh má písmo vektorizované, takže název z PDF vyčíst nejde — pokud
+finální design systém předepíše jiné, změní se jeden řádek v `body { font-family }`.
+
+Navigace odpovídá návrhu: sedm položek bez pozadí, rozbalovací panel jako bílá karta přes
+celou šířku se čtyřmi sloupci prostých odkazů, aktivní sekce podtržená. Rozcestníkové dlaždice
+jsou bílé bez rámečku, jen s jemným stínem. Hero je diagonální modrý přechod s kruhovým
+vizuálem vpravo. Stránky se submenu mají levý sloupec na šedém pozadí a obsah v bílém panelu,
+stejně jako návrh.
+
 ## Co je v maketě jinak než v návrhu
 
 Zeleně označené připomínky jsou zapracované a v maketě označené zelenou bublinkou s číslem

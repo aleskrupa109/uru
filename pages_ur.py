@@ -68,7 +68,7 @@ PUR = """
   <li><span class="ft">PDF</span><span class="grow"><span class="name">Brožura CZ / EN / DE</span><br>
     <span class="fmeta">3 jazykové verze · 4 MB</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
 </ul>
-<p class="hint" style="color:#5b6674">Soubory nad limit úložiště se zpřístupňují přes řízené úložiště — způsob je předmětem technického workshopu.</p>
+<p class="hint" style="color:#717171">Soubory nad limit úložiště se zpřístupňují přes řízené úložiště — způsob je předmětem technického workshopu.</p>
 
 <h2>O dokumentu</h2>
 <p>Politika územního rozvoje je celostátní nástroj územního plánování. Určuje požadavky na konkretizaci
@@ -85,12 +85,12 @@ PUR = """
 
 EVIDENCE = """
 <div class="grid g2">
-  <a class="card" href="#" style="border-color:#2372c4"><h3>Vstoupit do aplikace iLAS</h3>
+  <a class="card" href="#" style="box-shadow:0 0 0 2px #2362A2 inset"><h3>Vstoupit do aplikace iLAS</h3>
     <p>Evidence územně plánovací činnosti obcí.</p></a>
-  <a class="card" href="#" style="border-color:#2372c4"><h3>Vstoupit do aplikace iKAS</h3>
+  <a class="card" href="#" style="box-shadow:0 0 0 2px #2362A2 inset"><h3>Vstoupit do aplikace iKAS</h3>
     <p>Evidence územně plánovací činnosti krajů.</p></a>
 </div>
-<p class="hint" style="color:#5b6674">Vstupy do aplikací jsou nahoře — uživatel sem přichází primárně kvůli nim, ne kvůli textu.""" + cmt(64, "Struktura obrací prioritu: uživatel jde primárně do iLAS/iKAS, ale odkazy na aplikace jsou až pod dlouhým textem.") + """</p>
+<p class="hint" style="color:#717171">Vstupy do aplikací jsou nahoře — uživatel sem přichází primárně kvůli nim, ne kvůli textu.""" + cmt(64, "Struktura obrací prioritu: uživatel jde primárně do iLAS/iKAS, ale odkazy na aplikace jsou až pod dlouhým textem.") + """</p>
 
 <h2>K čemu evidence slouží</h2>
 <p>Evidence územně plánovací činnosti shromažďuje údaje o pořizované a vydané územně plánovací dokumentaci
@@ -197,7 +197,7 @@ CASOPIS = """
 
 KNIHOVNA = """
 <div class="grid g2">
-  <a class="card" href="#" style="border-color:#2372c4"><h3>Online katalog</h3><p>Vyhledávání ve fondu knihovny.</p></a>
+  <a class="card" href="#" style="box-shadow:0 0 0 2px #2362A2 inset"><h3>Online katalog</h3><p>Vyhledávání ve fondu knihovny.</p></a>
   <a class="card" href="#"><h3>Služby a knihovní řád</h3><p>Podmínky využívání fondu.</p></a>
 </div>
 <h2>Novinky v katalogu</h2>
@@ -212,7 +212,7 @@ STP = """
 <p>Systém stavebně technické prevence shromažďuje poznatky o poruchách a haváriích staveb.
 Provozuje se ve spolupráci s Hasičským záchranným sborem ČR.</p>
 <div class="grid g2">
-  <a class="card" href="#" style="border-color:#2372c4"><h3>Vstoupit do aplikace iSSTP</h3>
+  <a class="card" href="#" style="box-shadow:0 0 0 2px #2362A2 inset"><h3>Vstoupit do aplikace iSSTP</h3>
     <p>Evidence poruch a havárií staveb.</p></a>
   <a class="card" href="#"><h3>Metodika hlášení</h3><p>Kdo, co a v jaké lhůtě hlásí.</p></a>
 </div>

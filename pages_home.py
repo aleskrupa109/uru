@@ -4,11 +4,12 @@ from build import cmt, icon
 
 HOME = """
 <section class="hero">
+  <span class="disc" aria-hidden="true"></span>
   <h1>Úřad rozvoje území</h1>
   <p>Povolujeme vyhrazené stavby, podporujeme stavební úřady a rozvíjíme územní plánování České republiky.</p>
 </section>
 
-<h2 style="font-size:28px;color:#12365f;margin:0 0 18px">Co hledáte?</h2>
+<h2 class="plain">Co hledáte?</h2>
 <div class="grid g4">
   <a class="card" href="{{r}}vyhrazene-stavby/index.html">""" + icon() + """
     <h3>Stavím nebo připravuji vyhrazenou stavbu</h3>
