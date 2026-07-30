@@ -31,16 +31,18 @@ HOME = """
 </div>
 <div class="newsgrid">
   <a class="news" href="{{r}}clanek.html">
-    <div class="ph">ilustrační foto</div>
+    <img class="ph" src="{{r}}assets/img/hero-budova.jpg" alt="" loading="lazy">
     <div class="b"><h3>ÚRÚ vznikne k 1. červenci 2026</h3>
       <div class="date">11. 11. 2026 · Aktualita</div>
       <p>Dopravní a energetický stavební úřad se transformuje na Úřad rozvoje území s rozšířenými kompetencemi v oblasti územního plánování a metodické podpory.</p></div></a>
   <div class="newsside">
-    <a class="news" href="{{r}}clanek.html"><div class="ph">foto</div>
+    <a class="news" href="{{r}}clanek.html">
+      <img class="ph" src="{{r}}assets/img/aktualita-metodiky.jpg" alt="" loading="lazy">
       <div class="b"><h3>Nové metodické pokyny pro stavební úřady</h3>
         <div class="date">11. 11. 2026 · Aktualita</div>
         <p>Aktualizované metodiky k posuzování záměrů v ochranných pásmech dopravní infrastruktury.</p></div></a>
-    <a class="news" href="{{r}}clanek.html"><div class="ph">foto</div>
+    <a class="news" href="{{r}}clanek.html">
+      <img class="ph" src="{{r}}assets/img/aktualita-vyberova-rizeni.jpg" alt="" loading="lazy">
       <div class="b"><h3>Vyhlášení výběrových řízení na 12 pozic</h3>
         <div class="date">11. 11. 2026 · Tisková zpráva</div>
         <p>ÚRÚ hledá specialisty na stavební právo, územní plánování a správní řízení.</p></div></a>

@@ -105,6 +105,7 @@
         var makeChip = function (label, onClear) {
           var wrap = document.createElement('span');
           wrap.className = 'gov-chip';
+          wrap.setAttribute('data-hydrated', '');
           wrap.setAttribute('data-type', 'outlined');
           wrap.setAttribute('data-color', 'primary');
           wrap.setAttribute('data-size', 'm');

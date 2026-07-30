@@ -528,7 +528,7 @@ def build_page(p):
         # Struktura podle design systému: .gov-infobar drží barevný pruh přes celou
         # šířku okna, .gov-infobar__section je zároveň flex řádek a centrovaný
         # kontejner — vlastní obal by rozvržení rozbil.
-        banner = ('<div class="gov-infobar infobanner" data-color="primary" data-type="bold">'
+        banner = ('<div class="gov-infobar infobanner" data-hydrated data-color="primary" data-type="bold">'
                   '<section class="gov-infobar__section">'
                   f'<span>{gicon("warn", cls="", slot=True)}</span>'
                   f'<div class="gov-infobar__content"><p>{BANNER.format(r=r)}</p></div>'

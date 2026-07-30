@@ -138,6 +138,10 @@ Fotografie jsou v `assets/img/`:
 
 - `hero-budova.jpg` — kruhový vizuál v úvodním banneru. **Soubor má vodoznak Unsplash+**, pro
   spuštění bude potřeba licencovaná verze nebo vlastní fotografie.
+- `aktualita-metodiky.jpg`, `aktualita-vyberova-rizeni.jpg` — fotografie ve dvou menších
+  aktualitách. Velká aktualita používá tentýž soubor jako banner (`hero-budova.jpg`), protože
+  úřad dodal stejný snímek pro obě místa — pokud se mají rozejít, přidej druhý soubor a změň
+  jeden řádek v `pages_home.py`.
 - `sidlo-uradu.jpeg` — fotografie sídla v bloku Informace o úřadu. Má jen 400 × 225 px, takže se
   na šířku sloupce roztahuje a rozostřuje. Pro spuštění bude potřeba snímek alespoň 1200 px na šířku.
 - `logo.svg` — **znak úřadu, digitální lev.** Vektorizovaný z rastrového podkladu dodaného

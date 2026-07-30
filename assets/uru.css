@@ -317,15 +317,15 @@ h2.plain { margin-bottom: var(--spacing-m-nudge); }
 .news { background: var(--background-block-primary); border-radius: var(--corner-radius-m);
   overflow: hidden; text-decoration: none; display: block; box-shadow: var(--uru-shadow); }
 .news:hover { box-shadow: 0 6px 20px rgb(29 60 93 / 14%); }
-.news .ph { aspect-ratio: 16/9; background: linear-gradient(120deg, #D9E6F3, #B9D0E7);
-  display: grid; place-items: center; color: var(--color-primary-500); font-size: var(--font-size-body-s); }
+.news .ph { aspect-ratio: 16/9; width: 100%; height: auto; object-fit: cover; display: block;
+  background: linear-gradient(120deg, #D9E6F3, #B9D0E7); }
 .news .b { padding: var(--spacing-m) var(--spacing-m-nudge) var(--spacing-m-nudge); }
 .news h3 { margin: 0 0 var(--spacing-s); font-size: var(--font-size-headline-xs); color: var(--color-primary-700); }
 .news .date { font-size: var(--font-size-body-xs); color: var(--text-tertiary); }
 .news p { margin: var(--spacing-s) 0 0; font-size: var(--font-size-body-s); color: var(--text-secondary); }
 .newsside { display: grid; gap: var(--spacing-l); align-content: start; }
 .newsside .news { display: grid; grid-template-columns: 9.375rem 1fr; }
-.newsside .news .ph { aspect-ratio: auto; height: 100%; }
+.newsside .news .ph { aspect-ratio: auto; height: 100%; min-height: 100%; object-fit: cover; }
 .newsside .news .b { padding: var(--spacing-m); }
 
 .splitblock { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-3xl); align-items: center; }
@@ -410,7 +410,13 @@ body.editing [data-edit]:focus { outline: 2px solid var(--color-success-600); ba
 /* ---------- infobanner ----------
    Barevný pruh jde přes celou šířku okna, obsah se drží v obsahovém sloupci.
    Šířku kontejneru řídí design systém proměnnou --container-width, ikona i tlačítko
-   zavření si barvu berou z varianty bold. */
+   zavření si barvu berou z varianty bold.
+
+   Pozor: design systém má pro nehydratovaný stav náhradní pravidlo
+   `.gov-infobar:not([data-hydrated])`, které stejné omezení šířky nasadí i na vnější
+   element — tedy na ten, který nese barevný podklad. V maketě komponenty píšeme rovnou
+   v hydratované podobě, proto vnější element atribut data-hydrated nese a barevný pruh
+   zůstává přes celou šířku okna. */
 .infobanner { --container-width: var(--uru-wrap); }
 .infobanner .gov-infobar__section {
   align-items: center;
@@ -420,7 +426,10 @@ body.editing [data-edit]:focus { outline: 2px solid var(--color-success-600); ba
 @media (max-width: 76.5em) {
   .infobanner .gov-infobar__section { padding-left: var(--spacing-l); padding-right: var(--spacing-l); }
 }
-.infobanner p { font-size: var(--font-size-body-s); line-height: 1.5; }
+/* Návrh: text 16 px / řádkování 24 px, ikona 36 px, svislé odsazení 16 px
+   — dohromady dává pruh vysoký přesně 80 px při dvou řádcích textu. */
+.infobanner p { font-size: var(--font-size-body-m); line-height: 1.5; }
+.infobanner [slot="icon"] { width: 2.25rem; height: 2.25rem; }
 .infobanner a { color: inherit; }
 .infobanner .gov-infobar__close { margin-left: auto; }
 .infobanner .gov-infobar__close .element {
