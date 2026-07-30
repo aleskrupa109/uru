@@ -221,17 +221,17 @@ interně. Výsledkem jsou kratší lhůty a předvídatelný proces.</p>
 """
 
 POVINNE = [
-    ("1", "Název", "Úřad rozvoje území"),
+    ("1", "Název subjektu", "Úřad rozvoje území"),
     ("2", "Důvod a způsob založení", "Zřízen zákonem, vznik transformací Dopravního a energetického stavebního úřadu."),
     ("2.1", "Výňatek z citovaného zákona", "Doplní se."),
     ("3", "Organizační struktura", None),
-    ("4", "Kontaktní spojení", None),
-    ("5", "Způsob případných plateb", "Číslo účtu a variabilní symboly obdržíte ve výzvě k úhradě."),
-    ("6", "IČO", "Doplní se."),
-    ("7", "Plátce daně z přidané hodnoty", "Doplní se."),
+    ("4", "Kontaktní údaje", None),
+    ("5", "Způsob případných plateb", "Číslo účtu a variabilní symbol obdržíte ve výzvě k úhradě."),
+    ("6", "IČ", "Doplní se."),
+    ("7", "DIČ", "Doplní se."),
     ("8", "Dokumenty", "Rozpočet, závěrečné účty a další dokumenty ke stažení."),
     ("9", "Žádosti o informace", "Postup podání žádosti podle zák. č. 106/1999 Sb."),
-    ("10", "Příjem podání a podnětů", "Podatelna, datová schránka, osobní podání."),
+    ("10", "Příjem žádostí a dalších podání", "Podatelna, datová schránka, osobní podání."),
     ("11", "Opravné prostředky", None),
     ("11.1", "Stížnost", "Postup pro podání stížnosti."),
     ("11.2", "Odvolání", "Postup pro podání odvolání proti rozhodnutí."),
@@ -240,7 +240,7 @@ POVINNE = [
     ("14", "Předpisy", "Přehled právních předpisů, podle kterých úřad postupuje."),
     ("15", "Úhrady za poskytování informací", "Sazebník úhrad."),
     ("16", "Licenční smlouvy", "Vzory licenčních smluv podle §14a zák. č. 106/1999 Sb."),
-    ("17", "Výroční zpráva podle zákona o svobodném přístupu k informacím", None),
+    ("17", "Výroční zprávy", None),
 ]
 
 PRO_MEDIA = """
@@ -373,8 +373,28 @@ souvislostech, zejména s ohledem na udržitelný rozvoj území, a koordinuje �
 <p>Z důvodu naléhavého veřejného zájmu byla pořízena mimořádná změna PÚR ČR — Změna č. 9.</p>
 
 <h2>Pracovní výbor pro zpracování</h2>
-<p>Podkladové materiály pro jednotlivá jednání jsou k dispozici členům výboru
-v neveřejné části webu.</p>
+<p>Podkladové materiály pro jednotlivá jednání jsou k dispozici členům pracovního výboru
+v neveřejné části webu chráněné heslem.</p>
+
+<h2>Aktualizace a změny</h2>
+<p>Politika územního rozvoje se pořizuje a aktualizuje na základě zprávy o uplatňování.
+Termín pro předložení aktualizace vládě ČR byl prodloužen do 31. 8. 2025. Z důvodu naléhavého
+veřejného zájmu byly z podnětů různých resortů pořízeny mimořádné změny — poslední z nich
+je Změna č. 9 PÚR ČR.</p>
+<table class="t">
+  <tr><th style="width:44%">Dokument</th><th>Rok</th><th>Stav</th></tr>
+  <tr><td>Politika územního rozvoje ČR — Změna č. 9</td><td>2025</td><td><span class="tag valid">Platná</span></td></tr>
+  <tr><td>Politika územního rozvoje ČR — aktualizace č. 1–8</td><td>2015–2024</td><td><span class="tag hist">Historická</span></td></tr>
+  <tr><td>Politika územního rozvoje ČR (první vydání)</td><td>2008 (2009)</td><td><span class="tag hist">Historická</span></td></tr>
+</table>
+
+<h2>Podklady</h2>
+<ul class="files">
+  <li><span class="ft">XLSX</span><span class="grow"><span class="name">Seznam relevantních podkladů PÚR ČR</span><br>
+    <span class="fmeta">podklady pro pořizování aktualizací nebo nového návrhu · 138 kB</span></span>
+    <a class="btn ghost sm" href="#">Stáhnout</a></li>
+</ul>
+<p>Další podkladové materiály jsou dostupné na webových stránkách Ministerstva pro místní rozvoj.</p>
 """
 
 MEZINARODNI = """

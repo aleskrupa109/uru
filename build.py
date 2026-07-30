@@ -293,7 +293,7 @@ MOCKBAR = """<div class="mockbar"><div class="wrap">
 HELP = {
     "stavebnici": ("Potřebujete pomoct?", "Kontakt pro stavebníky",
                    "Máte otázky? Napište nám — rádi poradíme.", "obecny-dotaz@uru.gov.cz"),
-    "metodiky":   (None, "Kontakt na metodiky",
+    "metodiky":   ("Máte dotaz k metodickým stanoviskům?", "Kontakt na metodiky",
                    "Napište nám — rádi poradíme.", "obecny-dotaz@uru.gov.cz"),
     "hr":         ("Potřebujete pomoct?", "Personální oddělení",
                    "Máte otázky? Napište nám — rádi poradíme.", "kariera@uru.gov.cz"),
