@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """Sekce Územní rozvoj (obsah převzatý od ÚÚR)."""
 from build import cmt
+import content_extra2 as E
 
 C = [("Územní rozvoj", "uzemni-rozvoj/index.html")]
 
@@ -61,63 +62,12 @@ PUR = """
   Územní rozvojový plán, Územně analytické podklady, Politika architektury. Navrhuje se jednou a používá opakovaně.""" + cmt(67, "Potvrdit, že jde o vzorovou stránku pro celou třídu dokumentových stránek.") + """</p>
 </div>
 
-<h2>Přiložené dokumenty</h2>
-<ul class="files">
-  <li><span class="ft">PDF</span><span class="grow"><span class="name">Úplné znění — aktualizace č. 9</span><br>
-    <span class="fmeta">verze 9.0 · schváleno usnesením vlády · 12 MB</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
-  <li><span class="ft">PDF</span><span class="grow"><span class="name">Brožura CZ / EN / DE</span><br>
-    <span class="fmeta">3 jazykové verze · 4 MB</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
-</ul>
-<p class="hint" style="color:#717171">Soubory nad limit úložiště se zpřístupňují přes řízené úložiště — způsob je předmětem technického workshopu.</p>
-
-<h2>O dokumentu</h2>
-<p>Politika územního rozvoje je celostátní nástroj územního plánování. Určuje požadavky na konkretizaci
-úkolů územního plánování v republikových, přeshraničních a mezinárodních souvislostech.</p>
-
-<h2>Historie dokumentu</h2>
-<table class="t">
-  <tr><th style="width:150px">Aktualizace</th><th>Rok</th><th>Stav</th></tr>
-  <tr><td>Aktualizace č. 9</td><td>2026</td><td><span class="tag valid">Platná</span></td></tr>
-  <tr><td>Aktualizace č. 8</td><td>2024</td><td><span class="tag hist">Historická</span></td></tr>
-  <tr><td>Aktualizace č. 7</td><td>2023</td><td><span class="tag hist">Historická</span></td></tr>
-</table>
+""" + E.PUR_DOKUMENTY + """
 """
 
-EVIDENCE = """
-<div class="grid g2">
-  <a class="card" href="#" style="box-shadow:0 0 0 2px #2362A2 inset"><h3>Vstoupit do aplikace iLAS</h3>
-    <p>Evidence územně plánovací činnosti obcí.</p></a>
-  <a class="card" href="#" style="box-shadow:0 0 0 2px #2362A2 inset"><h3>Vstoupit do aplikace iKAS</h3>
-    <p>Evidence územně plánovací činnosti krajů.</p></a>
-</div>
-<p class="hint" style="color:#717171">Vstupy do aplikací jsou nahoře — uživatel sem přichází primárně kvůli nim, ne kvůli textu.""" + cmt(64, "Struktura obrací prioritu: uživatel jde primárně do iLAS/iKAS, ale odkazy na aplikace jsou až pod dlouhým textem.") + """</p>
+EVIDENCE = E.EVIDENCE
 
-<h2>K čemu evidence slouží</h2>
-<p>Evidence územně plánovací činnosti shromažďuje údaje o pořizované a vydané územně plánovací dokumentaci
-obcí a krajů. Data slouží pro celostátní přehled i pro navazující analytické podklady.</p>
-
-<h2>Kdo do evidence vkládá data</h2>
-<ul><li>Úřady územního plánování obcí s rozšířenou působností</li><li>Krajské úřady</li></ul>
-
-<h2>Související obsah</h2>
-<ul>
-  <li><a href="#">Metodiky a příručky k evidenci</a></li>
-  <li><a href="#">Ročenky evidence</a></li>
-  <li><a href="#">Seznam projektantů</a></li>
-  <li><a href="#">Územní studie</a></li>
-</ul>
-"""
-
-INFOWEB = """
-<div class="box note">
-  <h3>Obsah závisí na dosud nepřijatém rozhodnutí</h3>
-  <p>O osudu informačního webu územního plánování (rozcestník s velkým množstvím odkazů) se teprve rozhodne —
-  sloučení, ukončení, nebo archivace. Do rozhodnutí zůstává stránka informativní.</p>
-</div>
-<p>Informační web územního plánování je rozcestník odborných odkazů pro pořizovatele a zpracovatele
-územně plánovací dokumentace.</p>
-<div class="btn-row"><a class="btn ghost" href="#">Přejít na informační web</a></div>
-"""
+INFOWEB = E.INFOWEB
 
 UAP = """
 <p>Územně analytické podklady ČR jsou zveřejňovány po ročnících. Ukončené ročníky zůstávají dostupné
@@ -146,17 +96,7 @@ pro zpětné vyhodnocení vývoje.</p>
 <div class="empty" data-empty style="display:none">Zadanému filtru neodpovídá žádný ročník.</div>
 """
 
-MEZINARODNI = """
-<h2>ESPON</h2>
-<p>Evropská pozorovací síť pro územní rozvoj a soudržnost. Průběžně aktualizovaný obsah a mezinárodní závazky ČR.</p>
-<h2>V4+2</h2>
-<p>Spolupráce zemí Visegrádské skupiny a přidružených států v oblasti územního rozvoje.
-Obsah je vedený na samostatné doméně.</p>
-<div class="box note"><p>Odkaz vede mimo web ÚRÚ na samostatnou doménu projektu. Zpět se dostanete tlačítkem prohlížeče.</p></div>
-<div class="btn-row"><a class="btn ghost" href="#">Přejít na web V4+2</a></div>
-<h2>Přeshraniční projekty</h2>
-<p>Česko-polská a další přeshraniční spolupráce v územním plánování.</p>
-"""
+MEZINARODNI = E.MEZINARODNI
 
 PUBLIKACE = """
 <div class="filters" data-filterable>

@@ -1,35 +1,12 @@
 # -*- coding: utf-8 -*-
 """Kariéra, O úřadu, Kontakty, úřední deska, vyhledávání a šablony."""
 from build import cmt
+import content_extra2 as E
 
 KAR = [("Kariéra", "kariera/index.html")]
 OU = [("O úřadu", "o-uradu/index.html")]
 
-KARIERA = """
-<h2>Proč pracovat v ÚRÚ</h2>
-<p>ÚRÚ vzniká jako specializovaný správní úřad s celostátní působností. Hledáme desítky lidí do stavebního řádu,
-územního plánování a metodické podpory — často z jiných stavebních úřadů, dotčených orgánů a obcí.</p>
-
-<div class="grid g3">
-  <div class="card"><h3>Smysluplná agenda</h3><p>Povolování staveb celostátního významu a metodické vedení stavebních úřadů.</p></div>
-  <div class="card"><h3>Stabilita</h3><p>Služební i pracovní poměr, jasné platové zařazení a podmínky.</p></div>
-  <div class="card"><h3>Rozvoj</h3><p>Vzdělávání, odborné semináře a přímý kontakt s legislativní praxí.</p></div>
-</div>
-
-<h2>Pracovní poměr a státní služba</h2>
-<table class="t">
-  <tr><th style="width:30%">&nbsp;</th><th>Služební poměr</th><th>Pracovní poměr</th></tr>
-  <tr><td>Právní úprava</td><td>zákon o státní službě</td><td>zákoník práce</td></tr>
-  <tr><td>Jistota místa</td><td>vyšší, vázaná na služební hodnocení</td><td>standardní</td></tr>
-  <tr><td>Dovolená</td><td>rozšířená</td><td>dle zákoníku práce</td></tr>
-  <tr><td>Výběr</td><td>výběrové řízení dle zákona</td><td>výběrové řízení úřadu</td></tr>
-</table>
-
-<div class="btn-row">
-  <a class="btn" href="{{r}}kariera/otevrene-pozice.html">Otevřené pozice</a>
-  <a class="btn ghost" href="{{r}}kariera/prihlaska.html">Jak podat přihlášku</a>
-</div>
-"""
+KARIERA = E.KARIERA
 
 POZICE = """
 <div class="filters" data-filterable>
@@ -87,37 +64,9 @@ POZICE = """
 <div class="empty" data-empty style="display:none">Zadanému filtru neodpovídá žádná pozice.</div>
 """
 
-DETAIL_POZICE = """
-<div class="tags" style="display:flex;gap:8px;margin-bottom:14px">
-  <span class="tag neutral">Služební poměr</span><span class="tag hist">12. platová třída</span><span class="tag valid">Přihlášky otevřené</span>
-</div>
-<table class="t">
-  <tr><th style="width:220px">Lokalita</th><td>Praha</td></tr>
-  <tr><th>Úvazek</th><td>plný</td></tr>
-  <tr><th>Požadované vzdělání</th><td>vysokoškolské</td></tr>
-  <tr><th>Lhůta pro podání přihlášky</th><td>31. 8. 2026</td></tr>
-  <tr><th>Oficiální text výběrového řízení</th>
-      <td><a href="{{r}}uredni-deska.html">Oznámení o vyhlášení výběrového řízení (úřední deska, PDF)</a>""" + cmt(78, "Chybí vazba na PDF s oficiálním textem výběrového řízení na úřední desce.") + """</td></tr>
-</table>
-
-<h2>Co budete dělat</h2>
-<ul>
-  <li>Vedení řízení o povolení záměru u vyhrazených staveb</li>
-  <li>Koordinace vyjádření dotčených orgánů v rámci jednoho řízení</li>
-  <li>Komunikace se stavebníky a projektanty</li>
-</ul>
-
-<h2>Co od vás očekáváme</h2>
-<ul>
-  <li>Zkušenost se správním řízením, ideálně na stavebním úřadě</li>
-  <li>Orientaci ve stavebním zákoně</li>
-</ul>
-
-<div class="btn-row">
-  <a class="btn" href="{{r}}kariera/prihlaska.html">Podat přihlášku""" + cmt(77, "Chybí obrazovka formuláře přihlášky. Tlačítko Odpovědět nemá cíl.") + """</a>
-  <a class="btn ghost" href="{{r}}kontakty.html#hr">Zeptat se HR</a>
-</div>
-"""
+DETAIL_POZICE = (E.DETAIL_POZICE
+                 .replace("{c78}", cmt(78, "Chybí vazba na PDF s oficiálním textem výběrového řízení na úřední desce."))
+                 .replace("{c77}", cmt(77, "Chybí obrazovka formuláře přihlášky. Tlačítko Odpovědět nemá cíl.")))
 
 PRIHLASKA = """
 <p>Přihlášku lze podat online formulářem, datovou schránkou nebo poštou. Online formulář se odesílá
@@ -164,21 +113,7 @@ OURAD = """
 </div>
 """
 
-KDO_JSME = """
-<h2>Kompetence úřadu</h2>
-<p>Úřad rozvoje území je specializovaný správní úřad. Povoluje vyhrazené stavby celostátního a nadregionálního
-významu, poskytuje metodickou podporu stavebním úřadům a dotčeným orgánům a zajišťuje agendy územního rozvoje.</p>
-
-<h2>Vznik úřadu</h2>
-<p>ÚRÚ vznikl transformací Dopravního a energetického stavebního úřadu a převzetím agend Ústavu územního rozvoje.</p>
-
-<h2>Naše agendy</h2>
-<div class="grid g3">
-  <a class="card" href="{{r}}vyhrazene-stavby/index.html"><h3>Vyhrazené stavby</h3><p>Povolování staveb celostátního významu.</p></a>
-  <a class="card" href="{{r}}metodicka-podpora/index.html"><h3>Metodická podpora</h3><p>Výklady a metodické vedení úřadů.</p></a>
-  <a class="card" href="{{r}}uzemni-rozvoj/index.html"><h3>Územní rozvoj</h3><p>Strategické dokumenty a odborné publikace.</p></a>
-</div>
-"""
+KDO_JSME = E.KDO_JSME
 
 ORG = """
 <div class="box note">
@@ -201,52 +136,43 @@ ORG = """
 <p class="hint" style="color:#717171">Kontaktní údaje se zobrazují z centrální stránky Kontakty, která je jediným zdrojem dat.""" + cmt(92, "Určit jeden zdroj kontaktních dat a pravidlo, co se kde zobrazuje.") + """</p>
 """
 
-MEDIA = """
-<div class="contactcard" style="max-width:520px">
-  <h3>Kontakt pro média</h3><p class="role">Tiskové dotazy a vyjádření úřadu</p>
-  <dl><dt>E-mail</dt><dd>media@uru.gov.cz</dd><dt>Telefon</dt><dd>+420 000 000 000</dd></dl>
-</div>
+MEDIA = E.PRO_MEDIA + """
 <h2>Tiskové zprávy</h2>
 <p>Tiskové zprávy jsou součástí společného výpisu aktualit a odlišují se typem.""" + cmt(87, "Tiskové zprávy a Aktuality jsou dva obsahové typy bez společného výpisu.") + """</p>
 <div class="btn-row"><a class="btn ghost" href="{{r}}aktuality.html">Zobrazit všechny tiskové zprávy</a></div>
 <ul class="doclist">
+  <li><h3><a href="{{r}}clanek.html">ÚRÚ přebírá rozhodování o nových kategoriích vyhrazených staveb</a></h3>
+    <p>Mezi vyhrazené stavby nově patří i stavby v zastavitelných plochách nad 45 ha.
+    Stavebníci těchto projektů podávají žádosti o povolení u ÚRÚ.</p>
+    <div class="meta"><span>18. 9. 2026</span></div></li>
   <li><h3><a href="{{r}}clanek.html">Vyhlášení výběrových řízení na 12 pozic</a></h3>
     <div class="meta"><span>18. 9. 2026</span></div></li>
-  <li><h3><a href="{{r}}clanek.html">Novela stavebního zákona prošla Poslaneckou sněmovnou</a></h3>
-    <div class="meta"><span>11. 12. 2025</span></div></li>
 </ul>
 """
 
-POVINNE = """
-<div class="toc"><h2>Obsah stránky</h2>
-<ol>
-  <li><a href="#o1">Název</a></li><li><a href="#o2">Důvod a způsob založení</a></li>
-  <li><a href="#o3">Organizační struktura</a></li><li><a href="#o4">Kontaktní spojení</a></li>
-  <li><a href="#o5">Bankovní spojení</a></li><li><a href="#o6">IČO</a></li>
-  <li><a href="#o7">Dokumenty a rozpočet</a></li><li><a href="#o8">Žádosti o informace</a></li>
-  <li><a href="#o9">Předpisy</a></li><li><a href="#o10">Úhrady za informace</a></li>
-  <li><a href="#o11">Výroční zprávy</a></li><li><a href="#o12">Veřejné zakázky</a></li>
-</ol></div>
-<p class="hint" style="color:#717171">Položky označené odkazem mají vlastní podstránku, ostatní jsou uvedené přímo zde.""" + cmt(89, "Doplnit, které z položek mají vlastní podstránku a které jsou jen odstavcem.") + """</p>
-
-<h2 id="o1">Název</h2><p>Úřad rozvoje území</p>
-<h2 id="o2">Důvod a způsob založení</h2><p>Zřízen zákonem, vznik transformací DESÚ.</p>
-<h2 id="o3">Organizační struktura</h2><p>Viz <a href="{{r}}o-uradu/organizacni-struktura.html">Organizační struktura</a> (vlastní podstránka).</p>
-<h2 id="o4">Kontaktní spojení</h2><p>Viz <a href="{{r}}kontakty.html">Kontakty</a> (vlastní podstránka).</p>
-<h2 id="o5">Bankovní spojení</h2><p>Číslo účtu se doplní.</p>
-<h2 id="o6">IČO</h2><p>Doplní se.</p>
-<h2 id="o7">Dokumenty a rozpočet</h2><p>Rozpočet a závěrečné účty ke stažení.</p>
-<h2 id="o8">Žádosti o informace</h2><p>Postup podání žádosti podle zák. 106/1999 Sb.</p>
-<h2 id="o9">Předpisy</h2><p>Přehled právních předpisů, podle kterých úřad postupuje.</p>
-<h2 id="o10">Úhrady za poskytování informací</h2><p>Sazebník úhrad.</p>
-<h2 id="o11">Výroční zprávy</h2>
-<ul class="files">
-  <li><span class="ft">PDF</span><span class="grow"><span class="name">Výroční zpráva za rok 2026</span><br>
-    <span class="fmeta">dle §18 zák. 106/1999 Sb.</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
-</ul>
-<h2 id="o12">Veřejné zakázky</h2><p>Profil zadavatele je veden v NEN.</p>
-<div class="btn-row"><a class="btn ghost" href="#">Přejít na profil zadavatele</a></div>
-"""
+# Povinně zveřejňované informace: číslovaná struktura podle §5 zák. 106/1999 Sb.
+POVINNE = ('<div class="toc"><h2>Obsah stránky</h2><ol>'
+           + "".join(f'<li><a href="#o{n.replace(".", "-")}">{n} {t}</a></li>'
+                     for n, t, _d in E.POVINNE)
+           + '</ol></div>'
+           + '<p class="hint">Položky, které mají vlastní podstránku, jsou označené odkazem.'
+           + cmt(89, "Doplnit, které z položek mají vlastní podstránku a které jsou jen odstavcem.")
+           + '</p>')
+_ODKAZY = {"3": '{{r}}o-uradu/organizacni-struktura.html',
+           "4": '{{r}}kontakty.html', "12": '{{r}}vyhrazene-stavby/dokumenty-a-formulare.html'}
+for _n, _t, _d in E.POVINNE:
+    POVINNE += f'<h2 id="o{_n.replace(".", "-")}">{_n} {_t}</h2>'
+    if _n in _ODKAZY:
+        POVINNE += f'<p>Viz <a href="{_ODKAZY[_n]}">{_t}</a> — vlastní podstránka.</p>'
+    elif _n == "17":
+        POVINNE += ('<ul class="files"><li><span class="ft">PDF</span>'
+                    '<span class="grow"><span class="name">Výroční zpráva za rok 2026</span><br>'
+                    '<span class="fmeta">dle §18 zák. č. 106/1999 Sb.</span></span>'
+                    '<a class="btn ghost sm" href="#">Stáhnout</a></li></ul>')
+    else:
+        POVINNE += f'<p>{_d}</p>'
+POVINNE += ('<h2>Veřejné zakázky</h2><p>Profil zadavatele je veden v NEN.</p>'
+            '<div class="btn-row"><a class="btn ghost" href="#">Přejít na profil zadavatele</a></div>')
 
 KONTAKTY = """
 <div class="box note">
@@ -263,6 +189,7 @@ KONTAKTY = """
   <tr><th>IČO</th><td>doplní se</td></tr>
 </table>
 
+""" + E.KONTAKTY_POBOCKY + """
 <h2>Kontakty podle agendy""" + cmt(91, "Chybí členění podle agendy a oddělení, což je napříč personami nejsilnější opakovaná potřeba.") + """</h2>
 <div class="contactcards">
   <div class="contactcard" id="stavebnici"><h3>Vyhrazené stavby — dopravní</h3>
@@ -290,7 +217,7 @@ KONTAKTY = """
     <p class="agenda">Vyjádření úřadu, podklady pro novináře</p>
     <dl><dt>E-mail</dt><dd>media@uru.gov.cz</dd></dl></div>
 </div>
-"""
+""" + E.KONTAKTY_ODDELENI
 
 DESKA = """
 <div class="box gap">
