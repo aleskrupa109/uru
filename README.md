@@ -134,8 +134,16 @@ npm install @gov-design-system-ce/icons
 cp node_modules/@gov-design-system-ce/icons/lib/complex/*.svg assets/gov/icons/complex/
 ```
 
-Fotografie v úvodním banneru je `assets/img/hero-budova.jpg`. **Pozor: soubor má vodoznak
-Unsplash+.** Pro spuštění bude potřeba licencovaná verze bez vodoznaku, nebo vlastní fotografie.
+Fotografie jsou v `assets/img/`:
+
+- `hero-budova.jpg` — kruhový vizuál v úvodním banneru. **Soubor má vodoznak Unsplash+**, pro
+  spuštění bude potřeba licencovaná verze nebo vlastní fotografie.
+- `sidlo-uradu.jpeg` — fotografie sídla v bloku Informace o úřadu. Má jen 400 × 225 px, takže se
+  na šířku sloupce roztahuje a rozostřuje. Pro spuštění bude potřeba snímek alespoň 1200 px na šířku.
+- `logo.svg` — **zástupný znak úřadu.** Logo podle jednotného vizuálního stylu státní správy
+  (bílý dvouocasý lev na červeném štítu) není součástí ikonové sady design systému; dodává se
+  s logo manuálem JVS. Až soubor budeš mít, stačí přepsat `assets/img/logo.svg` — hlavička se
+  na něj odkazuje a nic dalšího se nemění.
 
 ### Úprava primitiv
 

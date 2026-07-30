@@ -164,12 +164,35 @@ li.open .dropdown { display: block; }
 .grid.g2 { grid-template-columns: repeat(2, 1fr); }
 .grid.g3 { grid-template-columns: repeat(3, 1fr); }
 .grid.g4 { grid-template-columns: repeat(4, 1fr); }
-.grid > .gov-tile { background: var(--background-block-primary); border-radius: var(--corner-radius-m);
-  border-bottom: 0; box-shadow: var(--uru-shadow); padding: var(--spacing-m-nudge); }
-.grid > .gov-tile:hover { box-shadow: 0 6px 20px rgb(29 60 93 / 14%); }
-.gov-tile [slot="icon"] { display: block; margin-bottom: var(--spacing-s); color: var(--color-primary-600); }
-.gov-tile__icon-img { width: 2.5rem; height: 2.5rem; display: block; }
-.grid > .gov-tile [slot="icon"] { margin-bottom: var(--spacing-s-nudge); }
+/* Dlaždice rozcestníku: bílá karta s ikonou, bez šipky.
+   Velikosti a rozestupy odměřené z návrhu (karta 270 px, odsazení 16 px). */
+.grid > .uru-card {
+  background: var(--background-block-primary); border-radius: var(--corner-radius-m);
+  border-bottom: 0; box-shadow: var(--uru-shadow); padding: var(--spacing-m);
+}
+.grid > .uru-card:hover { box-shadow: 0 6px 20px rgb(29 60 93 / 14%); }
+.uru-card [slot="icon"] { display: block; margin-bottom: var(--spacing-l); color: var(--color-primary-600); }
+.uru-card [slot="icon"] .gov-tile__icon-img { width: 3rem; height: 3rem; }
+.uru-card .gov-tile__title { font-size: var(--font-size-body-xl); line-height: 1.5; }
+.uru-card .gov-tile__title a { color: var(--color-primary-600); }
+.uru-card .gov-tile__annotation {
+  font-size: var(--font-size-body-m); line-height: 1.5;
+  color: var(--text-secondary); margin-top: var(--spacing-m); padding: 0;
+}
+
+/* Rychlé odkazy: bez pozadí, se spodní linkou a šipkou vpravo, ikona 32 px. */
+.grid.quicklinks { gap: var(--spacing-l) 0; }
+.grid.quicklinks > .uru-qlink { padding: 0 var(--spacing-m) var(--spacing-m); }
+.uru-qlink [slot="icon"] { display: block; margin-bottom: var(--spacing-m); color: var(--color-primary-600); }
+.uru-qlink [slot="icon"] .gov-tile__icon-img { width: 2rem; height: 2rem; }
+.uru-qlink .gov-tile__title { font-size: var(--font-size-headline-xs); line-height: 1.4; }
+.uru-qlink .gov-tile__title a { color: var(--color-primary-600); }
+.uru-qlink .gov-tile__annotation {
+  font-size: var(--font-size-body-s); line-height: 1.45;
+  color: var(--text-secondary); margin-top: var(--spacing-s-nudge);
+}
+.uru-qlink .gov-tile__icon { color: var(--color-primary-600); }
+.uru-qlink .gov-tile__icon svg { width: 0.75rem; height: 0.75rem; }
 
 .tile-order { display: block; font-size: var(--font-size-body-xs); color: var(--text-tertiary);
   text-transform: uppercase; letter-spacing: .04em; margin-bottom: var(--spacing-xs); }
@@ -367,3 +390,25 @@ body.editing [data-edit]:focus { outline: 2px solid var(--color-success-600); ba
 .sitemap-card ul { list-style: none; margin: 0; padding: 0; }
 .sitemap-card ul ul { padding-left: var(--spacing-m); }
 .sitemap-card li { margin: var(--spacing-xs) 0; font-size: var(--font-size-body-s); }
+
+/* ---------- úvodní stránka: časté dotazy ----------
+   V návrhu jde o seznam modrých odkazů s tenkými linkami, bez pozadí,
+   zabírající přibližně dvě třetiny obsahového sloupce. */
+.hp-faq { margin: 0; max-width: 50rem; }
+.hp-faq li { margin: 0; border-bottom: 1px solid var(--border-subtlest); }
+.hp-faq a {
+  display: block; padding: var(--spacing-m) var(--spacing-m);
+  font-size: var(--font-size-headline-xs); color: var(--color-primary-700); text-decoration: none;
+}
+.hp-faq a:hover { background: var(--background-primary-subtlest); color: var(--color-primary-600); }
+
+/* ---------- úvodní stránka: fotografie sídla ---------- */
+.hp-photo { margin: 0; }
+.hp-photo img { width: 100%; height: auto; display: block; border-radius: var(--corner-radius-m); }
+.hp-photo figcaption { margin-top: var(--spacing-s); font-size: var(--font-size-body-s); color: var(--text-tertiary); }
+
+/* ---------- infobanner: ikona na barevném podkladu je bílá ---------- */
+.gov-infobar[data-type="bold"] [slot="icon"],
+.gov-infobar[data-type="bold"] > section > span,
+.infobanner .gov-infobar__section > .wrap > span { color: var(--text-white-fixed); }
+.infobanner svg { color: inherit; }

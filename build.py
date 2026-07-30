@@ -111,7 +111,6 @@ BANNER = (
     "Vyhrazené stavby vyřizujeme v sekci <a href='{r}vyhrazene-stavby/index.html'>Vyhrazené stavby</a>, "
     "obsah a metodiky ÚÚR najdete v sekci <a href='{r}uzemni-rozvoj/index.html'>Územní rozvoj</a>."
 )
-BANNER_META = "Přechodové sdělení — zobrazuje se do konce přechodného období, poté se vypíná v CMS. Zavření platí do konce relace."
 
 
 def rel(depth):
@@ -141,9 +140,9 @@ def dsicon(name, kind="complex", cls="gov-tile__icon-img"):
 
 TILE_ICON = {
     # úvodní rozcestník
-    "vyhrazene-stavby/index.html": "house",
-    "metodicka-podpora/index.html": "doc-review",
-    "uzemni-rozvoj/index.html": "map",
+    "vyhrazene-stavby/index.html": "property",
+    "metodicka-podpora/index.html": "doc-personal-info",
+    "uzemni-rozvoj/index.html": "doc-search",
     "kariera/index.html": "job",
     # Vyhrazené stavby
     "vyhrazene-stavby/co-meni-novela.html": "news",
@@ -336,7 +335,7 @@ TPL = """<!doctype html>
 {mockbar}
 <header class="site-header"><div class="wrap">
 <a class="brand" href="{r}index.html">
-<svg width="30" height="34" viewBox="0 0 30 34" fill="#1D3C5D"><path d="M15 1l13 6v10c0 8-5.5 13.5-13 16C7.5 30.5 2 25 2 17V7z"/></svg>
+<img src="{r}assets/img/logo.svg" width="30" height="38" alt="">
 <span>Úřad rozvoje území</span></a>
 <form class="header-search" role="search" action="{r}vyhledavani.html">
 <input type="search" name="q" placeholder="Hledejte v názvu, obsahu i v přílohách (PDF)…" aria-label="Vyhledávání">
@@ -463,13 +462,33 @@ def to_ds(html_body):
         desc = p.group(1) if p else ""
         ico = tile_icon_for(href)
         ico = f'<span slot="icon">{ico}</span>' if ico else ""
-        return (f'<div class="gov-tile" data-size="m" data-orientation="vertical" data-clickable="1">'
+        # návrh v dlaždicích rozcestníku šipku nemá
+        return (f'<div class="gov-tile uru-card" data-size="m" data-orientation="vertical" data-clickable="1">'
                 f'{ico}<div class="gov-tile__content"><div class="gov-tile__text">{head}'
+                f'<div class="gov-tile__title"><a class="gov-tile__link" href="{href}">{h3.group(1)}</a></div>'
+                f'<div class="gov-tile__annotation">{desc}</div>'
+                f'</div></div></div>')
+
+    def qlink(m):
+        attrs, href, inner = m.group(1), m.group(2), m.group(3)
+        h3 = re.search(r'<h3>(.*?)</h3>', inner, re.S)
+        p = re.search(r'<p>(.*?)</p>', inner, re.S)
+        if not h3:
+            return m.group(0)
+        name = re.search(r'data-ico="([a-z0-9-]+)"', attrs)
+        ico = dsicon(name.group(1), cls="gov-tile__icon-img") if name else tile_icon_for(href)
+        ico = f'<span slot="icon">{ico}</span>' if ico else ""
+        desc = p.group(1) if p else ""
+        return (f'<div class="gov-tile uru-qlink" data-size="s" data-orientation="vertical" data-clickable="1">'
+                f'{ico}<div class="gov-tile__content"><div class="gov-tile__text">'
                 f'<div class="gov-tile__title"><a class="gov-tile__link" href="{href}">{h3.group(1)}</a>'
                 f'<span class="gov-tile__icon">{gicon("chevron-right")}</span></div>'
                 f'<div class="gov-tile__annotation gov-tile__annotation--padding">{desc}</div>'
                 f'</div></div></div>')
 
+    html_body = re.sub(r'<a class="qlink"([^>]*?)href="([^"]*)"([^>]*)>(.*?)</a>',
+                       lambda m: qlink(type("M", (), {"group": lambda self, i: [None, m.group(1) + m.group(3), m.group(2), m.group(4)][i]})()),
+                       html_body, flags=re.S)
     html_body = re.sub(r'<a class="card" href="([^"]*)"[^>]*>(.*?)</a>', tile, html_body, flags=re.S)
 
     def tile_static(m):
@@ -505,9 +524,8 @@ def build_page(p):
     if p.get("banner", True):
         banner = ('<div class="gov-infobar infobanner" data-color="primary" data-type="bold">'
                   '<section class="gov-infobar__section"><div class="wrap">'
-                  f'<span>{gicon("warn")}</span>'
-                  f'<div class="gov-infobar__content"><p>{BANNER.format(r=r)}'
-                  f'<span class="meta">{BANNER_META}</span></p></div>'
+                  f'<span slot="icon">{gicon("warn")}</span>'
+                  f'<div class="gov-infobar__content"><p>{BANNER.format(r=r)}</p></div>'
                   '<span class="gov-button gov-infobar__close" data-color="primary" data-type="base" data-size="s">'
                   f'<button class="element close" type="button" aria-label="Zavřít">{gicon("x-lg")}</button></span>'
                   '</div></section></div>')

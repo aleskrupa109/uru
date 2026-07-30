@@ -48,16 +48,33 @@ HOME = """
 </div>
 
 <div class="section-title"><h2>Rychlé odkazy</h2></div>
-<div class="grid g4">
-  <a class="card" href="{{r}}metodicka-podpora/metodicka-stanoviska.html"><h3>Metodická stanoviska</h3>
-    <p>Prohledávatelná databáze výkladů a stanovisek s filtrem platnosti.</p></a>
-  <a class="card" href="{{r}}vyhrazene-stavby/dokumenty-a-formulare.html"><h3>Formuláře ke stažení</h3>
-    <p>Žádosti a přílohy podle typu stavby a typu řízení.</p></a>
-  <a class="card" href="{{r}}uredni-deska.html"><h3>Úřední deska</h3>
-    <p>Veřejné vyhlášky, oznámení a výběrová řízení.</p></a>
-  <a class="card" href="{{r}}kariera/otevrene-pozice.html"><h3>Otevřené pozice</h3>
-    <p>Aktuálně vypsaná výběrová řízení do státní služby i pracovního poměru.</p></a>
+<div class="grid g3 quicklinks">
+  <a class="qlink" href="{{r}}vyhrazene-stavby/dokumenty-a-formulare.html" data-ico="business-file">
+    <h3>Formuláře ke stažení</h3>
+    <p>Aktuální formuláře a vzory dokumentů pro řízení o vyhrazených stavbách.</p></a>
+  <a class="qlink" href="{{r}}metodicka-podpora/tisic-otazek.html" data-ico="sos">
+    <h3>Tisíc otázek ke stavebnímu právu</h3>
+    <p>Databáze odpovědí na nejčastější dotazy úředníků ke stavebnímu zákonu.</p></a>
+  <a class="qlink" href="{{r}}metodicka-podpora/metodicka-stanoviska.html" data-ico="info">
+    <h3>Metodická stanoviska</h3>
+    <p>Výklady a stanoviska k zákonu č. 283/2021 Sb. a č. 183/2006 Sb.</p></a>
+  <a class="qlink" href="{{r}}kontakty.html" data-ico="contact">
+    <h3>Kontakty</h3>
+    <p>Kontakty na oddělení a referenty podle věcné příslušnosti agendy.</p></a>
+  <a class="qlink" href="{{r}}uzemni-rozvoj/uzemni-planovani.html" data-ico="doc-filled">
+    <h3>Slovník územního rozvoje</h3>
+    <p>Výkladový slovník 2 690 pojmů z oblasti územního plánování a rozvoje.</p></a>
 </div>
+
+<div class="section-title"><h2>Časté dotazy</h2></div>
+<ul class="hp-faq gov-list--plain">
+  <li><a href="{{r}}vyhrazene-stavby/co-spada-pod-uru.html">Jaké stavby spadají pod kompetenci ÚRÚ?</a></li>
+  <li><a href="{{r}}vyhrazene-stavby/co-meni-novela.html">Co se mění v řízeních po 1. 7. 2026?</a></li>
+  <li><a href="{{r}}metodicka-podpora/metodicka-stanoviska.html">Kde najdu metodická stanoviska k novému stavebnímu zákonu?</a></li>
+  <li><a href="{{r}}metodicka-podpora/prechodove-obdobi.html">Jak postupovat s řízeními zahájenými před 1. 7. 2026?</a></li>
+  <li><a href="{{r}}uzemni-rozvoj/index.html">Kde najdu obsah, který byl dříve na uur.cz?</a></li>
+  <li><a href="{{r}}kariera/prihlaska.html">Jak podat přihlášku do výběrového řízení?</a></li>
+</ul>
 
 <div class="section-title"><h2>Informace o úřadu</h2></div>
 <div class="splitblock">
@@ -70,7 +87,10 @@ HOME = """
     </ul>
     <div class="btn-row"><a class="btn ghost" href="{{r}}o-uradu/kdo-jsme.html">Více o úřadu</a></div>
   </div>
-  <div class="ph">foto sídla úřadu</div>
+  <figure class="hp-photo">
+    <img src="{{r}}assets/img/sidlo-uradu.jpeg" alt="Sídlo Úřadu rozvoje území" loading="lazy">
+    <figcaption>Sídlo úřadu — adresa se doplní</figcaption>
+  </figure>
 </div>
 """
 
