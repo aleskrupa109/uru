@@ -252,7 +252,8 @@ def render_subnav(section, current, r):
     items = SUBNAV.get(section)
     if not items:
         return ""
-    out = [f'<nav class="subnav" aria-label="Obsah sekce"><h2>V této sekci</h2>']
+    label = next((t for k, t, _h, _i in NAV if k == section), "V této sekci")
+    out = [f'<nav class="subnav" aria-label="Obsah sekce"><h2>{label}</h2>']
     for label, href, level in items:
         cur = ' aria-current="page"' if href == current else ""
         pad = ' style="padding-left:26px;font-size:13.5px"' if level else ""
@@ -262,14 +263,14 @@ def render_subnav(section, current, r):
 
 
 def render_crumbs(crumbs, r):
+    """Návrh: první položka „Domů", mezi položkami šipka, odstup 12 px na každou stranu."""
     if not crumbs:
         return ""
-    items = [f'<li><a href="{r}index.html">Úvod</a></li>']
+    sep = f'<span class="sep">{gicon("chevron-right")}</span>'
+    items = [f'<li><a href="{r}index.html">Domů</a></li>']
     for label, href in crumbs:
-        if href:
-            items.append(f'<li><a href="{r}{href}">{label}</a></li>')
-        else:
-            items.append(f'<li aria-current="page">{label}</li>')
+        inner = f'<a href="{r}{href}">{label}</a>' if href else f'<span aria-current="page">{label}</span>'
+        items.append(f'<li>{sep}{inner}</li>')
     return ('<div class="wrap"><nav class="gov-breadcrumbs crumbs" aria-label="Drobečková navigace">'
             f'<ul class="gov-list--plain">{"".join(items)}</ul></nav></div>')
 
@@ -457,7 +458,7 @@ def to_ds(html_body):
         '<div class="chips gov-chips" data-chips></div>')
 
     # ---- Message (zvýrazněné boxy) ----
-    BOX = {"change": ("warning", "subtle"), "edge": ("primary", "subtle"),
+    BOX = {"change": ("warning", "bold"), "edge": ("primary", "subtle"),
            "note": ("neutral", "subtle"), "gap": ("success", "subtle")}
 
     def box(m):
@@ -584,9 +585,6 @@ def build_page(p):
                   f'<button class="element close" type="button" aria-label="Zavřít">{gicon("x-lg")}</button></span>'
                   '</section></div>')
     body = to_ds(p["body"])
-    if p.get("section") in SUBNAV and p.get("sidebar", True):
-        body = (f'<div class="cols-side">{render_subnav(p["section"], p["path"], r)}'
-                f'<div class="content">{body}</div></div>')
     head = ""
     if p.get("h1"):
         head = f'<div class="page-head"><h1>{p["h1"]}</h1>'
@@ -595,6 +593,11 @@ def build_page(p):
         if p.get("updated"):
             head += f'<p class="updated">{p["updated"]}</p>'
         head += '</div>'
+    # v návrhu je nadpis podstránky i perex součástí pravého bílého panelu
+    if p.get("section") in SUBNAV and p.get("sidebar", True):
+        body = (f'<div class="cols-side">{render_subnav(p["section"], p["path"], r)}'
+                f'<div class="content">{head}{body}</div></div>')
+        head = ""
     html_out = TPL.format(
         title=p["title"], r=r, mockbar=MOCKBAR, mode_script=MODE_SCRIPT,
         nav=render_nav(p.get("section", ""), r),

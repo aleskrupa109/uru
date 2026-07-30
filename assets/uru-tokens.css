@@ -3,7 +3,7 @@
    všechny komponenty se překreslí samy. Hodnoty jsou odměřené z DESU_design.pdf. */
 :root {
   --color-primary-50:  rgb(242, 246, 252);
-  --color-primary-100: rgb(227, 235, 243);  /* #E3EBF3 – světlé plochy */
+  --color-primary-100: rgb(229, 238, 249);  /* #E5EEF9 - podklad světlých boxů */
   --color-primary-200: rgb(197, 219, 242);  /* #C5DBF2 – linka pod hlavičkou */
   --color-primary-300: rgb(158, 200, 233);
   --color-primary-400: rgb(104, 156, 209);

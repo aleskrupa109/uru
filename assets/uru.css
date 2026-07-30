@@ -130,12 +130,17 @@ li.open .dropdown { display: block; }
 }
 .dropdown a:hover { background: var(--background-primary-subtlest); color: var(--color-primary-600); }
 
-/* ---------- drobečky ---------- */
+/* ---------- drobečky ----------
+   Návrh: první položka „Domů", mezi položkami šipka, 12 px odstupu na každou stranu,
+   text 14 px. Žádné lomítko. */
 .crumbs { padding: var(--spacing-l) 0 0; font-size: var(--font-size-body-s); }
-.crumbs ul { list-style: none; display: flex; flex-wrap: wrap; gap: var(--spacing-s); margin: 0; padding: 0; }
-.crumbs li { color: var(--text-tertiary); }
-.crumbs li + li::before { content: "/"; margin-right: var(--spacing-s); color: var(--color-neutral-300); }
-.crumbs a { color: var(--color-primary-700); }
+.crumbs ul { display: flex; flex-wrap: wrap; align-items: center; margin: 0; padding: 0; }
+.crumbs li { display: flex; align-items: center; margin: 0; color: var(--text-tertiary); }
+.crumbs .sep { display: inline-flex; margin: 0 var(--spacing-s-nudge); color: #A9BBCE; }
+.crumbs .sep svg { width: 0.5rem; height: 0.5rem; }
+.crumbs a { color: var(--color-primary-700); text-decoration: none; }
+.crumbs a:hover { text-decoration: underline; }
+.crumbs [aria-current] { color: var(--text-tertiary); }
 
 /* ---------- stránka ---------- */
 .page { padding: 0 0 var(--spacing-6xl); }
@@ -145,17 +150,19 @@ li.open .dropdown { display: block; }
 .updated { font-size: var(--font-size-body-s); color: var(--text-tertiary); margin: var(--spacing-s) 0 0; }
 
 .cols-side { display: grid; grid-template-columns: 17.75rem 1fr; align-items: start; margin-top: var(--spacing-l); }
-.subnav { position: sticky; top: 3.5rem; padding: var(--spacing-xs) var(--spacing-l) var(--spacing-xs) 0; }
-.subnav h2 { font-size: var(--font-size-body-xs); text-transform: uppercase; letter-spacing: .07em;
-  color: var(--text-tertiary); margin: 0 0 var(--spacing-s); font-weight: 500; }
-.subnav a { display: block; padding: var(--spacing-s) 0; text-decoration: none;
-  color: var(--color-primary-700); font-size: var(--font-size-body-m); border-bottom: 1px solid var(--border-subtlest); }
-.subnav a:hover { color: var(--color-primary-600); }
-.subnav a[aria-current] { color: var(--color-primary-600); font-weight: 500;
-  box-shadow: inset 3px 0 0 var(--color-primary-600); padding-left: var(--spacing-s-nudge); }
-
+.subnav { position: sticky; top: 3.5rem; padding: 0 var(--spacing-l) 0 0; }
+.subnav h2 { font-size: var(--font-size-headline-xs); color: var(--text-primary);
+  margin: 0 0 var(--spacing-l); font-weight: 500; letter-spacing: 0; text-transform: none; }
+.subnav a { display: block; padding: var(--spacing-s-nudge) 0; text-decoration: none;
+  color: var(--color-primary-700); font-size: var(--font-size-body-m); line-height: 1.4; }
+.subnav a:hover { color: var(--color-primary-600); text-decoration: underline; }
+.subnav a[aria-current] { color: var(--color-primary-600); font-weight: 500; }
 .content { background: var(--background-block-primary); border-radius: var(--corner-radius-m);
-  padding: var(--spacing-xl) var(--spacing-2xl) var(--spacing-3xl); box-shadow: var(--uru-shadow); }
+  padding: var(--spacing-xl) var(--spacing-l) var(--spacing-3xl); box-shadow: var(--uru-shadow); }
+/* Nadpis podstránky a perex jsou v návrhu součástí bílého panelu. */
+.content .page-head { padding: 0; margin-bottom: var(--spacing-l); }
+.content .page-head h1 { font-size: var(--font-size-headline-l); margin: 0 0 var(--spacing-s-nudge); }
+.content .page-head .perex { font-size: var(--font-size-body-m); color: var(--text-secondary); max-width: 70ch; }
 .content > *:first-child { margin-top: 0; }
 .content h2 { font-size: var(--font-size-headline-m); margin: var(--spacing-2xl) 0 var(--spacing-s-nudge); }
 .content h3 { font-size: var(--font-size-headline-s); margin: var(--spacing-l) 0 var(--spacing-s); }
