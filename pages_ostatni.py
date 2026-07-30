@@ -103,13 +103,22 @@ do spisové služby úřadu a je mu přiděleno číslo jednací.</p>
 
 OURAD = """
 <div class="grid g3">
-  <a class="card" href="{{r}}o-uradu/kdo-jsme.html"><h3>Kdo jsme a co děláme</h3><p>Kompetence úřadu, zákonný základ a vznik z DESÚ.</p></a>
-  <a class="card" href="{{r}}o-uradu/organizacni-struktura.html"><h3>Organizační struktura</h3><p>Vedení úřadu a organizační schéma.</p></a>
-  <a class="card" href="{{r}}o-uradu/pro-media.html"><h3>Pro média</h3><p>Dedikovaný kontakt pro novináře a tiskové zprávy.</p></a>
-  <a class="card" href="{{r}}o-uradu/povinne-informace.html"><h3>Povinně zveřejňované informace</h3><p>Struktura podle §5 zák. 106/1999 Sb.</p></a>
-  <a class="card" href="{{r}}uzemni-rozvoj/konference.html"><h3>Konference a semináře</h3><p>Akce pod záštitou ÚRÚ.</p></a>
-  <a class="card" href="{{r}}kontakty.html"><h3>Kontakty""" + cmt(83, "Chybí odkaz na Kontakty. Sekce O úřadu je pro novináře a laickou veřejnost typický vstupní bod.") + """</h3>
-    <p>Adresa, datová schránka a kontakty podle agendy.</p></a>
+  <a class="card" href="{{r}}o-uradu/kdo-jsme.html"><h3>Kdo jsme a co děláme</h3>
+    <p>Kompetence, zákonný základ, vznik z DESÚ</p></a>
+  <a class="card" href="{{r}}o-uradu/organizacni-struktura.html"><h3>Organizační struktura</h3>
+    <p>Vedení úřadu a organizační schéma</p></a>
+  <a class="card" href="{{r}}o-uradu/pro-media.html"><h3>Pro média</h3>
+    <p>Dedikovaný kontakt pro novináře a tiskové zprávy</p></a>
+  <a class="card" href="{{r}}o-uradu/povinne-informace.html"><h3>Povinné informace</h3>
+    <p>Zákonně zveřejňované dokumenty ke stažení</p></a>
+  <a class="card" href="#"><span class="order">Externí odkaz</span><h3>Veřejné zakázky</h3>
+    <p>Odkaz na profil zadavatele v NEN</p></a>
+  <a class="card" href="{{r}}o-uradu/povinne-informace.html#o17"><h3>Výroční zprávy</h3>
+    <p>Výroční zprávy podle zákona o svobodném přístupu k informacím</p></a>
+  <a class="card" href="{{r}}uzemni-rozvoj/konference.html"><h3>Konference a semináře</h3>
+    <p>Akce pod záštitou ÚRÚ</p></a>
+  <a class="card" href="{{r}}kontakty.html"><h3>Kontakty""" + cmt(83, "Doplnit dlaždici Kontakty — z rozcestníku O úřadu na ně nevede cesta.") + """</h3>
+    <p>Adresa, datová schránka a kontakty podle agendy</p></a>
 </div>
 """
 
@@ -390,7 +399,8 @@ PAGES = [
          crumbs=KAR + [("Jak podat přihlášku", None)], h1="Jak podat přihlášku", body=PRIHLASKA),
 
     dict(path="o-uradu/index.html", title="O úřadu", section="o-uradu", crumbs=[("O úřadu", None)],
-         sidebar=False, h1="O úřadu", body=OURAD),
+         sidebar=False, h1="O úřadu", perex="Úřad rozvoje území vznikl transformací Dopravního a energetického stavebního úřadu (DESÚ). Přebírá agendy DESÚ a Ústavu územního rozvoje (ÚÚR).",
+         body=OURAD),
     dict(path="o-uradu/kdo-jsme.html", title="Kdo jsme a co děláme", section="o-uradu",
          crumbs=OU + [("Kdo jsme a co děláme", None)], h1="Kdo jsme a co děláme",
          perex="Úřad rozvoje území (ÚRÚ) vznikl transformací Dopravního a energetického stavebního úřadu (DESÚ). Přebíráme agendy DESÚ a Ústavu územního rozvoje (ÚÚR) a stáváme se klíčovou institucí reformované státní stavební správy.",

@@ -81,7 +81,9 @@ async function main() {
     ? Number(args[args.indexOf('--page') + 1]) : null;
 
   const { chromium } = require('playwright');
-  const pixelmatch = require('pixelmatch');
+  // pixelmatch 6+ je ESM — přes require přijde namespace objekt, ne funkce
+  const _pm = require('pixelmatch');
+  const pixelmatch = typeof _pm === 'function' ? _pm : _pm.default;
   const { PNG } = require('pngjs');
 
   const pdf = findPdf();

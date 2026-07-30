@@ -339,18 +339,10 @@ pro dotčené orgány</a>.</p>
 
 STANDARDIZACE = """
 <div class="tabs">
-  <a href="{{r}}metodicka-podpora/standardizace.html" aria-current="page">Nový zákon</a>
-  <a href="{{r}}metodicka-podpora/standardizace.html#stara">Starý zákon</a>
+  <a href="{{r}}metodicka-podpora/standardizace.html" aria-current="page">Nový zákon (od 1. 7. 2024)</a>
+  <a href="{{r}}metodicka-podpora/standardizace.html#stara">Starý zákon (do 30. 6. 2024)</a>
 </div>
 """ + M.STANDARDIZACE_DETAIL + """
-<h2>Dokumenty ke stažení</h2>
-<ul class="files">
-  <li><span class="ft">PDF</span><span class="grow"><span class="name">Jednotný standard — metodika</span><br>
-    <span class="fmeta">verze 2.0 · platné od 1. 7. 2024 · 296 kB</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
-  <li><span class="ft">ZIP</span><span class="grow"><span class="name">Datový model a vzorové soubory</span><br>
-    <span class="fmeta">verze 2.0 · platné od 1. 7. 2024</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
-</ul>
-
 <h2 id="stara">Starý zákon</h2>
 <p>Materiály k dokumentaci pořizované podle dřívější právní úpravy zůstávají dostupné kvůli
 kontinuitě a probíhajícím řízením.</p>
@@ -505,7 +497,7 @@ PAGES = [
          title="Standardizace územního plánování", section="metodicka-podpora",
          crumbs=C + [("Standardizace územního plánování", None)],
          h1="Standardizace územního plánování",
-         perex="Standardy pro tvorbu územních plánů — odděleně pro starý a nový zákon.",
+         perex="Standardizační dokumenty pro zpracování územně plánovací dokumentace — metodické pokyny, vzorové struktury, databáze a grafické styly. Obsah je rozdělen podle platné legislativy.",
          body=STANDARDIZACE),
     dict(help="metodiky", path="metodicka-podpora/konzultacni-stredisko.html", title="Konzultační středisko",
          section="metodicka-podpora", crumbs=C + [("Konzultační středisko", None)],

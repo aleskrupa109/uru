@@ -633,7 +633,8 @@ def build_page(p):
     if p.get("h1"):
         head = f'<div class="page-head"><h1>{p["h1"]}</h1>'
         if p.get("perex"):
-            head += f'<p class="perex">{p["perex"]}</p>'
+            cls = "perex mock-note" if 'class="cmt"' in p["perex"] else "perex"
+            head += f'<p class="{cls}">{p["perex"]}</p>'
         if p.get("updated"):
             cls = "updated mock-note" if 'class="cmt"' in p["updated"] else "updated"
             head += f'<p class="{cls}">{p["updated"]}</p>'

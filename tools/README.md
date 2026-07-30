@@ -64,6 +64,9 @@ Spolehlivé je pořadí stránek v tabulce — nejvyšší číslo znamená nejv
 
 ## Vizuální porovnání
 
+Předpoklady: **Node.js 18+** a **poppler** (kvůli `pdftoppm`, kterým se renderuje
+návrh). Na macOS: `brew install poppler`.
+
 ```
 npm init -y
 npm install -D playwright pixelmatch pngjs

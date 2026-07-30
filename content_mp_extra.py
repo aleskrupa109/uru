@@ -35,21 +35,49 @@ prostředí vydává vyjádření samostatně.</p>
 """
 
 STANDARDIZACE_DETAIL = """
-<h2>Jednotný standard územně plánovací dokumentace</h2>
-<p>Standard sjednocuje strukturu, značení a datový model územně plánovací dokumentace.
-Je závazný pro pořizovatele i zpracovatele.</p>
+<h2>Zásady územního rozvoje</h2>
+<p>Krajská úroveň — pořizuje kraj</p>
+<ul class="files">
+  <li><span class="ft">PDF</span><span class="grow"><span class="name">Metodický pokyn — struktura a značení</span><br><span class="fmeta">296 kB</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
+  <li><span class="ft">PDF</span><span class="grow"><span class="name">Vzorová struktura dokumentace</span><br><span class="fmeta">296 kB</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
+  <li><span class="ft">PDF</span><span class="grow"><span class="name">Databáze a datový model</span><br><span class="fmeta">296 kB</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
+  <li><span class="ft">PDF</span><span class="grow"><span class="name">Grafické styly</span><br><span class="fmeta">296 kB</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
+</ul>
 
-<h3>Krajská úroveň — pořizuje kraj</h3>
-<p>Zásady územního rozvoje a jejich aktualizace.</p>
+<h2>Územní plán</h2>
+<p>Obecní úroveň — pořizuje obec s rozšířenou působností</p>
+<ul class="files">
+  <li><span class="ft">PDF</span><span class="grow"><span class="name">Metodický pokyn — územní plán</span><br><span class="fmeta">296 kB</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
+  <li><span class="ft">PDF</span><span class="grow"><span class="name">Vzorová struktura územního plánu</span><br><span class="fmeta">296 kB</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
+  <li><span class="ft">PDF</span><span class="grow"><span class="name">Databáze a datový model</span><br><span class="fmeta">296 kB</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
+  <li><span class="ft">PDF</span><span class="grow"><span class="name">Grafické styly</span><br><span class="fmeta">296 kB</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
+</ul>
 
-<h3>Obecní úroveň — pořizuje obec s rozšířenou působností</h3>
-<p>Územní plány a jejich změny.</p>
+<h2>Regulační plán</h2>
+<p>Podrobná regulace využití území — pořizuje obec nebo kraj</p>
+<ul class="files">
+  <li><span class="ft">PDF</span><span class="grow"><span class="name">Metodický pokyn — regulační plán</span><br><span class="fmeta">296 kB</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
+  <li><span class="ft">PDF</span><span class="grow"><span class="name">Vzorová struktura regulačního plánu</span><br><span class="fmeta">296 kB</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
+</ul>
 
-<h3>Podrobná regulace využití území — pořizuje obec nebo kraj</h3>
-<p>Regulační plány a územní studie.</p>
+<h2>Územní studie</h2>
+<p>Prověření podmínek rozvoje — podklad pro územní plán</p>
+<ul class="files">
+  <li><span class="ft">PDF</span><span class="grow"><span class="name">Metodický pokyn — územní studie</span><br><span class="fmeta">296 kB</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
+</ul>
 
-<h3>Vymezení zastavěného území</h3>
-<p>Postup pro obce bez územního plánu.</p>
+<h2>Vymezení zastavěného území</h2>
+<p>Pro obce bez územního plánu</p>
+<ul class="files">
+  <li><span class="ft">PDF</span><span class="grow"><span class="name">Metodický pokyn — vymezení zastavěného území</span><br><span class="fmeta">296 kB</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
+</ul>
+
+<h2>Územně plánovací podklady</h2>
+<p>Územně analytické podklady a územní studie</p>
+<ul class="files">
+  <li><span class="ft">PDF</span><span class="grow"><span class="name">Metodický pokyn — územně analytické podklady</span><br><span class="fmeta">296 kB</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
+  <li><span class="ft">PDF</span><span class="grow"><span class="name">Datový model ÚAP</span><br><span class="fmeta">296 kB</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
+</ul>
 """
 
 KONZULTACNI_DETAIL = """

@@ -55,3 +55,26 @@ odchylky:
     poznamka: >
       Správní poplatky mají jedno primární umístění (zde), druhé místo
       (Jak probíhá řízení) na ně odkazuje.
+
+  # ---- stránky, kde je návrh jen šablona s výplní --------------------------
+  - stranka: "mapa-webu.html"
+    text: "Stránka 1. úrovně"
+    duvod: vypln
+    poznamka: >
+      Návrh mapy webu je obecná šablona s texty „Stránka 1. úrovně" a
+      „Podstránka 2. úrovně". Maketa má skutečnou strukturu webu, takže vysoká
+      pixelová odlišnost je správně a nemá se opravovat.
+  - stranka: "mapa-webu.html"
+    text: "Podstránka"
+    duvod: vypln
+  - stranka: "metodicka-podpora/stanovisko-detail.html"
+    text: "Základní údaje"
+    duvod: zelena
+    pripominka: 39
+    poznamka: >
+      Tabulka Základní údaje a Historie verzí jsou doplněné podle připomínek 39 a 40.
+      Stránka je proto delší než návrh (2832 proti 1904 px).
+  - stranka: "metodicka-podpora/stanovisko-detail.html"
+    text: "Historie verzí"
+    duvod: zelena
+    pripominka: 40

@@ -24,7 +24,8 @@ body { background: var(--background-page); color: var(--text-primary); }
    Bez atributu data-mode="edit" je maketa čistý web bez nástrojů a bez značek
    připomínek — v této podobě se dá poslat třetí straně. */
 .mockbar { display: none; }
-.cmt, .mock-note { display: none; }
+html:not([data-mode="edit"]) .cmt,
+html:not([data-mode="edit"]) .mock-note { display: none !important; }
 html[data-mode="edit"] .mockbar { display: block; }
 html[data-mode="edit"] .cmt { display: inline-flex; }
 html[data-mode="edit"] .mock-note { display: block; }
@@ -94,7 +95,7 @@ html[data-mode="edit"] body.hide-cmt .mock-note { display: none; }
 .mainnav > .wrap > ul > li > a {
   display: flex; align-items: center; gap: var(--spacing-s);
   padding: 0 var(--spacing-m-nudge); text-decoration: none;
-  color: var(--color-primary-700); font-weight: 500; font-size: var(--font-size-body-m);
+  color: var(--color-primary-700); font-weight: 500; font-size: var(--font-size-body-l);
   border-bottom: 3px solid transparent;
 }
 .mainnav > .wrap > ul > li > a:hover,
