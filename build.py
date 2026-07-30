@@ -155,7 +155,8 @@ def render_nav(active, r):
         caret = gicon("chevron-down", "caret") if items else ""
         out.append(f'<a href="{r}{href}">{label}{caret}</a>')
         if items:
-            out.append('<div class="dropdown"><div class="wrap"><div class="cols">')
+            wide = " wide" if len(items) >= 9 else ""
+            out.append(f'<div class="dropdown{wide}"><div class="wrap"><div class="cols">')
             for t, h, d in items:
                 out.append(f'<a href="{r}{h}" title="{d}">{t}</a>')
             out.append('</div></div></div>')

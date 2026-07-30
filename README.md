@@ -97,6 +97,13 @@ navigaci s rozbalovacím panelem, patičku, levé submenu, hero a několik výpi
 organismy, které si podle pravidel design systému staví každý projekt sám; i tak jsou
 postavené výhradně na jeho tokenech. Stejné dělení bude mít i finální web.
 
+Rozbalovací panel navigace má dvě podoby, obě odměřené z návrhu. Výchozí je **jeden sloupec
+o šířce 296 px**, zarovnaný na střed pod svou položkou menu (skript ho dopočítá a ořízne na
+okraje obsahového sloupce). Sekce s velkým počtem položek — v maketě jen Územní rozvoj —
+dostane **širokou variantu se čtyřmi sloupci**, zarovnanou na střed stránky. Přepínač je
+v `build.py`: devět a více položek v sekci znamená širokou variantu.
+
+
 ### Úprava primitiv
 
 Barvy návrhu se nekryjí s výchozí paletou design systému — ten má `--color-primary-600`

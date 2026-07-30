@@ -73,15 +73,25 @@ body { background: var(--background-page); color: var(--text-primary); }
 .mainnav li.open .caret { transform: rotate(180deg); }
 
 .dropdown {
-  display: none; position: absolute; left: 50%; transform: translateX(-50%); top: 100%;
-  width: min(77.5rem, calc(100vw - 3rem));
+  display: none; position: absolute; top: 100%; left: 0;
+  width: 18.5rem;                      /* 296 px – šířka odměřená z návrhu */
   background: var(--background-white); box-shadow: var(--uru-shadow-lg);
   border-radius: 0 0 var(--corner-radius-m) var(--corner-radius-m);
-  padding: var(--spacing-l) var(--spacing-m) var(--spacing-xl);
+  padding: var(--spacing-s-nudge) var(--spacing-s) var(--spacing-m);
 }
 .dropdown > .wrap { max-width: none; padding: 0; }
 li.open .dropdown { display: block; }
-.dropdown .cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--spacing-2xs) var(--spacing-l); }
+.dropdown .cols { display: grid; grid-template-columns: 1fr; gap: 0; }
+
+/* Široká varianta: sekce s velkým počtem položek (Územní rozvoj) je v návrhu
+   ve čtyřech sloupcích a zarovnaná na střed stránky, ne pod položku menu. */
+.dropdown.wide {
+  width: min(77.5rem, calc(100vw - 3rem));
+  left: 50%; transform: translateX(-50%);
+  padding: var(--spacing-l) var(--spacing-m) var(--spacing-xl);
+}
+.dropdown.wide .cols { grid-template-columns: repeat(4, 1fr); gap: var(--spacing-2xs) var(--spacing-l); }
+
 .dropdown a {
   display: block; padding: var(--spacing-s) var(--spacing-s-nudge);
   border-radius: var(--corner-radius-xs); text-decoration: none;
@@ -303,8 +313,9 @@ body.editing [data-edit]:focus { outline: 2px solid var(--color-success-600); ba
 @media (max-width: 67.5em) {
   .mainnav > .wrap > ul { height: auto; flex-wrap: wrap; }
   .mainnav > .wrap > ul > li > a { padding: var(--spacing-s-nudge) var(--spacing-m); }
-  .dropdown { position: static; transform: none; width: auto; box-shadow: none; padding: var(--spacing-s) 0 var(--spacing-m); }
-  .dropdown .cols { grid-template-columns: 1fr 1fr; }
+  .dropdown, .dropdown.wide { position: static; transform: none; width: auto; box-shadow: none;
+    padding: var(--spacing-s) 0 var(--spacing-m); }
+  .dropdown .cols, .dropdown.wide .cols { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 61em) {
   .cols-side { grid-template-columns: 1fr; }

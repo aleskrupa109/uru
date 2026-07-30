@@ -12,6 +12,25 @@
   var PAGEKEY = (dir && dir !== 'uru' ? dir + '/' : '') + page;
 
   /* ---------------- navigace ---------------- */
+  /* Úzký rozbalovací panel se v návrhu zarovnává na střed pod svou položkou
+     menu; široká varianta (Územní rozvoj) je zarovnaná na střed stránky. */
+  function placeDropdown(li) {
+    var dd = li.querySelector('.dropdown');
+    if (!dd || dd.classList.contains('wide')) return;
+    if (window.getComputedStyle(dd).position !== 'absolute') { dd.style.left = ''; return; }
+    var nav = li.closest('.mainnav');
+    var wrap = nav.querySelector('.wrap');
+    var navBox = nav.getBoundingClientRect();
+    var liBox = li.getBoundingClientRect();
+    var wrapBox = wrap.getBoundingClientRect();
+    var w = dd.offsetWidth;
+    var left = (liBox.left - navBox.left) + liBox.width / 2 - w / 2;
+    var min = wrapBox.left - navBox.left;
+    var max = wrapBox.right - navBox.left - w;
+    if (max < min) max = min;
+    dd.style.left = Math.round(Math.max(min, Math.min(left, max))) + 'px';
+  }
+
   function initNav() {
     var items = document.querySelectorAll('.mainnav li.has-drop');
     items.forEach(function (li) {
@@ -21,6 +40,7 @@
         e.preventDefault();
         items.forEach(function (x) { if (x !== li) x.classList.remove('open'); });
         li.classList.add('open');
+        placeDropdown(li);
       });
     });
     document.addEventListener('click', function (e) {
@@ -28,6 +48,9 @@
     });
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') items.forEach(function (x) { x.classList.remove('open'); });
+    });
+    window.addEventListener('resize', function () {
+      items.forEach(function (li) { if (li.classList.contains('open')) placeDropdown(li); });
     });
   }
 
