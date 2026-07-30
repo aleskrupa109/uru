@@ -1,0 +1,57 @@
+# Schválené odchylky makety od návrhu.
+#
+# Každá položka říká: na které stránce, jaký text (nebo jeho část) a proč se
+# odchyluje. Skript tools/text_diff.py tyto položky nehlásí, takže zbylé číslo
+# je čistý počet defektů.
+#
+# Kategorie důvodů:
+#   zelena     — zapracovaná zelená připomínka, číslo v poli pripominka
+#   vypln      — výplňový obsah návrhu (Lorem ipsum, vzorová data), nepřenáší se
+#   doplni_se  — konkrétní údaj, který dodá úřad (adresy, IČO, jména)
+#   navrh_chyba — v návrhu je zjevná chyba, maketa ji nepřenáší
+
+odchylky:
+  # ---- výplňový a vzorový obsah návrhu -------------------------------------
+  - stranka: "*"
+    text: "Lorem ipsum"
+    duvod: vypln
+  - stranka: "*"
+    text: "List item"
+    duvod: vypln
+  - stranka: "o-uradu/organizacni-struktura.html"
+    text: "Ministerstva zahraničních věcí"
+    duvod: vypln
+    poznamka: >
+      Návrh má v organizační struktuře vzorový text převzatý z MZV
+      (odbory zahraniční politiky, diplomatický protokol). Nepřenáší se.
+
+  # ---- údaje, které dodá úřad ----------------------------------------------
+  - stranka: "*"
+    text: "Sokolovská"
+    duvod: doplni_se
+  - stranka: "*"
+    text: "loremipsum@email.com"
+    duvod: doplni_se
+  - stranka: "o-uradu/pro-media.html"
+    text: "IČO"
+    duvod: doplni_se
+
+  # ---- zapracované zelené připomínky ---------------------------------------
+  - stranka: "vyhrazene-stavby/caste-dotazy.html"
+    text: "Žádosti o povolení vyhrazené stavby se podávají prostřednictvím Portálu stavebníka"
+    duvod: navrh_chyba
+    poznamka: >
+      Návrh má na stránce FAQ omylem perex ze stránky Portál stavebníka.
+      Maketa má vlastní perex odpovídající obsahu stránky.
+  - stranka: "metodicka-podpora/index.html"
+    text: "Přehled dotčených orgánů"
+    duvod: zelena
+    pripominka: 61
+    poznamka: Přehled dotčených orgánů přesunut z Územního rozvoje do Metodické podpory.
+  - stranka: "vyhrazene-stavby/dokumenty-a-formulare.html"
+    text: "Číslo účtu"
+    duvod: zelena
+    pripominka: 19
+    poznamka: >
+      Správní poplatky mají jedno primární umístění (zde), druhé místo
+      (Jak probíhá řízení) na ně odkazuje.

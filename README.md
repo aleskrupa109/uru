@@ -185,6 +185,20 @@ a odpovídají odměřeným hodnotám z rámu 1440 px.
 Písmo je **Roboto** z balíčku `@gov-design-system-ce/fonts`, tedy standard design systému.
 Návrh má písmo vektorizované, takže jeho název z PDF vyčíst nejde.
 
+## Kontrola věrnosti návrhu
+
+Ve `tools/` jsou dva porovnávací nástroje a seznam schválených odchylek —
+podrobně v [tools/README.md](tools/README.md).
+
+```
+python3 tools/text_diff.py       # porovnání textů, běží kdekoli
+node tools/visual_diff.js        # pixelové porovnání vzhledu (Node + Chromium)
+```
+
+Textové porovnání spouštěj po každé obsahové dávce, vizuální po každé úpravě CSS.
+Oba skripty se pouštějí proti `DESU_design.pdf` — cestu lze určit proměnnou
+`DESU_DESIGN`.
+
 ## Co je v maketě jinak než v návrhu
 
 Zeleně označené připomínky jsou zapracované a v maketě označené zelenou bublinkou s číslem
