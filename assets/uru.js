@@ -169,6 +169,8 @@
   }
 
   function initEdit() {
+    // nástroje se inicializují jen v pracovním režimu (?edit=1)
+    if (document.documentElement.getAttribute('data-mode') !== 'edit') return;
     var bar = document.querySelector('.mockbar');
     if (!bar) return;
     var btn = bar.querySelector('[data-edit-toggle]');

@@ -20,6 +20,15 @@ table.t th, .files .name, strong, b { font-weight: 500; }
 
 body { background: var(--background-page); color: var(--text-primary); }
 
+/* ---------- pracovní vs. prezentační režim ----------
+   Bez atributu data-mode="edit" je maketa čistý web bez nástrojů a bez značek
+   připomínek — v této podobě se dá poslat třetí straně. */
+.mockbar { display: none; }
+.cmt { display: none; }
+html[data-mode="edit"] .mockbar { display: block; }
+html[data-mode="edit"] .cmt { display: inline-flex; }
+html[data-mode="edit"] body.hide-cmt .cmt { display: none; }
+
 /* ---------- lišta makety (mimo design systém) ---------- */
 .mockbar { background: var(--color-neutral-1000); color: var(--color-neutral-0); font-size: var(--font-size-body-xs); position: sticky; top: 0; z-index: 80; }
 .mockbar .wrap { max-width: none; padding: 0 var(--spacing-l); display: flex; gap: var(--spacing-s-nudge); align-items: center; min-height: 2.5rem; flex-wrap: wrap; }
@@ -333,20 +342,38 @@ h2.plain { margin-bottom: var(--spacing-m-nudge); }
   background: linear-gradient(120deg, #D9E6F3, #B9D0E7); display: grid; place-items: center;
   color: var(--color-primary-500); font-size: var(--font-size-body-s); }
 
-/* ---------- patička ---------- */
+/* ---------- patička ----------
+   Návrh: čtyři sloupce po 288 px, nadpisy bílé, odkazy světle modré (#C5DBF2),
+   rozteč odkazů 45 px, pod sloupci loga a spodní lišta. */
 .site-footer { background: var(--color-primary-800); color: var(--color-primary-200);
-  margin-top: var(--spacing-6xl); padding: var(--spacing-3xl) 0 var(--spacing-m-nudge);
-  font-size: var(--font-size-body-s); }
-.site-footer a { color: var(--color-neutral-0); text-decoration: none; }
-.site-footer a:hover { text-decoration: underline; color: var(--color-neutral-0); }
+  margin-top: var(--spacing-6xl); padding: var(--spacing-3xl) 0 var(--spacing-xl);
+  font-size: var(--font-size-body-m); }
 .site-footer .cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--spacing-xl); }
 .site-footer h3 { color: var(--color-neutral-0); font-size: var(--font-size-body-m);
-  margin: 0 0 var(--spacing-s-nudge); font-weight: 500; }
+  margin: 0 0 var(--spacing-l); font-weight: 500; }
+.site-footer h3 a { color: var(--color-neutral-0); text-decoration: none; }
+.site-footer h3 a:hover { text-decoration: underline; }
 .site-footer ul { list-style: none; margin: 0; padding: 0; }
-.site-footer li { margin: var(--spacing-xs) 0; }
-.site-footer .bottom { border-top: 1px solid var(--color-primary-700); margin-top: var(--spacing-xl);
-  padding-top: var(--spacing-m); display: flex; gap: var(--spacing-m-nudge); flex-wrap: wrap;
-  font-size: var(--font-size-body-xs); }
+.site-footer li { margin: 0 0 var(--spacing-l); line-height: 1.4; color: var(--color-primary-200); }
+.site-footer li:last-child { margin-bottom: 0; }
+.site-footer a { color: var(--color-primary-200); text-decoration: none; }
+.site-footer a:hover { color: var(--color-neutral-0); text-decoration: underline; }
+
+.footer-logos { margin-top: var(--spacing-3xl); }
+.footer-logos .logos { display: flex; gap: var(--spacing-l); flex-wrap: wrap; }
+.footer-logos .logos span {
+  display: grid; place-items: center; min-width: 11rem; height: 3.5rem; padding: 0 var(--spacing-m);
+  border: 1px dashed var(--color-primary-700); border-radius: var(--corner-radius-xs);
+  font-size: var(--font-size-body-xs); color: var(--color-primary-200); text-align: center;
+}
+
+.site-footer .bottom { border-top: 1px solid var(--color-primary-700);
+  margin-top: var(--spacing-2xl); padding-top: var(--spacing-l); }
+.site-footer .legal { display: flex; gap: var(--spacing-l) var(--spacing-xl); flex-wrap: wrap; }
+.site-footer .legal li { margin: 0; }
+.site-footer .bottom-row { display: flex; gap: var(--spacing-m) var(--spacing-xl); flex-wrap: wrap;
+  margin-top: var(--spacing-l); font-size: var(--font-size-body-s); color: #A6BAD2; }
+.site-footer .bottom-row .ver { margin-left: auto; opacity: .7; }
 
 /* ---------- značka zapracované připomínky ---------- */
 .cmt { display: inline-flex; align-items: center; justify-content: center;
@@ -380,6 +407,7 @@ body.editing [data-edit]:focus { outline: 2px solid var(--color-success-600); ba
   .grid.g4, .grid.g3, .grid.g2 { grid-template-columns: 1fr; }
   .hero { padding: var(--spacing-xl) var(--spacing-m-nudge); min-height: 0; }
   .site-footer .cols { grid-template-columns: 1fr 1fr; }
+  .site-footer .bottom-row .ver { margin-left: 0; }
   .newsside .news { grid-template-columns: 1fr; }
 }
 
@@ -429,7 +457,7 @@ body.editing [data-edit]:focus { outline: 2px solid var(--color-success-600); ba
 /* Návrh: text 16 px / řádkování 24 px, ikona 36 px, svislé odsazení 16 px
    — dohromady dává pruh vysoký přesně 80 px při dvou řádcích textu. */
 .infobanner p { font-size: var(--font-size-body-m); line-height: 1.5; }
-.infobanner [slot="icon"] { width: 2.25rem; height: 2.25rem; }
+.infobanner [slot="icon"] { width: 1.25rem; height: 1.25rem; }   /* návrh: 20 × 15 px */
 .infobanner a { color: inherit; }
 .infobanner .gov-infobar__close { margin-left: auto; }
 .infobanner .gov-infobar__close .element {

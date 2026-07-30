@@ -288,34 +288,81 @@ MOCKBAR = """<div class="mockbar"><div class="wrap">
 
 
 def footer(r):
-    return f"""<footer class="site-footer"><div class="wrap">
-<div class="cols">
-<div><h3>Úřad rozvoje území</h3><ul class="gov-list--plain">
-<li><a href="{r}o-uradu/kdo-jsme.html">Kdo jsme a co děláme</a></li>
-<li><a href="{r}o-uradu/organizacni-struktura.html">Organizační struktura</a></li>
-<li><a href="{r}kariera/index.html">Kariéra</a></li>
-<li><a href="{r}o-uradu/pro-media.html">Pro média</a></li></ul></div>
-<div><h3>Agendy</h3><ul class="gov-list--plain">
-<li><a href="{r}vyhrazene-stavby/index.html">Vyhrazené stavby</a></li>
-<li><a href="{r}metodicka-podpora/index.html">Metodická podpora</a></li>
-<li><a href="{r}uzemni-rozvoj/index.html">Územní rozvoj</a></li>
-<li><a href="{r}uredni-deska.html">Úřední deska</a></li></ul></div>
-<div><h3>Kontakt</h3><ul class="gov-list--plain">
-<li><a href="{r}kontakty.html">Všechny kontakty</a></li>
-<li>Datová schránka: <strong>xxxxxxx</strong></li>
-<li>posta@uru.gov.cz</li>
-<li>+420 000 000 000</li></ul></div>
-<div><h3>Povinné informace</h3><ul class="gov-list--plain">
-<li><a href="{r}o-uradu/povinne-informace.html">Povinně zveřejňované informace</a></li>
-<li><a href="#">Prohlášení o přístupnosti</a></li>
-<li><a href="#">Ochrana osobních údajů a cookies</a></li>
-<li><a href="#">Oznámení protiprávního jednání</a></li></ul></div>
-</div>
-<div class="bottom"><span>© 2026 Úřad rozvoje území</span>
-<span><a href="{r}mapa-webu.html">Mapa webu</a></span>
-<span>Národní plán obnovy · Financováno Evropskou unií</span>
-<span style="opacity:.6">Maketa — design systém gov se doplní po vydání nové verze</span></div>
-</div></footer>"""
+    """Patička podle návrhu: čtyři sloupce zrcadlící hlavní navigaci (x 144 / 432 / 720
+    / 1008 při rámu 1440), pod nimi související loga a spodní lišta s povinnými odkazy."""
+    cols = [
+        ("Vyhrazené stavby", "vyhrazene-stavby/index.html", [
+            ("Co spadá pod ÚRÚ", "vyhrazene-stavby/co-spada-pod-uru.html"),
+            ("Jak probíhá řízení", "vyhrazene-stavby/jak-probiha-rizeni.html"),
+            ("Dokumenty a formuláře", "vyhrazene-stavby/dokumenty-a-formulare.html"),
+            ("Portál stavebníka", "vyhrazene-stavby/portal-stavebnika.html"),
+            ("Odpovědi na nejčastější otázky", "vyhrazene-stavby/caste-dotazy.html"),
+        ]),
+        ("Metodická podpora", "metodicka-podpora/index.html", [
+            ("Metodická stanoviska a výklady", "metodicka-podpora/metodicka-stanoviska.html"),
+            ("Často kladené otázky", "metodicka-podpora/caste-dotazy.html"),
+            ("Přechodové období", "metodicka-podpora/prechodove-obdobi.html"),
+            ("Standardizace územního plánování", "metodicka-podpora/standardizace.html"),
+            ("Konzultační středisko", "metodicka-podpora/konzultacni-stredisko.html"),
+            ("Tisíc otázek", "metodicka-podpora/tisic-otazek.html"),
+        ]),
+        ("Územní rozvoj", "uzemni-rozvoj/index.html", [
+            ("Územní plánování", "uzemni-rozvoj/uzemni-planovani.html"),
+            ("Mezinárodní spolupráce", "uzemni-rozvoj/mezinarodni-spoluprace.html"),
+            ("Publikační činnost", "uzemni-rozvoj/publikacni-cinnost.html"),
+            ("Časopis UaÚR", "uzemni-rozvoj/casopis.html"),
+            ("Knihovna", "uzemni-rozvoj/knihovna.html"),
+            ("Mapový portál", "uzemni-rozvoj/mapovy-portal.html"),
+            ("Archiv", "uzemni-rozvoj/archiv.html"),
+        ]),
+    ]
+    out = ['<footer class="site-footer"><div class="wrap"><div class="cols">']
+    for title, href, items in cols:
+        out.append(f'<div><h3><a href="{r}{href}">{title}</a></h3><ul class="gov-list--plain">')
+        for t, h in items:
+            out.append(f'<li><a href="{r}{h}">{t}</a></li>')
+        out.append('</ul></div>')
+    out.append(
+        '<div><h3>Kontakt</h3><ul class="gov-list--plain">'
+        '<li>Úřad rozvoje území</li>'
+        '<li>adresa se doplní</li>'
+        '<li>telefon se doplní</li>'
+        f'<li><a href="{r}kontakty.html">Všechny kontakty</a></li></ul></div>')
+    out.append('</div>')
+
+    out.append('<div class="footer-logos"><h3>Související loga</h3><div class="logos">'
+               '<span>Národní plán obnovy</span><span>Financováno Evropskou unií</span></div></div>')
+
+    out.append('<div class="bottom"><ul class="gov-list--plain legal">'
+               '<li><a href="#">Prohlášení o přístupnosti</a></li>'
+               '<li><a href="#">Ochrana osobních údajů a cookies</a></li>'
+               f'<li><a href="{r}o-uradu/povinne-informace.html">Povinně zveřejňované informace</a></li>'
+               '<li><a href="#">Oznámení protiprávního jednání</a></li></ul>'
+               '<div class="bottom-row">'
+               '<span>© 2026 Úřad rozvoje území • Informace jsou poskytovány v souladu '
+               'se zákonem č. 106/1999 Sb.</span>'
+               f'<span><a href="{r}mapa-webu.html">Mapa webu</a></span>'
+               '<span class="ver">Maketa — design systém gov.cz 4.6.5</span>'
+               '</div></div>')
+    out.append('</div></footer>')
+    return "".join(out)
+
+
+MODE_SCRIPT = """<script>
+/* Pracovní režim makety (lišta s nástroji, značky připomínek, editace textů) se
+   zapíná parametrem ?edit=1 a vypíná ?edit=0; volba se pamatuje v prohlížeči.
+   Bez něj se maketa chová jako běžný web — to je stav, ve kterém ji lze poslat
+   třetí straně. Není to ochrana dat: úpravy textů se ukládají jen v prohlížeči
+   editora a nikam se neodesílají. */
+(function () {
+  var q = location.search, K = "uru-maketa-editor";
+  try {
+    if (/[?&]edit=0(&|$)/.test(q)) localStorage.removeItem(K);
+    else if (/[?&]edit(=1)?(&|$)/.test(q)) localStorage.setItem(K, "1");
+    if (localStorage.getItem(K) === "1") document.documentElement.setAttribute("data-mode", "edit");
+  } catch (e) {}
+})();
+</script>"""
 
 
 TPL = """<!doctype html>
@@ -333,6 +380,7 @@ TPL = """<!doctype html>
 <link rel="stylesheet" href="{r}assets/gov/styles/animations.css">
 <link rel="stylesheet" href="{r}assets/gov/styles/components.css">
 <link rel="stylesheet" href="{r}assets/uru.css">
+{mode_script}
 </head>
 <body>
 {mockbar}
@@ -548,7 +596,7 @@ def build_page(p):
             head += f'<p class="updated">{p["updated"]}</p>'
         head += '</div>'
     html_out = TPL.format(
-        title=p["title"], r=r, mockbar=MOCKBAR,
+        title=p["title"], r=r, mockbar=MOCKBAR, mode_script=MODE_SCRIPT,
         nav=render_nav(p.get("section", ""), r),
         banner=banner,
         crumbs=render_crumbs(p.get("crumbs"), r),

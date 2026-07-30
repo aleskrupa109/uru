@@ -25,19 +25,31 @@ a **v Safari přetažení celé složky nefunguje vůbec**. Řešení:
 
 ## Jak upravovat texty
 
-**Přímo v HTML.** Soubory jsou čitelné a jeden soubor = jedna obrazovka. Editace přes GitHub
-(tužka u souboru) funguje bez klonování. Toto je způsob, kterým vzniká finální znění.
+Maketa má dva režimy. **Prezentační** je výchozí — chová se jako běžný web, bez nástrojů
+a bez zelených značek připomínek. V této podobě ji lze poslat komukoli.
 
-**V prohlížeči.** V černé liště nahoře je tlačítko *Upravit texty*. Zapne editaci přímo na stránce,
-změny se ukládají do prohlížeče (localStorage) — nikam se neodesílají a nevidí je nikdo jiný.
+**Pracovní režim** zapneš tím, že k adrese přidáš `?edit=1`:
 
-- *Stáhnout texty* — exportuje všechny změny do `uru-texty.json`
-- *Načíst texty* — nahraje JSON zpět (např. na jiném počítači nebo po předání kolegovi)
-- *Zahodit úpravy* — smaže lokální změny a vrátí původní znění
-- *Skrýt značky* — schová zelené bublinky se zapracovanými připomínkami
+```
+https://<uživatel>.github.io/<repozitář>/?edit=1
+```
 
-Prohlížečový režim je vhodný na rychlé připomínkování a předání textů. Až bude znění hotové,
-přenes ho do HTML souborů (nebo do `pages_*.py`), aby bylo v repozitáři.
+Volba se uloží do prohlížeče, takže parametr stačí použít jednou a dál se maketa prochází
+normálně. Vypneš ji parametrem `?edit=0`. V pracovním režimu se nahoře objeví černá lišta:
+
+- *Upravit texty* — zapne editaci přímo na stránce
+- *Stáhnout texty* — exportuje změny do `uru-texty.json`
+- *Načíst texty* — nahraje JSON zpět (jiný počítač, předání kolegovi)
+- *Zahodit úpravy* — smaže lokální změny
+- *Skrýt značky* — schová bublinky se zapracovanými připomínkami
+
+**Není to zabezpečení.** Kdo zná parametr `?edit=1`, režim si zapne také. Nemá to ale žádný
+dopad na ostatní: úpravy textů se ukládají jen do prohlížeče toho, kdo je dělá (localStorage),
+nikam se neodesílají a v repozitáři se nic nemění. Nikdo tedy nemůže změnit to, co vidí druzí.
+Smyslem přepínače je, aby maketa u třetí strany vypadala jako web a nesváděla k experimentům.
+
+Finální znění textů vzniká úpravou HTML souborů v repozitáři — v naklonované složce na disku
+nebo přes tužku na GitHubu. Prohlížečový režim je na rychlé připomínkování a předání textů.
 
 ## Struktura
 
