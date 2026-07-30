@@ -378,15 +378,15 @@ MAPA = """
 """
 
 PAGES = [
-    dict(path="kariera/index.html", title="Kariéra", section="kariera", crumbs=[("Kariéra", None)],
+    dict(help="hr", path="kariera/index.html", title="Kariéra", section="kariera", crumbs=[("Kariéra", None)],
          h1="Kariéra v ÚRÚ", perex="Hledáme odborníky na stavební právo, územní plánování a digitalizaci agend.",
          body=KARIERA),
-    dict(path="kariera/otevrene-pozice.html", title="Otevřené pozice", section="kariera",
+    dict(help="hr", path="kariera/otevrene-pozice.html", title="Otevřené pozice", section="kariera",
          crumbs=KAR + [("Otevřené pozice", None)], h1="Otevřené pozice", body=POZICE),
-    dict(path="kariera/detail-pozice.html", title="Detail pozice", section="kariera",
+    dict(help="hr", path="kariera/detail-pozice.html", title="Detail pozice", section="kariera",
          crumbs=KAR + [("Otevřené pozice", "kariera/otevrene-pozice.html"), ("Detail pozice", None)],
          h1="Referent stavebního řádu — vyhrazené stavby", body=DETAIL_POZICE),
-    dict(path="kariera/prihlaska.html", title="Jak podat přihlášku", section="kariera",
+    dict(help="hr", path="kariera/prihlaska.html", title="Jak podat přihlášku", section="kariera",
          crumbs=KAR + [("Jak podat přihlášku", None)], h1="Jak podat přihlášku", body=PRIHLASKA),
 
     dict(path="o-uradu/index.html", title="O úřadu", section="o-uradu", crumbs=[("O úřadu", None)],
@@ -395,7 +395,7 @@ PAGES = [
          crumbs=OU + [("Kdo jsme a co děláme", None)], h1="Kdo jsme a co děláme", body=KDO_JSME),
     dict(path="o-uradu/organizacni-struktura.html", title="Organizační struktura", section="o-uradu",
          crumbs=OU + [("Organizační struktura", None)], h1="Organizační struktura", body=ORG),
-    dict(path="o-uradu/pro-media.html", title="Pro média", section="o-uradu",
+    dict(help="media", path="o-uradu/pro-media.html", title="Pro média", section="o-uradu",
          crumbs=OU + [("Pro média", None)], h1="Pro média", body=MEDIA),
     dict(path="o-uradu/povinne-informace.html", title="Povinně zveřejňované informace", section="o-uradu",
          crumbs=OU + [("Povinně zveřejňované informace", None)], h1="Povinně zveřejňované informace",

@@ -476,3 +476,12 @@ body.editing [data-edit]:focus { outline: 2px solid var(--color-success-600); ba
 
 /* ---------- znak úřadu v hlavičce ---------- */
 .brand svg { height: 2.375rem; width: auto; color: var(--color-primary-600); flex: none; }
+
+/* ---------- opakující se blok „Potřebujete pomoct?" ---------- */
+.helpbox { display: flex; gap: var(--spacing-l); flex-wrap: wrap; align-items: center;
+  background: var(--background-primary-subtlest); border-radius: var(--corner-radius-s);
+  padding: var(--spacing-m-nudge); margin: var(--spacing-l) 0 0; }
+.helpbox h3 { margin: 0 0 var(--spacing-xs); font-size: var(--font-size-headline-xs); font-weight: 500; }
+.helpbox p { margin: 0; color: var(--text-secondary); }
+.helpbox .mail { font-weight: 500; }
+.helpbox .all { margin-left: auto; }

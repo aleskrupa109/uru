@@ -288,6 +288,28 @@ MOCKBAR = """<div class="mockbar"><div class="wrap">
 </div></div>"""
 
 
+# ---- opakující se blok „Potřebujete pomoct?" ----
+# Návrh ho má na konci obsahových stránek; liší se jen nadpisem kontaktu a adresou.
+HELP = {
+    "stavebnici": ("Potřebujete pomoct?", "Kontakt pro stavebníky",
+                   "Máte otázky? Napište nám — rádi poradíme.", "obecny-dotaz@uru.gov.cz"),
+    "metodiky":   (None, "Kontakt na metodiky",
+                   "Napište nám — rádi poradíme.", "obecny-dotaz@uru.gov.cz"),
+    "hr":         ("Potřebujete pomoct?", "Personální oddělení",
+                   "Máte otázky? Napište nám — rádi poradíme.", "kariera@uru.gov.cz"),
+    "media":      (None, "Kontakt pro média",
+                   "Máte otázky? Napište nám — rádi poradíme.", "media@uru.gov.cz"),
+}
+
+
+def help_block(kind, r):
+    head, title, text, mail = HELP[kind]
+    h = f"<h2>{head}</h2>" if head else ""
+    return (f'{h}<div class="helpbox"><div><h3>{title}</h3><p>{text}</p></div>'
+            f'<p class="mail"><a href="mailto:{mail}">{mail}</a></p>'
+            f'<p class="all"><a href="{r}kontakty.html">Všechny kontakty</a></p></div>')
+
+
 def footer(r):
     """Patička podle návrhu: čtyři sloupce zrcadlící hlavní navigaci (x 144 / 432 / 720
     / 1008 při rámu 1440), pod nimi související loga a spodní lišta s povinnými odkazy."""
@@ -605,6 +627,8 @@ def build_page(p):
                   f'<button class="element close" type="button" aria-label="Zavřít">{gicon("x-lg")}</button></span>'
                   '</section></div>')
     body = to_ds(p["body"])
+    if p.get("help"):
+        body += help_block(p["help"], r)
     head = ""
     if p.get("h1"):
         head = f'<div class="page-head"><h1>{p["h1"]}</h1>'
