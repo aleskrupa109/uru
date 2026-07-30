@@ -133,32 +133,45 @@ a koordinuje vyjádření všech dotčených orgánů.</p>
     <p>Žádost se podává prostřednictvím Portálu stavebníka, datovou schránkou, e-mailem,
     poštou nebo osobně. Projektová dokumentace musí být nejpozději v okamžiku podání nahrána
     v evidenci elektronických dokumentací přes Portál stavebníka.</p>
-    <p>Formuláře najdete v sekci <a href="{{r}}vyhrazene-stavby/dokumenty-a-formulare.html">Dokumenty a formuláře</a>.</p></li>
+    <p>Formuláře najdete v sekci <a href="{{r}}vyhrazene-stavby/dokumenty-a-formulare.html">Dokumenty a formuláře</a>.</p>
+    <table class="t"><tr><th style="width:150px">Povinné</th><td>vložení projektové dokumentace přes Portál stavebníka</td></tr>
+    <tr><th>Dobrovolné</th><td>ostatní komunikace včetně samotné žádosti — tu lze podat i datovou schránkou, e-mailem, poštou nebo osobně</td></tr></table></li>
   <li><h3>Kontrola úplnosti</h3>
     <p>ÚRÚ zkontroluje úplnost žádosti. Pokud žádost obsahuje vady, vyzve stavebníka
     k doplnění a stanoví lhůtu. Po dobu doplňování lhůta pro vydání rozhodnutí neběží.</p></li>
   <li><h3>Vyjádření dotčených orgánů</h3>
-    <p>ÚRÚ si vyžádá vyjádření dotčených orgánů a koordinuje je v rámci jednoho řízení.</p></li>
+    <p>ÚRÚ si vyžádá vyjádření dotčených orgánů — typicky orgánů ochrany přírody, krajské
+    hygieny, hasičského záchranného sboru a dalších. Vyjádření koordinuje úřad. Například ochranu
+    veřejného zdraví posuzuje ÚRÚ přímo — nevydávají k ní samostatná stanoviska krajské
+    hygienické stanice jako dříve.</p></li>
+  <li><h3>Posouzení záměru</h3>
+    <p>Úřad posoudí soulad záměru s územním rozvojovým plánem, regulačním plánem a technickými
+    požadavky na výstavbu.</p></li>
   <li><h3>Rozhodnutí</h3>
-    <p>Úřad vydá rozhodnutí o povolení záměru, případně žádost zamítne. Rozhodnutí
-    se doručuje účastníkům řízení.</p></li>
+    <p>Úřad vydá rozhodnutí o povolení záměru, případně žádost zamítne. Rozhodnutí vydá
+    do 60 dnů od zahájení řízení, ve složitých případech do 90 dnů. Rozhodnutí se doručuje
+    účastníkům řízení.</p></li>
   <li><h3>Odvolání a právní moc</h3>
-    <p>Proti rozhodnutí lze podat odvolání. Po marném uplynutí lhůty nabývá rozhodnutí
-    právní moci.</p></li>
+    <p>Proti rozhodnutí se mohou účastníci řízení odvolat do 15 dnů. Pokud se nikdo neodvolá,
+    rozhodnutí nabude právní moci. Stavebník může zahájit stavbu po nabytí právní moci
+    a splnění podmínek rozhodnutí.</p></li>
 </ol>
 
 <h2>Další typy řízení</h2>
 <h3>Vyvlastňovací řízení</h3>
-<p>ÚRÚ vede vyvlastňovací řízení pro vyhrazené stavby. Řízení je ústní a koncentrované —
+<p>ÚRÚ vede vyvlastňovací řízení pro vyhrazené stavby. Jde o řízení, při kterém lze odejmout
+nebo omezit vlastnická práva k nemovitostem za účelem veřejného zájmu. Vyžaduje předchozí pokus
+o dohodu s vlastníkem a náhradu určenou znaleckým posudkem. Řízení je ústní a koncentrované —
 námitky a důkazy je třeba uplatnit v jeho průběhu.</p>
 <h3>Odvolací řízení</h3>
 <p>ÚRÚ rozhoduje o odvoláních proti rozhodnutím krajských stavebních úřadů v případech
-stanovených zákonem.</p>
+spadajících do jeho působnosti. Jedná se o kontrolu zákonnosti, nikoli nové projednání věci.</p>
 <h3>Zkušební provoz a kolaudace</h3>
-<p>Po dokončení stavby následuje zkušební provoz a kolaudační řízení.</p>
+<p>ÚRÚ vydává povolení zkušebního provozu a provádí kolaudaci dokončených vyhrazených staveb.</p>
 
 <h2>Správní poplatky</h2>
-<p>Přehled poplatků, číslo účtu a variabilní symbol najdete na stránce
+<p>Některé úkony ÚRÚ podléhají správním poplatkům dle položky č. 18 a 19 sazebníku
+zákona č. 634/2004 Sb. Přehled poplatků, číslo účtu a variabilní symbol najdete na stránce
 <a href="{{r}}vyhrazene-stavby/dokumenty-a-formulare.html#poplatky">Dokumenty a formuláře</a>.""" + cmt(19, "Správní poplatky jsou na dvou místech. Primární umístění je Dokumenty a formuláře, zde zůstává odkaz.") + """</p>
 """
 

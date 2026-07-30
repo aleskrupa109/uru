@@ -11,6 +11,7 @@ KATEGORIE = """
 </ul>
 
 <h3>Dopravní stavby — dráhy</h3>
+<p>Povolování staveb železničních drah, metra a tramvajových tratí celostátního významu.</p>
 <ul>
   <li>Železniční koridory a tratě celostátního významu (Správa železnic)</li>
   <li>Metro ve statutárních městech</li>
@@ -29,9 +30,18 @@ KATEGORIE = """
 <ul>
   <li>Vedení přenosové soustavy a transformovny</li>
   <li>Fotovoltaické elektrárny nad 5 MW</li>
-  <li>Obnovitelné zdroje energie nad 1 MW (větrné parky, bioplynové stanice a další)</li>
+  <li>Ostatní výrobny elektřiny z obnovitelných zdrojů překračující stanovený výkon —
+      nad 1 MW (větrné parky, bioplynové stanice a další)</li>
   <li>Zařízení na energetické využívání odpadů</li>
   <li>Jaderné elektrárny a stavby jaderných zařízení</li>
+</ul>
+
+<div class="box edge"><h3>Hraniční případ</h3>
+<p>U obnovitelných zdrojů je klíčový instalovaný výkon — ověřte příslušnost před podáním žádosti.</p></div>
+
+<h3>Vodní stavby</h3>
+<ul>
+  <li>Vodní díla a vodní cesty na vodních tocích a v povodích celostátního významu</li>
 </ul>
 
 <h3>Energetické stavby — plynárenství a produktovody</h3>
@@ -52,6 +62,8 @@ KATEGORIE = """
   <li>Stavby pro přípravu a dobývání ložisek, úpravu a zušlechťování nerostů</li>
   <li>Úložná místa pro těžební odpad</li>
   <li>Úložiště radioaktivních odpadů obsahujících přírodní radionuklidy</li>
+  <li>Těžba, zpracování, transport a ukládání radioaktivních surovin na území vyhrazeném
+      pro tyto účely</li>
   <li>Stavby určené k nakládání s výbušninami</li>
 </ul>
 
@@ -59,14 +71,17 @@ KATEGORIE = """
 <p>Stavby vymezené zákonem o urychlení výstavby strategicky významné infrastruktury.</p>
 
 <h3>Stavby v zastavitelných plochách nad 45 ha</h3>
-<p>Stavby pro výrobu, skladování a bydlení umisťované v plochách vymezených pro tyto účely.
-Do této kategorie spadají i průmyslové areály, které dříve pod ÚRÚ nespadaly:</p>
+<p>Stavby a soubory staveb pro výrobu, skladování a bydlení umisťované v zastavitelných plochách
+určených k tomuto účelu o rozloze nejméně 45 hektarů. Toto je největší novinka — zahrnuje velké
+bytové projekty a průmyslové areály, které dříve pod ÚRÚ nespadaly:</p>
 <ul>
   <li>Gigafaktory a velké výrobní závody</li>
   <li>Logistické parky a centra</li>
   <li>Výrobní areály (například automobilky)</li>
+  <li>Skladovací areály nadregionálního významu</li>
   <li>Podnikatelská centra v průmyslových zónách</li>
 </ul>
+<p>Ověřte příslušnost před podáním žádosti — podání na nesprávný úřad prodlouží celý proces.</p>
 """
 
 RIZENI_DETAIL = """

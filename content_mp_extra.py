@@ -8,16 +8,30 @@ ani datum vydání prvního úkonu v řízení.</p>
 <div class="box edge">
   <h3>Na co dát pozor</h3>
   <ul>
+    <li>Datum zahájení musí být zaznamenáno ve spisu — ověřte je před každým procesním krokem.</li>
+    <li>Lhůty, procesní povinnosti a vzory dokumentů u těchto řízení vycházejí ze starého zákona.</li>
+    <li>Navazující stavební řízení se zahajuje podle nového zákona, pokud žádost přijde
+        po účinnosti novely.</li>
+    <li>Při změně pravomocného rozhodnutí vydaného dříve se postupuje podle nového zákona.</li>
     <li>Integraci dotčených orgánů podle nové úpravy nelze aplikovat zpětně na již zahájená řízení.</li>
     <li>Projektová dokumentace zpracovaná podle dosavadní úpravy zůstává použitelná.</li>
     <li>Závazná stanoviska vydaná před účinností novely zůstávají platná.</li>
   </ul>
 </div>
 
+<h2>Změny v dokumentech dotčených orgánů</h2>
+<p>Dotčené orgány už nevydávají závazné stanovisko jako samostatný dokument podle §149 správního
+řádu. Jejich vyjádření se zapojuje do koordinovaného stanoviska, které sestavuje úřad vedoucí
+řízení. Jednotné environmentální stanovisko se ruší — každý dotčený orgán v oblasti životního
+prostředí vydává vyjádření samostatně.</p>
+
 <h2>Jak postupovat při přijetí podkladů od stavebního úřadu</h2>
-<p>Podklady k řízení přicházejí prostřednictvím Portálu stavebníka, nikoli e-mailem.
-Lhůta pro vydání vyjádření je 30 dnů od doručení podkladů. Dotčený orgán vydává vyjádření
-samostatně v rámci koordinovaného stanoviska.</p>
+<p>Podklady k řízení přicházejí prostřednictvím Portálu stavebníka, nikoli e-mailem.</p>
+<ul>
+  <li>Lhůta 30 dnů běží od doručení podkladů — sledujte datum v datové schránce.</li>
+  <li>Pokud jsou podklady neúplné, kontaktujte stavební úřad s žádostí o doplnění — lhůta se staví.</li>
+  <li>Pokud jde věc mimo vaši věcnou příslušnost, informujte stavební úřad neprodleně.</li>
+</ul>
 """
 
 STANDARDIZACE_DETAIL = """

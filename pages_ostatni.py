@@ -10,7 +10,7 @@ KARIERA = E.KARIERA
 
 POZICE = """
 <div class="filters" data-filterable>
-  <div class="searchrow"><input type="search" data-q placeholder="Hledat v pozicích…"></div>
+  <div class="searchrow"><input type="search" data-q placeholder="Hledejte podle názvu pozice nebo oblasti"></div>
   <div class="row">
     <div class="field"><label for="p-pomer">Typ poměru</label>
       <select id="p-pomer" data-key="pomer"><option value="">Vše</option>
@@ -42,12 +42,12 @@ POZICE = """
 <ul class="doclist" data-list>
   <li data-pomer="sluzebni" data-trida="12" data-obor="sr" data-lokalita="praha" data-uvazek="plny" data-date="2026-07-01">
     <div class="tags"><span class="tag neutral">Služební poměr</span><span class="tag hist">12. platová třída</span></div>
-    <h3><a href="{{r}}kariera/detail-pozice.html">Referent stavebního řádu — vyhrazené stavby</a></h3>
+    <h3><a href="{{r}}kariera/detail-pozice.html">Referent povolování dálnic a rychlostních silnic</a></h3>
     <p>Vedení řízení o povolení záměru u dopravních a energetických staveb.</p>
     <div class="meta"><span>Praha</span><span>plný úvazek</span><span>přihlášky do 31. 8. 2026</span></div></li>
   <li data-pomer="sluzebni" data-trida="13" data-obor="up" data-lokalita="brno" data-uvazek="plny" data-date="2026-07-01">
     <div class="tags"><span class="tag neutral">Služební poměr</span><span class="tag hist">13. platová třída</span></div>
-    <h3><a href="{{r}}kariera/detail-pozice.html">Metodik územního plánování</a></h3>
+    <h3><a href="{{r}}kariera/detail-pozice.html">Referent povolování dopravních staveb — dráhy</a></h3>
     <p>Metodické vedení úřadů územního plánování a zpracování stanovisek.</p>
     <div class="meta"><span>Brno</span><span>plný úvazek</span><span>přihlášky do 31. 8. 2026</span></div></li>
   <li data-pomer="pracovni" data-trida="12" data-obor="it" data-lokalita="praha" data-uvazek="plny" data-date="2026-06-15">
@@ -392,7 +392,9 @@ PAGES = [
     dict(path="o-uradu/index.html", title="O úřadu", section="o-uradu", crumbs=[("O úřadu", None)],
          sidebar=False, h1="O úřadu", body=OURAD),
     dict(path="o-uradu/kdo-jsme.html", title="Kdo jsme a co děláme", section="o-uradu",
-         crumbs=OU + [("Kdo jsme a co děláme", None)], h1="Kdo jsme a co děláme", body=KDO_JSME),
+         crumbs=OU + [("Kdo jsme a co děláme", None)], h1="Kdo jsme a co děláme",
+         perex="Úřad rozvoje území (ÚRÚ) vznikl transformací Dopravního a energetického stavebního úřadu (DESÚ). Přebíráme agendy DESÚ a Ústavu územního rozvoje (ÚÚR) a stáváme se klíčovou institucí reformované státní stavební správy.",
+         body=KDO_JSME),
     dict(path="o-uradu/organizacni-struktura.html", title="Organizační struktura", section="o-uradu",
          crumbs=OU + [("Organizační struktura", None)], h1="Organizační struktura", body=ORG),
     dict(help="media", path="o-uradu/pro-media.html", title="Pro média", section="o-uradu",

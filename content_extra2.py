@@ -101,18 +101,21 @@ DETAIL_POZICE = """
 </table>
 
 <h2>O pozici</h2>
-<p>Budete vést řízení o povolení vyhrazených staveb v oblasti drah — od podání žádosti
-po vydání rozhodnutí — v integrovaném procesu podle stavebního zákona.</p>
+<p>Budete se podílet na povolování staveb železničních drah, metra a tramvajových tratí
+celostátního a regionálního významu. Jako součást Oddělení dopravních staveb ÚRÚ povedete
+řízení o povolení záměru od podání žádosti po vydání rozhodnutí v integrovaném procesu
+podle stavebního zákona.</p>
 <ul>
   <li>Vedení řízení o povolení záměru u drážních staveb</li>
-  <li>Koordinace vyjádření dotčených orgánů v rámci jednoho řízení</li>
+  <li>Koordinace vyjádření dotčených orgánů v rámci integrovaného řízení</li>
   <li>Komunikace se stavebníky (Správa železnic, dopravní podniky)</li>
   <li>Příprava rozhodnutí a dalších správních aktů</li>
 </ul>
 
 <h2>Koho hledáme</h2>
 <ul>
-  <li>Zkušenost se správním řízením, ideálně na stavebním úřadě</li>
+  <li>Vysokoškolské vzdělání právního, stavebního nebo technického směru</li>
+  <li>Zkušenost s vedením správního řízení nebo s agendou stavebního práva výhodou</li>
   <li>Znalost stavebního zákona č. 283/2021 Sb. výhodou</li>
   <li>Schopnost pracovat samostatně i v týmu</li>
   <li>Analytické myšlení a pečlivost</li>
@@ -128,8 +131,11 @@ po vydání rozhodnutí — v integrovaném procesu podle stavebního zákona.</
 </ul>
 
 <h2>Jak se přihlásit</h2>
-<p>Přihlaste se prostřednictvím online formuláře, nebo si stáhněte PDF a zašlete jej
-datovou schránkou či poštou. Součástí přihlášky je souhlas se zpracováním osobních údajů.</p>
+<p>Přihlaste se prostřednictvím online formuláře, nebo si stáhněte PDF a zašlete jej datovou
+schránkou, poštou nebo na kariera@uru.gov.cz. Potvrzení přijetí dostanete e-mailem, ozveme se
+do deseti pracovních dnů. Součástí přihlášky je souhlas se zpracováním osobních údajů
+pro účely tohoto výběrového řízení dle GDPR.</p>
+<p><a href="{{r}}uredni-deska.html">Odkaz na zákonný text výběrového řízení na úřední desce</a></p>
 <div class="btn-row">
   <a class="btn" href="{{r}}kariera/prihlaska.html">Odpovědět na nabídku{c77}</a>
   <a class="btn ghost" href="{{r}}kontakty.html#hr">Zeptat se HR</a>
@@ -209,6 +215,10 @@ interně. Výsledkem jsou kratší lhůty a předvídatelný proces.</p>
   <tr><th>Brno</th><td>adresa se doplní</td></tr>
 </table>
 
+<h2>Najděte správný kontakt</h2>
+<p>Územní rozvoj a agenda převzatá z ÚÚR má vlastní pracoviště v Brně. Kontakty podle agendy
+najdete v <a href="{{r}}kontakty.html">Kontaktech</a>.</p>
+
 <h2>Důležité odkazy</h2>
 <div class="grid g3">
   <a class="card" href="{{r}}kariera/otevrene-pozice.html"><h3>Otevřené pozice</h3>
@@ -244,12 +254,19 @@ POVINNE = [
 ]
 
 PRO_MEDIA = """
+<p>Jste novinář nebo redaktor? Mediální dotazy vyřizujeme prostřednictvím dedikovaného kontaktu.
+Rádi vám poskytneme informace o činnosti ÚRÚ, vyhrazených stavbách nebo územním rozvoji.</p>
+
 <div class="contactcard" style="max-width:34rem">
   <h3>Kontakt pro média</h3><p class="role">Tiskové dotazy a vyjádření úřadu</p>
   <p class="agenda">Odpovídáme do 2 pracovních dnů. Pro urgentní záležitosti volejte
   na uvedené telefonní číslo.</p>
   <dl><dt>E-mail</dt><dd>media@uru.gov.cz</dd><dt>Telefon</dt><dd>+420 000 000 000</dd></dl>
 </div>
+
+<h2>O úřadu pro média</h2>
+<p>Úřad rozvoje území (ÚRÚ) je ústřední správní úřad zřízený zákonem. Vznikl transformací
+Dopravního a energetického stavebního úřadu (DESÚ) a integrací agend Ústavu územního rozvoje (ÚÚR).</p>
 
 <h2>Základní údaje o úřadu</h2>
 <table class="t">
