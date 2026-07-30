@@ -12,23 +12,16 @@
   var PAGEKEY = (dir && dir !== 'uru' ? dir + '/' : '') + page;
 
   /* ---------------- navigace ---------------- */
-  /* Úzký rozbalovací panel se v návrhu zarovnává na střed pod svou položkou
-     menu; široká varianta (Územní rozvoj) je zarovnaná na střed stránky. */
+  /* Úzký panel se zarovnává na střed pod svou položkou menu čistě v CSS.
+     Široká varianta (Územní rozvoj) je ukotvená k položce menu, ale má se
+     zarovnat na obsahový sloupec — to dopočítáme. */
   function placeDropdown(li) {
-    var dd = li.querySelector('.dropdown');
-    if (!dd || dd.classList.contains('wide')) return;
+    var dd = li.querySelector('.dropdown.wide');
+    if (!dd) return;
     if (window.getComputedStyle(dd).position !== 'absolute') { dd.style.left = ''; return; }
-    var nav = li.closest('.mainnav');
-    var wrap = nav.querySelector('.wrap');
-    var navBox = nav.getBoundingClientRect();
-    var liBox = li.getBoundingClientRect();
-    var wrapBox = wrap.getBoundingClientRect();
-    var w = dd.offsetWidth;
-    var left = (liBox.left - navBox.left) + liBox.width / 2 - w / 2;
-    var min = wrapBox.left - navBox.left;
-    var max = wrapBox.right - navBox.left - w;
-    if (max < min) max = min;
-    dd.style.left = Math.round(Math.max(min, Math.min(left, max))) + 'px';
+    var wrap = li.closest('.mainnav').querySelector('.wrap');
+    dd.style.left = Math.round(wrap.getBoundingClientRect().left
+                             - li.getBoundingClientRect().left) + 'px';
   }
 
   function initNav() {

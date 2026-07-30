@@ -13,6 +13,16 @@ Statické HTML, žádný build ani závislosti. Stačí otevřít `index.html`.
 
 Soubor `.nojekyll` je součástí repozitáře — bez něj by GitHub Pages ignoroval některé cesty.
 
+### Omezení nahrávání přes web
+
+Repozitář má 103 souborů. Webové rozhraní GitHubu zvládne jedním přetažením nejvýš 100 souborů
+a **v Safari přetažení celé složky nefunguje vůbec**. Řešení:
+
+- použij Chrome nebo Firefox a nahraj obsah nadvakrát — nejdřív soubory z korene složky
+  (60 souborů), potom celou složku `assets` (43 souborů);
+- nebo použij GitHub Desktop, kde žádný z těchto limitů neplatí. Při opakovaných úpravách
+  se to vyplatí, protože každá změna vzhledu přegeneruje všech 52 HTML souborů.
+
 ## Jak upravovat texty
 
 **Přímo v HTML.** Soubory jsou čitelné a jeden soubor = jedna obrazovka. Editace přes GitHub
@@ -98,11 +108,34 @@ organismy, které si podle pravidel design systému staví každý projekt sám;
 postavené výhradně na jeho tokenech. Stejné dělení bude mít i finální web.
 
 Rozbalovací panel navigace má dvě podoby, obě odměřené z návrhu. Výchozí je **jeden sloupec
-o šířce 296 px**, zarovnaný na střed pod svou položkou menu (skript ho dopočítá a ořízne na
-okraje obsahového sloupce). Sekce s velkým počtem položek — v maketě jen Územní rozvoj —
-dostane **širokou variantu se čtyřmi sloupci**, zarovnanou na střed stránky. Přepínač je
-v `build.py`: devět a více položek v sekci znamená širokou variantu.
+o šířce 296 px** zarovnaný na střed pod svou položkou menu; panel je ukotvený k položce menu,
+takže polohu řeší čistě CSS. Sekce s velkým počtem položek — v maketě jen Územní rozvoj —
+dostane **širokou variantu se čtyřmi sloupci** zarovnanou na obsahový sloupec; její vodorovnou
+pozici dopočítá skript. Přepínač je v `build.py`: devět a více položek v sekci znamená širokou
+variantu.
 
+Design systém přidává k položkám seznamů odrážku přes `::before`. V obsahu je to správně,
+u navigace, patičky a výpisů ne — konstrukční seznamy proto mají třídu `gov-list--plain`
+a projektová vrstva odrážky u nich vypíná.
+
+
+### Ikony a fotografie
+
+V `assets/gov/icons/complex/` je 28 ilustračních ikon design systému — jen ty, které maketa
+skutečně používá. Ikony se do stránek vkládají inline (používají `currentColor`, aby se obarvily
+tokenem primární barvy), takže za běhu nejsou soubory potřeba vůbec — v repozitáři jsou jen
+kvůli generátoru.
+
+Přiřazení ikony k dlaždici je v `build.py` v tabulce `TILE_ICON`, klíčem je cesta cílové stránky.
+Výměna ikony je jeden řádek. Celou sadu (42 základních a 131 ilustračních) dostaneš takto:
+
+```
+npm install @gov-design-system-ce/icons
+cp node_modules/@gov-design-system-ce/icons/lib/complex/*.svg assets/gov/icons/complex/
+```
+
+Fotografie v úvodním banneru je `assets/img/hero-budova.jpg`. **Pozor: soubor má vodoznak
+Unsplash+.** Pro spuštění bude potřeba licencovaná verze bez vodoznaku, nebo vlastní fotografie.
 
 ### Úprava primitiv
 

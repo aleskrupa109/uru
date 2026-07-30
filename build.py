@@ -118,6 +118,86 @@ def rel(depth):
     return "../" * depth
 
 
+# ---- ikony pro dlaždice rozcestníků ----
+# Ilustrační ikony ze sady "complex" balíčku @gov-design-system-ce/icons.
+# Vkládají se inline, protože používají currentColor a mají se obarvit podle tokenu.
+ICON_DIR = os.path.join(ROOT, "assets", "gov", "icons")
+_svg_cache = {}
+
+
+def dsicon(name, kind="complex", cls="gov-tile__icon-img"):
+    key = (name, kind, cls)
+    if key in _svg_cache:
+        return _svg_cache[key]
+    path = os.path.join(ICON_DIR, kind, name + ".svg")
+    if not os.path.exists(path):
+        return ""
+    svg = open(path, encoding="utf-8").read().strip()
+    svg = re.sub(r'\s(width|height)="[^"]*"', "", svg, count=2)
+    svg = svg.replace("<svg", f'<svg class="{cls}" aria-hidden="true" focusable="false"', 1)
+    _svg_cache[key] = svg
+    return svg
+
+
+TILE_ICON = {
+    # úvodní rozcestník
+    "vyhrazene-stavby/index.html": "house",
+    "metodicka-podpora/index.html": "doc-review",
+    "uzemni-rozvoj/index.html": "map",
+    "kariera/index.html": "job",
+    # Vyhrazené stavby
+    "vyhrazene-stavby/co-meni-novela.html": "news",
+    "vyhrazene-stavby/co-spada-pod-uru.html": "doc-search",
+    "vyhrazene-stavby/jak-probiha-rizeni.html": "queue",
+    "vyhrazene-stavby/dokumenty-a-formulare.html": "documents",
+    "vyhrazene-stavby/portal-stavebnika.html": "portal",
+    "vyhrazene-stavby/caste-dotazy.html": "help",
+    # Metodická podpora
+    "metodicka-podpora/metodicka-stanoviska.html": "doc-stamp",
+    "metodicka-podpora/caste-dotazy.html": "help",
+    "metodicka-podpora/prechodove-obdobi.html": "time",
+    "metodicka-podpora/standardizace.html": "doc-agreement",
+    "metodicka-podpora/konzultacni-stredisko.html": "chat",
+    "metodicka-podpora/tisic-otazek.html": "info-list",
+    "metodicka-podpora/dotcene-organy.html": "institution",
+    "metodicka-podpora/kontakty-na-metodiky.html": "contact",
+    # Územní rozvoj
+    "uzemni-rozvoj/uzemni-planovani.html": "map",
+    "uzemni-rozvoj/uap.html": "doc-registers",
+    "uzemni-rozvoj/mezinarodni-spoluprace.html": "globe",
+    "uzemni-rozvoj/publikacni-cinnost.html": "documents",
+    "uzemni-rozvoj/casopis.html": "news",
+    "uzemni-rozvoj/knihovna.html": "institute-file",
+    "uzemni-rozvoj/stavebne-technicka-prevence.html": "settings",
+    "uzemni-rozvoj/mapovy-portal.html": "region",
+    "uzemni-rozvoj/konference.html": "communication",
+    "uzemni-rozvoj/archiv.html": "history",
+    "uzemni-rozvoj/politika-uzemniho-rozvoje.html": "doc-state",
+    "uzemni-rozvoj/evidence-upc.html": "doc-registers",
+    "uzemni-rozvoj/informacni-web-up.html": "portal",
+    # Kariéra
+    "kariera/otevrene-pozice.html": "job",
+    "kariera/prihlaska.html": "doc-filled",
+    # O úřadu
+    "o-uradu/kdo-jsme.html": "institution",
+    "o-uradu/organizacni-struktura.html": "city-office",
+    "o-uradu/pro-media.html": "news",
+    "o-uradu/povinne-informace.html": "doc-basic-info",
+    "o-uradu/index.html": "institution",
+    # ostatní
+    "uredni-deska.html": "doc-state",
+    "kontakty.html": "contact",
+    "aktuality.html": "news",
+    "vyhledavani.html": "doc-search",
+}
+
+
+def tile_icon_for(href):
+    tail = href.split("{{r}}")[-1].split("#")[0]
+    name = TILE_ICON.get(tail)
+    return dsicon(name) if name else ""
+
+
 # SVG ikony z balíčku @gov-design-system-ce/icons, vložené inline (maketa
 # tak nepotřebuje běhové prostředí web komponent)
 GICON = {
@@ -144,7 +224,8 @@ def cmt(n, text):
 
 
 def render_nav(active, r):
-    out = ['<nav class="mainnav" aria-label="Hlavní navigace"><div class="wrap"><ul>']
+    out = ['<nav class="mainnav" aria-label="Hlavní navigace"><div class="wrap">'
+           '<ul class="gov-list--plain">']
     for key, label, href, items in NAV:
         cls = []
         if items:
@@ -188,7 +269,7 @@ def render_crumbs(crumbs, r):
         else:
             items.append(f'<li aria-current="page">{label}</li>')
     return ('<div class="wrap"><nav class="gov-breadcrumbs crumbs" aria-label="Drobečková navigace">'
-            f'<ul>{"".join(items)}</ul></nav></div>')
+            f'<ul class="gov-list--plain">{"".join(items)}</ul></nav></div>')
 
 
 MOCKBAR = """<div class="mockbar"><div class="wrap">
@@ -207,22 +288,22 @@ MOCKBAR = """<div class="mockbar"><div class="wrap">
 def footer(r):
     return f"""<footer class="site-footer"><div class="wrap">
 <div class="cols">
-<div><h3>Úřad rozvoje území</h3><ul>
+<div><h3>Úřad rozvoje území</h3><ul class="gov-list--plain">
 <li><a href="{r}o-uradu/kdo-jsme.html">Kdo jsme a co děláme</a></li>
 <li><a href="{r}o-uradu/organizacni-struktura.html">Organizační struktura</a></li>
 <li><a href="{r}kariera/index.html">Kariéra</a></li>
 <li><a href="{r}o-uradu/pro-media.html">Pro média</a></li></ul></div>
-<div><h3>Agendy</h3><ul>
+<div><h3>Agendy</h3><ul class="gov-list--plain">
 <li><a href="{r}vyhrazene-stavby/index.html">Vyhrazené stavby</a></li>
 <li><a href="{r}metodicka-podpora/index.html">Metodická podpora</a></li>
 <li><a href="{r}uzemni-rozvoj/index.html">Územní rozvoj</a></li>
 <li><a href="{r}uredni-deska.html">Úřední deska</a></li></ul></div>
-<div><h3>Kontakt</h3><ul>
+<div><h3>Kontakt</h3><ul class="gov-list--plain">
 <li><a href="{r}kontakty.html">Všechny kontakty</a></li>
 <li>Datová schránka: <strong>xxxxxxx</strong></li>
 <li>posta@uru.gov.cz</li>
 <li>+420 000 000 000</li></ul></div>
-<div><h3>Povinné informace</h3><ul>
+<div><h3>Povinné informace</h3><ul class="gov-list--plain">
 <li><a href="{r}o-uradu/povinne-informace.html">Povinně zveřejňované informace</a></li>
 <li><a href="#">Prohlášení o přístupnosti</a></li>
 <li><a href="#">Ochrana osobních údajů a cookies</a></li>
@@ -380,8 +461,10 @@ def to_ds(html_body):
             return m.group(0)
         head = f'<span class="tile-order">{order.group(1)}</span>' if order else ""
         desc = p.group(1) if p else ""
+        ico = tile_icon_for(href)
+        ico = f'<span slot="icon">{ico}</span>' if ico else ""
         return (f'<div class="gov-tile" data-size="m" data-orientation="vertical" data-clickable="1">'
-                f'<div class="gov-tile__content"><div class="gov-tile__text">{head}'
+                f'{ico}<div class="gov-tile__content"><div class="gov-tile__text">{head}'
                 f'<div class="gov-tile__title"><a class="gov-tile__link" href="{href}">{h3.group(1)}</a>'
                 f'<span class="gov-tile__icon">{gicon("chevron-right")}</span></div>'
                 f'<div class="gov-tile__annotation gov-tile__annotation--padding">{desc}</div>'

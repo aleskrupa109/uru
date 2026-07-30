@@ -4,6 +4,16 @@
    hlavička, navigace, patička, levé submenu, hero a několik výpisů.
    Rozměry odpovídají návrhu (DESU_design.pdf, rám 1440 px). */
 
+/* ---------- tučnost písma ----------
+   Design systém sází nadpisy a tlačítka na 700. Návrh používá napříč webem
+   medium (500), proto je tady jedno místo, kde se to přemapuje. */
+h1, h2, h3, h4, h5, h6,
+.gov-button .element, .gov-tag .element, .gov-chip .element,
+.gov-tile__title, .gov-tile__title a,
+.gov-accordion-item__title, .gov-accordion-item__title *,
+.gov-message__content h3, .gov-infobar__content,
+table.t th, .files .name, strong, b { font-weight: 500; }
+
 /* ---------- kontejner ---------- */
 .wrap { max-width: var(--uru-wrap); margin: 0 auto; padding: 0; }
 @media (max-width: 76.5em) { .wrap { padding: 0 var(--spacing-l); } }
@@ -56,10 +66,20 @@ body { background: var(--background-page); color: var(--text-primary); }
   border-radius: 50%; background: var(--background-white); box-shadow: 0 1px 2px rgb(0 0 0 / 20%);
 }
 
+/* ---------- konstrukční seznamy bez odrážek ----------
+   Design systém přidává k položkám seznamů odrážku přes ::before. V obsahu je to
+   správně, u navigace, patičky a výpisů ne. */
+.mainnav ul, .site-footer ul, .doclist, .files, .sitemap-card ul, .contactcard dl,
+.dropdown .cols, .crumbs ul { padding-left: 0; }
+.mainnav li::before, .site-footer li::before, .doclist > li::before,
+.files > li::before, .sitemap-card li::before, .crumbs li::before,
+.subnav li::before { display: none !important; content: none !important; }
+
 /* ---------- hlavní navigace ---------- */
 .mainnav { background: var(--background-white); position: relative; z-index: 60; }
 .mainnav > .wrap > ul { list-style: none; margin: 0; padding: 0; display: flex; height: var(--uru-nav-h); }
 .mainnav > .wrap > ul > li { display: flex; }
+.mainnav > .wrap > ul > li.has-drop { position: relative; }
 .mainnav > .wrap > ul > li > a {
   display: flex; align-items: center; gap: var(--spacing-s);
   padding: 0 var(--spacing-m-nudge); text-decoration: none;
@@ -73,8 +93,9 @@ body { background: var(--background-page); color: var(--text-primary); }
 .mainnav li.open .caret { transform: rotate(180deg); }
 
 .dropdown {
-  display: none; position: absolute; top: 100%; left: 0;
-  width: 18.5rem;                      /* 296 px – šířka odměřená z návrhu */
+  display: none; position: absolute; top: 100%;
+  left: 50%; transform: translateX(-50%);   /* na střed pod položkou menu */
+  width: 18.5rem;                           /* 296 px – šířka odměřená z návrhu */
   background: var(--background-white); box-shadow: var(--uru-shadow-lg);
   border-radius: 0 0 var(--corner-radius-m) var(--corner-radius-m);
   padding: var(--spacing-s-nudge) var(--spacing-s) var(--spacing-m);
@@ -84,10 +105,11 @@ li.open .dropdown { display: block; }
 .dropdown .cols { display: grid; grid-template-columns: 1fr; gap: 0; }
 
 /* Široká varianta: sekce s velkým počtem položek (Územní rozvoj) je v návrhu
-   ve čtyřech sloupcích a zarovnaná na střed stránky, ne pod položku menu. */
+   ve čtyřech sloupcích a zarovnaná na obsahový sloupec, ne pod položku menu.
+   Vodorovnou pozici dopočítá skript, protože panel je ukotvený k položce menu. */
 .dropdown.wide {
-  width: min(77.5rem, calc(100vw - 3rem));
-  left: 50%; transform: translateX(-50%);
+  width: min(var(--uru-wrap), calc(100vw - 3rem));
+  left: 0; transform: none;
   padding: var(--spacing-l) var(--spacing-m) var(--spacing-xl);
 }
 .dropdown.wide .cols { grid-template-columns: repeat(4, 1fr); gap: var(--spacing-2xs) var(--spacing-l); }
@@ -145,6 +167,10 @@ li.open .dropdown { display: block; }
 .grid > .gov-tile { background: var(--background-block-primary); border-radius: var(--corner-radius-m);
   border-bottom: 0; box-shadow: var(--uru-shadow); padding: var(--spacing-m-nudge); }
 .grid > .gov-tile:hover { box-shadow: 0 6px 20px rgb(29 60 93 / 14%); }
+.gov-tile [slot="icon"] { display: block; margin-bottom: var(--spacing-s); color: var(--color-primary-600); }
+.gov-tile__icon-img { width: 2.5rem; height: 2.5rem; display: block; }
+.grid > .gov-tile [slot="icon"] { margin-bottom: var(--spacing-s-nudge); }
+
 .tile-order { display: block; font-size: var(--font-size-body-xs); color: var(--text-tertiary);
   text-transform: uppercase; letter-spacing: .04em; margin-bottom: var(--spacing-xs); }
 
@@ -254,8 +280,9 @@ ol.steps h3 { margin: 0 0 var(--spacing-s); font-size: var(--font-size-headline-
   font-weight: 400; color: var(--text-white-fixed); }
 .hero p { margin: 0; font-size: var(--font-size-body-l); max-width: 46ch; color: var(--text-white-fixed); opacity: .94; }
 .hero .disc { position: absolute; right: -2.5rem; top: 50%; transform: translateY(-50%);
-  width: 26rem; height: 26rem; border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #DCF3FF 0%, #A9CDE9 45%, #4E93C4 100%); }
+  width: 26rem; height: 26rem; border-radius: 50%; overflow: hidden;
+  background-image: url("img/hero-budova.jpg");
+  background-size: cover; background-position: 50% 40%; }
 @media (max-width: 56em) { .hero .disc { display: none; } }
 
 .section-title { display: flex; justify-content: space-between; align-items: baseline;
