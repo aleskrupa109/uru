@@ -86,22 +86,26 @@
 
       if (chips) {
         chips.innerHTML = '';
+        var makeChip = function (label, onClear) {
+          var wrap = document.createElement('span');
+          wrap.className = 'gov-chip';
+          wrap.setAttribute('data-type', 'outlined');
+          wrap.setAttribute('data-color', 'primary');
+          wrap.setAttribute('data-size', 'm');
+          var b = document.createElement('button');
+          b.className = 'element';
+          b.type = 'button';
+          b.textContent = label + ' \u00d7';
+          b.addEventListener('click', onClear);
+          wrap.appendChild(b);
+          chips.appendChild(wrap);
+        };
         selects.forEach(function (s) {
           if (!s.value) return;
-          var label = s.options[s.selectedIndex].text;
-          var c = document.createElement('button');
-          c.className = 'chip';
-          c.type = 'button';
-          c.textContent = label;
-          c.addEventListener('click', function () { s.value = ''; apply(); });
-          chips.appendChild(c);
+          makeChip(s.options[s.selectedIndex].text, function () { s.value = ''; apply(); });
         });
         if (q && q.value.trim()) {
-          var c2 = document.createElement('button');
-          c2.className = 'chip'; c2.type = 'button';
-          c2.textContent = '„' + q.value.trim() + '"';
-          c2.addEventListener('click', function () { q.value = ''; apply(); });
-          chips.appendChild(c2);
+          makeChip('\u201e' + q.value.trim() + '\u201c', function () { q.value = ''; apply(); });
         }
       }
       active.length;
@@ -122,7 +126,10 @@
 
   /* ---------------- režim úprav ---------------- */
   var SEL = 'main h1, main h2, main h3, main h4, main p, main li, main td, main th, ' +
-            'main summary, main dd, main dt, main figcaption, main .tag, main .date, main .btn';
+            'main dd, main dt, main figcaption, main .date, main .tile-order, ' +
+            'main .gov-button .element, main .gov-tag .element, ' +
+            'main .gov-tile__link, main .gov-tile__annotation, ' +
+            'main [slot="label"], main .gov-message__content > p';
 
   function editable() {
     return Array.prototype.slice.call(document.querySelectorAll(SEL))

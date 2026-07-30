@@ -44,7 +44,10 @@ metodicka-podpora/      14 obrazovek
 uzemni-rozvoj/          14 obrazovek
 kariera/                4 obrazovky
 o-uradu/                5 obrazovek
-assets/uru.css          styly
+assets/gov/             design systém gov.cz (CSS, písmo, ikony)
+assets/uru-tokens.css   přemapování primární palety na barvy ÚRÚ
+assets/gov-fonts.css    deklarace řezů Roboto
+assets/uru.css          projektová vrstva (hlavička, navigace, patička, layout)
 assets/uru.js           navigace, filtry, režim úprav
 build.py, pages_*.py    generátor (nepovinný — viz níže)
 ```
@@ -56,33 +59,67 @@ hromadným zásahům (změna navigace, patičky, přidání sekce). **Pozor:** `
 `.html` soubory. Pokud upravuješ texty přímo v HTML, build už nespouštěj, nebo změny nejdřív
 přenes do `pages_*.py`.
 
-## Vizuál
+## Vizuál — design systém gov.cz
 
-Barvy, rozměry a proporce jsou odměřené přímo z návrhu designu (rám 1440 px), ne odhadnuté.
-Všechny jsou v `assets/uru.css` jako proměnné v `:root`, takže přemapování na novou verzi
-design systému gov je změna na jednom místě.
+Maketa stojí na **design systému gov.cz** (`@gov-design-system-ce`, verze 4.6.5). Balíčky jsou
+uložené přímo v repozitáři, takže nasazení nepotřebuje npm, build ani připojení k CDN:
+
+```
+assets/gov/styles/   tokens.css, styles.css, layout.css, content.css,
+                     animations.css, components.css
+assets/gov/fonts/    Roboto (woff2) z balíčku fonts — 4 řezy bez kurzivy
+assets/gov/icons/    ikony použité v maketě
+```
+
+Aktualizace na novější verzi je stažení balíčků z npm a přepsání těchto adresářů.
+
+### Bez běhového prostředí web komponent
+
+CSS design systému cílí zároveň na element i na třídu a varianty čte z atributů `data-*`.
+Maketa proto používá skutečné komponenty design systému v čistém HTML, bez JavaScriptu:
+
+```html
+<span class="gov-button" data-color="primary" data-type="solid" data-size="m">
+  <a class="element" href="...">Zobrazit</a>
+</span>
+```
+
+Díky tomu jde maketa otevřít i dvojklikem z disku, váží 1,2 MB místo 20 MB a nemá shadow DOM,
+takže filtrovací skript makety si na obsah dosáhne. Použité komponenty: Tile (rozcestníky),
+Button, Tag, Chip (aktivní filtry), Message (zvýrazněné boxy), Accordion (FAQ), Infobar
+(oznámení v hlavičce), Breadcrumbs a Empty (prázdné stavy výpisů).
+
+### Co dodává design systém a co projekt
+
+Komponenty, typografii, barvy, rozestupy a rádiusy dodává design systém. Projektová vrstva
+v `assets/uru.css` obsahuje jen to, co design systém záměrně neobsahuje — hlavičku, hlavní
+navigaci s rozbalovacím panelem, patičku, levé submenu, hero a několik výpisů. Jsou to
+organismy, které si podle pravidel design systému staví každý projekt sám; i tak jsou
+postavené výhradně na jeho tokenech. Stejné dělení bude mít i finální web.
+
+### Úprava primitiv
+
+Barvy návrhu se nekryjí s výchozí paletou design systému — ten má `--color-primary-600`
+na `#00469B`, návrh používá `#2362A2`. Neutrální odstíny naopak sedí přesně, včetně pozadí
+`#F6F6F6` a textu `#262626`.
+
+Podle [pravidel pro modifikaci](https://designsystem.gov.cz/pravidla/pravidla-pro-modifikaci-design-systemu)
+se to řeší úpravou kolekce Primitives. V maketě je to soubor `assets/uru-tokens.css`, který
+přepisuje primární škálu na hodnoty odměřené z návrhu:
 
 | Token | Hodnota | Kde v návrhu |
 |---|---|---|
-| `--primary` | `#2362A2` | infobanner, ikony dlaždic, tlačítka, aktivní prvky |
-| `--primary-dark` | `#1E5086` | odkazy v hlavní navigaci a v levém submenu |
-| `--primary-deep` | `#1D3C5D` | patička |
-| `--hairline` | `#C5DBF2` | linka pod hlavičkou |
-| `--ink` | `#262626` | nadpisy i běžný text |
-| `--bg` | `#F6F6F6` | pozadí stránky |
-| `--wrap` | `1152px` | obsahový sloupec (okraje 144 px při rámu 1440) |
-| `--gutter` | `24px` | mezera mezi dlaždicemi (4 x 270 px + 3 x 24 px = 1152) |
-| `--header-h` / `--nav-h` | `72px` / `64px` | výška hlavičky a navigace |
+| `--color-primary-600` | `#2362A2` | oznámení v hlavičce, ikony, tlačítka, aktivní prvky |
+| `--color-primary-700` | `#1E5086` | odkazy v hlavní navigaci a v levém submenu |
+| `--color-primary-800` | `#1D3C5D` | patička |
+| `--color-primary-200` | `#C5DBF2` | linka pod hlavičkou |
 
-Písmo je **Roboto** (standard design systému gov), načítané z Google Fonts se systémovým
-zálohovým řetězcem. Návrh má písmo vektorizované, takže název z PDF vyčíst nejde — pokud
-finální design systém předepíše jiné, změní se jeden řádek v `body { font-family }`.
+Smazáním toho souboru se maketa vrátí k výchozí paletě design systému. Projektové rozměry
+(`--uru-wrap` 1152 px, `--uru-header-h` 72 px, `--uru-nav-h` 64 px) jsou ve stejném souboru
+a odpovídají odměřeným hodnotám z rámu 1440 px.
 
-Navigace odpovídá návrhu: sedm položek bez pozadí, rozbalovací panel jako bílá karta přes
-celou šířku se čtyřmi sloupci prostých odkazů, aktivní sekce podtržená. Rozcestníkové dlaždice
-jsou bílé bez rámečku, jen s jemným stínem. Hero je diagonální modrý přechod s kruhovým
-vizuálem vpravo. Stránky se submenu mají levý sloupec na šedém pozadí a obsah v bílém panelu,
-stejně jako návrh.
+Písmo je **Roboto** z balíčku `@gov-design-system-ce/fonts`, tedy standard design systému.
+Návrh má písmo vektorizované, takže jeho název z PDF vyčíst nejde.
 
 ## Co je v maketě jinak než v návrhu
 

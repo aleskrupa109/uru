@@ -1,0 +1,25 @@
+/* Přemapování primární barevné škály design systému na barvy z návrhu ÚRÚ.
+   Design systém gov.cz umožňuje modifikaci právě přepsáním kolekce Primitives —
+   všechny komponenty se překreslí samy. Hodnoty jsou odměřené z DESU_design.pdf. */
+:root {
+  --color-primary-50:  rgb(242, 246, 252);
+  --color-primary-100: rgb(227, 235, 243);  /* #E3EBF3 – světlé plochy */
+  --color-primary-200: rgb(197, 219, 242);  /* #C5DBF2 – linka pod hlavičkou */
+  --color-primary-300: rgb(158, 200, 233);
+  --color-primary-400: rgb(104, 156, 209);
+  --color-primary-500: rgb( 55, 113, 184);
+  --color-primary-600: rgb( 35,  98, 162);  /* #2362A2 – primární barva */
+  --color-primary-700: rgb( 30,  80, 134);  /* #1E5086 – odkazy v navigaci */
+  --color-primary-800: rgb( 29,  60,  93);  /* #1D3C5D – patička */
+  --color-primary-900: rgb( 24,  50,  78);
+  --color-primary-950: rgb( 16,  36,  58);
+}
+
+/* projektové tokeny, které design systém nedefinuje */
+:root {
+  --uru-wrap: 72rem;        /* 1152 px – obsahový sloupec z návrhu */
+  --uru-header-h: 4.5rem;   /* 72 px */
+  --uru-nav-h: 4rem;        /* 64 px */
+  --uru-shadow: 0 2px 8px rgb(38 38 38 / 6%);
+  --uru-shadow-lg: 0 8px 28px rgb(29 60 93 / 14%);
+}

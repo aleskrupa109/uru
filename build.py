@@ -118,6 +118,21 @@ def rel(depth):
     return "../" * depth
 
 
+# SVG ikony z balíčku @gov-design-system-ce/icons, vložené inline (maketa
+# tak nepotřebuje běhové prostředí web komponent)
+GICON = {
+    "chevron-down": '<svg class="{c}" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708Z" fill="currentColor"/></svg>',
+    "chevron-right": '<svg class="{c}" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708Z" fill="currentColor"/></svg>',
+    "search": '<svg class="{c}" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.398 1.398l3.85 3.85a1 1 0 0 0 1.414-1.414l-3.85-3.85ZM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0Z" fill="currentColor"/></svg>',
+    "x-lg": '<svg class="{c}" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" fill="currentColor"/></svg>',
+    "warn": '<svg class="{c}" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566ZM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5Zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z" fill="currentColor"/></svg>',
+}
+
+
+def gicon(name, cls=""):
+    return GICON[name].format(c=cls)
+
+
 def icon():
     return ('<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">'
             '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg>')
@@ -137,7 +152,7 @@ def render_nav(active, r):
         if key == active:
             cls.append("active")
         out.append(f'<li class="{" ".join(cls)}">')
-        caret = ('<svg class="caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg>') if items else ""
+        caret = gicon("chevron-down", "caret") if items else ""
         out.append(f'<a href="{r}{href}">{label}{caret}</a>')
         if items:
             out.append('<div class="dropdown"><div class="wrap"><div class="cols">')
@@ -165,13 +180,14 @@ def render_subnav(section, current, r):
 def render_crumbs(crumbs, r):
     if not crumbs:
         return ""
-    parts = [f'<span><a href="{r}index.html">Úvod</a></span>']
+    items = [f'<li><a href="{r}index.html">Úvod</a></li>']
     for label, href in crumbs:
         if href:
-            parts.append(f'<span><a href="{r}{href}">{label}</a></span>')
+            items.append(f'<li><a href="{r}{href}">{label}</a></li>')
         else:
-            parts.append(f'<span>{label}</span>')
-    return f'<div class="wrap"><div class="crumbs">{"".join(parts)}</div></div>'
+            items.append(f'<li aria-current="page">{label}</li>')
+    return ('<div class="wrap"><nav class="gov-breadcrumbs crumbs" aria-label="Drobečková navigace">'
+            f'<ul>{"".join(items)}</ul></nav></div>')
 
 
 MOCKBAR = """<div class="mockbar"><div class="wrap">
@@ -224,9 +240,14 @@ TPL = """<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title} — Úřad rozvoje území</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+<link rel="stylesheet" href="{r}assets/gov/styles/tokens.css">
+<link rel="stylesheet" href="{r}assets/uru-tokens.css">
+<link rel="stylesheet" href="{r}assets/gov-fonts.css">
+<link rel="stylesheet" href="{r}assets/gov/styles/styles.css">
+<link rel="stylesheet" href="{r}assets/gov/styles/layout.css">
+<link rel="stylesheet" href="{r}assets/gov/styles/content.css">
+<link rel="stylesheet" href="{r}assets/gov/styles/animations.css">
+<link rel="stylesheet" href="{r}assets/gov/styles/components.css">
 <link rel="stylesheet" href="{r}assets/uru.css">
 </head>
 <body>
@@ -237,7 +258,7 @@ TPL = """<!doctype html>
 <span>Úřad rozvoje území</span></a>
 <form class="header-search" role="search" action="{r}vyhledavani.html">
 <input type="search" name="q" placeholder="Hledejte v názvu, obsahu i v přílohách (PDF)…" aria-label="Vyhledávání">
-<button type="submit" aria-label="Hledat">&#128269;</button>
+<button type="submit" aria-label="Hledat">{search_icon}</button>
 </form>
 <span class="cmt" title="Zapracovaná připomínka č. 98: vyhledávací pole uvádí, že se prohledává i obsah příloh (PDF).">98</span>
 <span class="header-toggle" aria-hidden="true"></span>
@@ -255,15 +276,158 @@ TPL = """<!doctype html>
 """
 
 
+
+# --------------------------------------------------------------------------
+# převod vlastního značkování na komponenty design systému gov
+# --------------------------------------------------------------------------
+TAG_COLOR = {"valid": ("success", "subtle"), "invalid": ("error", "subtle"),
+             "superseded": ("warning", "subtle"), "neutral": ("primary", "subtle"),
+             "hist": ("neutral", "subtle")}
+
+
+def to_ds(html_body):
+    """Nahradí vlastní značkování komponentami design systému gov.
+
+    CSS design systému cílí zároveň na element i na třídu a varianty čte
+    z atributů data-*, takže komponenty jde použít v čistém HTML bez
+    běhového prostředí web komponent.
+    """
+
+    # ---- Button ----
+    def btn(m):
+        cls, attrs, label = m.group("cls"), m.group("attrs"), m.group("label")
+        typ = "outlined" if "ghost" in cls else "solid"
+        size = "s" if " sm" in " " + cls else "m"
+        href = re.search(r'href="([^"]*)"', attrs)
+        if href:
+            inner = f'<a class="element" href="{href.group(1)}">{label}</a>'
+        else:
+            inner = f'<button class="element" type="button">{label}</button>'
+        return (f'<span class="gov-button" data-color="primary" data-type="{typ}" '
+                f'data-size="{size}">{inner}</span>')
+
+    html_body = re.sub(r'<a class="(?P<cls>btn[^"]*)"(?P<attrs>[^>]*)>(?P<label>.*?)</a>',
+                       btn, html_body, flags=re.S)
+    html_body = re.sub(r'<button class="(?P<cls>btn[^"]*)"(?P<attrs>[^>]*)>(?P<label>.*?)</button>',
+                       btn, html_body, flags=re.S)
+
+    # ---- Tag ----
+    def tag(m):
+        color, typ = TAG_COLOR.get(m.group(1).strip(), ("neutral", "subtle"))
+        return (f'<span class="gov-tag" data-color="{color}" data-type="{typ}" data-size="s">'
+                f'<span class="element">{m.group(2)}</span></span>')
+
+    html_body = re.sub(r'<span class="tag ([a-z]+)">(.*?)</span>', tag, html_body, flags=re.S)
+
+    # ---- Chip (aktivní filtry) ----
+    html_body = html_body.replace(
+        '<div class="chips" data-chips></div>',
+        '<div class="chips gov-chips" data-chips></div>')
+
+    # ---- Message (zvýrazněné boxy) ----
+    BOX = {"change": ("warning", "subtle"), "edge": ("primary", "subtle"),
+           "note": ("neutral", "subtle"), "gap": ("success", "subtle")}
+
+    def box(m):
+        color, typ = BOX.get(m.group(1), ("neutral", "subtle"))
+        return (f'<div class="gov-message" data-color="{color}" data-type="{typ}" role="status">'
+                f'<span>{gicon("warn", "gov-message__icon")}</span>'
+                f'<div class="gov-message__content">{m.group(2)}</div></div>')
+
+    html_body = re.sub(r'<div class="box ([a-z]+)">(.*?)</div>\s*(?=<|$)', box, html_body, flags=re.S)
+
+    def box_attrs(m):
+        pre, kind, inner = m.group(1), m.group(2), m.group(3)
+        color, typ = BOX.get(kind, ("neutral", "subtle"))
+        return (f'<div{pre} class="gov-message" data-color="{color}" data-type="{typ}" role="status">'
+                f'<span>{gicon("warn", "gov-message__icon")}</span>'
+                f'<div class="gov-message__content">{inner}</div></div>')
+
+    html_body = re.sub(r'<div((?:\s+[a-z-]+="[^"]*")+) class="box ([a-z]+)">(.*?)</div>\s*(?=<|$)',
+                       box_attrs, html_body, flags=re.S)
+
+    # ---- Accordion ----
+    def acc(m):
+        attrs, label, body = m.group(1), m.group(2), m.group(3)
+        ident = re.search(r'id="([^"]*)"', attrs)
+        i = f' id="{ident.group(1)}"' if ident else ""
+        op = " open" if re.search(r'\sopen(?=[\s>])', attrs) else ""
+        extra = " data-faq" if "data-faq" in attrs else ""
+        return (f'<div class="gov-accordion-item" data-size="m" role="listitem"{extra}>'
+                f'<details class="gov-accordion-item__details"{i}{op}>'
+                f'<summary class="gov-accordion-item__summary">'
+                f'<span class="gov-accordion-item__title"><span slot="label">{label}</span></span>'
+                f'<span class="gov-accordion-item__right"><span class="gov-accordion-item__arrow">'
+                f'{gicon("chevron-down")}</span></span></summary>'
+                f'<div class="gov-accordion-item__content">{body}</div></details></div>')
+
+    html_body = re.sub(
+        r'<details class="acc"([^>]*)>\s*<summary>(.*?)</summary>\s*<div class="body">(.*?)</div>\s*</details>',
+        acc, html_body, flags=re.S)
+    html_body = re.sub(r'(\s*)((?:<div class="gov-accordion-item".*?</details></div>\s*){1,})',
+                       lambda m: m.group(1) + '<div class="gov-accordion" role="list">'
+                                 + m.group(2).strip() + '</div>',
+                       html_body, flags=re.S)
+
+    # ---- Tile (rozcestníky) ----
+    def tile(m):
+        href, inner = m.group(1), m.group(2)
+        order = re.search(r'<span class="order">(.*?)</span>', inner, re.S)
+        h3 = re.search(r'<h3>(.*?)</h3>', inner, re.S)
+        p = re.search(r'<p>(.*?)</p>', inner, re.S)
+        if not h3:
+            return m.group(0)
+        head = f'<span class="tile-order">{order.group(1)}</span>' if order else ""
+        desc = p.group(1) if p else ""
+        return (f'<div class="gov-tile" data-size="m" data-orientation="vertical" data-clickable="1">'
+                f'<div class="gov-tile__content"><div class="gov-tile__text">{head}'
+                f'<div class="gov-tile__title"><a class="gov-tile__link" href="{href}">{h3.group(1)}</a>'
+                f'<span class="gov-tile__icon">{gicon("chevron-right")}</span></div>'
+                f'<div class="gov-tile__annotation gov-tile__annotation--padding">{desc}</div>'
+                f'</div></div></div>')
+
+    html_body = re.sub(r'<a class="card" href="([^"]*)"[^>]*>(.*?)</a>', tile, html_body, flags=re.S)
+
+    def tile_static(m):
+        inner = m.group(1)
+        h3 = re.search(r'<h3>(.*?)</h3>', inner, re.S)
+        p = re.search(r'<p>(.*?)</p>', inner, re.S)
+        if not h3 or "<ul>" in inner:
+            return m.group(0)
+        desc = p.group(1) if p else ""
+        return (f'<div class="gov-tile" data-size="m" data-orientation="vertical">'
+                f'<div class="gov-tile__content"><div class="gov-tile__text">'
+                f'<div class="gov-tile__title">{h3.group(1)}</div>'
+                f'<div class="gov-tile__annotation">{desc}</div></div></div></div>')
+
+    html_body = re.sub(r'<div class="card">(.*?)</div>', tile_static, html_body, flags=re.S)
+    html_body = html_body.replace('<div class="card">', '<div class="sitemap-card">')
+
+    # ---- Empty (prázdné stavy výpisů) ----
+    html_body = re.sub(
+        r'<div class="empty"([^>]*)>(.*?)</div>',
+        lambda m: (f'<div class="gov-empty" data-size="m" data-direction="column" '
+                   f'data-align="center"{m.group(1)}>'
+                   f'<div class="gov-empty__content"><p>{m.group(2)}</p></div></div>'),
+        html_body, flags=re.S)
+
+    return html_body
+
+
 def build_page(p):
     depth = p["path"].count("/")
     r = rel(depth)
     banner = ""
     if p.get("banner", True):
-        banner = ('<div class="infobanner"><div class="wrap"><span>&#9888;</span>'
-                  f'<p>{BANNER.format(r=r)}<span class="meta">{BANNER_META}</span></p>'
-                  '<button class="close" type="button" aria-label="Zavřít">&times;</button></div></div>')
-    body = p["body"]
+        banner = ('<div class="gov-infobar infobanner" data-color="primary" data-type="bold">'
+                  '<section class="gov-infobar__section"><div class="wrap">'
+                  f'<span>{gicon("warn")}</span>'
+                  f'<div class="gov-infobar__content"><p>{BANNER.format(r=r)}'
+                  f'<span class="meta">{BANNER_META}</span></p></div>'
+                  '<span class="gov-button gov-infobar__close" data-color="primary" data-type="base" data-size="s">'
+                  f'<button class="element close" type="button" aria-label="Zavřít">{gicon("x-lg")}</button></span>'
+                  '</div></section></div>')
+    body = to_ds(p["body"])
     if p.get("section") in SUBNAV and p.get("sidebar", True):
         body = (f'<div class="cols-side">{render_subnav(p["section"], p["path"], r)}'
                 f'<div class="content">{body}</div></div>')
@@ -282,6 +446,7 @@ def build_page(p):
         crumbs=render_crumbs(p.get("crumbs"), r),
         body=head + body,
         footer=footer(r),
+        search_icon=gicon("search"),
         c98=cmt(98, "Chybí indikace, že se prohledává i obsah příloh (PDF)."),
     )
     # relativní odkazy uvnitř těla stránek
