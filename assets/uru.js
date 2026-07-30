@@ -231,9 +231,15 @@
     var cmt = bar.querySelector('[data-cmt-toggle]');
     if (cmt) {
       if (localStorage.getItem('uru-cmt') === 'off') document.body.classList.add('hide-cmt');
+      var setLabel = function () {
+        cmt.textContent = document.body.classList.contains('hide-cmt')
+          ? 'Zobrazit poznámky' : 'Skrýt poznámky';
+      };
+      setLabel();
       cmt.addEventListener('click', function () {
         var off = document.body.classList.toggle('hide-cmt');
         localStorage.setItem('uru-cmt', off ? 'off' : 'on');
+        setLabel();
       });
     }
   }

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """Sekce Vyhrazené stavby."""
 from build import cmt
+import content_vs_extra as X
 
 C = [("Vyhrazené stavby", "vyhrazene-stavby/index.html")]
 
@@ -84,30 +85,7 @@ CO_SPADA = """
   <div data-verdict="jine" style="display:none" class="box edge"><h3>Pravděpodobně obecný stavební úřad</h3><p>Pokud si nejste jistí, napište nám — příslušnost ověříme bez podání žádosti.</p></div>
 </div>
 
-<h2>Přehled kategorií vyhrazených staveb</h2>
-
-<h3>Dopravní stavby — dálnice</h3>
-<p>Stavby dálnic a rychlostních silnic celostátního významu.</p>
-<ul><li>Dálnice a rychlostní silnice (investor: ŘSD)</li><li>Přeložky dálnic a rychlostních silnic</li></ul>
-
-<h3>Dopravní stavby — dráhy</h3>
-<p>Stavby železničních drah, metra a tramvajových tratí celostátního významu.</p>
-<ul><li>Železniční koridory a tratě (investor: Správa železnic)</li>
-<li>Metro ve statutárních městech</li><li>Tramvajové dráhy ve statutárních městech</li>
-<li>Stavby drah dle zákona č. 266/1994 Sb.</li></ul>
-
-<h3>Dopravní stavby — letecké</h3>
-<p>Civilní letecké stavby.</p>
-<ul><li>Dráhy ke vzletu a přistávání letadel</li><li>Plochy určené k pohybu a stání letadel</li>
-<li>Letiště mezinárodního významu</li></ul>
-
-<h3>Energetické stavby</h3>
-<p>Stavby přenosové a přepravní soustavy a navazující infrastruktury.</p>
-<ul><li>Vedení přenosové soustavy a transformovny</li><li>Přepravní soustava plynu a zásobníky</li>
-<li>Výrobny elektřiny nad stanovený instalovaný výkon</li></ul>
-
-<h3>Strategické investiční stavby</h3>
-<p>Stavby vymezené zákonem o urychlení výstavby strategicky významné infrastruktury.</p>
+""" + X.KATEGORIE + """
 
 <div class="box edge">
   <h3>Hraniční případy</h3>
@@ -157,30 +135,13 @@ RIZENI = RIZENI_TABS.replace('@A1@', ' aria-current="page"').replace('@A2@', '')
     <p>Proti rozhodnutí lze podat odvolání. Po marném uplynutí lhůty nabývá rozhodnutí právní moci.</p></li>
 </ol>
 
-<h2 id="poplatky">Správní poplatky</h2>
-<p>Některé úkony ÚRÚ podléhají správním poplatkům podle sazebníku správních poplatků.
-Toto je primární místo, kde se poplatky popisují; ostatní stránky sem pouze odkazují.""" + cmt(19, "Správní poplatky jsou zde i na str. 7. Určit primární umístění a druhé místo řešit odkazem.") + """</p>
-<table class="t"><tr><th>Úkon</th><th>Poplatek</th></tr>
-<tr><td>Žádost o povolení záměru</td><td>dle sazebníku</td></tr>
-<tr><td>Změna rozhodnutí</td><td>dle sazebníku</td></tr></table>
-
-<h2>Další typy řízení</h2>
-<ul>
-  <li>Vyvlastňovací řízení</li>
-  <li>Odvolací řízení</li>
-  <li>Zkušební provoz a kolaudace</li>
-</ul>
+""" + X.RIZENI_DETAIL + """
 """
 
 RIZENI_U = RIZENI_TABS.replace('@A1@', '').replace('@A2@', ' aria-current="page"') + """
 <h2>Nahlížení do spisu</h2>
-<p>Účastníci řízení a osoby, které prokáží právní zájem, mohou nahlížet do spisu vedeného ÚRÚ.
-Nahlížení se sjednává předem, spis je veden v elektronické podobě.</p>
-<ol class="steps">
-  <li><h3>Zjistěte spisovou značku</h3><p>Najdete ji v oznámení o zahájení řízení nebo na úřední desce.</p></li>
-  <li><h3>Požádejte o nahlédnutí</h3><p>Písemně, datovou schránkou nebo osobně. Uveďte, v jakém postavení do spisu nahlížíte.</p></li>
-  <li><h3>Nahlédnutí do spisu</h3><p>Úřad sjedná termín. Z dokumentů lze pořizovat kopie a výpisy.</p></li>
-</ol>
+<p>Účastníci řízení a osoby, které prokáží právní zájem, mohou nahlížet do spisu vedeného ÚRÚ.</p>
+""" + X.UCASTNICI_DETAIL + """
 <h2>Co se mění pro účastníky řízení</h2>
 <p>Podrobnosti k dopadům novely najdete na stránce <a href="{{r}}vyhrazene-stavby/co-meni-novela.html">Co změní novela SZ</a>.</p>
 """
@@ -251,9 +212,8 @@ Portálu stavebníka do evidence elektronických dokumentací.</p>
 """
 
 PORTAL = """
-<p>Žádosti o povolení vyhrazené stavby se podávají prostřednictvím Portálu stavebníka — státního online systému
-pro komunikaci se stavebními úřady. Před přechodem na portál si přečtěte, co budete potřebovat.</p>
-
+<p>Žádosti o povolení vyhrazené stavby se podávají prostřednictvím Portálu stavebníka.</p>
+""" + X.PORTAL_DETAIL + """
 <h2>Co potřebujete mít připravené</h2>
 <ul>
   <li>Prostředek pro elektronickou identifikaci (bankovní identita, eObčanka, NIA ID)</li>
@@ -309,6 +269,14 @@ FAQ_VS = """
 <details class="acc" data-faq><summary>Jak a kam uhradit správní poplatek?</summary><div class="body"><p>Údaje k platbě obdržíte spolu s výzvou k úhradě.</p></div></details>
 </div>
 """
+
+for _grp, _qs in X.FAQ_EXTRA:
+    FAQ_VS += f'<div data-faqgroup><h2>{_grp}</h2>'
+    for _q, _a in _qs:
+        FAQ_VS += (f'<details class="acc" data-faq><summary>{_q}</summary>'
+                   f'<div class="body"><p>{_a}</p></div></details>')
+    FAQ_VS += '</div>'
+
 
 PAGES = [
     dict(path="vyhrazene-stavby/index.html", title="Vyhrazené stavby", section="vyhrazene-stavby",

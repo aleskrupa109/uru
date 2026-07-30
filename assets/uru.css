@@ -24,10 +24,12 @@ body { background: var(--background-page); color: var(--text-primary); }
    Bez atributu data-mode="edit" je maketa čistý web bez nástrojů a bez značek
    připomínek — v této podobě se dá poslat třetí straně. */
 .mockbar { display: none; }
-.cmt { display: none; }
+.cmt, .mock-note { display: none; }
 html[data-mode="edit"] .mockbar { display: block; }
 html[data-mode="edit"] .cmt { display: inline-flex; }
-html[data-mode="edit"] body.hide-cmt .cmt { display: none; }
+html[data-mode="edit"] .mock-note { display: block; }
+html[data-mode="edit"] body.hide-cmt .cmt,
+html[data-mode="edit"] body.hide-cmt .mock-note { display: none; }
 
 /* ---------- lišta makety (mimo design systém) ---------- */
 .mockbar { background: var(--color-neutral-1000); color: var(--color-neutral-0); font-size: var(--font-size-body-xs); position: sticky; top: 0; z-index: 80; }

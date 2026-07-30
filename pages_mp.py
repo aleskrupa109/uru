@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """Sekce Metodická podpora."""
 from build import cmt
+import content_mp_extra as M
 
 C = [("Metodická podpora", "metodicka-podpora/index.html")]
 
@@ -164,7 +165,7 @@ def faq(active, items):
     return out
 
 
-FAQ_SU = faq(0, [
+FAQ_SU = faq(0, M.FAQ_SU_EXTRA + [
     ("Kde najdu metodické stanovisko k paragrafu nového stavebního zákona?",
      'V databázi <a href="{{r}}metodicka-podpora/metodicka-stanoviska.html">Metodická stanoviska a výklady</a> s filtrem podle oblasti a zákona.'),
     ("Jak poznám, že stanovisko, které mám, je stále aktuální?",
@@ -175,7 +176,7 @@ FAQ_SU = faq(0, [
      'Na metodika podle věcné oblasti — viz <a href="{{r}}metodicka-podpora/kontakty-na-metodiky.html">Kontakty na metodiky</a>.'),
 ])
 
-FAQ_DO = faq(1, [
+FAQ_DO = faq(1, M.FAQ_DO_EXTRA + [
     ("Co se mění v dokumentech, které vydávám?",
      "Mění se typ vydávaného dokumentu a způsob jeho zapojení do řízení vedeného ÚRÚ."),
     ("Komu vyjádření zasílám?",
@@ -218,6 +219,8 @@ Tato situace se řídí jinými pravidly než běžné přechodné ustanovení.<
   <tr><td>Záměr dosud nepodaný</td><td>ÚRÚ</td><td>Podat rovnou u ÚRÚ</td></tr>
 </table>
 
+""" + M.PRECHOD_DETAIL + """
+
 <h2>Změny pro dotčené orgány</h2>
 <p>Mění se typ vydávaného dokumentu a způsob jeho zapojení do řízení. Podrobnosti najdete v
 <a href="{{r}}metodicka-podpora/caste-dotazy-dotcene-organy.html">Častých dotazech pro dotčené orgány</a>.</p>
@@ -232,8 +235,7 @@ STANDARDIZACE = """
   <a href="{{r}}metodicka-podpora/standardizace.html" aria-current="page">Nová právní úprava</a>
   <a href="{{r}}metodicka-podpora/standardizace.html#stara">Předchozí právní úprava</a>
 </div>
-<h2>Jednotný standard územně plánovací dokumentace</h2>
-<p>Standard sjednocuje strukturu, značení a datový model územně plánovací dokumentace. Je závazný pro pořizovatele i zpracovatele.</p>
+""" + M.STANDARDIZACE_DETAIL + """
 <ul class="files">
   <li><span class="ft">PDF</span><span class="grow"><span class="name">Jednotný standard — metodika</span><br>
     <span class="fmeta">verze 2.0 · platné od 1. 7. 2024</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
@@ -245,16 +247,7 @@ STANDARDIZACE = """
 """
 
 KONZULTACNI = """
-<h2>Komu středisko slouží</h2>
-<ul>
-  <li>Úřadům územního plánování — metodické vedení ze zákona</li>
-  <li>Krajským úřadům při pořizování zásad územního rozvoje</li>
-  <li>Obcím jako pořizovatelům územních plánů</li>
-</ul>
-<h2>Komu středisko neslouží</h2>
-<p>Veřejnosti a stavebníkům. Odpovědi na obecné otázky ke stavebnímu právu najdete v databázi
-<a href="{{r}}metodicka-podpora/tisic-otazek.html">Tisíc otázek ke stavebnímu právu</a>.</p>
-
+""" + M.KONZULTACNI_DETAIL + """
 <h2>Položit dotaz""" + cmt(50, "Chybí strukturovaný formulář dotazu. Stránka sama vyjmenovává, co musí dotaz obsahovat.") + """</h2>
 <div class="filters">
   <div class="row">
@@ -272,15 +265,7 @@ KONZULTACNI = """
 </div>
 """
 
-TISIC = """
-<p>Databáze otázek a odpovědí ke stavebnímu právu. Obsah je členěný podle právní úpravy, ke které se vztahuje.</p>
-<div class="grid g2">
-  <a class="card" href="{{r}}metodicka-podpora/tisic-otazek-seznam.html"><h3>Nová právní úprava (283/2021 Sb.)</h3>
-    <p>Otázky a odpovědi k platnému stavebnímu zákonu.</p></a>
-  <a class="card" href="{{r}}metodicka-podpora/tisic-otazek-seznam.html"><h3>Předchozí právní úprava (183/2006 Sb.)</h3>
-    <p>Historické odpovědi ponechané kvůli kontinuitě a soudním sporům.</p></a>
-</div>
-"""
+TISIC = M.TISIC_ROZCESTNIK
 
 TISIC_SEZNAM = """
 <div class="filters">
@@ -294,13 +279,9 @@ TISIC_SEZNAM = """
   </div>
   <p class="hint" style="margin:0">Přepínač určuje, zda se hledá jen v názvu hesla, nebo i v textu odpovědí.""" + cmt(53, "Není zřejmé, zda vyhledávací pole hledá v názvech hesel, nebo i v textu odpovědí.") + """</p>
 </div>
-<ul class="doclist" style="margin-top:16px">
-  <li data-h><h3><a href="{{r}}metodicka-podpora/tisic-otazek-heslo.html">Dělení pozemků</a></h3><p>12 otázek</p></li>
-  <li data-h><h3><a href="{{r}}metodicka-podpora/tisic-otazek-heslo.html">Dotčené orgány</a></h3><p>28 otázek</p></li>
-  <li data-h><h3><a href="{{r}}metodicka-podpora/tisic-otazek-heslo.html">Kolaudace</a></h3><p>19 otázek</p></li>
-  <li data-h><h3><a href="{{r}}metodicka-podpora/tisic-otazek-heslo.html">Odstraňování staveb</a></h3><p>14 otázek</p></li>
-  <li data-h><h3><a href="{{r}}metodicka-podpora/tisic-otazek-heslo.html">Územní plán obce</a></h3><p>41 otázek</p></li>
-</ul>
+<ul class="doclist" style="margin-top:16px">""" + "".join(
+  f'<li data-h><h3><a href="{{{{r}}}}metodicka-podpora/tisic-otazek-heslo.html">{t}</a></h3>'
+  f'<p>{n} otázek</p></li>' for t, n in M.HESLA) + """</ul>
 """
 
 TISIC_HESLO = """

@@ -39,7 +39,7 @@
 <button data-export type="button">Stáhnout texty</button>
 <label class="btn-import" style="cursor:pointer;border:1px solid #4b5563;padding:4px 12px;border-radius:999px">Načíst texty<input data-import type="file" accept="application/json" hidden></label>
 <button data-clear type="button">Zahodit úpravy</button>
-<button data-cmt-toggle type="button">Skrýt značky</button>
+<button data-cmt-toggle type="button">Skrýt poznámky</button>
 </div></div>
 <header class="site-header"><div class="wrap">
 <a class="brand" href="../index.html">
@@ -131,7 +131,7 @@
 <div class="cols-side"><nav class="subnav" aria-label="Obsah sekce"><h2>Metodická podpora</h2><a href="../metodicka-podpora/metodicka-stanoviska.html">Metodická stanoviska a výklady</a><a href="../metodicka-podpora/caste-dotazy.html">Časté dotazy</a><a href="../metodicka-podpora/prechodove-obdobi.html" aria-current="page">Přechodové období</a><a href="../metodicka-podpora/standardizace.html">Standardizace územního plánování</a><a href="../metodicka-podpora/konzultacni-stredisko.html">Konzultační středisko</a><a href="../metodicka-podpora/tisic-otazek.html">Tisíc otázek ke stavebnímu právu</a><a href="../metodicka-podpora/dotcene-organy.html">Přehled dotčených orgánů</a><a href="../metodicka-podpora/kontakty-na-metodiky.html">Kontakty na metodiky</a></nav><div class="content"><div class="page-head"><h1>Přechodové období</h1><p class="perex">Co se děje s rozpracovanými řízeními, jak probíhá delimitace a co se mění pro dotčené orgány.</p></div>
 <div class="gov-message" data-color="warning" data-type="bold" role="status"><span><svg class="gov-message__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566ZM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5Zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z" fill="currentColor"/></svg></span><div class="gov-message__content">
   <h3>Protějšek pro stavebníky</h3>
-  <p>Tato stránka popisuje dopady pro úřady a dotčené orgány. Stejné téma z pohledu stavebníků najdete na stránce
+  <p class="mock-note">Tato stránka popisuje dopady pro úřady a dotčené orgány. Stejné téma z pohledu stavebníků najdete na stránce
   <a href="../vyhrazene-stavby/co-meni-novela.html">Co změní novela SZ</a>. Obě stránky používají stejný vzor a vzájemně se odkazují.<span class="cmt" title="Zapracovaná připomínka č. 44: Tato stránka je protějškem nové stránky „Co změní novela SZ&quot; pro druhé publikum. Provázat a sjednotit vzor.">44</span></p>
 </div></div><h2>Rozpracovaná řízení</h2>
 <p>Řízení zahájená přede dnem účinnosti novely se dokončují podle dosavadních pravidel, není-li v přechodných
@@ -147,12 +147,29 @@ Tato situace se řídí jinými pravidly než běžné přechodné ustanovení.<
   <tr><td>Záměr dosud nepodaný</td><td>ÚRÚ</td><td>Podat rovnou u ÚRÚ</td></tr>
 </table>
 
+
+<h2>Jak poznat datum zahájení řízení</h2>
+<p>Rozhodující je datum doručení žádosti stavebnímu úřadu, nikoli datum jejího podání
+ani datum vydání prvního úkonu v řízení.</p>
+<div class="gov-message" data-color="primary" data-type="subtle" role="status"><span><svg class="gov-message__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566ZM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5Zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z" fill="currentColor"/></svg></span><div class="gov-message__content">
+  <h3>Na co dát pozor</h3>
+  <ul>
+    <li>Integraci dotčených orgánů podle nové úpravy nelze aplikovat zpětně na již zahájená řízení.</li>
+    <li>Projektová dokumentace zpracovaná podle dosavadní úpravy zůstává použitelná.</li>
+    <li>Závazná stanoviska vydaná před účinností novely zůstávají platná.</li>
+  </ul>
+</div></div><h2>Jak postupovat při přijetí podkladů od stavebního úřadu</h2>
+<p>Podklady k řízení přicházejí prostřednictvím Portálu stavebníka, nikoli e-mailem.
+Lhůta pro vydání vyjádření je 30 dnů od doručení podkladů. Dotčený orgán vydává vyjádření
+samostatně v rámci koordinovaného stanoviska.</p>
+
+
 <h2>Změny pro dotčené orgány</h2>
 <p>Mění se typ vydávaného dokumentu a způsob jeho zapojení do řízení. Podrobnosti najdete v
 <a href="../metodicka-podpora/caste-dotazy-dotcene-organy.html">Častých dotazech pro dotčené orgány</a>.</p>
 
 <h2>Vzory nových dokumentů</h2>
-<p>Vzory a formuláře jsou spravovány na jednom místě v sekci
+<p class="mock-note">Vzory a formuláře jsou spravovány na jednom místě v sekci
 <a href="../vyhrazene-stavby/dokumenty-a-formulare.html">Dokumenty a formuláře</a>.<span class="cmt" title="Zapracovaná připomínka č. 46: „Vzory dokumentů ke stažení&quot; duplikují Dokumenty a formuláře. Určit jedno místo správy.">46</span></p>
 </div></div>
 </div></main>

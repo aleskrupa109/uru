@@ -284,7 +284,7 @@ MOCKBAR = """<div class="mockbar"><div class="wrap">
 <button data-export type="button">Stáhnout texty</button>
 <label class="btn-import" style="cursor:pointer;border:1px solid #4b5563;padding:4px 12px;border-radius:999px">Načíst texty<input data-import type="file" accept="application/json" hidden></label>
 <button data-clear type="button">Zahodit úpravy</button>
-<button data-cmt-toggle type="button">Skrýt značky</button>
+<button data-cmt-toggle type="button">Skrýt poznámky</button>
 </div></div>"""
 
 
@@ -566,6 +566,26 @@ def to_ds(html_body):
                    f'<div class="gov-empty__content"><p>{m.group(2)}</p></div></div>'),
         html_body, flags=re.S)
 
+
+    # ---- poznámky makety ----
+    # Vysvětlující poznámky (odstavce se značkou připomínky a zelené boxy) dostanou
+    # třídu mock-note. Zobrazují se jen v pracovním režimu a jde je vypnout jedním
+    # tlačítkem spolu se značkami.
+    def mark_note(m):
+        tag, attrs, inner = m.group(1), m.group(2), m.group(3)
+        if 'class="cmt"' not in inner:
+            return m.group(0)
+        if 'class="' in attrs:
+            attrs = re.sub(r'class="([^"]*)"', lambda k: f'class="{k.group(1)} mock-note"', attrs, count=1)
+        else:
+            attrs += ' class="mock-note"'
+        return f'<{tag}{attrs}>{inner}</{tag}>'
+
+    html_body = re.sub(r'<(p)((?:\s+[a-z-]+="[^"]*")*)>((?:(?!</p>).)*?)</p>',
+                       mark_note, html_body, flags=re.S)
+    html_body = html_body.replace('<div class="gov-message" data-color="success"',
+                                  '<div class="gov-message mock-note" data-color="success"')
+
     return html_body
 
 
@@ -591,7 +611,8 @@ def build_page(p):
         if p.get("perex"):
             head += f'<p class="perex">{p["perex"]}</p>'
         if p.get("updated"):
-            head += f'<p class="updated">{p["updated"]}</p>'
+            cls = "updated mock-note" if 'class="cmt"' in p["updated"] else "updated"
+            head += f'<p class="{cls}">{p["updated"]}</p>'
         head += '</div>'
     # v návrhu je nadpis podstránky i perex součástí pravého bílého panelu
     if p.get("section") in SUBNAV and p.get("sidebar", True):
