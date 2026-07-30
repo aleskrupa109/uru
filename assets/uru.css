@@ -407,8 +407,26 @@ body.editing [data-edit]:focus { outline: 2px solid var(--color-success-600); ba
 .hp-photo img { width: 100%; height: auto; display: block; border-radius: var(--corner-radius-m); }
 .hp-photo figcaption { margin-top: var(--spacing-s); font-size: var(--font-size-body-s); color: var(--text-tertiary); }
 
-/* ---------- infobanner: ikona na barevném podkladu je bílá ---------- */
-.gov-infobar[data-type="bold"] [slot="icon"],
-.gov-infobar[data-type="bold"] > section > span,
-.infobanner .gov-infobar__section > .wrap > span { color: var(--text-white-fixed); }
-.infobanner svg { color: inherit; }
+/* ---------- infobanner ----------
+   Barevný pruh jde přes celou šířku okna, obsah se drží v obsahovém sloupci.
+   Šířku kontejneru řídí design systém proměnnou --container-width, ikona i tlačítko
+   zavření si barvu berou z varianty bold. */
+.infobanner { --container-width: var(--uru-wrap); }
+.infobanner .gov-infobar__section {
+  align-items: center;
+  gap: var(--spacing-s-nudge);
+  padding: var(--spacing-m) 0;
+}
+@media (max-width: 76.5em) {
+  .infobanner .gov-infobar__section { padding-left: var(--spacing-l); padding-right: var(--spacing-l); }
+}
+.infobanner p { font-size: var(--font-size-body-s); line-height: 1.5; }
+.infobanner a { color: inherit; }
+.infobanner .gov-infobar__close { margin-left: auto; }
+.infobanner .gov-infobar__close .element {
+  background: none; border: 0; color: var(--text-white-fixed); cursor: pointer;
+  display: grid; place-items: center; padding: var(--spacing-xs);
+}
+
+/* ---------- znak úřadu v hlavičce ---------- */
+.brand svg { height: 2.375rem; width: auto; color: var(--color-primary-600); flex: none; }

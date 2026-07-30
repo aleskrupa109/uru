@@ -107,7 +107,7 @@ SUBNAV = {
 }
 
 BANNER = (
-    "Od 1. 7. 2026 vznikl Úřad rozvoje území (ÚRÚ). Přebírá agendy zaniklého DESÚ i ÚÚR. "
+    "Od 1. 1. 2027 vznikl Úřad rozvoje území (ÚRÚ). Přebírá agendy zaniklého DESÚ i ÚÚR. "
     "Vyhrazené stavby vyřizujeme v sekci <a href='{r}vyhrazene-stavby/index.html'>Vyhrazené stavby</a>, "
     "obsah a metodiky ÚÚR najdete v sekci <a href='{r}uzemni-rozvoj/index.html'>Územní rozvoj</a>."
 )
@@ -208,8 +208,11 @@ GICON = {
 }
 
 
-def gicon(name, cls=""):
-    return GICON[name].format(c=cls)
+def gicon(name, cls="", slot=False):
+    svg = GICON[name].format(c=cls)
+    if slot:
+        svg = svg.replace("<svg", '<svg slot="icon"', 1)
+    return svg
 
 
 def icon():
@@ -323,7 +326,7 @@ TPL = """<!doctype html>
 <title>{title} — Úřad rozvoje území</title>
 <link rel="stylesheet" href="{r}assets/gov/styles/tokens.css">
 <link rel="stylesheet" href="{r}assets/uru-tokens.css">
-<link rel="stylesheet" href="{r}assets/gov-fonts.css">
+<link rel="stylesheet" href="{r}assets/gov/fonts/roboto.css">
 <link rel="stylesheet" href="{r}assets/gov/styles/styles.css">
 <link rel="stylesheet" href="{r}assets/gov/styles/layout.css">
 <link rel="stylesheet" href="{r}assets/gov/styles/content.css">
@@ -335,7 +338,7 @@ TPL = """<!doctype html>
 {mockbar}
 <header class="site-header"><div class="wrap">
 <a class="brand" href="{r}index.html">
-<img src="{r}assets/img/logo.svg" width="30" height="38" alt="">
+{logo}
 <span>Úřad rozvoje území</span></a>
 <form class="header-search" role="search" action="{r}vyhledavani.html">
 <input type="search" name="q" placeholder="Hledejte v názvu, obsahu i v přílohách (PDF)…" aria-label="Vyhledávání">
@@ -522,13 +525,16 @@ def build_page(p):
     r = rel(depth)
     banner = ""
     if p.get("banner", True):
+        # Struktura podle design systému: .gov-infobar drží barevný pruh přes celou
+        # šířku okna, .gov-infobar__section je zároveň flex řádek a centrovaný
+        # kontejner — vlastní obal by rozvržení rozbil.
         banner = ('<div class="gov-infobar infobanner" data-color="primary" data-type="bold">'
-                  '<section class="gov-infobar__section"><div class="wrap">'
-                  f'<span slot="icon">{gicon("warn")}</span>'
+                  '<section class="gov-infobar__section">'
+                  f'<span>{gicon("warn", cls="", slot=True)}</span>'
                   f'<div class="gov-infobar__content"><p>{BANNER.format(r=r)}</p></div>'
                   '<span class="gov-button gov-infobar__close" data-color="primary" data-type="base" data-size="s">'
                   f'<button class="element close" type="button" aria-label="Zavřít">{gicon("x-lg")}</button></span>'
-                  '</div></section></div>')
+                  '</section></div>')
     body = to_ds(p["body"])
     if p.get("section") in SUBNAV and p.get("sidebar", True):
         body = (f'<div class="cols-side">{render_subnav(p["section"], p["path"], r)}'
@@ -549,6 +555,7 @@ def build_page(p):
         body=head + body,
         footer=footer(r),
         search_icon=gicon("search"),
+        logo=open(os.path.join(ROOT, "assets", "img", "logo.svg"), encoding="utf-8").read().strip(),
         c98=cmt(98, "Chybí indikace, že se prohledává i obsah příloh (PDF)."),
     )
     # relativní odkazy uvnitř těla stránek

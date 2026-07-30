@@ -140,10 +140,10 @@ Fotografie jsou v `assets/img/`:
   spuštění bude potřeba licencovaná verze nebo vlastní fotografie.
 - `sidlo-uradu.jpeg` — fotografie sídla v bloku Informace o úřadu. Má jen 400 × 225 px, takže se
   na šířku sloupce roztahuje a rozostřuje. Pro spuštění bude potřeba snímek alespoň 1200 px na šířku.
-- `logo.svg` — **zástupný znak úřadu.** Logo podle jednotného vizuálního stylu státní správy
-  (bílý dvouocasý lev na červeném štítu) není součástí ikonové sady design systému; dodává se
-  s logo manuálem JVS. Až soubor budeš mít, stačí přepsat `assets/img/logo.svg` — hlavička se
-  na něj odkazuje a nic dalšího se nemění.
+- `logo.svg` — **znak úřadu, digitální lev.** Vektorizovaný z rastrového podkladu dodaného
+  úřadem: pixelová kresba je převedená na mřížku 18 × 24 obdélníků, shoda s předlohou 0,98.
+  Vkládá se do hlavičky inline, takže barvu bere z tokenu primární barvy (`currentColor`).
+  Výměna za oficiální soubor podle logo manuálu JVS = přepsat tento soubor a spustit `build.py`.
 
 ### Úprava primitiv
 
