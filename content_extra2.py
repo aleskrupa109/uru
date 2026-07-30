@@ -290,36 +290,62 @@ KONTAKTY_ODDELENI = """
 
 # ---------------------------------------------------------------- Územní rozvoj
 EVIDENCE = """
-<h2>K čemu evidence slouží</h2>
-<p>Evidence územně plánovací činnosti shromažďuje údaje o pořizované a vydané územně
-plánovací dokumentaci obcí a krajů. Data slouží pro celostátní přehled i pro navazující
-analytické podklady.</p>
+<p>Evidence územně plánovací činnosti je prováděna na základě § 162 zákona č. 183/2006 Sb.,
+o územním plánování a stavebním řádu. Postup orgánů územního plánování při evidenci je dále
+upraven Metodikou OÚP MMR pro postup orgánů územního plánování při evidenci územně plánovací
+činnosti (dále jen Metodika OÚP MMR).</p>
 
-<h2>Jak evidence probíhá</h2>
+<h2>Dvě části evidence</h2>
+<p>Evidence územně plánovací činnosti má dvě relativně samostatné části:</p>
 <ul>
-  <li>Evidence dokumentace obcí probíhá průběžně na základě registračních listů,
-      které krajským úřadům zasílají úřady územního plánování.</li>
-  <li>Krajské úřady pořizují zápis do centrální databáze.</li>
-  <li>Evidence dokumentace velkých územních celků probíhá průběžně prostřednictvím aplikace.</li>
+  <li>evidenci územně plánovací činnosti obcí,</li>
+  <li>evidenci územně plánovací činnosti krajů.</li>
 </ul>
+<p>Evidence ÚPD a ÚPP obcí nyní probíhá průběžně, a to na základě registračních listů, které
+krajským úřadům zasílají jejich pořizovatelé (obecní úřady). Pracovníci krajských úřadů pak
+prostřednictvím aplikace iLAS pořizují zápis do centrální databáze.</p>
+<p>Evidence ÚPD a ÚPP velkých územních celků probíhá taktéž průběžně, a to prostřednictvím
+aplikace iKAS. Zápis do centrální databáze pořizují pověření pracovníci krajských úřadů.</p>
+<p>Bližší podrobnosti o postupu orgánů územního plánování při evidenci uvádí Metodika OÚP MMR.</p>
 
-<h2>Výstupy evidence</h2>
+<h2>Zveřejňování získaných údajů</h2>
+<p>Zveřejňování získaných údajů o územně plánovací činnosti v ČR je prováděno prostřednictvím:</p>
 <ul>
-  <li>Průběžně aktualizovaná data zveřejňovaná na webu úřadu</li>
-  <li>Statistiky (struktura pořizovatelů, průměrná doba procesu pořizování a další)</li>
-  <li>Články v odborných časopisech</li>
+  <li>průběžně aktualizovaných dat na webových stránkách úřadu a MMR;</li>
+  <li>ročních přehledů (internetových prezentací), které obsahují vedle přehledů o stavu územně
+      plánovací připravenosti obcí a krajů rovněž některé strukturně vývojové analýzy — schválené
+      ÚPD podle velikostních kategorií obcí, počty obcí bez ÚPD podle velikostních kategorií obcí,
+      struktury pořizovatelů ÚPD, průměrné doby procesu pořizování a další;</li>
+  <li>článků v časopisech, například Urbanismus a územní rozvoj nebo Moderní obec.</li>
 </ul>
 
 <h2>Vývoj systému evidence</h2>
-<p>Rozvoj evidence územně plánovací činnosti pokračuje. Systém umožňuje přístup obcím
-s rozšířenou působností i krajům a připojení k mapovému podkladu.</p>
+<p>Rozvoj evidence územně plánovací činnosti neustále pokračuje. Byl vyřešen problém aktualizace
+databáze zodpovědných projektantů — autorizovaných architektů. Rovněž je průběžně čištěna databáze
+zhotovitelů tak, aby byla v souladu s celostátními registry podnikatelských subjektů, právnických
+i fyzických osob. Jedná se zejména o Obchodní rejstřík a Registr ekonomických subjektů.
+Zde je nutno zdůraznit význam správného vyplňování registračních listů pořizovateli ÚPD a ÚPP,
+a to nejlépe na základě smlouvy o dílo.</p>
+<p>Evidence územně plánovací činnosti má vazbu na registr územní identifikace, adres a nemovitostí
+(RÚIAN). Dovoluje tak přiřazovat data k příslušným katastrálním územím, obcím, obcím s rozšířenou
+působností a krajům. Dále pak dovoluje připojení k mapovému podkladu.</p>
 
-<h2>Související obsah</h2>
+<h2>Proč je evidence důležitá</h2>
+<p>Schválený územní plán s jasnými, obecně závaznými pravidly pro využití území významně
+ovlivňuje rozhodování soukromého sektoru o tom, kam vloží své prostředky a jak se bude podílet
+na rozvoji obce nebo kraje. Územně plánovací dokumentace je dále jedním z rozhodujících
+podkladů pro rozhodování veřejné správy.</p>
+
+<h2>Aplikace a související obsah</h2>
+<table class="t">
+  <tr><th style="width:130px">iLAS</th><td>evidence územně plánovací činnosti obcí</td></tr>
+  <tr><th>iKAS</th><td>evidence územně plánovací činnosti krajů a velkých územních celků</td></tr>
+  <tr><th>RÚIAN</th><td>vazba na registr územní identifikace, adres a nemovitostí</td></tr>
+</table>
 <ul>
-  <li><a href="#">Metodiky a příručky k evidenci</a></li>
-  <li><a href="#">Ročenky evidence</a></li>
-  <li><a href="#">Seznam projektantů</a></li>
-  <li><a href="#">Územní studie</a></li>
+  <li><a href="#">Metodika OÚP MMR</a></li>
+  <li><a href="#">Roční přehledy evidence</a></li>
+  <li><a href="#">Seznam zodpovědných projektantů</a></li>
   <li><a href="#">Historie evidence</a></li>
 </ul>
 """
@@ -327,16 +353,29 @@ s rozšířenou působností i krajům a připojení k mapovému podkladu.</p>
 INFOWEB = """
 <div class="btn-row"><a class="btn" href="#">Vstup do portálu</a></div>
 
+<h2>Základní informace</h2>
+<p>Informační web územního plánování je oficiální portál — rozcestník odkazů z oblasti územního
+plánování. Do 31. 12. 2021 fungoval pod názvem Portál územního plánování.</p>
+<p>Od 1. 1. 2022 došlo ke změně názvu Portálu územního plánování na Informační web územního
+plánování (zkratka IWÚP). Nový název více odpovídá zaměření webu — soustředění informací
+v oblasti územního plánování a souvisejících oborů do jednoho místa pro odbornou i laickou
+veřejnost, rozcestník odkazů a prezentace výstupů z činnosti ÚÚR a MMR. Současně je třeba
+předejít případné záměně s Národním geoportálem územního plánování, který připravuje MMR
+dle § 11 odst. 1 písm. d) stavebního zákona.</p>
+<p>Portál územního plánování byl uveden do provozu Ústavem územního rozvoje ve spolupráci
+s Odborem územního plánování Ministerstva pro místní rozvoj ČR v roce 2004.</p>
+
 <h2>Cíle portálu</h2>
-<p>Informační portál územního plánování je rozcestník odborných informací podle
-§ 11 odst. 1 písm. d) stavebního zákona. Je určen pro veřejnou správu, odbornou
-i laickou veřejnost.</p>
+<p>Cílem portálu je směřovat k vytváření otevřeného a průběžně aktualizovaného systému odkazů
+na relevantní informace v oblasti územního plánování a územního rozvoje, jež vyplývají zejména
+z činností ÚÚR, MMR a ostatních orgánů veřejné správy a odborných institucí.
+Je určen pro veřejnou správu, odbornou i laickou veřejnost.</p>
 
 <h2>Základní vize portálu</h2>
 <ul>
-  <li>Prioritně udržovat aktuálnost a kvalitu informací</li>
-  <li>Sledovat nová témata v územním rozvoji</li>
-  <li>Zpřístupňovat obsah přehledně pro odbornou i laickou veřejnost</li>
+  <li>Prioritně udržovat aktuálnost a kvalitu informací.</li>
+  <li>Sledovat nová témata v územním rozvoji.</li>
+  <li>Propagovat portál tak, aby byl cenným zdrojem informací nejen pro odbornou veřejnost.</li>
 </ul>
 
 <h2>Kontaktní osoby</h2>
@@ -346,55 +385,53 @@ i laickou veřejnost.</p>
 PUR_DOKUMENTY = """
 <h2>Přiložené dokumenty</h2>
 <ul class="files">
-  <li><span class="ft">PDF</span><span class="grow"><span class="name">Politika územního rozvoje ČR — úplné znění</span><br>
-    <span class="fmeta">aktuální znění po poslední aktualizaci</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
-  <li><span class="ft">PDF</span><span class="grow"><span class="name">Spatial Development Policy of the Czech Republic</span><br>
-    <span class="fmeta">anglická verze</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
-  <li><span class="ft">PDF</span><span class="grow"><span class="name">Raumentwicklungspolitik der Tschechischen Republik</span><br>
-    <span class="fmeta">německá verze</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
-  <li><span class="ft">XLSX</span><span class="grow"><span class="name">Seznam relevantních podkladů PÚR ČR</span><br>
-    <span class="fmeta">podklady pro pořizování aktualizací</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
+  <li><span class="ft">PDF</span><span class="grow"><span class="name">POLITIKA ÚZEMNÍHO ROZVOJE České republiky — úplné znění</span><br>
+    <span class="fmeta">závazné od 1. 10. 2025 · 296 kB</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
+  <li><span class="ft">PDF</span><span class="grow"><span class="name">SPATIAL DEVELOPMENT POLICY OF THE CZECH REPUBLIC</span><br>
+    <span class="fmeta">anglická verze brožury · 296 kB</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
+  <li><span class="ft">PDF</span><span class="grow"><span class="name">RAUMENTWICKLUNGSPOLITIK DER TSCHECHISCHEN REPUBLIK</span><br>
+    <span class="fmeta">německá verze brožury · 296 kB</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
 </ul>
-<p class="hint">Verze v anglickém a německém jazyce jsou součástí přiložených dokumentů.</p>
 
 <h2>O dokumentu</h2>
-<p>Politika územního rozvoje je celostátní nástroj územního plánování. Určuje požadavky
-na konkretizaci úkolů územního plánování v republikových, přeshraničních a mezinárodních
-souvislostech, zejména s ohledem na udržitelný rozvoj území, a koordinuje územně plánovací
-činnost krajů. Navazuje na dokumenty územního rozvoje Evropské unie.</p>
+<p>Politika územního rozvoje ČR (dále také PÚR ČR) je celostátní nástroj územního plánování,
+který slouží zejména pro koordinaci územního rozvoje na celostátní úrovni a pro koordinaci
+územně plánovací činnosti krajů a současně jako zdroj důležitých argumentů při prosazování
+zájmů ČR v rámci územního rozvoje Evropské unie.</p>
+<p>Aktuální a závazná od 1. 10. 2025 je Politika územního rozvoje České republiky
+po Změně č. 8 Politiky územního rozvoje České republiky. Úplné znění závazné od 1. 10. 2025
+a brožury v české, anglické a německé verzi jsou v části Přiložené dokumenty.</p>
 
-<h2>Historie dokumentu</h2>
-<table class="t">
-  <tr><th style="width:200px">Aktualizace</th><th>Rok</th><th>Stav</th></tr>
-  <tr><td>Změna č. 9</td><td>2025</td><td><span class="tag valid">Platná</span></td></tr>
-  <tr><td>Aktualizace č. 1–8</td><td>2015–2024</td><td><span class="tag hist">Historická</span></td></tr>
-  <tr><td>První vydání PÚR ČR</td><td>2009</td><td><span class="tag hist">Historická</span></td></tr>
-</table>
-<p>Z důvodu naléhavého veřejného zájmu byla pořízena mimořádná změna PÚR ČR — Změna č. 9.</p>
-
-<h2>Pracovní výbor pro zpracování</h2>
-<p>Podkladové materiály pro jednotlivá jednání jsou k dispozici členům pracovního výboru
-v neveřejné části webu chráněné heslem.</p>
+<h2>Evidence podkladů pro Politiku územního rozvoje ČR</h2>
+<p>Evidence podkladů je součástí úkolu A.1.08/ÚP — Politika územního rozvoje ČR a potřebné
+územně plánovací podklady. Úkol zpracovává Ústav územního rozvoje z pověření odboru územního
+plánování Ministerstva pro místní rozvoj.</p>
+<p>Cílem evidence je shromažďování vstupních podkladů a vedení databáze relevantních podkladů
+pro pořizování aktualizací nebo nového návrhu PÚR ČR.</p>
+<p>Zveřejněný seznam relevantních podkladů PÚR ČR:</p>
+<ul class="files">
+  <li><span class="ft">PDF</span><span class="grow"><span class="name">Seznam relevantních podkladů PÚR ČR</span><br>
+    <span class="fmeta">425 kB</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
+  <li><span class="ft">XLSX</span><span class="grow"><span class="name">Seznam relevantních podkladů PÚR ČR</span><br>
+    <span class="fmeta">138 kB</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
+</ul>
 
 <h2>Aktualizace a změny</h2>
-<p>Politika územního rozvoje se pořizuje a aktualizuje na základě zprávy o uplatňování.
-Termín pro předložení aktualizace vládě ČR byl prodloužen do 31. 8. 2025. Z důvodu naléhavého
+<p>Termín pro předložení aktualizace vládě ČR byl prodloužen do 31. 8. 2025. Z důvodu naléhavého
 veřejného zájmu byly z podnětů různých resortů pořízeny mimořádné změny — poslední z nich
 je Změna č. 9 PÚR ČR.</p>
 <table class="t">
-  <tr><th style="width:44%">Dokument</th><th>Rok</th><th>Stav</th></tr>
+  <tr><th style="width:46%">Dokument</th><th>Rok</th><th>Stav</th></tr>
   <tr><td>Politika územního rozvoje ČR — Změna č. 9</td><td>2025</td><td><span class="tag valid">Platná</span></td></tr>
-  <tr><td>Politika územního rozvoje ČR — aktualizace č. 1–8</td><td>2015–2024</td><td><span class="tag hist">Historická</span></td></tr>
-  <tr><td>Politika územního rozvoje ČR (první vydání)</td><td>2008 (2009)</td><td><span class="tag hist">Historická</span></td></tr>
+  <tr><td>Politika územního rozvoje ČR po Změně č. 8</td><td>2025</td><td><span class="tag valid">Závazná od 1. 10. 2025</span></td></tr>
+  <tr><td>Politika územního rozvoje ČR — aktualizace č. 1–7</td><td>2015–2024</td><td><span class="tag hist">Historická</span></td></tr>
+  <tr><td>Politika územního rozvoje České republiky 2008</td><td>2009</td><td><span class="tag hist">Historická</span></td></tr>
 </table>
 
-<h2>Podklady</h2>
-<ul class="files">
-  <li><span class="ft">XLSX</span><span class="grow"><span class="name">Seznam relevantních podkladů PÚR ČR</span><br>
-    <span class="fmeta">podklady pro pořizování aktualizací nebo nového návrhu · 138 kB</span></span>
-    <a class="btn ghost sm" href="#">Stáhnout</a></li>
-</ul>
-<p>Další podkladové materiály jsou dostupné na webových stránkách Ministerstva pro místní rozvoj.</p>
+<h2>Pracovní výbor pro zpracování</h2>
+<p>Podkladové materiály pro jednotlivá jednání jsou k dispozici členům pracovního výboru
+v neveřejné části webu chráněné heslem. Další podkladové materiály jsou dostupné na webových
+stránkách Ministerstva pro místní rozvoj.</p>
 """
 
 MEZINARODNI = """

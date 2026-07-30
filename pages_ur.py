@@ -8,26 +8,41 @@ C = [("Územní rozvoj", "uzemni-rozvoj/index.html")]
 ROZCESTNIK = """
 <div class="grid g3">
   <a class="card" href="{{r}}uzemni-rozvoj/uzemni-planovani.html"><h3>Územní plánování</h3>
-    <p>Politika územního rozvoje, územní rozvojový plán, evidence územně plánovací činnosti a slovník.</p></a>
-  <a class="card" href="{{r}}uzemni-rozvoj/uap.html"><h3>Územně analytické podklady</h3>
-    <p>Aktuální i ukončené ročníky ÚAP ČR.""" + cmt(62, "Územně analytické podklady jsou v submenu, ale nemají návrh obrazovky.") + """</p></a>
+    <p>PÚR ČR, Politika architektury, Územní rozvojový plán, ÚAP, Evidence ÚP činnosti,
+    Slovník, Přehled dotčených orgánů.</p></a>
   <a class="card" href="{{r}}uzemni-rozvoj/mezinarodni-spoluprace.html"><h3>Mezinárodní spolupráce</h3>
-    <p>ESPON, V4+2 a přeshraniční projekty.</p></a>
+    <p>ESPON — průběžně aktualizováno, mezinárodní závazky ČR. V4+2 — Visegrádská spolupráce.</p></a>
   <a class="card" href="{{r}}uzemni-rozvoj/publikacni-cinnost.html"><h3>Publikační činnost</h3>
-    <p>Aktualizované příručky, publikace od roku 2019 a cykly aktualizací.</p></a>
+    <p>Aktualizované příručky a metodické publikace — cestovní ruch, CORCAP, INKA, Místní akční
+    skupiny, Památka roku a další.</p></a>
   <a class="card" href="{{r}}uzemni-rozvoj/casopis.html"><h3>Časopis UaÚR</h3>
-    <p>Urbanismus a územní rozvoj — čísla, ediční plán, pokyny pro autory.</p></a>
+    <p>Odborný recenzovaný časopis Urbanismus a územní rozvoj. Indexován SCOPUS a ERIH.
+    Bilingvní. Průběžně aktualizovaný, různé cykly vydávání.</p></a>
   <a class="card" href="{{r}}uzemni-rozvoj/knihovna.html"><h3>Knihovna</h3>
-    <p>Online katalog, služby a knihovní řád, novinky z katalogu.</p></a>
-  <a class="card" href="{{r}}uzemni-rozvoj/stavebne-technicka-prevence.html"><h3>Stavebně technická prevence""" + cmt(56, "Chybí Stavebně technická prevence a Konference a semináře, které IA řadí do této sekce.") + """</h3>
-    <p>Systém STP a aplikace iSSTP ve spolupráci s HZS ČR.</p></a>
+    <p>Online katalog knihovního fondu (58 000+ záznamů). Služby, knihovní řád, novinky
+    z katalogu.</p></a>
   <a class="card" href="{{r}}uzemni-rozvoj/mapovy-portal.html"><h3>Mapový portál</h3>
-    <p>Mapové aplikace a datové sady.</p></a>
-  <a class="card" href="{{r}}uzemni-rozvoj/konference.html"><h3>Konference a semináře</h3>
-    <p>Akce pod záštitou ÚRÚ a přehled odborných setkání.</p></a>
+    <p>Mapová aplikace územně analytických podkladů a dalších dat. Provozuje ARCData Praha.</p></a>
   <a class="card" href="{{r}}uzemni-rozvoj/archiv.html"><h3>Archiv</h3>
-    <p>Historické projekty a výroční zprávy ÚÚR. Označeno jako archiv, ne aktivní obsah.</p></a>
+    <p>Historické projekty ÚÚR — cestovní ruch, CORCAP, INKA, Místní akční skupiny,
+    Památka roku a další.</p></a>
+  <a class="card" href="{{r}}uzemni-rozvoj/stavebne-technicka-prevence.html"><h3>Stavebně technická prevence</h3>
+    <p>Agenda převzatá z ÚÚR — poruchy a vady staveb, prevence.</p></a>
+  <a class="card" href="{{r}}uzemni-rozvoj/konference.html"><h3>Konference a semináře</h3>
+    <p>Akce pod záštitou úřadu, sborníky a prezentace.</p></a>
 </div>
+
+<h2>Užitečné odkazy</h2>
+<table class="t">
+  <tr><th style="width:34%">Aplikace nebo web</th><th>K čemu slouží</th></tr>
+  <tr><td>iLAS</td><td>evidence územně plánovací činnosti obcí</td></tr>
+  <tr><td>iKAS</td><td>evidence územně plánovací činnosti krajů</td></tr>
+  <tr><td>Národní geoportál územního plánování (NGP ÚP)</td><td>celostátní geoportál územního plánování</td></tr>
+  <tr><td>Evidence ÚPČ obcí</td><td><a href="{{r}}uzemni-rozvoj/evidence-upc.html">přehled evidence na tomto webu</a></td></tr>
+  <tr><td>Ministerstvo pro místní rozvoj</td><td>navazující agendy a podkladové materiály</td></tr>
+</table>
+<p class="hint">Obsah převzatý z uur.cz je dostupný pod hlavičkou ÚRÚ. Přesměrování z původních
+adres je součástí migrace.""" + cmt(64, "Chybí informace o přesměrování původních adres uur.cz — uživatelé mají odkazy uložené v záložkách a v korespondenci.") + """</p>
 """
 
 UP = """
