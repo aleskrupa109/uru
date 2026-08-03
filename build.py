@@ -268,7 +268,7 @@ def render_nav(active, r):
                             "Bez něj se na něj uživatel dostane jen dvojím kliknutím na "
                             "položku menu, což není zřejmé ani ovladatelné na dotyku.")
             out.append(f'<p class="dropdown-overview-row">'
-                       f'<a class="dropdown-overview" href="{r}{href}">Přehled sekce {label}</a>'
+                       f'<a class="dropdown-overview" href="{r}{href}">Přehled</a>'
                        f'{note}</p>')
             out.append('<div class="cols">')
             for t, h, d in items:

@@ -155,8 +155,8 @@ li.open .dropdown { display: block; }
 /* Návrh drží mezi perexem a první řadou dlaždic 64 px. */
 .page-head + .grid, .page-head + .newsgrid { margin-top: var(--spacing-3xl); }
 .page-head h1 { font-size: var(--font-size-display-s); margin: 0 0 var(--spacing-s-nudge); }
-.page-head .perex { font-size: var(--font-size-body-l); color: var(--text-secondary);
-  max-width: 50rem; margin: 0; }   /* návrh: 800 px */
+.page-head .perex { font-size: var(--font-size-body-xl); color: var(--text-secondary);
+  max-width: 50rem; margin: 0; }   /* návrh: 20 px, šířka 800 px */
 .updated { font-size: var(--font-size-body-s); color: var(--text-tertiary); margin: var(--spacing-s) 0 0; }
 
 /* Návrh: levý sloupec 284 px, obsahový panel 800 px — zbytek mřížky zůstává prázdný. */
