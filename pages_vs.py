@@ -233,7 +233,7 @@ DOKUMENTY = """
 
 <div class="resultbar"><span>Nalezeno <strong data-count>0</strong> souborů</span></div>
 
-<ul class="files" data-list>
+<ul class="files rich" data-list>
   <li data-stavba="vse" data-rizeni="povoleni" data-format="PDF"><span class="ft">PDF</span>
     <span class="grow"><span class="name">Žádost o povolení záměru</span><br>
     <span class="fmeta">verze 3.0 · platné od 1. 7. 2026 · 296 kB</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>

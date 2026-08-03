@@ -259,16 +259,46 @@ li.open .dropdown { display: block; }
   padding: var(--spacing-s) var(--spacing-s-nudge); background: var(--background-status-warning-subtlest);
   border-radius: var(--corner-radius-xs); color: var(--text-status-warning); }
 
-/* ---------- soubory ---------- */
+/* ---------- soubory ----------
+   Návrh vypisuje přílohy jako kompaktní odkaz s ikonou a údajem v závorce,
+   ne jako orámovaný řádek s tlačítkem. Bohatší varianta .files.rich zůstává tam,
+   kde připomínka č. 23 vyžaduje metadata o platnosti a verzi. */
 .files { list-style: none; padding: 0; margin: var(--spacing-s-nudge) 0; }
-.files li { display: flex; gap: var(--spacing-s-nudge); align-items: center;
-  background: var(--background-block-primary); border: 1px solid var(--border-subtlest);
-  border-radius: var(--corner-radius-s); padding: var(--spacing-s-nudge) var(--spacing-m); margin-bottom: var(--spacing-s); }
-.files .ft { font-size: var(--font-size-body-xs); font-weight: 500; color: var(--text-white-fixed);
-  background: var(--background-primary); border-radius: var(--corner-radius-2xs); padding: 2px 6px; letter-spacing: .04em; }
-.files .name { font-weight: 500; color: var(--text-primary); }
+.files > li {
+  display: flex; align-items: baseline; gap: var(--spacing-s);
+  background: none; border: 0; border-radius: 0;
+  padding: var(--spacing-xs) 0; margin: 0;
+}
+.files > li br { display: none; }
+.files .grow { display: inline; }
+.files .name { color: var(--color-primary-700); text-decoration: underline; font-weight: 400; }
+.files > li:hover .name { color: var(--color-primary-600); }
 .files .fmeta { font-size: var(--font-size-body-s); color: var(--text-tertiary); }
-.files .grow { flex: 1; }
+.files .fmeta::before { content: "("; }
+.files .fmeta::after { content: ")"; }
+.files .btn { display: none; }
+.files .ft {
+  font-size: var(--font-size-body-xs); font-weight: 500; color: var(--color-primary-600);
+  background: none; border: 1px solid var(--color-primary-200);
+  border-radius: var(--corner-radius-2xs); padding: 0 4px; letter-spacing: .04em; flex: none;
+}
+
+/* Bohatší varianta: orámovaný řádek s metadaty a tlačítkem ke stažení. */
+.files.rich > li {
+  display: flex; gap: var(--spacing-s-nudge); align-items: center;
+  background: var(--background-block-primary); border: 1px solid var(--border-subtlest);
+  border-radius: var(--corner-radius-s); padding: var(--spacing-s-nudge) var(--spacing-m);
+  margin-bottom: var(--spacing-s);
+}
+.files.rich > li br { display: revert; }
+.files.rich .grow { display: block; flex: 1; }
+.files.rich .name { color: var(--text-primary); text-decoration: none; font-weight: 500; }
+.files.rich .fmeta::before, .files.rich .fmeta::after { content: ""; }
+.files.rich .btn { display: inline-block; }
+.files.rich .ft {
+  color: var(--text-white-fixed); background: var(--background-primary); border: 0;
+  padding: 3px 7px;
+}
 
 /* ---------- akordeon: nativní details ---------- */
 .gov-accordion-item__summary { cursor: pointer; list-style: none; }
