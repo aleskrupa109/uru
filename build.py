@@ -201,6 +201,7 @@ def tile_icon_for(href):
 # tak nepotřebuje běhové prostředí web komponent)
 GICON = {
     "chevron-down": '<svg class="{c}" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708Z" fill="currentColor"/></svg>',
+    "chevron-crumb": '<svg class="{c}" width="6" height="11" viewBox="4.5 1.5 7 13" fill="none" aria-hidden="true"><path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708Z" fill="currentColor"/></svg>',
     "chevron-right": '<svg class="{c}" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708Z" fill="currentColor"/></svg>',
     "search": '<svg class="{c}" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.398 1.398l3.85 3.85a1 1 0 0 0 1.414-1.414l-3.85-3.85ZM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0Z" fill="currentColor"/></svg>',
     "x-lg": '<svg class="{c}" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" fill="currentColor"/></svg>',
@@ -267,7 +268,7 @@ def render_crumbs(crumbs, r):
     """Návrh: první položka „Domů", mezi položkami šipka, odstup 12 px na každou stranu."""
     if not crumbs:
         return ""
-    sep = f'<span class="sep">{gicon("chevron-right")}</span>'
+    sep = f'<span class="sep">{gicon("chevron-crumb")}</span>'
     items = [f'<li><a href="{r}index.html">Domů</a></li>']
     for label, href in crumbs:
         inner = f'<a href="{r}{href}">{label}</a>' if href else f'<span aria-current="page">{label}</span>'
