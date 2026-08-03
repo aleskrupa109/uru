@@ -13,7 +13,6 @@ ROZCESTNIK = """
 <p class="hint">Pořadí dlaždic odpovídá pořadí položek v levém submenu podstránek.""" + cmt(12, "Zajistit, aby pořadí dlaždic odpovídalo pořadí v levém submenu na navazujících stránkách.") + """</p>
 <div class="grid g3 hub" style="margin-top:18px">
   <a class="card" href="{{r}}vyhrazene-stavby/co-meni-novela.html">
-    <span class="order">novinka</span>
     <h3>Co změní novela SZ""" + cmt(11, "Doplnit dlaždici „Co změní novela SZ\" jako první.") + """</h3>
     <p>Přehled všech změn na jednom místě: rozsah vyhrazených staveb, průběh řízení, rozpracovaná řízení a nové formuláře.</p></a>
   <a class="card" href="{{r}}vyhrazene-stavby/co-spada-pod-uru.html">
@@ -94,9 +93,8 @@ CO_SPADA = """
 """ + X.KATEGORIE + """
 <div class="box edge">
   <h3>Hraniční případ</h3>
-  <p>Do kategorie staveb v zastavitelných plochách nad 45 ha patří i velké bytové projekty —
-  mnoho stavebníků to nečeká. Než začnete připravovat dokumentaci, ověřte si příslušnost
-  dotazem; vyhnete se podání na nesprávný úřad.</p>
+  <p>Patří sem i velké bytové projekty — mnoho stavebníků to neví. Ověřte příslušnost
+  před podáním žádosti.</p>
 </div>
 """
 
@@ -305,7 +303,7 @@ podání žádosti.</p>
 FAQ_GROUPS = [
     ("Příslušnost ÚRÚ", [
         ("Co je to vyhrazená stavba?",
-         "Vyhrazené stavby jsou stavby celostátního a nadregionálního významu vyjmenované v příloze stavebního zákona."),
+         "Vyhrazené stavby jsou stavby celostátního a nadregionálního významu vyjmenované v příloze č. 3 stavebního zákona."),
         ("Spadá moje stavba pod ÚRÚ, nebo pod obecný stavební úřad?",
          'Použijte ověření příslušnosti na stránce <a href="{{r}}vyhrazene-stavby/co-spada-pod-uru.html">Co spadá pod ÚRÚ</a>.'),
         ("Jaký je rozdíl mezi ÚRÚ a běžným stavebním úřadem?",
@@ -400,7 +398,7 @@ PAGES = [
     dict(path="vyhrazene-stavby/co-spada-pod-uru.html", title="Co spadá pod ÚRÚ", section="vyhrazene-stavby",
          crumbs=C + [("Co spadá pod ÚRÚ", None)], help="stavebnici",
          h1="Co spadá pod ÚRÚ",
-         perex="Úřad rozvoje území je stavebním úřadem pro vyhrazené stavby — stavby celostátního a nadregionálního významu vyjmenované v příloze stavebního zákona. Níže najdete přehled kategorií i konkrétních příkladů.",
+         perex="Úřad rozvoje území je stavebním úřadem pro vyhrazené stavby — stavby celostátního a nadregionálního významu vyjmenované v příloze č. 3 stavebního zákona. Níže najdete přehled kategorií i konkrétních příkladů.",
          updated="Přehled kategorií naposledy aktualizován 12. 6. 2026." + cmt(16, "Chybí datum poslední aktualizace přehledu — u obsahu vázaného na legislativu je to funkční prvek."),
          body=CO_SPADA),
     dict(path="vyhrazene-stavby/jak-probiha-rizeni.html", title="Jak probíhá řízení", section="vyhrazene-stavby",

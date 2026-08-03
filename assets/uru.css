@@ -11,7 +11,7 @@ h1, h2, h3, h4, h5, h6,
 .gov-button .element, .gov-tag .element, .gov-chip .element,
 .gov-tile__title, .gov-tile__title a,
 .gov-accordion-item__title, .gov-accordion-item__title *,
-.gov-message__content h3, .gov-infobar__content,
+.gov-message__content h3, .gov-message__content strong, .gov-infobar__content,
 table.t th, .files .name, strong, b { font-weight: 500; }
 
 /* ---------- kontejner ---------- */
@@ -707,3 +707,19 @@ body.editing [data-edit]:focus { outline: 2px solid var(--color-success-600); ba
 .article-tags .gov-tag svg { width: .75rem; height: .75rem; }
 .article-share { display: inline-flex; align-items: center; gap: var(--spacing-m-nudge); }
 .article-share svg { width: .875rem; height: .875rem; }
+
+/* ---------- odznak „Nově od …" u nadpisu kategorie ---------- */
+.badge-new {
+  display: inline-block; margin-left: var(--spacing-s); vertical-align: middle;
+  padding: 2px var(--spacing-s); border-radius: var(--corner-radius-xs);
+  background: var(--background-status-warning-subtlest); color: var(--text-status-warning);
+  font-size: var(--font-size-body-xs); font-weight: 500;
+}
+
+/* ---------- zvýrazněné boxy ----------
+   Návrh: ikona a text na jednom řádku, nadpis jen tučně a s dvojtečkou.
+   Členěná podoba (nadpis + seznam) zůstává pro boxy s více odstavci. */
+.gov-message__content > p { margin: 0; }
+.gov-message__content > p + p { margin-top: var(--spacing-s); }
+.gov-message__content > h3 { margin: 0 0 var(--spacing-s); font-size: var(--font-size-body-m); }
+.gov-message__content ul { margin: var(--spacing-s) 0 0; }

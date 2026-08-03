@@ -531,11 +531,19 @@ def to_ds(html_body):
     BOX = {"change": ("warning", "bold"), "edge": ("primary", "subtle"),
            "note": ("neutral", "subtle"), "gap": ("success", "subtle")}
 
+    def box_inner(inner):
+        """Návrh sází jednoduchý box na jeden řádek: „Nadpis: text".
+        Boxy se seznamem nebo více odstavci si ponechávají členěnou podobu."""
+        simple = re.fullmatch(r'\s*<h3>(.*?)</h3>\s*<p>(.*?)</p>\s*', inner, re.S)
+        if simple:
+            return f'<p><strong>{simple.group(1)}:</strong> {simple.group(2)}</p>'
+        return inner
+
     def box(m):
         color, typ = BOX.get(m.group(1), ("neutral", "subtle"))
         return (f'<div class="gov-message" data-color="{color}" data-type="{typ}" role="status">'
-                f'<span>{gicon("warn", "gov-message__icon")}</span>'
-                f'<div class="gov-message__content">{m.group(2)}</div></div>')
+                f'<span>{gicon("warn", cls="", slot=True)}</span>'
+                f'<div class="gov-message__content">{box_inner(m.group(2))}</div></div>')
 
     html_body = re.sub(r'<div class="box ([a-z]+)">(.*?)</div>\s*(?=<|$)', box, html_body, flags=re.S)
 
@@ -543,8 +551,8 @@ def to_ds(html_body):
         pre, kind, inner = m.group(1), m.group(2), m.group(3)
         color, typ = BOX.get(kind, ("neutral", "subtle"))
         return (f'<div{pre} class="gov-message" data-color="{color}" data-type="{typ}" role="status">'
-                f'<span>{gicon("warn", "gov-message__icon")}</span>'
-                f'<div class="gov-message__content">{inner}</div></div>')
+                f'<span>{gicon("warn", cls="", slot=True)}</span>'
+                f'<div class="gov-message__content">{box_inner(inner)}</div></div>')
 
     html_body = re.sub(r'<div((?:\s+[a-z-]+="[^"]*")+) class="box ([a-z]+)">(.*?)</div>\s*(?=<|$)',
                        box_attrs, html_body, flags=re.S)
@@ -647,6 +655,11 @@ def to_ds(html_body):
     def mark_note(m):
         tag, attrs, inner = m.group(1), m.group(2), m.group(3)
         if 'class="cmt"' not in inner:
+            return m.group(0)
+        # Odstavec uvnitř zvýrazněného boxu je obsah stránky, ne poznámka makety.
+        # Kdyby se skryl, zůstal by na stránce prázdný barevný box.
+        before = html_body[max(0, m.start() - 80):m.start()]
+        if 'gov-message__content' in before:
             return m.group(0)
         if 'class="' in attrs:
             attrs = re.sub(r'class="([^"]*)"', lambda k: f'class="{k.group(1)} mock-note"', attrs, count=1)
