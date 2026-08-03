@@ -6,43 +6,53 @@ KATEGORIE = """
 
 <h3>Dopravní stavby — dálnice</h3>
 <p>Stavby dálnic a rychlostních silnic celostátního významu.</p>
+<div class="box edge">
 <ul>
   <li>Dálnice a rychlostní silnice (investor: ŘSD)</li>
   <li>Přeložky dálnic a rychlostních silnic</li>
 </ul>
+</div>
 
 <h3>Dopravní stavby — dráhy</h3>
 <p>Stavby železničních drah, metra a tramvajových tratí celostátního významu.</p>
+<div class="box edge">
 <ul>
   <li>Železniční koridory a tratě (investor: Správa železnic)</li>
   <li>Metro ve statutárních městech (investor: DPP, DPMB)</li>
   <li>Tramvajové dráhy ve statutárních městech</li>
   <li>Stavby drah dle zákona č. 266/1994 Sb.</li>
 </ul>
+</div>
 
 <h3>Dopravní stavby — letecké</h3>
 <p>Civilní letecké stavby.</p>
+<div class="box edge">
 <ul>
   <li>Dráhy ke vzletu a přistávání letadel</li>
   <li>Plochy určené k pohybu a stání letadel</li>
   <li>Letiště mezinárodního významu</li>
 </ul>
+</div>
 
 <h3>Strategické investiční stavby</h3>
 <p>Stavby vymezené zákonem o urychlení výstavby strategicky významné infrastruktury.</p>
+<div class="box edge">
 <ul>
   <li>Strategické investiční stavby dle zákona o urychlení výstavby strategicky
       významné infrastruktury</li>
 </ul>
+</div>
 
 <h3>Energetické stavby — OZE</h3>
 <p>Výrobny elektřiny z obnovitelných zdrojů překračující stanovený výkon.</p>
+<div class="box edge">
 <ul>
   <li>Fotovoltaické elektrárny nad 5 MW</li>
   <li>Ostatní výrobny elektřiny z OZE nad 1 MW (větrné parky, bioplynové stanice aj.)
       — Výrobny tepla z OZE nad 10 MW</li>
   <li>Zařízení na energetické využívání odpadů</li>
 </ul>
+</div>
 <div class="box edge">
   <h3>Hraniční případ</h3>
   <p>Klíčový je instalovaný výkon — ověřte příslušnost před podáním žádosti.</p>
@@ -51,6 +61,7 @@ KATEGORIE = """
 <h3>Energetické stavby a ostatní</h3>
 <p>Stavby přenosové soustavy elektřiny, přepravní soustavy plynu, velké zdroje energie
 a další energetická infrastruktura.</p>
+<div class="box edge">
 <ul>
   <li>Vedení VVN 400 kV a 220 kV (investor: ČEPS)</li>
   <li>Jaderné elektrárny a stavby jaderných zařízení</li>
@@ -60,10 +71,12 @@ a další energetická infrastruktura.</p>
   <li>Ropovody celostátního významu</li>
   <li>Bateriová úložiště energie připojená do přenosové soustavy</li>
 </ul>
+</div>
 
 <h3>Těžební stavby a stavby pro nakládání s výbušninami</h3>
 <p>Stavby sloužící těžbě nerostných surovin, radioaktivních materiálů a nakládání
 s výbušninami.</p>
+<div class="box edge">
 <ul>
   <li>Otvírka, příprava a dobývání ložisek, úprava a zušlechťování nerostů,
       úložná místa pro těžební odpad</li>
@@ -73,19 +86,23 @@ s výbušninami.</p>
       radionuklidy</li>
   <li>Stavby určené k nakládání s výbušninami</li>
 </ul>
+</div>
 
 <h3>Tepelná infrastruktura a zachytávání CO₂</h3>
 <p>Rozvodné tepelné soustavy a stavby pro zachytávání a ukládání oxidu uhličitého.</p>
+<div class="box edge">
 <ul>
   <li>Rozvodné tepelné zařízení o dimenzi potrubí DN 300 a více</li>
   <li>Stavby pro ukládání a zachytávání CO₂ do přírodních horninových struktur,
       stavby přepravní sítě k úložištím CO₂</li>
 </ul>
+</div>
 
 <h3>Stavby v zastavitelných plochách nad 45 ha <span class="badge-new">Nově od 1. 7. 2026</span></h3>
 <p>Stavby a soubory staveb pro výrobu, skladování a bydlení umisťované v plochách
 vymezených k tomuto účelu o rozloze nejméně 45 hektarů. Toto je největší novinka —
 zahrnuje velké bytové projekty a průmyslové areály, které dříve pod ÚRÚ nespadaly.</p>
+<div class="box edge">
 <ul>
   <li>Gigafaktory a velké výrobní závody</li>
   <li>Logistické parky a centra</li>
@@ -93,6 +110,7 @@ zahrnuje velké bytové projekty a průmyslové areály, které dříve pod ÚR�
   <li>Skladovací areály nadregionálního významu</li>
   <li>Podnikatelská centra v průmyslových zónách</li>
 </ul>
+</div>
 """
 
 RIZENI_DETAIL = """
