@@ -152,8 +152,11 @@ li.open .dropdown { display: block; }
 /* ---------- stránka ---------- */
 .page { padding: 0 0 var(--spacing-6xl); }
 .page-head { padding: var(--spacing-l) 0 var(--spacing-2xs); }
+/* Návrh drží mezi perexem a první řadou dlaždic 64 px. */
+.page-head + .grid, .page-head + .newsgrid { margin-top: var(--spacing-3xl); }
 .page-head h1 { font-size: var(--font-size-display-s); margin: 0 0 var(--spacing-s-nudge); }
-.page-head .perex { font-size: var(--font-size-body-l); color: var(--text-secondary); max-width: 64ch; margin: 0; }
+.page-head .perex { font-size: var(--font-size-body-l); color: var(--text-secondary);
+  max-width: 50rem; margin: 0; }   /* návrh: 800 px */
 .updated { font-size: var(--font-size-body-s); color: var(--text-tertiary); margin: var(--spacing-s) 0 0; }
 
 /* Návrh: levý sloupec 284 px, obsahový panel 800 px — zbytek mřížky zůstává prázdný. */
@@ -198,7 +201,7 @@ li.open .dropdown { display: block; }
 }
 .grid > .uru-card:hover { box-shadow: 0 6px 20px rgb(29 60 93 / 14%); }
 .uru-card [slot="icon"] { display: block; margin-bottom: var(--spacing-l); color: var(--color-primary-600); }
-.uru-card [slot="icon"] .gov-tile__icon-img { width: 3rem; height: 3rem; }
+.uru-card [slot="icon"] .gov-tile__icon-img { width: 3rem; height: auto; }
 .uru-card .gov-tile__title { font-size: var(--font-size-body-xl); line-height: 1.5; }
 .uru-card .gov-tile__title a { color: var(--color-primary-600); }
 .uru-card .gov-tile__annotation {
@@ -612,8 +615,8 @@ body.editing [data-edit]:focus { outline: 2px solid var(--color-success-600); ba
 .tile-more { display: none; }
 .grid.hub .tile-more {
   display: inline-flex; align-items: center; gap: var(--spacing-s);
-  margin-top: var(--spacing-m); color: var(--color-primary-600);
-  font-size: var(--font-size-body-m); font-weight: 500;
+  margin-top: var(--spacing-m); color: var(--color-primary-700);
+  font-size: var(--font-size-body-s); font-weight: 500;
 }
 .grid.hub .tile-more::after {
   content: ""; width: .8125rem; height: .8125rem; background: currentColor;
@@ -624,3 +627,15 @@ body.editing [data-edit]:focus { outline: 2px solid var(--color-success-600); ba
 .grid.hub > .uru-card .gov-tile__content,
 .grid.hub > .uru-card .gov-tile__text { display: flex; flex-direction: column; flex: 1; }
 .grid.hub > .uru-card .tile-more { margin-top: auto; padding-top: var(--spacing-m); }
+
+/* ---------- odkaz na přehled sekce v rozbalovacím panelu ----------
+   Doplněno nad rámec návrhu: bez něj se na přehled sekce dá dostat jen dvojím
+   kliknutím na položku menu, což není zřejmé ani ovladatelné na dotyku. */
+.dropdown-overview-row { display: flex; align-items: center; margin: 0 0 var(--spacing-s);
+  border-bottom: 1px solid var(--border-subtlest); }
+.dropdown-overview {
+  display: block; flex: 1; padding: var(--spacing-s) var(--spacing-s-nudge);
+  color: var(--color-primary-700); font-weight: 500; text-decoration: none;
+  font-size: var(--font-size-body-m);
+}
+.dropdown-overview:hover { background: var(--background-primary-subtlest); color: var(--color-primary-600); }

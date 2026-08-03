@@ -138,6 +138,19 @@ def dsicon(name, kind="complex", cls="gov-tile__icon-img"):
     return svg
 
 
+# Ikony dodané z návrhu (export z Figmy). Nejsou ze sady design systému, proto se
+# vkládají jako obrázek. Až budou k dispozici ve formátu SVG, stačí vyměnit soubory
+# a přepnout tuto tabulku na dsicon().
+URU_ICON = {
+    "metodicka-podpora/metodicka-stanoviska.html": "metodicka-stanoviska",
+    "metodicka-podpora/caste-dotazy.html": "caste-dotazy",
+    "metodicka-podpora/prechodove-obdobi.html": "prechodove-obdobi",
+    "metodicka-podpora/standardizace.html": "standardizace",
+    "metodicka-podpora/konzultacni-stredisko.html": "konzultacni-stredisko",
+    "metodicka-podpora/tisic-otazek.html": "tisic-otazek",
+}
+
+
 TILE_ICON = {
     # úvodní rozcestník
     "vyhrazene-stavby/index.html": "property",
@@ -193,6 +206,11 @@ TILE_ICON = {
 
 def tile_icon_for(href):
     tail = href.split("{{r}}")[-1].split("#")[0]
+    own = URU_ICON.get(tail)
+    if own:
+        depth = 0  # cesta se dopočítá až v šabloně přes {r}
+        return (f'<img class="gov-tile__icon-img" src="{{{{r}}}}assets/img/icons/{own}.png"'
+                f' width="48" height="48" alt="" loading="lazy">')
     name = TILE_ICON.get(tail)
     return dsicon(name) if name else ""
 
@@ -242,7 +260,17 @@ def render_nav(active, r):
         out.append(f'<a href="{r}{href}">{label}{caret}</a>')
         if items:
             wide = " wide" if len(items) >= 9 else ""
-            out.append(f'<div class="dropdown{wide}"><div class="wrap"><div class="cols">')
+            out.append(f'<div class="dropdown{wide}"><div class="wrap">')
+            # Návrh nemá v panelu odkaz na přehled sekce, takže se na něj lze dostat
+            # jen dvojím kliknutím na položku menu — první klik panel otevře, druhý
+            # teprve naviguje. Doplněn pojmenovaný odkaz jako první položka panelu.
+            note = cmt(112, "Z rozbalovacího panelu nevede odkaz na přehled sekce. "
+                            "Bez něj se na něj uživatel dostane jen dvojím kliknutím na "
+                            "položku menu, což není zřejmé ani ovladatelné na dotyku.")
+            out.append(f'<p class="dropdown-overview-row">'
+                       f'<a class="dropdown-overview" href="{r}{href}">Přehled sekce {label}</a>'
+                       f'{note}</p>')
+            out.append('<div class="cols">')
             for t, h, d in items:
                 out.append(f'<a href="{r}{h}" title="{d}">{t}</a>')
             out.append('</div></div></div>')

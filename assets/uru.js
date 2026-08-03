@@ -29,8 +29,10 @@
     items.forEach(function (li) {
       var a = li.querySelector(':scope > a');
       a.addEventListener('click', function (e) {
-        if (li.classList.contains('open')) return; // druhý klik projde na stránku sekce
+        // Položka menu panel jen otevírá a zavírá; na přehled sekce vede
+        // pojmenovaný odkaz uvnitř panelu.
         e.preventDefault();
+        if (li.classList.contains('open')) { li.classList.remove('open'); return; }
         items.forEach(function (x) { if (x !== li) x.classList.remove('open'); });
         li.classList.add('open');
         placeDropdown(li);
