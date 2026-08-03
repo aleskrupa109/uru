@@ -130,34 +130,46 @@
 <main class="page"><div class="wrap">
 <div class="cols-side"><nav class="subnav" aria-label="Obsah sekce"><h2>Metodická podpora</h2><a href="../metodicka-podpora/metodicka-stanoviska.html" aria-current="page">Metodická stanoviska a výklady</a><a href="../metodicka-podpora/caste-dotazy.html">Časté dotazy</a><a href="../metodicka-podpora/prechodove-obdobi.html">Přechodové období</a><a href="../metodicka-podpora/standardizace.html">Standardizace územního plánování</a><a href="../metodicka-podpora/konzultacni-stredisko.html">Konzultační středisko</a><a href="../metodicka-podpora/tisic-otazek.html">Tisíc otázek ke stavebnímu právu</a><a href="../metodicka-podpora/dotcene-organy.html">Přehled dotčených orgánů</a><a href="../metodicka-podpora/kontakty-na-metodiky.html">Kontakty na metodiky</a></nav><div class="content"><div class="page-head"><h1>Metodická stanoviska a výklady</h1><p class="perex">Přehled metodických stanovisek, výkladů a pokynů. Dokumenty slouží jako závazný výklad právních předpisů v oblasti územního plánování, stavebního řádu a souvisejících agend. Pomocí filtrů níže můžete vyhledávat podle oblasti, zákona, platnosti nebo data vydání.</p></div>
 <div class="filters" data-filterable>
-  <div class="searchrow"><input type="search" data-q placeholder="Hledejte v metodických stanoviscích…"></div>
-  <div class="row">
-    <div class="field"><label for="f-oblast">Oblast</label>
-      <select id="f-oblast" data-key="oblast"><option value="">Vše</option>
-        <option value="sr">Stavební řád</option>
-        <option value="up">Územní plánování</option>
-        <option value="eia">EIA a dotčené orgány</option></select></div>
-    <div class="field"><label for="f-zakon">Zákon</label>
-      <select id="f-zakon" data-key="zakon"><option value="">Vše</option>
-        <option value="283">283/2021 Sb. (nový)</option>
-        <option value="183">183/2006 Sb. (starý)</option></select></div>
-    <div class="field"><label for="f-platnost">Platnost</label>
-      <select id="f-platnost" data-key="platnost"><option value="">Vše</option>
-        <option value="platna">Platné</option><option value="neplatna">Neplatné</option></select></div>
-    <div class="field"><label for="f-aktualnost">Aktuálnost</label>
-      <select id="f-aktualnost" data-key="aktualnost"><option value="">Vše</option>
-        <option value="aktualni">Aktuální</option><option value="nahrazena">Nahrazené</option>
-        <option value="historicka">Historické</option></select></div>
-    <div class="field"><label for="f-od">Datum vydání od</label>
-      <input id="f-od" type="text" placeholder="DD.MM.RRRR"></div>
-    <div class="field"><label for="f-do">Datum vydání do</label>
-      <input id="f-do" type="text" placeholder="DD.MM.RRRR"></div>
-    <div class="field"><label>&nbsp;</label><span class="gov-button" data-color="primary" data-type="outlined" data-size="s"><button class="element" type="button">Zrušit filtry</button></span></div>
+  <div class="searchrow">
+    <input type="search" data-q placeholder="Hledejte v metodických stanoviscích…">
+    <button class="searchbtn" type="button" aria-label="Hledat"><svg class="" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.398 1.398l3.85 3.85a1 1 0 0 0 1.414-1.414l-3.85-3.85ZM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0Z" fill="currentColor"/></svg></button>
   </div>
-  <div class="chips gov-chips" data-chips></div>
+
+  <fieldset class="fgroup"><legend>Oblast</legend>
+    <label for="o-sr"><input type="checkbox" id="o-sr" data-key="oblast" value="sr"> Stavební řád</label>
+    <label for="o-up"><input type="checkbox" id="o-up" data-key="oblast" value="up"> Územní plánování</label>
+    <label for="o-eia"><input type="checkbox" id="o-eia" data-key="oblast" value="eia"> EIA a dotčené orgány</label>
+  </fieldset>
+
+  <fieldset class="fgroup"><legend>Zákon</legend>
+    <label for="z-283"><input type="checkbox" id="z-283" data-key="zakon" value="283"> 283/2021 Sb. (nový)</label>
+    <label for="z-183"><input type="checkbox" id="z-183" data-key="zakon" value="183"> 183/2006 Sb. (starý)</label>
+  </fieldset>
+
+  <div class="fcols">
+    <fieldset class="fgroup"><legend>Platnost</legend>
+      <label for="p-platne"><input type="checkbox" id="p-platne" data-key="platnost" value="platna"> Platné</label>
+      <label for="p-neplatne"><input type="checkbox" id="p-neplatne" data-key="platnost" value="neplatna"> Neplatné</label>
+    </fieldset>
+    <fieldset class="fgroup"><legend>Aktuálnost</legend>
+      <label for="a-akt"><input type="checkbox" id="a-akt" data-key="aktualnost" value="aktualni"> Aktuální</label>
+      <label for="a-hist"><input type="checkbox" id="a-hist" data-key="aktualnost" value="historicka"> Historické</label>
+      <label for="a-nahr"><input type="checkbox" id="a-nahr" data-key="aktualnost" value="nahrazena"> Nahrazené</label>
+    </fieldset>
+  </div>
+
+  <fieldset class="fgroup"><legend>Datum vydání</legend>
+    <div class="frow">
+      <span class="field"><label for="d-od">Od</label><input id="d-od" type="text" placeholder="DD.MM.RRRR"></span>
+      <span class="field"><label for="d-do">Do</label><input id="d-do" type="text" placeholder="DD.MM.RRRR"></span>
+    </div>
+  </fieldset>
+
   <p class="hint mock-note">Platnost je právní status dokumentu, aktuálnost říká, zda dokument nebyl
   nahrazen novějším. Jsou to dvě nezávislá metadata a u každého dokumentu se evidují zvlášť.<span class="cmt" title="Zapracovaná připomínka č. 34: Filtry Platnost a Aktuálnost jsou dvě samostatné osy — dvě povinná metadata u každého dokumentu. Potvrdit s redakcí.">34</span>
   Vyhledávání prochází i obsah připojených PDF.<span class="cmt" title="Zapracovaná připomínka č. 98: Chybí indikace, že se prohledává i obsah příloh (PDF).">98</span></p>
+  <div class="chips gov-chips" data-chips></div>
+  <span class="gov-button" data-color="primary" data-type="outlined" data-size="s"><button class="element" type="button">Zrušit filtry</button></span>
 </div>
 
 <div class="resultbar">
@@ -171,42 +183,24 @@
 </div>
 
 <ul class="doclist" data-list>
-  <li data-oblast="eia" data-zakon="283" data-platnost="platna" data-aktualnost="aktualni" data-date="2026-11-26">
-    <div class="tags"><span class="gov-tag" data-color="neutral" data-type="subtle" data-size="s"><span class="element">Zákon č. 283/2021 Sb.</span></span><span class="gov-tag" data-color="neutral" data-type="subtle" data-size="s"><span class="element">Stavební řád</span></span><span class="gov-tag" data-color="success" data-type="subtle" data-size="s"><span class="element">Platné</span></span></div>
-    <h3><a href="../metodicka-podpora/stanovisko-detail.html">Metodické stanovisko k §184a — Integrace dotčených orgánů do řízení</a></h3>
-    <p>Stanovisko popisuje postup integrace dotčených orgánů do společného řízení o povolení
-    záměru podle nového stavebního zákona, včetně lhůt a náležitostí koordinovaného závazného
-    stanoviska.</p>
-    <div class="meta"><span>Aktualizováno: 26. 11. 2026</span><span>PDF, 296 kB</span></div></li>
-
-  <li data-oblast="sr" data-zakon="283" data-platnost="platna" data-aktualnost="aktualni" data-date="2026-11-26">
-    <div class="tags"><span class="gov-tag" data-color="neutral" data-type="subtle" data-size="s"><span class="element">Zákon č. 283/2021 Sb.</span></span><span class="gov-tag" data-color="neutral" data-type="subtle" data-size="s"><span class="element">Stavební řád</span></span><span class="gov-tag" data-color="success" data-type="subtle" data-size="s"><span class="element">Platné</span></span></div>
-    <h3><a href="../metodicka-podpora/stanovisko-detail.html">Metodické stanovisko k §85 — společné územní a stavební řízení</a></h3>
-    <p>Stanovisko vyjasňuje podmínky, za nichž může stavební úřad sloučit územní a stavební
-    řízení do společného postupu.</p>
-    <div class="meta"><span>Aktualizováno: 26. 11. 2026</span><span>PDF, 296 kB</span></div></li>
-
-  <li data-oblast="sr" data-zakon="283" data-platnost="platna" data-aktualnost="nahrazena" data-date="2025-03-02">
-    <div class="tags"><span class="gov-tag" data-color="neutral" data-type="subtle" data-size="s"><span class="element">Zákon č. 283/2021 Sb.</span></span><span class="gov-tag" data-color="neutral" data-type="subtle" data-size="s"><span class="element">Stavební řád</span></span><span class="gov-tag" data-color="success" data-type="subtle" data-size="s"><span class="element">Platné</span></span><span class="gov-tag" data-color="warning" data-type="subtle" data-size="s"><span class="element">Nahrazené</span></span></div>
-    <h3><a href="../metodicka-podpora/stanovisko-detail.html">Metodické stanovisko k postupu při vadách žádosti</a></h3>
-    <p>Postup úřadu při výzvě k doplnění a běh lhůt.</p>
-    <div class="supersede">Nahrazeno novějším dokumentem: <a href="../metodicka-podpora/stanovisko-detail.html">Metodické stanovisko k §184a</a><span class="cmt" title="Zapracovaná připomínka č. 37: Ve výpisu není navržený stav „nahrazeno novějším dokumentem&quot;.">37</span></div>
-    <div class="meta"><span>Aktualizováno: 2. 3. 2025</span><span>PDF, 296 kB</span></div></li>
-
-  <li data-oblast="up" data-zakon="283" data-platnost="platna" data-aktualnost="aktualni" data-date="2026-05-20">
-    <div class="tags"><span class="gov-tag" data-color="neutral" data-type="subtle" data-size="s"><span class="element">Zákon č. 283/2021 Sb.</span></span><span class="gov-tag" data-color="neutral" data-type="subtle" data-size="s"><span class="element">Územní plánování</span></span><span class="gov-tag" data-color="success" data-type="subtle" data-size="s"><span class="element">Platné</span></span></div>
-    <h3><a href="../metodicka-podpora/stanovisko-detail.html">Metodické stanovisko k pořizování územních plánů obcí</a></h3>
-    <p>Postup pořizovatele a role určeného zastupitele.</p>
-    <div class="meta"><span>Aktualizováno: 20. 5. 2026</span><span>PDF, 296 kB</span></div></li>
-
-  <li data-oblast="up" data-zakon="183" data-platnost="neplatna" data-aktualnost="historicka" data-date="2023-11-08">
-    <div class="tags"><span class="gov-tag" data-color="neutral" data-type="subtle" data-size="s"><span class="element">Zákon č. 183/2006 Sb.</span></span><span class="gov-tag" data-color="neutral" data-type="subtle" data-size="s"><span class="element">Územní plánování</span></span><span class="gov-tag" data-color="error" data-type="subtle" data-size="s"><span class="element">Neplatné</span></span><span class="gov-tag" data-color="neutral" data-type="subtle" data-size="s"><span class="element">Historické</span></span></div>
-    <h3><a href="../metodicka-podpora/stanovisko-detail.html">Stanovisko k obsahu zadání územního plánu</a></h3>
-    <p>Ponecháno kvůli kontinuitě a probíhajícím soudním sporům.</p>
-    <div class="meta"><span>Aktualizováno: 8. 11. 2023</span><span>PDF, 296 kB</span></div></li>
+<li data-oblast="sr" data-zakon="283" data-platnost="platna" data-aktualnost="aktualni" data-date="2026-11-26"><div class="tags"><span class="gov-tag" data-color="neutral" data-type="subtle" data-size="s"><span class="element">Zákon č. 283/2021 Sb.</span></span><span class="gov-tag" data-color="neutral" data-type="subtle" data-size="s"><span class="element">Stavební řád</span></span><span class="gov-tag" data-color="success" data-type="subtle" data-size="s"><span class="element">Platné</span></span></div><h3><a href="../metodicka-podpora/stanovisko-detail.html">Metodické stanovisko k §184a — Integrace dotčených orgánů do řízení po 1. 7. 2026</a></h3><p class="doc-date"><svg class="" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5ZM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1Z" fill="currentColor"/></svg>Aktualizováno: 26. 11. 2026</p><p>Stanovisko popisuje postup integrace dotčených orgánů do společného řízení o povolení záměru podle nového stavebního zákona, včetně lhůt a náležitostí koordinovaného závazného stanoviska.</p></li>
+<li data-oblast="sr" data-zakon="283" data-platnost="platna" data-aktualnost="aktualni" data-date="2026-11-26"><div class="tags"><span class="gov-tag" data-color="neutral" data-type="subtle" data-size="s"><span class="element">Zákon č. 283/2021 Sb.</span></span><span class="gov-tag" data-color="neutral" data-type="subtle" data-size="s"><span class="element">Stavební řád</span></span><span class="gov-tag" data-color="success" data-type="subtle" data-size="s"><span class="element">Platné</span></span></div><h3><a href="../metodicka-podpora/stanovisko-detail.html">Metodické stanovisko k §85 — společné územní a stavební řízení</a></h3><p class="doc-date"><svg class="" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5ZM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1Z" fill="currentColor"/></svg>Aktualizováno: 26. 11. 2026</p><p>Stanovisko vyjasňuje podmínky, za nichž může stavební úřad sloučit územní a stavební řízení do společného postupu.</p></li>
+<li data-oblast="sr" data-zakon="283" data-platnost="platna" data-aktualnost="nahrazena" data-date="2025-03-02"><div class="tags"><span class="gov-tag" data-color="neutral" data-type="subtle" data-size="s"><span class="element">Zákon č. 283/2021 Sb.</span></span><span class="gov-tag" data-color="neutral" data-type="subtle" data-size="s"><span class="element">Stavební řád</span></span><span class="gov-tag" data-color="success" data-type="subtle" data-size="s"><span class="element">Platné</span></span><span class="gov-tag" data-color="warning" data-type="subtle" data-size="s"><span class="element">Nahrazené</span></span></div><h3><a href="../metodicka-podpora/stanovisko-detail.html">Metodické stanovisko k postupu při vadách žádosti</a></h3><p class="doc-date"><svg class="" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5ZM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1Z" fill="currentColor"/></svg>Aktualizováno: 2. 3. 2025</p><p>Postup úřadu při výzvě k doplnění a běh lhůt.</p><div class="supersede">Nahrazeno novějším dokumentem: <a href="../metodicka-podpora/stanovisko-detail.html">Metodické stanovisko k §184a</a></div></li>
+<li data-oblast="up" data-zakon="283" data-platnost="platna" data-aktualnost="aktualni" data-date="2026-05-20"><div class="tags"><span class="gov-tag" data-color="neutral" data-type="subtle" data-size="s"><span class="element">Zákon č. 283/2021 Sb.</span></span><span class="gov-tag" data-color="neutral" data-type="subtle" data-size="s"><span class="element">Územní plánování</span></span><span class="gov-tag" data-color="success" data-type="subtle" data-size="s"><span class="element">Platné</span></span></div><h3><a href="../metodicka-podpora/stanovisko-detail.html">Metodické stanovisko k pořizování územních plánů obcí</a></h3><p class="doc-date"><svg class="" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5ZM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1Z" fill="currentColor"/></svg>Aktualizováno: 20. 5. 2026</p><p>Postup pořizovatele a role určeného zastupitele.</p></li>
+<li data-oblast="up" data-zakon="283" data-platnost="platna" data-aktualnost="aktualni" data-date="2026-04-14"><div class="tags"><span class="gov-tag" data-color="neutral" data-type="subtle" data-size="s"><span class="element">Zákon č. 283/2021 Sb.</span></span><span class="gov-tag" data-color="neutral" data-type="subtle" data-size="s"><span class="element">Územní plánování</span></span><span class="gov-tag" data-color="success" data-type="subtle" data-size="s"><span class="element">Platné</span></span></div><h3><a href="../metodicka-podpora/stanovisko-detail.html">Metodické stanovisko k vymezení zastavěného území</a></h3><p class="doc-date"><svg class="" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5ZM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1Z" fill="currentColor"/></svg>Aktualizováno: 14. 4. 2026</p><p>Postup pro obce bez územního plánu a náležitosti vymezení.</p></li>
+<li data-oblast="eia" data-zakon="283" data-platnost="platna" data-aktualnost="aktualni" data-date="2026-03-05"><div class="tags"><span class="gov-tag" data-color="neutral" data-type="subtle" data-size="s"><span class="element">Zákon č. 283/2021 Sb.</span></span><span class="gov-tag" data-color="neutral" data-type="subtle" data-size="s"><span class="element">EIA a dotčené orgány</span></span><span class="gov-tag" data-color="success" data-type="subtle" data-size="s"><span class="element">Platné</span></span></div><h3><a href="../metodicka-podpora/stanovisko-detail.html">Metodické stanovisko k vyjádření dotčeného orgánu ve lhůtě 30 dnů</a></h3><p class="doc-date"><svg class="" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5ZM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1Z" fill="currentColor"/></svg>Aktualizováno: 5. 3. 2026</p><p>Postup dotčeného orgánu při doručení podkladů a stavění lhůty při jejich doplňování.</p></li>
+<li data-oblast="eia" data-zakon="283" data-platnost="platna" data-aktualnost="aktualni" data-date="2026-02-11"><div class="tags"><span class="gov-tag" data-color="neutral" data-type="subtle" data-size="s"><span class="element">Zákon č. 283/2021 Sb.</span></span><span class="gov-tag" data-color="neutral" data-type="subtle" data-size="s"><span class="element">EIA a dotčené orgány</span></span><span class="gov-tag" data-color="success" data-type="subtle" data-size="s"><span class="element">Platné</span></span></div><h3><a href="../metodicka-podpora/stanovisko-detail.html">Metodické stanovisko ke zrušení jednotného environmentálního stanoviska</a></h3><p class="doc-date"><svg class="" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5ZM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1Z" fill="currentColor"/></svg>Aktualizováno: 11. 2. 2026</p><p>Jak se obsah dosavadního JES promítá do vyjádření jednotlivých dotčených orgánů.</p></li>
+<li data-oblast="sr" data-zakon="283" data-platnost="platna" data-aktualnost="historicka" data-date="2025-09-30"><div class="tags"><span class="gov-tag" data-color="neutral" data-type="subtle" data-size="s"><span class="element">Zákon č. 283/2021 Sb.</span></span><span class="gov-tag" data-color="neutral" data-type="subtle" data-size="s"><span class="element">Stavební řád</span></span><span class="gov-tag" data-color="success" data-type="subtle" data-size="s"><span class="element">Platné</span></span><span class="gov-tag" data-color="neutral" data-type="subtle" data-size="s"><span class="element">Historické</span></span></div><h3><a href="../metodicka-podpora/stanovisko-detail.html">Metodické stanovisko k přechodu rozpracovaných řízení</a></h3><p class="doc-date"><svg class="" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5ZM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1Z" fill="currentColor"/></svg>Aktualizováno: 30. 9. 2025</p><p>Ponecháno kvůli řízením zahájeným před účinností novely.</p></li>
+<li data-oblast="up" data-zakon="183" data-platnost="neplatna" data-aktualnost="historicka" data-date="2023-11-08"><div class="tags"><span class="gov-tag" data-color="neutral" data-type="subtle" data-size="s"><span class="element">Zákon č. 183/2006 Sb.</span></span><span class="gov-tag" data-color="neutral" data-type="subtle" data-size="s"><span class="element">Územní plánování</span></span><span class="gov-tag" data-color="error" data-type="subtle" data-size="s"><span class="element">Neplatné</span></span><span class="gov-tag" data-color="neutral" data-type="subtle" data-size="s"><span class="element">Historické</span></span></div><h3><a href="../metodicka-podpora/stanovisko-detail.html">Stanovisko k obsahu zadání územního plánu</a></h3><p class="doc-date"><svg class="" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5ZM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1Z" fill="currentColor"/></svg>Aktualizováno: 8. 11. 2023</p><p>Ponecháno kvůli kontinuitě a probíhajícím soudním sporům.</p></li>
+<li data-oblast="up" data-zakon="183" data-platnost="neplatna" data-aktualnost="historicka" data-date="2023-05-22"><div class="tags"><span class="gov-tag" data-color="neutral" data-type="subtle" data-size="s"><span class="element">Zákon č. 183/2006 Sb.</span></span><span class="gov-tag" data-color="neutral" data-type="subtle" data-size="s"><span class="element">Územní plánování</span></span><span class="gov-tag" data-color="error" data-type="subtle" data-size="s"><span class="element">Neplatné</span></span><span class="gov-tag" data-color="neutral" data-type="subtle" data-size="s"><span class="element">Historické</span></span></div><h3><a href="../metodicka-podpora/stanovisko-detail.html">Stanovisko k projednávání změn územního plánu zkráceným postupem</a></h3><p class="doc-date"><svg class="" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5ZM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1Z" fill="currentColor"/></svg>Aktualizováno: 22. 5. 2023</p><p>Ponecháno kvůli probíhajícím pořizovacím procesům.</p></li>
 </ul>
 <div class="gov-empty" data-size="m" data-direction="column" data-align="center" data-empty style="display:none"><div class="gov-empty__content"><p>Zadanému filtru neodpovídá žádné stanovisko.
 Zkuste zrušit filtr platnosti nebo aktuálnosti.</p></div></div>
+
+<nav class="pager" aria-label="Stránkování">
+  <a href="#" aria-current="page">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a>
+  <span>…</span><a href="#">10</a><a href="#">11</a>
+</nav>
 <h2>Máte dotaz k metodickým stanoviskům?</h2><div class="helpbox"><svg class="helpbox__icon" aria-hidden="true" focusable="false" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M0 10.0009C0 8.89632 0.895431 8.00089 2 8.00089H46C47.1046 8.00089 48 8.89632 48 10.0009V38.0009C48 39.1055 47.1046 40.0009 46 40.0009H2C0.895432 40.0009 0 39.1055 0 38.0009V10.0009ZM45.1815 9.50089H2.81819L23.6865 26.2862C23.8695 26.4334 24.1302 26.4334 24.3132 26.2862L45.1815 9.50089ZM1.5 10.3656V38.0009C1.5 38.277 1.72386 38.5009 2 38.5009H46C46.2761 38.5009 46.5 38.277 46.5 38.0009V10.3654L25.2534 27.4551C24.5214 28.0438 23.4783 28.0438 22.7463 27.4551L1.5 10.3656Z" fill="currentColor"/>
 </svg><h3>Kontakt na metodiky</h3><p>Napište nám — rádi poradíme.</p><p class="mail"><svg class="" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 10.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 14h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" fill="currentColor"/></svg><a href="mailto:obecny-dotaz@uru.gov.cz">obecny-dotaz@uru.gov.cz</a></p></div></div></div>

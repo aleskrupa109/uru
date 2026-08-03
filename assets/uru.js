@@ -67,6 +67,7 @@
     if (!list) return;
     var rows = Array.prototype.slice.call(list.children);
     var selects = wrap.querySelectorAll('select[data-key]');
+    var boxes = wrap.querySelectorAll('input[data-key]');   // checkbox / radio
     var q = wrap.querySelector('input[data-q]');
     var counter = document.querySelector('[data-count]');
     var chips = document.querySelector('[data-chips]');
@@ -80,6 +81,16 @@
         selects.forEach(function (s) {
           if (!s.value) return;
           if ((r.dataset[s.dataset.key] || '') !== s.value) ok = false;
+        });
+        // zaškrtnutá políčka téže skupiny se spojují spojkou „nebo",
+        // skupiny mezi sebou spojkou „a"
+        var byKey = {};
+        boxes.forEach(function (b) {
+          if (!b.checked) return;
+          (byKey[b.dataset.key] = byKey[b.dataset.key] || []).push(b.value);
+        });
+        Object.keys(byKey).forEach(function (k) {
+          if (byKey[k].indexOf(r.dataset[k] || '') === -1) ok = false;
         });
         if (q && q.value.trim()) {
           var needle = q.value.trim().toLowerCase();
@@ -121,6 +132,12 @@
           if (!s.value) return;
           makeChip(s.options[s.selectedIndex].text, function () { s.value = ''; apply(); });
         });
+        boxes.forEach(function (b) {
+          if (!b.checked) return;
+          var lab = wrap.querySelector('label[for="' + b.id + '"]');
+          makeChip(lab ? lab.textContent.trim() : b.value,
+                   function () { b.checked = false; apply(); });
+        });
         if (q && q.value.trim()) {
           makeChip('\u201e' + q.value.trim() + '\u201c', function () { q.value = ''; apply(); });
         }
@@ -129,12 +146,14 @@
     }
 
     selects.forEach(function (s) { s.addEventListener('change', apply); });
+    boxes.forEach(function (b) { b.addEventListener('change', apply); });
     if (q) q.addEventListener('input', apply);
     if (sort) sort.addEventListener('change', apply);
     if (perPage) perPage.addEventListener('change', apply);
     var reset = wrap.querySelector('[data-reset]');
     if (reset) reset.addEventListener('click', function () {
       selects.forEach(function (s) { s.value = ''; });
+      boxes.forEach(function (b) { b.checked = false; });
       if (q) q.value = '';
       apply();
     });
