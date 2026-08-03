@@ -550,10 +550,13 @@ def to_ds(html_body):
         ico = tile_icon_for(href)
         ico = f'<span slot="icon">{ico}</span>' if ico else ""
         # návrh v dlaždicích rozcestníku šipku nemá
+        # Návrh má v dlaždicích rozcestníku sekce odkaz „Zjistit více"; na úvodní
+        # stránce ne. Vypisuje se vždy a zobrazuje jen v mřížce s třídou hub.
         return (f'<div class="gov-tile uru-card" data-size="m" data-orientation="vertical" data-clickable="1">'
                 f'{ico}<div class="gov-tile__content"><div class="gov-tile__text">{head}'
                 f'<div class="gov-tile__title"><a class="gov-tile__link" href="{href}">{h3.group(1)}</a></div>'
                 f'<div class="gov-tile__annotation">{desc}</div>'
+                f'<span class="tile-more">Zjistit více</span>'
                 f'</div></div></div>')
 
     def qlink(m):

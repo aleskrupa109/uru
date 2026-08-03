@@ -11,7 +11,7 @@ C = [("Vyhrazené stavby", "vyhrazene-stavby/index.html")]
 
 ROZCESTNIK = """
 <p class="hint">Pořadí dlaždic odpovídá pořadí položek v levém submenu podstránek.""" + cmt(12, "Zajistit, aby pořadí dlaždic odpovídalo pořadí v levém submenu na navazujících stránkách.") + """</p>
-<div class="grid g3" style="margin-top:18px">
+<div class="grid g3 hub" style="margin-top:18px">
   <a class="card" href="{{r}}vyhrazene-stavby/co-meni-novela.html">
     <span class="order">novinka</span>
     <h3>Co změní novela SZ""" + cmt(11, "Doplnit dlaždici „Co změní novela SZ\" jako první.") + """</h3>

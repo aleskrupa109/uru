@@ -102,7 +102,7 @@ do spisové služby úřadu a je mu přiděleno číslo jednací.</p>
 """
 
 OURAD = """
-<div class="grid g3">
+<div class="grid g3 hub">
   <a class="card" href="{{r}}o-uradu/kdo-jsme.html"><h3>Kdo jsme a co děláme</h3>
     <p>Kompetence, zákonný základ, vznik z DESÚ</p></a>
   <a class="card" href="{{r}}o-uradu/organizacni-struktura.html"><h3>Organizační struktura</h3>

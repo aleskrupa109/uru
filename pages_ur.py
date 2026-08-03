@@ -6,7 +6,7 @@ import content_extra2 as E
 C = [("Územní rozvoj", "uzemni-rozvoj/index.html")]
 
 ROZCESTNIK = """
-<div class="grid g3">
+<div class="grid g3 hub">
   <a class="card" href="{{r}}uzemni-rozvoj/uzemni-planovani.html"><h3>Územní plánování</h3>
     <p>PÚR ČR, Politika architektury, Územní rozvojový plán, ÚAP, Evidence ÚP činnosti,
     Slovník, Přehled dotčených orgánů.</p></a>

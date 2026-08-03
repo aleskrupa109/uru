@@ -606,3 +606,21 @@ body.editing [data-edit]:focus { outline: 2px solid var(--color-success-600); ba
 .filters .chips { margin: var(--spacing-s-nudge) 0 0; }
 .filters .chips:empty { display: none; }
 .filters [data-reset] { margin-top: var(--spacing-m); }
+
+/* ---------- odkaz „Zjistit více" v dlaždici rozcestníku ----------
+   Návrh ho má na rozcestnících sekcí, na úvodní stránce ne. */
+.tile-more { display: none; }
+.grid.hub .tile-more {
+  display: inline-flex; align-items: center; gap: var(--spacing-s);
+  margin-top: var(--spacing-m); color: var(--color-primary-600);
+  font-size: var(--font-size-body-m); font-weight: 500;
+}
+.grid.hub .tile-more::after {
+  content: ""; width: .8125rem; height: .8125rem; background: currentColor;
+  -webkit-mask: var(--uru-arrow) no-repeat center / contain;
+  mask: var(--uru-arrow) no-repeat center / contain;
+}
+.grid.hub > .uru-card { display: flex; }
+.grid.hub > .uru-card .gov-tile__content,
+.grid.hub > .uru-card .gov-tile__text { display: flex; flex-direction: column; flex: 1; }
+.grid.hub > .uru-card .tile-more { margin-top: auto; padding-top: var(--spacing-m); }

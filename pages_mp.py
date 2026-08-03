@@ -10,7 +10,7 @@ import content_mp_extra as M
 C = [("Metodická podpora", "metodicka-podpora/index.html")]
 
 ROZCESTNIK = """
-<div class="grid g3">
+<div class="grid g3 hub">
   <a class="card" href="{{r}}metodicka-podpora/metodicka-stanoviska.html">
     <h3>Metodická stanoviska a výklady</h3>
     <p>Databáze výkladových stanovisek k novému i starému stavebnímu zákonu.</p></a>
