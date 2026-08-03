@@ -286,15 +286,12 @@ PORTAL = """
 Digitální a informační agentura (DIA).</p>
 
 <h2>Co musíte udělat před podáním žádosti</h2>
-<ol class="steps">
-  <li><h3>Připravte projektovou dokumentaci</h3>
-    <p>Ve formátu PDF, elektronicky podepsanou autorizovanou osobou s kvalifikovaným
-    elektronickým razítkem.</p></li>
-  <li><h3>Vložte dokumentaci do evidence</h3>
-    <p>Do evidence elektronických dokumentací přes Portál stavebníka — jako příjemce
-    zvolte ÚRÚ.</p></li>
-  <li><h3>Zaznamenejte si ID dokumentace</h3>
-    <p>Budete ho potřebovat při vyplňování žádosti.</p></li>
+<ol>
+  <li>Připravte projektovou dokumentaci ve formátu PDF, elektronicky podepsanou autorizovanou
+      osobou s kvalifikovaným elektronickým razítkem.</li>
+  <li>Vložte dokumentaci do evidence elektronických dokumentací přes Portál stavebníka —
+      jako příjemce zvolte ÚRÚ.</li>
+  <li>Zaznamenejte si ID dokumentace — budete ho potřebovat při vyplňování žádosti.</li>
 </ol>
 
 <h2>Jak podat žádost</h2>
@@ -302,7 +299,7 @@ Digitální a informační agentura (DIA).</p>
 osobně. Vložení projektové dokumentace přes portál je povinné vždy — bez ohledu na způsob
 podání žádosti.</p>
 
-<div class="btn-row"><a class="btn" href="#">Přejít na Portál stavebníka</a></div>
+<div class="btn-row"><a class="btn arrow" href="#">Přejít na portál stavebníka</a></div>
 """
 
 FAQ_GROUPS = [

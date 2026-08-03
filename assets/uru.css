@@ -152,14 +152,16 @@ li.open .dropdown { display: block; }
 .page-head .perex { font-size: var(--font-size-body-l); color: var(--text-secondary); max-width: 64ch; margin: 0; }
 .updated { font-size: var(--font-size-body-s); color: var(--text-tertiary); margin: var(--spacing-s) 0 0; }
 
-.cols-side { display: grid; grid-template-columns: 17.75rem 1fr; align-items: start; margin-top: var(--spacing-l); }
+/* Návrh: levý sloupec 284 px, obsahový panel 800 px — zbytek mřížky zůstává prázdný. */
+.cols-side { display: grid; grid-template-columns: 17.75rem minmax(0, 50rem);
+  align-items: start; margin-top: var(--spacing-l); }
 .subnav { position: sticky; top: 3.5rem; padding: 0 var(--spacing-l) 0 0; }
 .subnav h2 { font-size: var(--font-size-headline-xs); color: var(--text-primary);
   margin: 0 0 var(--spacing-l); font-weight: 500; letter-spacing: 0; text-transform: none; }
-.subnav a { display: block; padding: var(--spacing-s-nudge) 0; text-decoration: none;
-  color: var(--color-primary-700); font-size: var(--font-size-body-m); line-height: 1.4; }
-.subnav a:hover { color: var(--color-primary-600); text-decoration: underline; }
-.subnav a[aria-current] { color: var(--color-primary-600); font-weight: 500; }
+.subnav a { display: block; padding: var(--spacing-s-nudge) 0; font-size: var(--font-size-body-m);
+  line-height: 1.4; color: var(--color-primary-700); text-decoration: underline; }
+.subnav a:hover { color: var(--color-primary-600); }
+.subnav a[aria-current] { color: var(--text-primary); text-decoration: none; font-weight: 400; }
 .content { background: var(--background-block-primary); border-radius: var(--corner-radius-m);
   padding: var(--spacing-xl) var(--spacing-l) var(--spacing-3xl); box-shadow: var(--uru-shadow); }
 /* Nadpis podstránky a perex jsou v návrhu součástí bílého panelu. */
@@ -508,11 +510,41 @@ body.editing [data-edit]:focus { outline: 2px solid var(--color-success-600); ba
 /* ---------- znak úřadu v hlavičce ---------- */
 .brand svg { height: 2.375rem; width: auto; color: var(--color-primary-600); flex: none; }
 
-/* ---------- opakující se blok „Potřebujete pomoct?" ---------- */
-.helpbox { display: flex; gap: var(--spacing-l); flex-wrap: wrap; align-items: center;
-  background: var(--background-primary-subtlest); border-radius: var(--corner-radius-s);
-  padding: var(--spacing-m-nudge); margin: var(--spacing-l) 0 0; }
-.helpbox h3 { margin: 0 0 var(--spacing-xs); font-size: var(--font-size-headline-xs); font-weight: 500; }
+/* ---------- opakující se blok „Potřebujete pomoct?" ----------
+   Návrh: šedý panel uvnitř bílého obsahu, ikona obálky 48 px, modrý nadpis
+   kontaktu, popisný text a e-mail jako odkaz — vše pod sebou. */
+.helpbox { background: var(--background-block-secondary); border-radius: var(--corner-radius-s);
+  padding: var(--spacing-m-nudge) var(--spacing-l) var(--spacing-l); margin: var(--spacing-m-nudge) 0 0; }
+.helpbox__icon { width: 3rem; height: 3rem; display: block; color: var(--color-primary-600);
+  margin-bottom: var(--spacing-m); }
+.helpbox h3 { margin: 0 0 var(--spacing-s); font-size: var(--font-size-headline-s);
+  font-weight: 500; color: var(--color-primary-700); }
 .helpbox p { margin: 0; color: var(--text-secondary); }
-.helpbox .mail { font-weight: 500; }
-.helpbox .all { margin-left: auto; }
+.helpbox .mail { display: flex; align-items: center; gap: var(--spacing-s);
+  margin-top: var(--spacing-m); color: var(--color-primary-600); }
+.helpbox .mail svg { width: var(--icon-size-l); height: var(--icon-size-l); flex: none; }
+
+/* ---------- tlačítko se šipkou ----------
+   Návrh má u tlačítek vedoucích mimo web šipku vpravo uvnitř tlačítka. */
+.gov-button .element.arrow::after {
+  content: ""; display: inline-block; width: .8125rem; height: .8125rem;
+  margin-left: .5rem; vertical-align: -1px; background: currentColor;
+  -webkit-mask: var(--uru-arrow) no-repeat center / contain;
+  mask: var(--uru-arrow) no-repeat center / contain;
+}
+
+/* ---------- patička: sociální sítě a tlačítko zpět nahoru ---------- */
+.site-footer .wrap { position: relative; }
+.footer-social { display: flex; gap: var(--spacing-s); margin-top: var(--spacing-m); }
+.footer-social span {
+  width: 2rem; height: 2rem; border-radius: var(--corner-radius-xs);
+  background: var(--color-primary-600); color: var(--color-neutral-0);
+  display: grid; place-items: center; font-size: var(--font-size-body-s); font-weight: 500;
+}
+.footer-top {
+  position: absolute; right: 0; top: 0; width: 2.5rem; height: 2.5rem;
+  border-radius: var(--corner-radius-xs); background: var(--background-white);
+  color: var(--color-primary-600); display: grid; place-items: center;
+}
+.footer-top .up { transform: rotate(180deg); width: var(--icon-size-l); height: var(--icon-size-l); }
+.footer-top:hover { background: var(--color-primary-100); }

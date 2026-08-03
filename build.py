@@ -204,6 +204,7 @@ GICON = {
     "chevron-right": '<svg class="{c}" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708Z" fill="currentColor"/></svg>',
     "search": '<svg class="{c}" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.398 1.398l3.85 3.85a1 1 0 0 0 1.414-1.414l-3.85-3.85ZM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0Z" fill="currentColor"/></svg>',
     "x-lg": '<svg class="{c}" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" fill="currentColor"/></svg>',
+    "envelope": '<svg class="{c}" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 10.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 14h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" fill="currentColor"/></svg>',
     "warn": '<svg class="{c}" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566ZM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5Zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z" fill="currentColor"/></svg>',
 }
 
@@ -303,11 +304,14 @@ HELP = {
 
 
 def help_block(kind, r):
+    """Blok „Potřebujete pomoct?" podle návrhu: šedý panel, ikona obálky 48 px,
+    modrý nadpis kontaktu, popisný text a e-mail jako odkaz — vše pod sebou."""
     head, title, text, mail = HELP[kind]
     h = f"<h2>{head}</h2>" if head else ""
-    return (f'{h}<div class="helpbox"><div><h3>{title}</h3><p>{text}</p></div>'
-            f'<p class="mail"><a href="mailto:{mail}">{mail}</a></p>'
-            f'<p class="all"><a href="{r}kontakty.html">Všechny kontakty</a></p></div>')
+    return (f'{h}<div class="helpbox">{dsicon("simple-envelope", cls="helpbox__icon")}'
+            f'<h3>{title}</h3><p>{text}</p>'
+            f'<p class="mail">{gicon("envelope")}'
+            f'<a href="mailto:{mail}">{mail}</a></p></div>')
 
 
 def footer(r):
@@ -350,9 +354,15 @@ def footer(r):
         '<li>Úřad rozvoje území</li>'
         '<li>adresa se doplní</li>'
         '<li>telefon se doplní</li>'
-        f'<li><a href="{r}kontakty.html">Všechny kontakty</a></li></ul></div>')
+        f'<li><a href="{r}kontakty.html">Všechny kontakty</a></li></ul>'
+        '<div class="footer-social" aria-label="Sociální sítě">'
+        + "".join(f'<span title="{n}">{n[0]}</span>' for n in
+                  ("Facebook", "Instagram", "YouTube", "LinkedIn"))
+        + '</div></div>')
     out.append('</div>')
 
+    out.append('<a class="footer-top" href="#" aria-label="Zpět nahoru">'
+               + gicon("chevron-down", "up") + '</a>')
     out.append('<div class="footer-logos"><h3>Související loga</h3><div class="logos">'
                '<span>Národní plán obnovy</span><span>Financováno Evropskou unií</span></div></div>')
 
@@ -453,11 +463,12 @@ def to_ds(html_body):
         cls, attrs, label = m.group("cls"), m.group("attrs"), m.group("label")
         typ = "outlined" if "ghost" in cls else "solid"
         size = "s" if " sm" in " " + cls else "m"
+        arrow = " arrow" if "arrow" in cls.split() else ""
         href = re.search(r'href="([^"]*)"', attrs)
         if href:
-            inner = f'<a class="element" href="{href.group(1)}">{label}</a>'
+            inner = f'<a class="element{arrow}" href="{href.group(1)}">{label}</a>'
         else:
-            inner = f'<button class="element" type="button">{label}</button>'
+            inner = f'<button class="element{arrow}" type="button">{label}</button>'
         return (f'<span class="gov-button" data-color="primary" data-type="{typ}" '
                 f'data-size="{size}">{inner}</span>')
 

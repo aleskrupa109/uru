@@ -20,6 +20,7 @@
   --uru-wrap: 72rem;        /* 1152 px – obsahový sloupec z návrhu */
   --uru-header-h: 4.5rem;   /* 72 px */
   --uru-nav-h: 4rem;        /* 64 px */
+  --uru-arrow: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8.5 2.5 14 8l-5.5 5.5-1-1L11 9H2V7h9L7.5 3.5z"/></svg>');
   --uru-shadow: 0 2px 8px rgb(38 38 38 / 6%);
   --uru-shadow-lg: 0 8px 28px rgb(29 60 93 / 14%);
 }
