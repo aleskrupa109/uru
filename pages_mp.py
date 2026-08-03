@@ -58,13 +58,13 @@ STANOVISKA = """
 
   <div class="fcols">
     <fieldset class="fgroup"><legend>Platnost</legend>
-      <label for="p-platne"><input type="checkbox" id="p-platne" data-key="platnost" value="platna"> Platné</label>
-      <label for="p-neplatne"><input type="checkbox" id="p-neplatne" data-key="platnost" value="neplatna"> Neplatné</label>
+      <label for="p-platne"><input type="radio" name="platnost" id="p-platne" data-key="platnost" value="platna"> Platné</label>
+      <label for="p-neplatne"><input type="radio" name="platnost" id="p-neplatne" data-key="platnost" value="neplatna"> Neplatné</label>
     </fieldset>
     <fieldset class="fgroup"><legend>Aktuálnost</legend>
-      <label for="a-akt"><input type="checkbox" id="a-akt" data-key="aktualnost" value="aktualni"> Aktuální</label>
-      <label for="a-hist"><input type="checkbox" id="a-hist" data-key="aktualnost" value="historicka"> Historické</label>
-      <label for="a-nahr"><input type="checkbox" id="a-nahr" data-key="aktualnost" value="nahrazena"> Nahrazené</label>
+      <label for="a-akt"><input type="radio" name="aktualnost" id="a-akt" data-key="aktualnost" value="aktualni"> Aktuální</label>
+      <label for="a-hist"><input type="radio" name="aktualnost" id="a-hist" data-key="aktualnost" value="historicka"> Historické</label>
+      <label for="a-nahr"><input type="radio" name="aktualnost" id="a-nahr" data-key="aktualnost" value="nahrazena"> Nahrazené</label>
     </fieldset>
   </div>
 
@@ -108,8 +108,11 @@ STANOVISKA = """
 Zkuste zrušit filtr platnosti nebo aktuálnosti.</div>
 
 <nav class="pager" aria-label="Stránkování">
+  <a class="edge" href="#" aria-label="Předchozí stránka">‹</a>
   <a href="#" aria-current="page">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a>
   <span>…</span><a href="#">10</a><a href="#">11</a>
+  <a class="edge" href="#" aria-label="Další stránka">›</a>
+  <a class="edge" href="#" aria-label="Poslední stránka">»</a>
 </nav>
 """
 

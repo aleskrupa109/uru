@@ -568,7 +568,9 @@ body.editing [data-edit]:focus { outline: 2px solid var(--color-success-600); ba
 .fgroup label { display: inline-flex; align-items: center; gap: var(--spacing-s);
   margin-right: var(--spacing-l); font-size: var(--font-size-body-m); color: var(--text-secondary); }
 .fgroup input[type="checkbox"], .fgroup input[type="radio"] { width: 1rem; height: 1rem; accent-color: var(--color-primary-600); }
-.fcols { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-l); }
+/* Návrh dává Aktuálnosti víc místa, aby se všechny tři volby vešly na řádek. */
+.fcols { display: grid; grid-template-columns: 1fr 1.55fr; gap: var(--spacing-l); }
+.fcols .fgroup label { white-space: nowrap; margin-right: var(--spacing-m-nudge); }
 .fgroup .frow { display: flex; gap: var(--spacing-l); }
 .fgroup .frow .field { display: inline-flex; flex-direction: column; gap: var(--spacing-xs); }
 .fgroup .frow label { margin: 0; font-size: var(--font-size-body-s); }
@@ -596,3 +598,4 @@ body.editing [data-edit]:focus { outline: 2px solid var(--color-success-600); ba
 .pager a:hover { background: var(--background-primary-subtlest); }
 .pager a[aria-current] { background: var(--background-primary); color: var(--text-white-fixed); }
 .pager span { color: var(--text-tertiary); }
+.pager .edge { color: var(--text-secondary); font-size: var(--font-size-body-l); }

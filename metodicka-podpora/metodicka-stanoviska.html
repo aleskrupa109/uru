@@ -148,13 +148,13 @@
 
   <div class="fcols">
     <fieldset class="fgroup"><legend>Platnost</legend>
-      <label for="p-platne"><input type="checkbox" id="p-platne" data-key="platnost" value="platna"> Platné</label>
-      <label for="p-neplatne"><input type="checkbox" id="p-neplatne" data-key="platnost" value="neplatna"> Neplatné</label>
+      <label for="p-platne"><input type="radio" name="platnost" id="p-platne" data-key="platnost" value="platna"> Platné</label>
+      <label for="p-neplatne"><input type="radio" name="platnost" id="p-neplatne" data-key="platnost" value="neplatna"> Neplatné</label>
     </fieldset>
     <fieldset class="fgroup"><legend>Aktuálnost</legend>
-      <label for="a-akt"><input type="checkbox" id="a-akt" data-key="aktualnost" value="aktualni"> Aktuální</label>
-      <label for="a-hist"><input type="checkbox" id="a-hist" data-key="aktualnost" value="historicka"> Historické</label>
-      <label for="a-nahr"><input type="checkbox" id="a-nahr" data-key="aktualnost" value="nahrazena"> Nahrazené</label>
+      <label for="a-akt"><input type="radio" name="aktualnost" id="a-akt" data-key="aktualnost" value="aktualni"> Aktuální</label>
+      <label for="a-hist"><input type="radio" name="aktualnost" id="a-hist" data-key="aktualnost" value="historicka"> Historické</label>
+      <label for="a-nahr"><input type="radio" name="aktualnost" id="a-nahr" data-key="aktualnost" value="nahrazena"> Nahrazené</label>
     </fieldset>
   </div>
 
@@ -198,8 +198,11 @@
 Zkuste zrušit filtr platnosti nebo aktuálnosti.</p></div></div>
 
 <nav class="pager" aria-label="Stránkování">
+  <a class="edge" href="#" aria-label="Předchozí stránka">‹</a>
   <a href="#" aria-current="page">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a>
   <span>…</span><a href="#">10</a><a href="#">11</a>
+  <a class="edge" href="#" aria-label="Další stránka">›</a>
+  <a class="edge" href="#" aria-label="Poslední stránka">»</a>
 </nav>
 <h2>Máte dotaz k metodickým stanoviskům?</h2><div class="helpbox"><svg class="helpbox__icon" aria-hidden="true" focusable="false" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M0 10.0009C0 8.89632 0.895431 8.00089 2 8.00089H46C47.1046 8.00089 48 8.89632 48 10.0009V38.0009C48 39.1055 47.1046 40.0009 46 40.0009H2C0.895432 40.0009 0 39.1055 0 38.0009V10.0009ZM45.1815 9.50089H2.81819L23.6865 26.2862C23.8695 26.4334 24.1302 26.4334 24.3132 26.2862L45.1815 9.50089ZM1.5 10.3656V38.0009C1.5 38.277 1.72386 38.5009 2 38.5009H46C46.2761 38.5009 46.5 38.277 46.5 38.0009V10.3654L25.2534 27.4551C24.5214 28.0438 23.4783 28.0438 22.7463 27.4551L1.5 10.3656Z" fill="currentColor"/>
