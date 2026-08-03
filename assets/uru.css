@@ -699,3 +699,11 @@ body.editing [data-edit]:focus { outline: 2px solid var(--color-success-600); ba
   .article-toc { position: static; }
   .gallery { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* ---------- štítky a sdílení v hlavičce článku ----------
+   Návrh: štítek má před textem hvězdičku, vpravo čtyři ikony sdílení
+   (odměřeno: 13 px, rozteč 32 px, zarovnané k pravému okraji sloupce). */
+.article-tags .gov-tag .element { display: inline-flex; align-items: center; gap: var(--spacing-xs); }
+.article-tags .gov-tag svg { width: .75rem; height: .75rem; }
+.article-share { display: inline-flex; align-items: center; gap: var(--spacing-m-nudge); }
+.article-share svg { width: .875rem; height: .875rem; }

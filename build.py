@@ -223,6 +223,11 @@ GICON = {
     "chevron-right": '<svg class="{c}" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708Z" fill="currentColor"/></svg>',
     "search": '<svg class="{c}" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.398 1.398l3.85 3.85a1 1 0 0 0 1.414-1.414l-3.85-3.85ZM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0Z" fill="currentColor"/></svg>',
     "x-lg": '<svg class="{c}" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" fill="currentColor"/></svg>',
+    "star": '<svg class="{c}" width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256Z" fill="currentColor"/></svg>',
+    "share-fb": '<svg class="{c}" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M16 8.05C16 3.6 12.42 0 8 0S0 3.6 0 8.05C0 12.07 2.93 15.4 6.75 16v-5.62H4.72V8.05h2.03V6.28c0-2.02 1.2-3.13 3.02-3.13.87 0 1.79.16 1.79.16v1.97h-1.01c-.99 0-1.3.62-1.3 1.26v1.51h2.22l-.36 2.33H9.25V16C13.07 15.4 16 12.07 16 8.05Z" fill="currentColor"/></svg>',
+    "share-x": '<svg class="{c}" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M12.6 0h2.45l-5.35 6.12L16 16h-4.94l-3.87-5.06L2.76 16H.31l5.72-6.54L0 0h5.06l3.5 4.63L12.6 0Zm-.86 14.55h1.36L4.32 1.38H2.87l8.87 13.17Z" fill="currentColor"/></svg>',
+    "share-mail": '<svg class="{c}" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm6 6.7L1.5 4.5V4l6.5 4.2L14.5 4v.5L8 8.7Z" fill="currentColor"/></svg>',
+    "share-link": '<svg class="{c}" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6.35 9.65a3.5 3.5 0 0 0 4.95 0l2.12-2.12a3.5 3.5 0 1 0-4.95-4.95l-1.06 1.06 1.06 1.06 1.06-1.06a2 2 0 1 1 2.83 2.83L10.24 8.6a2 2 0 0 1-2.83 0L6.35 9.65Zm3.3-3.3a3.5 3.5 0 0 0-4.95 0L2.58 8.47a3.5 3.5 0 1 0 4.95 4.95l1.06-1.06-1.06-1.06-1.06 1.06a2 2 0 1 1-2.83-2.83L5.76 7.4a2 2 0 0 1 2.83 0l1.06-1.05Z" fill="currentColor"/></svg>',
     "user": '<svg class="{c}" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2 1H6a4 4 0 0 0-4 4v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-1a4 4 0 0 0-4-4Z" fill="currentColor"/></svg>',
     "share": '<svg class="{c}" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M12 5a2 2 0 1 0-1.8-1.13L5.9 6.3a2 2 0 1 0 0 3.4l4.3 2.43a2 2 0 1 0 .5-.87L6.4 8.83a2 2 0 0 0 0-1.66l4.3-2.43c.35.16.74.26 1.15.26Z" fill="currentColor"/></svg>',
     "calendar": '<svg class="{c}" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5ZM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1Z" fill="currentColor"/></svg>',
@@ -675,7 +680,9 @@ def build_page(p):
     body = (p["body"].replace("{CAL}", gicon("calendar"))
             .replace("{SEARCH}", gicon("search"))
             .replace("{USER}", gicon("user"))
-            .replace("{SHARE}", gicon("share")))
+            .replace("{STAR}", gicon("star"))
+            .replace("{SHARE}", gicon("share-fb") + gicon("share-x")
+                     + gicon("share-mail") + gicon("share-link")))
     p = dict(p, body=body)
     body = to_ds(body)
     if p.get("help"):

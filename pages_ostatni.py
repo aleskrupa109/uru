@@ -320,8 +320,8 @@ CLANEK = ("""
   <p class="doc-date">{USER}Jan Novotný</p>
 </div>
 <div class="tags article-tags">
-  <span class="tag neutral">Aktualita</span><span class="tag neutral">novela</span>
-  <span class="tag neutral">transformace</span>""" + cmt(94, "Štítky nemají cílovou stránku (výpis podle štítku).") + """
+  <span class="tag neutral">{STAR}Aktualita</span><span class="tag neutral">{STAR}novela</span>
+  <span class="tag neutral">{STAR}transformace</span>""" + cmt(94, "Štítky nemají cílovou stránku (výpis podle štítku).") + """
   <span class="article-share" aria-label="Sdílet">{SHARE}</span>
 </div>
 
