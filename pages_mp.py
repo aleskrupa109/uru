@@ -118,11 +118,12 @@ Zkuste zrušit filtr platnosti nebo aktuálnosti.</div>
 """
 
 DETAIL = """
-<div class="tags" style="display:flex;gap:8px;margin-bottom:12px">
+<p class="doc-date">{CAL}Aktualizováno: 26. 11. 2026</p>
+<p class="doc-date">{CAL}Vydáno: 26. 11. 2026</p>
+<div class="tags" style="display:flex;gap:8px;margin:14px 0">
   <span class="tag hist">Stavební řád</span><span class="tag hist">Zákon č. 283/2021 Sb.</span>
   <span class="tag valid">Platné</span><span class="tag neutral">Aktuální</span>
 </div>
-<p class="updated">Vydáno: 26. 11. 2026 · Aktualizováno: 26. 11. 2026</p>
 
 <p>Stanovisko vyjasňuje podmínky, za nichž může stavební úřad sloučit územní a stavební řízení
 do společného postupu podle §85 nového stavebního zákona. Zaměřuje se na situace, kdy je
@@ -131,11 +132,10 @@ ve správě ÚRÚ.</p>
 
 <h2>Soubor ke stažení</h2>
 <ul class="files"><li><span class="ft">PDF</span>
-  <span class="grow"><span class="name">Metodické stanovisko k §85 — společné územní a stavební řízení</span><br>
-  <span class="fmeta">296 kB · fulltextově indexováno</span></span>
-  <a class="btn ghost sm" href="#">Stáhnout</a></li></ul>
+  <span class="grow"><span class="name">Metodické stanovisko k §85 — společné územní a stavební řízení</span>
+  <span class="fmeta">PDF, 296 KB</span></span></li></ul>
 
-<h2>Základní údaje</h2>
+<h2>Základní údaje""" + cmt(34, "Platnost a aktuálnost jsou dvě povinná metadata u každého dokumentu — proto jsou uvedena i v detailu. Návrh tabulku nemá.") + """</h2>
 <table class="t">
   <tr><th style="width:220px">Číslo jednací</th><td>ÚRÚ-0000/2026</td></tr>
   <tr><th>Oblast</th><td>Stavební řád</td></tr>
@@ -144,20 +144,30 @@ ve správě ÚRÚ.</p>
   <tr><th>Aktuálnost</th><td>Aktuální — nebylo nahrazeno novějším dokumentem</td></tr>
 </table>
 
-<h2>Související dokumenty""" + cmt(39, "„Související dokumenty\" nemá označení typu vztahu (nahrazuje / je nahrazeno / navazuje).") + """</h2>
-<table class="t">
-  <tr><th style="width:180px">Vztah</th><th>Dokument</th></tr>
-  <tr><td><span class="tag neutral">Navazuje na</span></td>
-      <td><a href="#">Metodické stanovisko k §184a — Integrace dotčených orgánů do řízení</a><br>
-      <span class="fmeta">Stanovisko popisuje postup integrace dotčených orgánů do společného
-      řízení o povolení záměru, včetně lhůt a náležitostí koordinovaného závazného stanoviska.</span></td></tr>
-  <tr><td><span class="tag superseded">Nahrazuje</span></td>
-      <td><a href="#">Metodické stanovisko k postupu při vadách žádosti (2025)</a></td></tr>
-  <tr><td><span class="tag hist">Souvisí s</span></td>
-      <td><a href="{{r}}metodicka-podpora/prechodove-obdobi.html">Přechodové období</a></td></tr>
-</table>
+<h2>Související dokumenty""" + cmt(39, "Doplněno označení typu vztahu (navazuje / nahrazuje / souvisí). Návrh vztah neoznačuje.") + """</h2>
+<ul class="doclist">
+  <li>
+    <div class="tags"><span class="tag neutral">Navazuje na</span>
+      <span class="tag hist">Stavební řád</span><span class="tag hist">Zákon č. 283/2021 Sb.</span>
+      <span class="tag valid">Platné</span></div>
+    <h3><a href="{{r}}metodicka-podpora/stanovisko-detail.html">Metodické stanovisko k §184a — Integrace dotčených orgánů do řízení po 1. 7. 2026</a></h3>
+    <p class="doc-date">{CAL}Aktualizováno: 26. 11. 2026</p>
+    <p>Stanovisko popisuje postup integrace dotčených orgánů do společného řízení o povolení
+    záměru podle nového stavebního zákona, včetně lhůt a náležitostí koordinovaného závazného
+    stanoviska.</p></li>
+  <li>
+    <div class="tags"><span class="tag superseded">Nahrazuje</span>
+      <span class="tag hist">Stavební řád</span><span class="tag hist">Zákon č. 283/2021 Sb.</span></div>
+    <h3><a href="{{r}}metodicka-podpora/stanovisko-detail.html">Metodické stanovisko k postupu při vadách žádosti (2025)</a></h3>
+    <p class="doc-date">{CAL}Aktualizováno: 2. 3. 2025</p>
+    <p>Postup úřadu při výzvě k doplnění a běh lhůt.</p></li>
+  <li>
+    <div class="tags"><span class="tag hist">Souvisí s</span></div>
+    <h3><a href="{{r}}metodicka-podpora/prechodove-obdobi.html">Přechodové období</a></h3>
+    <p>Co platí pro řízení zahájená před účinností novely.</p></li>
+</ul>
 
-<h2>Historie verzí""" + cmt(40, "Chybí historie verzí dokumentu.") + """</h2>
+<h2>Historie verzí""" + cmt(40, "Doplněna historie verzí dokumentu. Návrh ji nemá.") + """</h2>
 <table class="t">
   <tr><th style="width:140px">Verze</th><th>Datum</th><th>Změna</th></tr>
   <tr><td>1.0</td><td>26. 11. 2026</td><td>První vydání</td></tr>

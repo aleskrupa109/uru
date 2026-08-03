@@ -78,3 +78,29 @@ odchylky:
     text: "Historie verzí"
     duvod: zelena
     pripominka: 40
+
+  # ---- detail stanoviska: proti návrhu doplněno ---------------------------
+  - stranka: "metodicka-podpora/stanovisko-detail.html"
+    text: "Metodická podpora"
+    duvod: zelena
+    pripominka: 38
+    poznamka: >
+      Návrh má detail stanoviska bez levého submenu a bez bílého panelu, přes celou
+      šířku. Připomínka 38 žádá zachovat kontext sekce, proto maketa submenu i panel má.
+  - stranka: "metodicka-podpora/stanovisko-detail.html"
+    text: "Základní údaje"
+    duvod: zelena
+    pripominka: 34
+    poznamka: >
+      Platnost a aktuálnost jsou dvě povinná metadata u každého dokumentu, proto jsou
+      uvedena i v detailu. Návrh tabulku nemá.
+  - stranka: "metodicka-podpora/stanovisko-detail.html"
+    text: "Historie verzí"
+    duvod: zelena
+    pripominka: 40
+  - stranka: "metodicka-podpora/stanovisko-detail.html"
+    text: "Máte dotaz k metodickým stanoviskům"
+    duvod: zelena
+    poznamka: >
+      Blok pomoci je v návrhu na ostatních stránkách Metodické podpory, na detailu chybí.
+      Maketa ho má všude kvůli konzistenci.

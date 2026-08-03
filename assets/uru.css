@@ -283,7 +283,7 @@ li.open .dropdown { display: block; }
 .files .fmeta { font-size: var(--font-size-body-s); color: var(--text-tertiary); }
 .files .fmeta::before { content: "("; }
 .files .fmeta::after { content: ")"; }
-.files .btn { display: none; }
+.files .btn, .files .gov-button { display: none; }
 .files .ft {
   font-size: var(--font-size-body-xs); font-weight: 500; color: var(--color-primary-600);
   background: none; border: 1px solid var(--color-primary-200);
@@ -301,7 +301,7 @@ li.open .dropdown { display: block; }
 .files.rich .grow { display: block; flex: 1; }
 .files.rich .name { color: var(--text-primary); text-decoration: none; font-weight: 500; }
 .files.rich .fmeta::before, .files.rich .fmeta::after { content: ""; }
-.files.rich .btn { display: inline-block; }
+.files.rich .btn, .files.rich .gov-button { display: inline-block; }
 .files.rich .ft {
   color: var(--text-white-fixed); background: var(--background-primary); border: 0;
   padding: 3px 7px;
