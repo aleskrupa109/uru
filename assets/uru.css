@@ -90,12 +90,12 @@ html[data-mode="edit"] body.hide-cmt .mock-note { display: none; }
 /* ---------- hlavní navigace ---------- */
 .mainnav { background: var(--background-white); position: relative; z-index: 60; }
 .mainnav > .wrap > ul { list-style: none; margin: 0; padding: 0; display: flex; height: var(--uru-nav-h); }
-.mainnav > .wrap > ul > li { display: flex; }
+.mainnav > .wrap > ul > li { display: flex; flex: none; }
 .mainnav > .wrap > ul > li.has-drop { position: relative; }
 .mainnav > .wrap > ul > li > a {
-  display: flex; align-items: center;
+  display: flex; align-items: center; white-space: nowrap;
   gap: var(--spacing-m-nudge);          /* návrh: 20 px mezi popiskem a šipkou */
-  padding: 0 var(--spacing-l);          /* návrh: 50 px mezi sousedními položkami */
+  padding: 0 var(--spacing-m-nudge);    /* širší odsazení se do sloupce 1152 px nevejde */
   text-decoration: none;
   color: var(--color-primary-700); font-weight: 500; font-size: var(--font-size-body-l);
   border-bottom: 3px solid transparent;
@@ -142,7 +142,9 @@ li.open .dropdown { display: block; }
 .crumbs ul { display: flex; flex-wrap: wrap; align-items: center; margin: 0; padding: 0; }
 .crumbs li { display: flex; align-items: center; margin: 0; color: var(--text-tertiary); }
 .crumbs .sep { display: inline-flex; margin: 0 var(--spacing-s-nudge); color: var(--text-secondary); }
-.crumbs .sep svg { width: 0.375rem; height: 0.625rem; }   /* návrh: šipka 6 × 10 px, tmavá */
+/* Návrh: šipka je 6 × 10 px, tedy vysoká jako verzálky. Kresba vyplňuje jen
+   část plátna ikony, proto se plátno nastavuje na velikost písma. */
+.crumbs .sep svg { width: 0.875rem; height: 0.875rem; }
 .crumbs a { color: var(--color-primary-700); text-decoration: underline; }
 .crumbs a:hover { color: var(--color-primary-600); }
 .crumbs [aria-current] { color: var(--text-primary); font-weight: 500; }
