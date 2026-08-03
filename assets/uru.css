@@ -599,3 +599,9 @@ body.editing [data-edit]:focus { outline: 2px solid var(--color-success-600); ba
 .pager a[aria-current] { background: var(--background-primary); color: var(--text-white-fixed); }
 .pager span { color: var(--text-tertiary); }
 .pager .edge { color: var(--text-secondary); font-size: var(--font-size-body-l); }
+
+/* ---------- odznaky zvolených filtrů ----------
+   Odsazení od tlačítka Zrušit filtry; prázdný řádek odznaků nemá zabírat místo. */
+.filters .chips { margin: var(--spacing-s-nudge) 0 0; }
+.filters .chips:empty { display: none; }
+.filters [data-reset] { margin-top: var(--spacing-m); }

@@ -119,7 +119,7 @@
           wrap.setAttribute('data-hydrated', '');
           wrap.setAttribute('data-type', 'outlined');
           wrap.setAttribute('data-color', 'primary');
-          wrap.setAttribute('data-size', 'm');
+          wrap.setAttribute('data-size', 'xs');
           var b = document.createElement('button');
           b.className = 'element';
           b.type = 'button';
