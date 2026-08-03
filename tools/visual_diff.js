@@ -66,13 +66,19 @@ const MAP = {
 };
 
 function findPdf() {
+  const home = require('os').homedir();
   const cands = [
     process.env.DESU_DESIGN,
     path.join(ROOT, 'DESU_design.pdf'),
     path.join(ROOT, '..', 'DESU_design.pdf'),
+    path.join(ROOT, '..', '..', 'DESU_design.pdf'),
+    path.join(home, 'Documents', 'DESU_design.pdf'),
+    path.join(home, 'Desktop', 'DESU_design.pdf'),
+    path.join(home, 'Downloads', 'DESU_design.pdf'),
   ].filter(Boolean);
   for (const c of cands) if (fs.existsSync(c)) return c;
-  throw new Error('Nenalezen DESU_design.pdf. Nastav proměnnou DESU_DESIGN.');
+  throw new Error('Nenalezen DESU_design.pdf. Polož ho o složku výš nad repozitář, '
+    + 'nebo nastav proměnnou DESU_DESIGN.');
 }
 
 async function main() {

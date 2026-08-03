@@ -64,6 +64,17 @@ Spolehlivé je pořadí stránek v tabulce — nejvyšší číslo znamená nejv
 
 ## Vizuální porovnání
 
+### Kam položit návrh designu
+
+Nedávej `DESU_design.pdf` dovnitř repozitáře — při výměně souborů za novou verzi
+se smaže spolu se zbytkem a musel bys ho pokaždé kopírovat zpět. **Polož ho o složku
+výš**, tedy vedle složky repozitáře; oba skripty ho tam hledají automaticky.
+
+Prohledávaná místa v pořadí: proměnná `DESU_DESIGN`, kořen repozitáře, jedna a dvě
+složky nad ním, pak `~/Documents`, `~/Desktop` a `~/Downloads`.
+
+### Vizuální porovnání
+
 Předpoklady: **Node.js 18+** a **poppler** (kvůli `pdftoppm`, kterým se renderuje
 návrh). Na macOS: `brew install poppler`.
 

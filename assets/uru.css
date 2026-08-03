@@ -93,8 +93,10 @@ html[data-mode="edit"] body.hide-cmt .mock-note { display: none; }
 .mainnav > .wrap > ul > li { display: flex; }
 .mainnav > .wrap > ul > li.has-drop { position: relative; }
 .mainnav > .wrap > ul > li > a {
-  display: flex; align-items: center; gap: var(--spacing-s);
-  padding: 0 var(--spacing-m-nudge); text-decoration: none;
+  display: flex; align-items: center;
+  gap: var(--spacing-m-nudge);          /* návrh: 20 px mezi popiskem a šipkou */
+  padding: 0 var(--spacing-l);          /* návrh: 50 px mezi sousedními položkami */
+  text-decoration: none;
   color: var(--color-primary-700); font-weight: 500; font-size: var(--font-size-body-l);
   border-bottom: 3px solid transparent;
 }
@@ -139,11 +141,11 @@ li.open .dropdown { display: block; }
 .crumbs { padding: var(--spacing-l) 0 0; font-size: var(--font-size-body-s); }
 .crumbs ul { display: flex; flex-wrap: wrap; align-items: center; margin: 0; padding: 0; }
 .crumbs li { display: flex; align-items: center; margin: 0; color: var(--text-tertiary); }
-.crumbs .sep { display: inline-flex; margin: 0 var(--spacing-s-nudge); color: #A9BBCE; }
-.crumbs .sep svg { width: 0.5rem; height: 0.5rem; }
-.crumbs a { color: var(--color-primary-700); text-decoration: none; }
-.crumbs a:hover { text-decoration: underline; }
-.crumbs [aria-current] { color: var(--text-tertiary); }
+.crumbs .sep { display: inline-flex; margin: 0 var(--spacing-s-nudge); color: var(--text-secondary); }
+.crumbs .sep svg { width: 0.375rem; height: 0.625rem; }   /* návrh: šipka 6 × 10 px, tmavá */
+.crumbs a { color: var(--color-primary-700); text-decoration: underline; }
+.crumbs a:hover { color: var(--color-primary-600); }
+.crumbs [aria-current] { color: var(--text-primary); font-weight: 500; }
 
 /* ---------- stránka ---------- */
 .page { padding: 0 0 var(--spacing-6xl); }
@@ -167,7 +169,8 @@ li.open .dropdown { display: block; }
 /* Nadpis podstránky a perex jsou v návrhu součástí bílého panelu. */
 .content .page-head { padding: 0; margin-bottom: var(--spacing-l); }
 .content .page-head h1 { font-size: var(--font-size-headline-l); margin: 0 0 var(--spacing-s-nudge); }
-.content .page-head .perex { font-size: var(--font-size-body-m); color: var(--text-secondary); max-width: 70ch; }
+.content .page-head .perex { font-size: var(--font-size-body-m); color: var(--text-secondary);
+  max-width: none; }   /* návrh: perex využívá celou šířku panelu */
 .content > *:first-child { margin-top: 0; }
 .content h2 { font-size: var(--font-size-headline-m); margin: var(--spacing-2xl) 0 var(--spacing-s-nudge); }
 .content h3 { font-size: var(--font-size-headline-s); margin: var(--spacing-l) 0 var(--spacing-s); }
@@ -548,3 +551,9 @@ body.editing [data-edit]:focus { outline: 2px solid var(--color-success-600); ba
 }
 .footer-top .up { transform: rotate(180deg); width: var(--icon-size-l); height: var(--icon-size-l); }
 .footer-top:hover { background: var(--color-primary-100); }
+
+/* ---------- řádek s tlačítky ----------
+   Návrh drží nad tlačítkem 32 px odstupu od předchozího odstavce. */
+.btn-row { display: flex; gap: var(--spacing-s-nudge); flex-wrap: wrap;
+  margin: var(--spacing-xl) 0 0; }
+.content .btn-row { margin-bottom: var(--spacing-s); }

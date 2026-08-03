@@ -29,9 +29,14 @@ from html.parser import HTMLParser
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Návrh se hledá v repozitáři, o úroveň výš, nebo v cestě z proměnné DESU_DESIGN.
 def _find_pdf():
+    home = os.path.expanduser("~")
     for p in (os.environ.get("DESU_DESIGN"),
               os.path.join(ROOT, "DESU_design.pdf"),
               os.path.join(ROOT, "..", "DESU_design.pdf"),
+              os.path.join(ROOT, "..", "..", "DESU_design.pdf"),
+              os.path.join(home, "Documents", "DESU_design.pdf"),
+              os.path.join(home, "Desktop", "DESU_design.pdf"),
+              os.path.join(home, "Downloads", "DESU_design.pdf"),
               "/mnt/user-data/uploads/DESU_design.pdf"):
         if p and os.path.exists(p):
             return p

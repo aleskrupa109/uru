@@ -20,7 +20,7 @@ NAV = [
         ("Jak probíhá řízení", "vyhrazene-stavby/jak-probiha-rizeni.html", "Postup od podání po rozhodnutí, lhůty, poplatky"),
         ("Dokumenty a formuláře", "vyhrazene-stavby/dokumenty-a-formulare.html", "Formuláře podle typu stavby a typu řízení"),
         ("Portál stavebníka", "vyhrazene-stavby/portal-stavebnika.html", "Elektronické podání a evidence dokumentací"),
-        ("Časté dotazy", "vyhrazene-stavby/caste-dotazy.html", "Odpovědi na nejčastější otázky stavebníků"),
+        ("Odpovědi na nejčastější dotazy", "vyhrazene-stavby/caste-dotazy.html", "Odpovědi na nejčastější otázky stavebníků"),
     ]),
     ("metodicka-podpora", "Metodická podpora", "metodicka-podpora/index.html", [
         ("Metodická stanoviska a výklady", "metodicka-podpora/metodicka-stanoviska.html", "Prohledávatelná databáze stanovisek"),
@@ -64,7 +64,7 @@ SUBNAV = {
         ("— pro účastníky řízení", "vyhrazene-stavby/jak-probiha-rizeni-ucastnici.html", 1),
         ("Dokumenty a formuláře", "vyhrazene-stavby/dokumenty-a-formulare.html", 0),
         ("Portál stavebníka", "vyhrazene-stavby/portal-stavebnika.html", 0),
-        ("Časté dotazy", "vyhrazene-stavby/caste-dotazy.html", 0),
+        ("Odpovědi na nejčastější dotazy", "vyhrazene-stavby/caste-dotazy.html", 0),
         ("Kontakty pro stavebníky", "kontakty.html#stavebnici", 0),
     ],
     "metodicka-podpora": [
