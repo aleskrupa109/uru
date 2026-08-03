@@ -2,6 +2,7 @@
 """Kariéra, O úřadu, Kontakty, úřední deska, vyhledávání a šablony."""
 from build import cmt
 import content_extra2 as E
+import content_clanek as CL
 
 KAR = [("Kariéra", "kariera/index.html")]
 OU = [("O úřadu", "o-uradu/index.html")]
@@ -313,19 +314,30 @@ VYHLEDAVANI = """
 </div>
 """
 
-CLANEK = """
-<p class="updated">11. 11. 2026 · Aktualita ·
-  <a href="{{r}}aktuality.html">novela</a>, <a href="{{r}}aktuality.html">transformace</a>""" + cmt(94, "Tagy nemají cílovou stránku (výpis podle tagu).") + """</p>
-<p>Perex článku shrnuje sdělení v jednom odstavci. Šablona se používá pro aktuality, tiskové zprávy
-i obecné textové stránky.</p>
-<h2>Mezititulek</h2>
-<p>Tělo článku. Text je pracovní a nahradí se finálním zněním.</p>
-<ul><li>Odrážka</li><li>Odrážka</li></ul>
-<h2>Přílohy</h2>
-<ul class="files"><li><span class="ft">PDF</span>
-  <span class="grow"><span class="name">Příloha k článku</span><br><span class="fmeta">296 kB</span></span>
-  <a class="btn ghost sm" href="#">Stáhnout</a></li></ul>
-"""
+CLANEK = ("""
+<div class="article-meta">
+  <p class="doc-date">{CAL}Aktualizováno 11. 11. 2026</p>
+  <p class="doc-date">{USER}Jan Novotný</p>
+</div>
+<div class="tags article-tags">
+  <span class="tag neutral">Aktualita</span><span class="tag neutral">novela</span>
+  <span class="tag neutral">transformace</span>""" + cmt(94, "Štítky nemají cílovou stránku (výpis podle štítku).") + """
+  <span class="article-share" aria-label="Sdílet">{SHARE}</span>
+</div>
+
+<p class="article-perex">Perex článku shrnuje sdělení v jednom odstavci. Šablona se
+používá pro aktuality, tiskové zprávy i obecné textové stránky.</p>
+
+<figure class="article-hero">
+  <img src="{{r}}assets/img/hero-budova.jpg" alt="" loading="lazy">
+</figure>
+
+<div class="article-cols">
+  <div class="article-body">""" + CL.TELO + """</div>
+  """ + CL.TOC + """
+</div>
+""")
+
 
 MAPA = """
 <div class="grid g3">
