@@ -108,6 +108,7 @@ STANOVISKA = """
 Zkuste zrušit filtr platnosti nebo aktuálnosti.</div>
 
 <nav class="pager" aria-label="Stránkování">
+  <a class="edge" href="#" aria-label="První stránka">«</a>
   <a class="edge" href="#" aria-label="Předchozí stránka">‹</a>
   <a href="#" aria-current="page">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a>
   <span>…</span><a href="#">10</a><a href="#">11</a>
