@@ -340,15 +340,22 @@ table.t th { background: var(--background-primary-subtlest); color: var(--text-p
 table.t tr:last-child td { border-bottom: 0; }
 
 /* ---------- kroky ---------- */
+/* Kroky podle návrhu (str. 5): kolečko Ø 32 px má světlé pozadí a modré číslo,
+   nadpis kroku je modrý 16 px, text kroku 14 px a řádek lhůty 12 px polotučně.
+   Text kroku začíná 29 px za spojnicí (odměřeno: spojnice 468, text 497). */
 ol.steps { list-style: none; counter-reset: s; padding: 0; margin: var(--spacing-m-nudge) 0; }
-ol.steps > li { counter-increment: s; position: relative; padding: 0 0 var(--spacing-l) var(--spacing-3xl);
+ol.steps > li { counter-increment: s; position: relative; padding: 0 0 var(--spacing-l) 29px;
   border-left: 2px solid var(--border-subtlest); margin-left: var(--spacing-m); }
 ol.steps > li::before { content: counter(s); position: absolute; left: -1.0625rem; top: 0;
-  width: var(--height-xl); height: var(--height-xl); background: var(--background-primary);
-  color: var(--text-white-fixed); border-radius: 50%; display: grid; place-items: center;
+  width: var(--height-xl); height: var(--height-xl); background: var(--color-primary-100);
+  color: var(--color-primary-600); border-radius: 50%; display: grid; place-items: center;
   font-weight: 500; font-size: var(--font-size-body-s); }
 ol.steps > li:last-child { border-left-color: transparent; }
-ol.steps h3 { margin: 0 0 var(--spacing-s); font-size: var(--font-size-headline-xs); }
+ol.steps h3 { margin: 0 0 var(--spacing-xs); font-size: var(--font-size-headline-xs); color: var(--color-primary-600); }
+ol.steps > li p { font-size: var(--font-size-body-s); margin: 0; }
+ol.steps > li p + p { margin-top: var(--spacing-s); }
+ol.steps .updated { font-size: var(--font-size-body-xs); font-weight: 500;
+  color: var(--text-secondary); margin-top: var(--spacing-s); }
 
 /* ---------- kontaktní karty ---------- */
 .contactcards { display: grid; gap: var(--spacing-m); grid-template-columns: repeat(2, 1fr); margin: var(--spacing-m) 0; }

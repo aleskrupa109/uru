@@ -125,9 +125,10 @@ a koordinuje vyjádření všech dotčených orgánů.</p>
     <p>Žádost se podává prostřednictvím Portálu stavebníka, datovou schránkou, e-mailem,
     poštou nebo osobně. Projektová dokumentace musí být nejpozději v okamžiku podání nahrána
     v evidenci elektronických dokumentací přes Portál stavebníka.</p>
-    <p>Formuláře najdete v sekci <a href="{{r}}vyhrazene-stavby/dokumenty-a-formulare.html">Dokumenty a formuláře</a>.</p>
-    <table class="t"><tr><th style="width:150px">Povinné</th><td>vložení projektové dokumentace přes Portál stavebníka</td></tr>
-    <tr><th>Dobrovolné</th><td>ostatní komunikace včetně samotné žádosti — tu lze podat i datovou schránkou, e-mailem, poštou nebo osobně</td></tr></table></li>
+    <p><strong>Povinné:</strong> vložení projektové dokumentace přes Portál stavebníka.</p>
+    <p><strong>Dobrovolné:</strong> ostatní komunikace včetně samotné žádosti — tu lze podat
+    i datovou schránkou, e-mailem, poštou nebo osobně.</p>
+    <p>Formuláře najdete v sekci <a href="{{r}}vyhrazene-stavby/dokumenty-a-formulare.html">Dokumenty a formuláře</a>.</p></li>
   <li><h3>Kontrola úplnosti</h3>
     <p>ÚRÚ zkontroluje úplnost žádosti. Pokud žádost obsahuje vady, vyzve stavebníka
     k doplnění a stanoví lhůtu. Po dobu doplňování lhůta pro vydání rozhodnutí neběží.</p>

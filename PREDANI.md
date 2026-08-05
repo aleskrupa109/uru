@@ -147,6 +147,17 @@ sahat do Figmy, hodí se export 3× — výměna souborů je pak triviální.
 
 ## Systémové opravy ze str. 5 a 6
 
+**Seznam kroků (`ol.steps`).** Maketa měla kolečko s tmavě modrou výplní a bílým
+číslem, černý nadpis kroku a text 16 px. Návrh má kolečko Ø 32 px se světlým
+pozadím (`primary-100`) a modrým číslem, nadpis kroku modrý 16 px, text kroku
+14 px a řádek lhůty 12 px polotučně v `neutral-700`. Velikosti odečteny z výšek
+verzálek na str. 5: 11,5 px u nadpisu (16), 10,1 px u textu (14), 8,6 px
+u lhůty (12). Text kroku začíná 29 px za spojnicí — spojnice je na 468 px,
+text na 497 px. Rozestup odstavců uvnitř kroku je 8 px (měření dává 10, což
+není hodnota ze škály).
+
+Používá se i na str. 32, 36 a v šabloně článku, takže se změna propíše dál.
+
 **Záložky.** V návrhu vyplňují celou šířku obsahu a mají stejnou šířku, popisek
 je uprostřed a menší (14 px, `body-s`). Maketa je měla široké podle obsahu,
 zarovnané doleva a 16 px. Odměřeno na str. 5: řada 452–1203 px, popisky široké
