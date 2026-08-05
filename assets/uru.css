@@ -177,7 +177,12 @@ li.open .dropdown { display: block; }
 .content .page-head .perex { font-size: var(--font-size-body-m); color: var(--text-secondary);
   max-width: none; }   /* návrh: perex využívá celou šířku panelu */
 .content > *:first-child { margin-top: 0; }
-.content h2 { font-size: var(--font-size-headline-m); margin: var(--spacing-2xl) 0 var(--spacing-s-nudge); }
+/* Rozestupy odměřené na str. 4 a ověřené na str. 8: nadpis sekce má nad sebou
+   48 px a pod sebou 24 px, odstavec 24 px pod sebou (do textu i do modrého boxu).
+   Nadpis je 24 px / 150 %, odstavec 16 px / 150 %; blok „nadpis + jednořádkový
+   odstavec" mezi dvěma boxy měří v návrhu 157 px. */
+.content h2 { font-size: var(--font-size-headline-m); margin: var(--spacing-3xl) 0 var(--spacing-l); }
+.content > p { margin: var(--spacing-l) 0; }
 .content h3 { font-size: var(--font-size-headline-s); margin: var(--spacing-l) 0 var(--spacing-s); }
 .content p, .content li { color: var(--text-secondary); }
 

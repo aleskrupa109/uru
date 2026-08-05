@@ -147,6 +147,28 @@ sahat do Figmy, hodí se export 3× — výměna souborů je pak triviální.
 
 ## Systémové opravy ze str. 4
 
+**Rozestupy nadpisů a odstavců.** Odměřeno na str. 4 a ověřeno na str. 8:
+nadpis sekce má nad sebou 48 px (`spacing-3xl`) a pod sebou 24 px (`spacing-l`),
+odstavec má 24 px pod sebou — do dalšího textu i do modrého boxu. Maketa měla
+40 / 12 a u odstavce výchozích 16 px prohlížeče.
+
+Opora měření: hrany modrých boxů jsou v rastru ostré, takže blok „nadpis +
+jednořádkový odstavec" mezi dvěma boxy jde změřit přesně — v návrhu je 157 px
+u všech osmi přechodů na str. 4 (a 181 px tam, kde je odstavec dvouřádkový).
+Z toho 36 px je řádek nadpisu a 24 px řádek odstavce, na okraje zbývá 97 px,
+tedy 48 + 24 + 24. Na str. 8 vychází mezera nadpis → text stejně (79 px při
+rasterizaci na 100 dpi u obou stránek).
+
+**Názvy kategorií jsou v návrhu nadpis sekce, ne podnadpis.** Výška verzálek je
+17,3 px, což při poměru 0,711 dává písmo 24 px — stejné jako nadpisy „Co musíte
+udělat před podáním žádosti" na str. 8, které maketa sází jako `h2`. Maketa je
+měla jako `h3` (20 px). Změněno na `h2`.
+
+**Úvodní nadpis „Přehled kategorií vyhrazených staveb" návrh nemá** — jde rovnou
+od žlutého boxu k první kategorii. Odstraněn. Textové porovnání ho nehlásilo,
+protože se slovním překryvem spároval s perexem, kde je „přehled kategorií
+i konkrétních příkladů".
+
 **Rozestupy v seznamech uvnitř boxů.** Maketa dávala každé položce 4 px nahoru
 i dolů. Návrh je nemá — rozestup je čistá výška řádku 24 px. Odměřeno na výškách
 boxů: dvě položky 80 px (2 × 24 + 2 × 16 vnitřního okraje), sedm položek 200 px,

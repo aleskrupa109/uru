@@ -2,9 +2,7 @@
 """Doplnění obsahu sekce Vyhrazené stavby podle návrhu (DESU_design.pdf, str. 4–9)."""
 
 KATEGORIE = """
-<h2>Přehled kategorií vyhrazených staveb</h2>
-
-<h3>Dopravní stavby — dálnice</h3>
+<h2>Dopravní stavby — dálnice</h2>
 <p>Stavby dálnic a rychlostních silnic celostátního významu.</p>
 <div class="box edge" data-ico="vs-dalnice">
 <ul>
@@ -13,7 +11,7 @@ KATEGORIE = """
 </ul>
 </div>
 
-<h3>Dopravní stavby — dráhy</h3>
+<h2>Dopravní stavby — dráhy</h2>
 <p>Stavby železničních drah, metra a tramvajových tratí celostátního významu.</p>
 <div class="box edge" data-ico="vs-drahy">
 <ul>
@@ -24,7 +22,7 @@ KATEGORIE = """
 </ul>
 </div>
 
-<h3>Dopravní stavby — letecké</h3>
+<h2>Dopravní stavby — letecké</h2>
 <p>Civilní letecké stavby.</p>
 <div class="box edge" data-ico="vs-letecke">
 <ul>
@@ -34,7 +32,7 @@ KATEGORIE = """
 </ul>
 </div>
 
-<h3>Strategické investiční stavby</h3>
+<h2>Strategické investiční stavby</h2>
 <p>Stavby vymezené zákonem o urychlení výstavby strategicky významné infrastruktury.</p>
 <div class="box edge" data-ico="vs-strategicke">
 <ul>
@@ -43,7 +41,7 @@ KATEGORIE = """
 </ul>
 </div>
 
-<h3>Energetické stavby — OZE</h3>
+<h2>Energetické stavby — OZE</h2>
 <p>Výrobny elektřiny z obnovitelných zdrojů překračující stanovený výkon.</p>
 <div class="box edge" data-ico="vs-oze">
 <ul>
@@ -56,7 +54,7 @@ KATEGORIE = """
   podáním žádosti.</p>
 </div>
 
-<h3>Energetické stavby a ostatní</h3>
+<h2>Energetické stavby a ostatní</h2>
 <p>Stavby přenosové soustavy elektřiny, přepravní soustavy plynu, velké zdroje energie
 a další energetická infrastruktura.</p>
 <div class="box edge" data-ico="vs-energetika">
@@ -71,7 +69,7 @@ a další energetická infrastruktura.</p>
 </ul>
 </div>
 
-<h3>Těžební stavby a stavby pro nakládání s výbušninami</h3>
+<h2>Těžební stavby a stavby pro nakládání s výbušninami</h2>
 <p>Stavby sloužící těžbě nerostných surovin, radioaktivních materiálů a nakládání
 s výbušninami.</p>
 <div class="box edge" data-ico="vs-tezba">
@@ -86,7 +84,7 @@ s výbušninami.</p>
 </ul>
 </div>
 
-<h3>Tepelná infrastruktura a zachytávání CO₂</h3>
+<h2>Tepelná infrastruktura a zachytávání CO₂</h2>
 <p>Rozvodné tepelné soustavy a stavby pro zachytávání a ukládání oxidu uhličitého.</p>
 <div class="box edge" data-ico="vs-teplo-co2">
 <ul>
@@ -96,7 +94,7 @@ s výbušninami.</p>
 </ul>
 </div>
 
-<h3>Stavby v zastavitelných plochách nad 45 ha <span class="badge-new">Nově od 1. 7. 2026</span></h3>
+<h2>Stavby v zastavitelných plochách nad 45 ha <span class="badge-new">Nově od 1. 7. 2026</span></h2>
 <p>Stavby a soubory staveb pro výrobu, skladování a bydlení umisťované v plochách
 vymezených k tomuto účelu o rozloze nejméně 45 hektarů. Toto je největší novinka —
 zahrnuje velké bytové projekty a průmyslové areály, které dříve pod ÚRÚ nespadaly.</p>
