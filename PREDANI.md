@@ -145,6 +145,20 @@ silnější obrys a zaoblené rohy, s ikonou ze sady se nekryla.
 sedí přesně, na ostrém webu budou na retina displeji měkké. Až se bude
 sahat do Figmy, hodí se export 3× — výměna souborů je pak triviální.
 
+## Vědomá odchylka: sedm kroků řízení na str. 5
+
+Návrh má šest kroků a slučuje „Posouzení a rozhodnutí" do jednoho. Maketa je má
+zvlášť jako „Posouzení záměru" a „Rozhodnutí". **Aleš rozhodl, že sedm bodů
+zůstane** — není to tedy chyba k opravě.
+
+Důsledek: str. 5 zůstane proti návrhu zhruba o 90 px vyšší a všechno pod
+seznamem kroků bude o tolik posunuté. Pixelová odlišnost té stránky proto
+nespadne pod několik procent a nemá smysl ji tam honit; rozhoduje snímek.
+
+Lhůty u kroků jsou doplněné podle návrhu: 5 pracovních dnů, 30 dnů od vyžádání,
+60–90 dnů a odvolací 15 dnů. Návrh je má u kroků 1, 3, 4, 5 a 6; maketa u 1, 3,
+4, 6 a 7 (krok „Posouzení záměru" žádnou lhůtu nemá).
+
 ## Systémové opravy ze str. 5 a 6
 
 **Seznam kroků (`ol.steps`).** Maketa měla kolečko s tmavě modrou výplní a bílým
@@ -260,11 +274,6 @@ obsahu se používá `-layout`.
 6. **Vyhledávání** (str. 44–48 návrhu) — převzatá šablona pro služby gov.cz
    s fasetami Občan / Podnikatel / Právnická osoba. Než se na ni sáhne, měla
    by se vyjasnit s Cognitem.
-7. **Kroky řízení na str. 5** — návrh má šest kroků, maketa sedm: krok
-   „Posouzení a rozhodnutí" je v maketě rozdělený na „Posouzení záměru"
-   a „Rozhodnutí". Není u toho značka připomínky, takže není jasné, jestli je to
-   záměr, nebo omyl. Lhůty u kroků jsou doplněné podle návrhu (5 pracovních dnů,
-   30 dnů, 60–90 dnů, odvolací 15 dnů).
 
 ## Jak pokračovat
 
