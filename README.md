@@ -5,6 +5,11 @@ a má zapracované připomínky označené v komentářovém dokumentu **zeleně
 
 Statické HTML, žádný build ani závislosti. Stačí otevřít `index.html`.
 
+## Navázání v novém chatu
+
+Postup a stav práce popisuje [PREDANI.md](PREDANI.md). Do nového chatu je
+potřeba nahrát `uru-maketa.zip` a `DESU_design.pdf`.
+
 ## Nasazení na GitHub Pages
 
 1. Nahraj obsah tohoto adresáře do repozitáře.

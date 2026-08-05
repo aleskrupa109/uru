@@ -722,6 +722,9 @@ body.editing [data-edit]:focus { outline: 2px solid var(--color-success-600); ba
 .gov-message__content > p { margin: 0; }
 .gov-message__content > p + p { margin-top: var(--spacing-s); }
 .gov-message__content > h3 { margin: 0 0 var(--spacing-s); font-size: var(--font-size-body-m); }
-.gov-message__content > ul:only-child { margin: 0; }
-.gov-message__content ul { margin: var(--spacing-s) 0 0; padding-left: var(--spacing-m); }
-.gov-message__content li { margin: var(--spacing-xs) 0; }
+/* Rozestup položek seznamu je v návrhu čistá výška řádku (24 px), bez odsazení
+   položek. Odměřeno na str. 4: box se dvěma položkami má 80 px (2 × 24 + 2 × 16
+   vnitřního okraje), se sedmi 200 px. Odstavec za seznamem odsazuje 8 px. */
+.gov-message__content > ul { margin: 0; padding-left: var(--spacing-m); }
+.gov-message__content > ul + p { margin-top: var(--spacing-s); }
+.gov-message__content li { margin: 0; }

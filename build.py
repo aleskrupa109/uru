@@ -232,6 +232,7 @@ GICON = {
     "share": '<svg class="{c}" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M12 5a2 2 0 1 0-1.8-1.13L5.9 6.3a2 2 0 1 0 0 3.4l4.3 2.43a2 2 0 1 0 .5-.87L6.4 8.83a2 2 0 0 0 0-1.66l4.3-2.43c.35.16.74.26 1.15.26Z" fill="currentColor"/></svg>',
     "calendar": '<svg class="{c}" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5ZM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1Z" fill="currentColor"/></svg>',
     "envelope": '<svg class="{c}" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 10.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 14h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" fill="currentColor"/></svg>',
+    "info": '<svg class="{c}" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16ZM8 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm1 3.5v5a1 1 0 0 1-2 0v-5a1 1 0 0 1 2 0Z" fill="currentColor"/></svg>',
     "warn": '<svg class="{c}" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566ZM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5Zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z" fill="currentColor"/></svg>',
 }
 
@@ -345,7 +346,11 @@ def help_block(kind, r):
     modrý nadpis kontaktu, popisný text a e-mail jako odkaz — vše pod sebou."""
     head, title, text, mail = HELP[kind]
     h = f"<h2>{head}</h2>" if head else ""
-    return (f'{h}<div class="helpbox">{dsicon("simple-envelope", cls="helpbox__icon")}'
+    # obálka není ze sady design systému — je to export z návrhu (silnější
+    # obrys, zaoblené rohy), proto obrázek místo dsicon("simple-envelope")
+    envelope = (f'<img class="helpbox__icon" src="{r}assets/img/icons/obalka.png"'
+                f' width="48" height="48" alt="" loading="lazy">')
+    return (f'{h}<div class="helpbox">{envelope}'
             f'<h3>{title}</h3><p>{text}</p>'
             f'<p class="mail">{gicon("envelope")}'
             f'<a href="mailto:{mail}">{mail}</a></p></div>')
@@ -540,12 +545,24 @@ def to_ds(html_body):
         return inner
 
     def box(m):
-        color, typ = BOX.get(m.group(1), ("neutral", "subtle"))
+        color, typ = BOX.get(m.group("kind"), ("neutral", "subtle"))
+        inner = m.group("inner")
+        own = re.search(r'data-ico="([a-z0-9-]+)"', m.group("attrs") or "")
+        if own:
+            # ikona z návrhu; rozměr a svislé zarovnání řeší design systém
+            # přes atribut slot="icon" (--icon-size-l = 18 px)
+            ico_html = (f'<img slot="icon" src="{{{{r}}}}assets/img/icons/{own.group(1)}.png"'
+                        f' width="18" height="18" alt="" loading="lazy">')
+        else:
+            # výčtový box (jen seznam) není varování — dostane informační ikonu
+            ico = "info" if re.fullmatch(r"\s*<ul>.*</ul>\s*", inner, re.S) else "warn"
+            ico_html = gicon(ico, cls="", slot=True)
         return (f'<div class="gov-message" data-color="{color}" data-type="{typ}" role="status">'
-                f'<span>{gicon("warn", cls="", slot=True)}</span>'
-                f'<div class="gov-message__content">{box_inner(m.group(2))}</div></div>')
+                f'<span>{ico_html}</span>'
+                f'<div class="gov-message__content">{box_inner(inner)}</div></div>')
 
-    html_body = re.sub(r'<div class="box ([a-z]+)">(.*?)</div>\s*(?=<|$)', box, html_body, flags=re.S)
+    html_body = re.sub(r'<div class="box (?P<kind>[a-z]+)"(?P<attrs>[^>]*)>(?P<inner>.*?)</div>\s*(?=<|$)',
+                       box, html_body, flags=re.S)
 
     def box_attrs(m):
         pre, kind, inner = m.group(1), m.group(2), m.group(3)

@@ -90,13 +90,7 @@ CO_SPADA = """
   <div data-verdict="plocha" style="display:none" class="box edge"><h3>Spadá pod ÚRÚ</h3><p>Stavby pro výrobu, skladování a bydlení v plochách vymezených pro tyto účely nad 45 ha.</p></div>
   <div data-verdict="jine" style="display:none" class="box edge"><h3>Pravděpodobně obecný stavební úřad</h3><p>Pokud si nejste jistí, napište nám — příslušnost ověříme bez podání žádosti.</p></div>
 </div>
-""" + X.KATEGORIE + """
-<div class="box edge">
-  <h3>Hraniční případ</h3>
-  <p>Patří sem i velké bytové projekty — mnoho stavebníků to neví. Ověřte příslušnost
-  před podáním žádosti.</p>
-</div>
-"""
+""" + X.KATEGORIE
 
 RIZENI_TABS = """
 <div class="tabs">
