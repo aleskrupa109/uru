@@ -130,23 +130,27 @@ a koordinuje vyjádření všech dotčených orgánů.</p>
     <tr><th>Dobrovolné</th><td>ostatní komunikace včetně samotné žádosti — tu lze podat i datovou schránkou, e-mailem, poštou nebo osobně</td></tr></table></li>
   <li><h3>Kontrola úplnosti</h3>
     <p>ÚRÚ zkontroluje úplnost žádosti. Pokud žádost obsahuje vady, vyzve stavebníka
-    k doplnění a stanoví lhůtu. Po dobu doplňování lhůta pro vydání rozhodnutí neběží.</p></li>
+    k doplnění a stanoví lhůtu. Po dobu doplňování lhůta pro vydání rozhodnutí neběží.</p>
+    <p class="updated">Lhůta: 5 pracovních dnů</p></li>
   <li><h3>Vyjádření dotčených orgánů</h3>
     <p>ÚRÚ si vyžádá vyjádření dotčených orgánů — typicky orgánů ochrany přírody, krajské
     hygieny, hasičského záchranného sboru a dalších. Vyjádření koordinuje úřad. Například ochranu
     veřejného zdraví posuzuje ÚRÚ přímo — nevydávají k ní samostatná stanoviska krajské
-    hygienické stanice jako dříve.</p></li>
+    hygienické stanice jako dříve.</p>
+    <p class="updated">Lhůta: 30 dnů od vyžádání</p></li>
   <li><h3>Posouzení záměru</h3>
     <p>Úřad posoudí soulad záměru s územním rozvojovým plánem, regulačním plánem a technickými
     požadavky na výstavbu.</p></li>
   <li><h3>Rozhodnutí</h3>
     <p>Úřad vydá rozhodnutí o povolení záměru, případně žádost zamítne. Rozhodnutí vydá
     do 60 dnů od zahájení řízení, ve složitých případech do 90 dnů. Rozhodnutí se doručuje
-    účastníkům řízení.</p></li>
+    účastníkům řízení.</p>
+    <p class="updated">Lhůta: 60–90 dnů</p></li>
   <li><h3>Odvolání a právní moc</h3>
     <p>Proti rozhodnutí se mohou účastníci řízení odvolat do 15 dnů. Pokud se nikdo neodvolá,
     rozhodnutí nabude právní moci. Stavebník může zahájit stavbu po nabytí právní moci
-    a splnění podmínek rozhodnutí.</p></li>
+    a splnění podmínek rozhodnutí.</p>
+    <p class="updated">Odvolací lhůta: 15 dnů</p></li>
 </ol>
 
 <h2>Další typy řízení</h2>
@@ -177,14 +181,14 @@ některého z účastníků ani veřejný zájem.</p>
 <p>Nahlížení do spisu musí být umožněno i osobě nevidomé — té musí být spis či jeho část
 úředníkem přečtena.</p>
 
-<h2>Postup</h2>
+<h3>Postup</h3>
 <ul>
   <li>projděte si záložky s informacemi, nebo</li>
   <li>vyplňte kontaktní formulář se svým dotazem a my se vám ozveme, zodpovíme váš dotaz
       a budeme vás informovat o konkrétní možnosti nahlédnutí do spisu</li>
 </ul>
 
-<h2>Jak si domluvit návštěvu</h2>
+<h3>Jak si domluvit návštěvu</h3>
 <p>Pracoviště pověřené vaším řízením zjistíte:</p>
 <ul>
   <li>z úřední desky, nebo</li>

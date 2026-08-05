@@ -145,6 +145,28 @@ silnější obrys a zaoblené rohy, s ikonou ze sady se nekryla.
 sedí přesně, na ostrém webu budou na retina displeji měkké. Až se bude
 sahat do Figmy, hodí se export 3× — výměna souborů je pak triviální.
 
+## Systémové opravy ze str. 5 a 6
+
+**Záložky.** V návrhu vyplňují celou šířku obsahu a mají stejnou šířku, popisek
+je uprostřed a menší (14 px, `body-s`). Maketa je měla široké podle obsahu,
+zarovnané doleva a 16 px. Odměřeno na str. 5: řada 452–1203 px, popisky široké
+94 a 127 px se středy v 637 a 1018 — to sedí na stejně široké záložky, nikoli na
+šířku podle obsahu ani na stejné vnitřní okraje. Svisle je návrh sevřenější:
+mezi spodkem řádku popisku a podtržením jsou 4 px, maketa měla 12.
+
+**Nadpis bez obsahu.** Odstavec se značkou připomínky se v prezentačním režimu
+skrývá jako poznámka makety. Když je ale takový odstavec jediným obsahem oddílu,
+zůstane na stránce nadpis a pod ním nic — na str. 5 takhle visel prázdný oddíl
+„Správní poplatky", na str. 18 totéž. Výjimka pro odstavce uvnitř zvýrazněných
+boxů teď platí i pro odstavec, který stojí mezi dvěma nadpisy nebo na konci
+stránky. Týkalo se to dvou stránek.
+
+**Úrovně nadpisů se musí ověřovat po stránkách.** Návrh používá obě velikosti:
+24 px (`h2`) i 20 px (`h3`). Na str. 4 byly kategorie 24 px, ale na str. 6 jsou
+„Postup" a „Jak si domluvit návštěvu" 20 px — maketa je měla jako `h2`, což při
+okrajích 48 / 24 přidávalo 46 px na každý nadpis. Velikost se pozná z výšky
+verzálek: 17,3 px odpovídá 24 px, 14,2 px odpovídá 20 px.
+
 ## Systémové opravy ze str. 4
 
 **Rozestupy nadpisů a odstavců.** Odměřeno na str. 4 a ověřeno na str. 8:
@@ -227,6 +249,11 @@ obsahu se používá `-layout`.
 6. **Vyhledávání** (str. 44–48 návrhu) — převzatá šablona pro služby gov.cz
    s fasetami Občan / Podnikatel / Právnická osoba. Než se na ni sáhne, měla
    by se vyjasnit s Cognitem.
+7. **Kroky řízení na str. 5** — návrh má šest kroků, maketa sedm: krok
+   „Posouzení a rozhodnutí" je v maketě rozdělený na „Posouzení záměru"
+   a „Rozhodnutí". Není u toho značka připomínky, takže není jasné, jestli je to
+   záměr, nebo omyl. Lhůty u kroků jsou doplněné podle návrhu (5 pracovních dnů,
+   30 dnů, 60–90 dnů, odvolací 15 dnů).
 
 ## Jak pokračovat
 

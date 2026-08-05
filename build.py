@@ -678,6 +678,13 @@ def to_ds(html_body):
         before = html_body[max(0, m.start() - 80):m.start()]
         if 'gov-message__content' in before:
             return m.group(0)
+        # Odstavec, který je jediným obsahem oddílu (stojí mezi dvěma nadpisy nebo
+        # na konci stránky), je také obsah — jinak by po skrytí zůstal nadpis
+        # bez ničeho. Takto vzniká prázdný oddíl „Správní poplatky" na str. 5.
+        prev = html_body[:m.start()].rstrip()
+        rest = html_body[m.end():].lstrip()
+        if prev.endswith(('</h2>', '</h3>')) and (rest == '' or rest.startswith(('<h1', '<h2', '<h3'))):
+            return m.group(0)
         if 'class="' in attrs:
             attrs = re.sub(r'class="([^"]*)"', lambda k: f'class="{k.group(1)} mock-note"', attrs, count=1)
         else:

@@ -232,9 +232,14 @@ li.open .dropdown { display: block; }
   text-transform: uppercase; letter-spacing: .04em; margin-bottom: var(--spacing-xs); }
 
 /* ---------- záložky (odkazy mezi stránkami) ---------- */
-.tabs { display: flex; gap: 2px; border-bottom: 1px solid var(--border-subtlest);
-  margin: var(--spacing-l) 0 0; flex-wrap: wrap; }
-.tabs a { padding: var(--spacing-s-nudge) var(--spacing-m); text-decoration: none;
+/* Návrh: záložky vyplňují celou šířku obsahu a mají stejnou šířku, popisek je
+   uprostřed a menší (14 px). Odměřeno na str. 5: řada 452–1203 px, aktivní
+   podtržení 460–815, popisky široké 94 a 127 px se středy v 637 a 1018 —
+   to sedí na stejně široké záložky, ne na šířku podle obsahu. */
+.tabs { display: flex; gap: 0; border-bottom: 1px solid var(--border-subtlest);
+  margin: var(--spacing-l) 0 0; }
+.tabs a { flex: 1 1 0; text-align: center; font-size: var(--font-size-body-s);
+  padding: var(--spacing-xs) var(--spacing-m); text-decoration: none;
   color: var(--color-primary-700); font-weight: 500; border-bottom: 3px solid transparent; margin-bottom: -1px; }
 .tabs a[aria-current] { color: var(--color-primary-600); border-bottom-color: var(--color-primary-600); }
 .tabs a:hover { background: var(--background-primary-subtlest); }
