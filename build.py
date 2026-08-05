@@ -696,6 +696,19 @@ def to_ds(html_body):
     html_body = html_body.replace('<div class="gov-message" data-color="success"',
                                   '<div class="gov-message mock-note" data-color="success"')
 
+    # ---- Soubory ----
+    # Návrh nemá u souboru štítek formátu ani tlačítko Stáhnout — má ikonu
+    # dokumentu (u PDF s popiskem) a stahuje se kliknutím na název souboru.
+    def fico(m):
+        fmt = m.group(1)
+        name = "soubor-pdf" if fmt.upper() == "PDF" else "soubor"
+        return (f'<img class="fico" src="{{{{r}}}}assets/img/icons/{name}.png"'
+                f' width="18" height="18" alt="{fmt}" loading="lazy">')
+
+    html_body = re.sub(r'<span class="ft">([A-Za-z]+)</span>', fico, html_body)
+    html_body = re.sub(r'<span class="name">(.*?)</span>',
+                       r'<a class="name" href="#">\1</a>', html_body, flags=re.S)
+
     return html_body
 
 

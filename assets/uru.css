@@ -298,11 +298,10 @@ li.open .dropdown { display: block; }
 .files .fmeta::before { content: "("; }
 .files .fmeta::after { content: ")"; }
 .files .btn, .files .gov-button { display: none; }
-.files .ft {
-  font-size: var(--font-size-body-xs); font-weight: 500; color: var(--color-primary-600);
-  background: none; border: 1px solid var(--color-primary-200);
-  border-radius: var(--corner-radius-2xs); padding: 0 4px; letter-spacing: .04em; flex: none;
-}
+/* Ikona dokumentu z návrhu (str. 7): list se zahnutým rohem, u PDF s popiskem.
+   Vysoká 18 px, tedy --icon-size-l, stejně jako ikony v boxech. */
+.files .fico { width: var(--icon-size-l); height: var(--icon-size-l); flex: none;
+  align-self: flex-start; margin-top: 3px; }
 
 /* Bohatší varianta: orámovaný řádek s metadaty a tlačítkem ke stažení. */
 .files.rich > li {
@@ -313,13 +312,7 @@ li.open .dropdown { display: block; }
 }
 .files.rich > li br { display: revert; }
 .files.rich .grow { display: block; flex: 1; }
-.files.rich .name { color: var(--text-primary); text-decoration: none; font-weight: 500; }
 .files.rich .fmeta::before, .files.rich .fmeta::after { content: ""; }
-.files.rich .btn, .files.rich .gov-button { display: inline-block; }
-.files.rich .ft {
-  color: var(--text-white-fixed); background: var(--background-primary); border: 0;
-  padding: 3px 7px;
-}
 
 /* ---------- akordeon: nativní details ---------- */
 .gov-accordion-item__summary { cursor: pointer; list-style: none; }

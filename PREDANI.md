@@ -161,6 +161,25 @@ Tabulka s číslem účtu nahrazena dvěma prostými odstavci, jak to má návrh
 s variabilním symbolem návrh nemá, ale str. 5 na něj podle připomínky 19 odkazuje,
 proto zůstává — je zapsaný mezi odchylkami.
 
+## Řádek souboru (`ul.files`) podle návrhu
+
+Návrh nemá u souboru štítek formátu ani tlačítko Stáhnout: je tam ikona dokumentu
+(list se zahnutým rohem, u PDF s popiskem „PDF“), název souboru je modrý podtržený
+odkaz, kterým se stahuje, a za ním formát a velikost v závorce. Maketa měla barevný
+štítek PDF/DOCX, název černý a vpravo tlačítko Stáhnout.
+
+Převod je v `to_ds()`, ne v obsahu — `<span class="ft">PDF</span>` se mění na ikonu
+a `<span class="name">` na odkaz. Propsalo se to do 31 řádků na všech stránkách
+se seznamem souborů.
+
+Ikony jsou vytažené přímo z PDF návrhu: vykresleny při 600 dpi, průhlednost dopočítána
+z prolnění mezi bílou a `#2362A2`, uloženy jako `soubor.png` a `soubor-pdf.png`
+na plátně 72 × 72 (4× proti zobrazovaným 18 px). Stejný postup půjde použít i jinde,
+kde návrh má ikonu, kterou design systém nemá.
+
+Tlačítko „Přejít na Portál stavebníka“ na str. 7 dostalo šipku (třída `btn arrow`),
+stejnou, jakou má též tlačítko na str. 8.
+
 ## Vědomá odchylka: sedm kroků řízení na str. 5
 
 Návrh má šest kroků a slučuje „Posouzení a rozhodnutí" do jednoho. Maketa je má

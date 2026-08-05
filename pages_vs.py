@@ -271,7 +271,7 @@ správních poplatků (příloha zákona č. 634/2004 Sb.).</p>
 <p>Žádosti můžete podat online prostřednictvím Portálu stavebníka, datovou schránkou,
 e-mailem, poštou nebo osobně. Projektovou dokumentaci je nutné vždy vložit přes Portál
 stavebníka.</p>
-<div class="btn-row"><a class="btn" href="{{r}}vyhrazene-stavby/portal-stavebnika.html">Přejít na Portál stavebníka</a></div>
+<div class="btn-row"><a class="btn arrow" href="{{r}}vyhrazene-stavby/portal-stavebnika.html">Přejít na Portál stavebníka</a></div>
 """
 
 PORTAL = """
