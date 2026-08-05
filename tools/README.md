@@ -45,6 +45,14 @@ jednotlivé glyfy, takže z „Připravte projektovou dokumentaci" zůstane
 „Při ravte rojektovou dokumentaci". Skript proto používá `-layout`, který text
 vrací celý a sloupce zachovává odsazením.
 
+### Párování podle písmen
+
+Export z Figmy láme slova uprostřed („P řílohy a vzory", „N ah l í žení do spisu").
+Porovnání podle slov na takovém bloku propadne, i když je text totožný. Skript proto
+nejdřív zkusí spárovat blok podle klíče z `norm()`, který mezery zahazuje — buď na
+shodu, nebo na obsažení, pokud jsou oba bloky podobně dlouhé (poměr délek aspoň 0,7).
+Teprve pak nastupuje porovnání podle významových slov.
+
 Důsledkem je, že skript nezná velikost písma a nemůže spolehlivě rozlišit nadpis
 od odstavce. Pořadí proto kontroluje na posloupnosti spárovaných bloků, ne na
 posloupnosti nadpisů.

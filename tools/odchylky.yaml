@@ -104,3 +104,31 @@ odchylky:
     poznamka: >
       Blok pomoci je v návrhu na ostatních stránkách Metodické podpory, na detailu chybí.
       Maketa ho má všude kvůli konzistenci.
+  - stranka: "vyhrazene-stavby/dokumenty-a-formulare.html"
+    text: "Vzor průvodní zprávy — dopravní stavby"
+    duvod: zelena
+    pripominka: 22
+    poznamka: >
+      Návrh má tři výplňové položky „Lorem ipsum". Maketa má sedm konkrétních
+      formulářů, aby šel ukázat filtr podle typu stavby a typu řízení.
+  - stranka: "vyhrazene-stavby/dokumenty-a-formulare.html"
+    text: "Vzor průvodní zprávy — energetické stavby"
+    duvod: zelena
+    pripominka: 22
+  - stranka: "vyhrazene-stavby/dokumenty-a-formulare.html"
+    text: "Návrh na zahájení vyvlastňovacího řízení"
+    duvod: zelena
+    pripominka: 22
+  - stranka: "vyhrazene-stavby/dokumenty-a-formulare.html"
+    text: "Zadanému filtru neodpovídá žádný soubor"
+    duvod: zelena
+    pripominka: 22
+    poznamka: >
+      Prázdný stav filtru. V návrhu filtr není, takže ho návrh nemůže mít.
+  - stranka: "vyhrazene-stavby/dokumenty-a-formulare.html"
+    text: "Variabilní symbol"
+    duvod: zelena
+    pripominka: 19
+    poznamka: >
+      Návrh uvádí jen číslo účtu. Připomínka 19 přesunula správní poplatky sem jako
+      na primární místo a str. 5 odkazuje i na variabilní symbol, proto zůstává.

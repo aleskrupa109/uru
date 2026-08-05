@@ -264,10 +264,8 @@ elektronických dokumentací.</p>
 <h2 id="poplatky">Správní poplatky</h2>
 <p>Některé úkony ÚRÚ podléhají správním poplatkům ve smyslu položky č. 18 a 19 sazebníku
 správních poplatků (příloha zákona č. 634/2004 Sb.).</p>
-<table class="t">
-  <tr><th style="width:220px">Číslo účtu</th><td>3711-1426011/0710</td></tr>
-  <tr><th>Variabilní symbol</th><td>obdržíte od ÚRÚ ve výzvě k úhradě</td></tr>
-</table>
+<p>Číslo účtu: 3711-1426011/0710</p>
+<p>Variabilní symbol: obdržíte od ÚRÚ ve výzvě k úhradě</p>
 
 <h2>Podat žádost elektronicky</h2>
 <p>Žádosti můžete podat online prostřednictvím Portálu stavebníka, datovou schránkou,

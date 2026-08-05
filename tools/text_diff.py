@@ -305,13 +305,39 @@ def compare(page, path, waivers, detail=False):
     if m is None:
         return None
     m_tok = [tokens(b["text"]) for b in m]
+    m_norm = [norm(b["text"]) for b in m]
     m_all = set().union(*m_tok) if m_tok else set()
     d_all = set().union(*[tokens(b["text"]) for b in d]) if d else set()
+
+    def by_letters(text):
+        """Spárování podle písmen bez mezer.
+
+        Export z Figmy láme slova uprostřed („P řílohy", „N ah l í žení"),
+        takže porovnání podle slov propadává, i když je text totožný.
+        Klíč z norm() mezery zahazuje, takže se takový blok pozná."""
+        key = norm(text)
+        if len(key) < 12:
+            return -1
+        best, best_ratio = -1, 0.0
+        for j, mk in enumerate(m_norm):
+            if not mk:
+                continue
+            if key == mk:
+                return j
+            if len(mk) >= 12 and (key in mk or mk in key):
+                ratio = min(len(key), len(mk)) / max(len(key), len(mk))
+                if ratio > best_ratio:
+                    best, best_ratio = j, ratio
+        return best if best_ratio >= 0.7 else -1
 
     missing, matched = [], []
     for b in d:
         tk = tokens(b["text"])
         if not tk:
+            continue
+        j = by_letters(b["text"])
+        if j >= 0:
+            matched.append(j)
             continue
         best, best_score = -1, 0.0
         for j, mt in enumerate(m_tok):

@@ -98,8 +98,9 @@ dvanáctkrát (6907 px proti 4877).
 zapracovány ikony a rozestupy — potřebuje přeměřit). Ikony z Figmy dorazily
 a jsou nasazené, viz níže.
 
-**Textové pokrytí návrhu:** 67,5 % (`python3 tools/text_diff.py`). Dřívější
-údaj 68,4 % byl zastaralý — přeměřeno na nezměněné kopii repozitáře.
+**Textové pokrytí návrhu:** 70,5 % (`python3 tools/text_diff.py`). Číslo vyskočilo ze 67,5 %
+poté, co porovnání umí párovat bloky podle písmen bez mezer; obsah makety se tím
+nezměnil, jen se přestaly hlásit bloky rozsekané exportem z Figmy.
 
 ## Ikony z návrhu (srpen 2026)
 
@@ -144,6 +145,21 @@ silnější obrys a zaoblené rohy, s ikonou ze sady se nekryla.
 **Exporty jsou 1×.** Na maketu a na `visual_diff` (rám 1440 px, měřítko 1)
 sedí přesně, na ostrém webu budou na retina displeji měkké. Až se bude
 sahat do Figmy, hodí se export 3× — výměna souborů je pak triviální.
+
+## Str. 7 — proč je odlišnost vysoká a je to v pořádku
+
+Maketa je o 723 px vyšší než návrh. Návrh má v „Přílohách a vzorech" tři výplňové
+řádky „Lorem ipsum"; maketa má filtr (typ stavby / typ řízení / formát), počítadlo
+nálezů a sedm konkrétních formulářů s verzí a platností. To jsou zelené připomínky
+22 a 23 a je to největší schválená odchylka na webu. Pixelové číslo té stránky
+proto zůstane vysoké — posuzuje se snímek.
+
+Doplněno do `tools/odchylky.yaml`, aby to textové porovnání nehlásilo jako chybu.
+Str. 7 je textově na 100 %.
+
+Tabulka s číslem účtu nahrazena dvěma prostými odstavci, jak to má návrh. Řádek
+s variabilním symbolem návrh nemá, ale str. 5 na něj podle připomínky 19 odkazuje,
+proto zůstává — je zapsaný mezi odchylkami.
 
 ## Vědomá odchylka: sedm kroků řízení na str. 5
 
