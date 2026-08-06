@@ -182,6 +182,10 @@ stejnou, jakou má též tlačítko na str. 8.
 
 ## Ze str. 18: členění přechodného období
 
+**Text v boxu bral barvu z obsahového sloupce.** Pravidlo `.content p` míří přímo
+na `<p>`, takže přebíjelo dědění z `.gov-message` — na plném modrém boxu tak vyšel
+tmavý text na tmavém pozadí. Uvnitř boxu teď barvu určuje box (`color: inherit`).
+
 **Výrazný box není jen žlutý.** Návrh má dvě varianty: žlutou (str. 4, 5, 6, 16)
 a plnou modrou s bílým textem (str. 18). Maketa znala jen žlutou. Přibyl druh boxu
 `box hl` = `primary` + `bold`. Žárovka se teď kreslí maskou přes `currentColor`,
@@ -344,8 +348,11 @@ nemá, takže je potřeba atribut `data-hydrated` doplnit ručně (infobar, chip
 poznámka makety a v prezentačním režimu se skryje. Odstavce uvnitř
 zvýrazněných boxů jsou z toho vyňaté, jinak by zůstal prázdný barevný box.
 
-**Cache prohlížeče** — po výměně souborů je někdy potřeba vymazat historii,
-jinak porovnání ukazuje starý stav.
+**Cache prohlížeče a stará složka** — po výměně souborů je někdy potřeba vymazat
+historii, jinak prohlížeč ukazuje starý stav. Stalo se to i tak, že `visual_diff`
+vykresloval novou verzi a prohlížeč zároveň starou. Proto je v patičce razítko
+`sestaveno DD. MM. RRRR HH:MM` — když nesedí s časem posledního běhu `build.py`,
+dívá se prohlížeč jinam (cache, jiný klon, nebo nasazená verze na GitHub Pages).
 
 **Návrh nepatří do repozitáře** — při výměně souborů by se smazal. Skripty ho
 hledají o složku výš, v `~/Documents`, `~/Desktop`, `~/Downloads` nebo v cestě

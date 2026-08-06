@@ -185,6 +185,11 @@ li.open .dropdown { display: block; }
 .content > p { margin: var(--spacing-l) 0; }
 .content h3 { font-size: var(--font-size-headline-s); margin: var(--spacing-l) 0 var(--spacing-s); }
 .content p, .content li { color: var(--text-secondary); }
+/* Uvnitř boxu barvu určuje box, ne obsahový sloupec. Pravidlo výše míří přímo
+   na <p>, takže přebíjí dědění z .gov-message — na plném modrém boxu tím text
+   vycházel tmavý na tmavém. */
+.gov-message__content p, .gov-message__content li,
+.gov-message__content h3 { color: inherit; }
 /* Seznam v obsahu: návrh má rozestup položek rovný výšce řádku (24 px), design
    systém přidává pod každou položku 8 px. Odměřeno na str. 18: rozestupy odrážek
    24 px, od nadpisu k první odrážce 24 px. */

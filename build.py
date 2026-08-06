@@ -8,8 +8,13 @@ Pokud upravuješ texty přímo v HTML, build už nespouštěj (přepsal by je),
 nebo úpravy nejdřív přenes do pages_*.py.
 """
 import os, re, html
+from datetime import datetime
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
+
+# Razítko sestavení v patičce — aby bylo na první pohled poznat, jestli prohlížeč
+# neukazuje starou verzi z cache nebo z jiné složky.
+BUILD_STAMP = datetime.now().strftime("%d. %m. %Y %H:%M")
 
 # --------------------------------------------------------------------------
 # hlavní navigace
@@ -417,7 +422,7 @@ def footer(r):
                '<span>© 2026 Úřad rozvoje území • Informace jsou poskytovány v souladu '
                'se zákonem č. 106/1999 Sb.</span>'
                f'<span><a href="{r}mapa-webu.html">Mapa webu</a></span>'
-               '<span class="ver">Maketa — design systém gov.cz 4.6.5</span>'
+               f'<span class="ver">Maketa — design systém gov.cz 4.6.5 · sestaveno {BUILD_STAMP}</span>'
                '</div></div>')
     out.append('</div></footer>')
     return "".join(out)
