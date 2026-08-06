@@ -180,6 +180,24 @@ kde návrh má ikonu, kterou design systém nemá.
 Tlačítko „Přejít na Portál stavebníka“ na str. 7 dostalo šipku (třída `btn arrow`),
 stejnou, jakou má též tlačítko na str. 8.
 
+## Ze str. 16: žárovka a dvě opravy nástroje
+
+**Žlutý box má v návrhu žárovku,** ne výstražný trojúhelník. Ověřeno na str. 4, 6
+i 16 — všude táž vyplněná žárovka 13,7 × 18 px. Vytažena z PDF stejně jako ikony
+souborů, uložena jako `zarovka.png`. Nasazuje se automaticky na každý `box change`,
+což je sedm stránek.
+
+**Odpovědi v zavřeném akordeonu se hlásily jako přebývající text.** Návrh je nemůže
+ukázat, když je akordeon zavřený. `text_diff.py` teď obsah zavřeného `<details>`
+z přebývajících vynechává (`summary` z toho vyjmut, ten vidět je). Ze strany návrhu
+se spárovat pořád může — na stránkách, kde návrh akordeon otevřený ukazuje. Ubralo
+to 23 falešných hlášení.
+
+**pdftotext na tomhle PDF občas selže** a stránka pak vrátí nula bloků. Celkové číslo
+tiše klesne — zachytil jsem běh, kde vyšlo 368 z 522 místo 382 z 542. Skript na to
+teď upozorní na chybový výstup. Když se číslo mezi běhy změní bez zásahu do obsahu,
+je to tohle a stačí spustit znovu.
+
 ## Vědomá odchylka: sedm kroků řízení na str. 5
 
 Návrh má šest kroků a slučuje „Posouzení a rozhodnutí" do jednoho. Maketa je má

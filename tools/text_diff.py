@@ -210,6 +210,8 @@ class Blocks(HTMLParser):
         self.blocks = []
         self.depth = 0
         self.skip_at = None      # hloubka, ve které začal přeskakovaný uzel
+        self.hide_at = None      # hloubka zavřeného <details> — obsah není vidět
+        self.sum_at = None       # hloubka <summary> — ten vidět je
         self.buf = []
         self.tag = None
         self.in_main = False
@@ -222,6 +224,10 @@ class Blocks(HTMLParser):
         if tag == "main":
             self.in_main = True
         self.depth += 1
+        if tag == "details" and "open" not in a and self.hide_at is None:
+            self.hide_at = self.depth
+        if tag == "summary" and self.sum_at is None:
+            self.sum_at = self.depth
         if self.skip_at is None and (
                 cls & SKIP_CLASSES
                 or tag in ("script", "style", "nav", "header", "footer", "select")):
@@ -239,6 +245,12 @@ class Blocks(HTMLParser):
             self.flush()
         if self.skip_at is not None and self.depth == self.skip_at:
             self.skip_at = None
+        if self.hide_at is not None and self.depth == self.hide_at:
+            self.flush()
+            self.hide_at = None
+        if self.sum_at is not None and self.depth == self.sum_at:
+            self.flush()
+            self.sum_at = None
         self.depth = max(0, self.depth - 1)
 
     def handle_data(self, data):
@@ -249,7 +261,8 @@ class Blocks(HTMLParser):
         if self.buf:
             text = " ".join(self.buf).strip()
             if len(norm(text)) >= 12:
-                self.blocks.append({"text": text, "tag": self.tag or "p"})
+                self.blocks.append({"text": text, "tag": self.tag or "p",
+                                    "hidden": self.hide_at is not None and self.sum_at is None})
         self.buf = []
         self.tag = None
 
@@ -354,8 +367,12 @@ def compare(page, path, waivers, detail=False):
             missing.append(b["text"])
 
     used = set(matched)
+    # Odpověď v zavřeném akordeonu není v návrhu vidět, takže ji nelze hlásit
+    # jako přebývající. Ze strany návrhu se spárovat může — tam, kde návrh
+    # ukazuje akordeon otevřený.
     extra = [b["text"] for j, b in enumerate(m)
              if j not in used and len(m_tok[j]) >= 4
+             and not b.get("hidden")
              and (not d_all or len(m_tok[j] & d_all) / len(m_tok[j]) < 0.5)
              and not waived(waivers, path, b["text"])]
 
@@ -393,6 +410,10 @@ def main():
         if res is None:
             continue
         miss, extra, blocks, order = res
+        if blocks == 0:
+            print(f"POZOR: str. {pg} nevrátila z návrhu žádný text — pdftotext"
+                  f" na tom PDF občas selže a celkové číslo pak tiše klesne."
+                  f" Spusťte porovnání znovu.", file=sys.stderr)
         tot_m += miss
         tot_e += extra
         tot_b += blocks
