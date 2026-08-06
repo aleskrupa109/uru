@@ -739,6 +739,11 @@ body.editing [data-edit]:focus { outline: 2px solid var(--color-success-600); ba
    se o ně opíral. Odměřeno na str. 16 (linka záložek 424, box 448) a ověřeno
    na str. 6 (řádek nad boxem končí 1042, box začíná 1066). */
 .content > .gov-message { margin: var(--spacing-l) 0; }
+/* Žárovka z návrhu. Kreslená maskou, ne obrázkem, aby si vzala barvu textu:
+   na žlutém boxu vyjde černá, na modrém bílá. */
+.ico-zarovka { display: block; background: currentColor;
+  -webkit-mask: url("img/icons/zarovka.png") no-repeat center / contain;
+  mask: url("img/icons/zarovka.png") no-repeat center / contain; }
 .gov-message__content > p { margin: 0; }
 .gov-message__content > p + p { margin-top: var(--spacing-s); }
 .gov-message__content > h3 { margin: 0 0 var(--spacing-s); font-size: var(--font-size-body-m); }

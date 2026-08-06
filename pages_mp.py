@@ -320,10 +320,10 @@ PRECHOD = """
   Obě stránky používají stejný vzor a vzájemně se odkazují.""" + cmt(44, "Tato stránka je protějškem stránky „Co změní novela SZ\" pro druhé publikum. Provázat a sjednotit vzor.") + """</p>
 </div>
 
-<h2>Rozpracovaná řízení</h2>
-<div class="box change">
-  <p>Řízení zahájená přede dnem účinnosti novely se dokončují podle dosavadní právní úpravy —
-  zákona č. 183/2006 Sb. (starý stavební zákon). Nový zákon se na tato řízení nevztahuje.</p>
+<h2>Řízení zahájená před 1. 7. 2026</h2>
+<div class="box hl">
+  <p>Řízení zahájená před 1. 7. 2026 se dokončují podle dosavadní právní úpravy — zákona
+  č. 183/2006 Sb. (starý stavební zákon). Nový zákon se na tato řízení nevztahuje.</p>
 </div>
 """ + M.PRECHOD_DETAIL + """
 
@@ -496,7 +496,7 @@ PAGES = [
     dict(help="metodiky", path="metodicka-podpora/prechodove-obdobi.html", title="Přechodové období",
          section="metodicka-podpora", crumbs=C + [("Přechodové období", None)],
          h1="Přechodové období",
-         perex="Co platí pro řízení zahájená před účinností novely, jak probíhá delimitace a co se mění pro dotčené orgány.",
+         perex="Od 1. 7. 2026 vstoupil v platnost zákon č. 283/2021 Sb. (nový stavební zákon). Řízení zahájená před tímto datem, změny v dokumentech dotčených orgánů a vzory nových dokumentů — to vše najdete na této stránce.",
          body=PRECHOD),
     dict(help="metodiky", path="metodicka-podpora/standardizace.html",
          title="Standardizace územního plánování", section="metodicka-podpora",

@@ -98,7 +98,7 @@ dvanáctkrát (6907 px proti 4877).
 zapracovány ikony a rozestupy — potřebuje přeměřit). Ikony z Figmy dorazily
 a jsou nasazené, viz níže.
 
-**Textové pokrytí návrhu:** 71,4 % (`python3 tools/text_diff.py`). Číslo vyskočilo ze 67,5 %
+**Textové pokrytí návrhu:** 71,6 % (`python3 tools/text_diff.py`). Číslo vyskočilo ze 67,5 %
 poté, co porovnání umí párovat bloky podle písmen bez mezer; obsah makety se tím
 nezměnil, jen se přestaly hlásit bloky rozsekané exportem z Figmy.
 
@@ -181,6 +181,17 @@ Tlačítko „Přejít na Portál stavebníka“ na str. 7 dostalo šipku (tří
 stejnou, jakou má též tlačítko na str. 8.
 
 ## Ze str. 18: členění přechodného období
+
+**Výrazný box není jen žlutý.** Návrh má dvě varianty: žlutou (str. 4, 5, 6, 16)
+a plnou modrou s bílým textem (str. 18). Maketa znala jen žlutou. Přibyl druh boxu
+`box hl` = `primary` + `bold`. Žárovka se teď kreslí maskou přes `currentColor`,
+takže na žlutém boxu vyjde černá a na modrém bílá z jednoho souboru.
+
+**Text str. 18 srovnán s návrhem včetně dat.** Dřív jsem se domíval, že maketa data
+záměrně obchází formulací „přede dnem účinnosti novely“. Není to pravda: „1. 7. 2026“
+je ve zdrojích 19× a opisná formulace 17×, obojí i v týchž souborech. Je to nedůslednost
+v psaní, ne záměr. Datum účinnosti novely (1. 7. 2026) tedy nemá s otevřeným
+rozhodnutím č. 1 nic společného — to se týká data vzniku úřadu v infobanneru.
 
 **Rozestup odrážek v obsahu byl o 8 px větší.** Design systém dává každé položce
 `margin-bottom: 8px`, návrh má rozestup rovný výšce řádku, tedy 24 px. Odměřeno

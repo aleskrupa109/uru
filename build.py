@@ -534,7 +534,8 @@ def to_ds(html_body):
 
     # ---- Message (zvýrazněné boxy) ----
     BOX = {"change": ("warning", "bold"), "edge": ("primary", "subtle"),
-           "note": ("neutral", "subtle"), "gap": ("success", "subtle")}
+           "note": ("neutral", "subtle"), "gap": ("success", "subtle"),
+           "hl": ("primary", "bold")}
 
     def box_inner(inner):
         """Návrh sází jednoduchý box na jeden řádek: „Nadpis: text".
@@ -556,10 +557,10 @@ def to_ds(html_body):
             # přes atribut slot="icon" (--icon-size-l = 18 px)
             ico_html = (f'<img slot="icon" src="{{{{r}}}}assets/img/icons/{own.group(1)}.png"'
                         f' width="18" height="18" alt="" loading="lazy">')
-        elif m.group("kind") == "change":
-            # žlutý box má v návrhu žárovku, ne výstražný trojúhelník
-            ico_html = ('<img slot="icon" src="{{r}}assets/img/icons/zarovka.png"'
-                        ' width="18" height="18" alt="" loading="lazy">')
+        elif m.group("kind") in ("change", "hl"):
+            # výrazný box má v návrhu žárovku, ne výstražný trojúhelník. Kreslí se
+            # maskou, aby si vzala barvu textu — na žlutém boxu černá, na modrém bílá.
+            ico_html = '<span slot="icon" class="ico-zarovka" aria-hidden="true"></span>'
         else:
             # výčtový box (jen seznam) není varování — dostane informační ikonu
             ico = "info" if re.fullmatch(r"\s*<ul>.*</ul>\s*", inner, re.S) else "warn"

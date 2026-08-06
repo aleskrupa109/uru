@@ -4,54 +4,53 @@
 PRECHOD_DETAIL = """
 <h3>Jak poznat datum zahájení řízení</h3>
 <ul>
-  <li>Rozhodující je datum doručení žádosti stavebnímu úřadu, nikoli datum jejího podání.</li>
-  <li>U řízení zahájených z moci úřední je rozhodující datum doručení oznámení účastníkům.</li>
-  <li>Datum zahájení musí být zaznamenáno ve spisu — ověřte je před každým procesním krokem.</li>
+  <li>Rozhodující je datum doručení žádosti stavebnímu úřadu, nikoli datum podání</li>
+  <li>U řízení zahájených z moci úřední je rozhodující datum doručení oznámení účastníkům</li>
+  <li>Datum zahájení musí být zaznamenáno ve spisu — ověřte před každým procesním krokem</li>
 </ul>
 
 <h3>Co platí pro tato řízení</h3>
 <ul>
-  <li>Lhůty, procesní povinnosti a vzory dokumentů vycházejí ze starého zákona.</li>
-  <li>Integraci dotčených orgánů podle nové úpravy nelze aplikovat zpětně.</li>
-  <li>Odvolací řízení probíhá podle právní úpravy platné v době rozhodnutí prvního stupně.</li>
-  <li>Projektová dokumentace zpracovaná podle dosavadní úpravy zůstává použitelná.</li>
-  <li>Závazná stanoviska dotčených orgánů vydaná před účinností novely jsou stále platná.</li>
+  <li>Lhůty, procesní povinnosti a vzory dokumentů vycházejí ze starého zákona</li>
+  <li>Integraci dotčených orgánů podle §85 nového SZ nelze aplikovat zpětně</li>
+  <li>Odvolací řízení probíhá podle právní úpravy platné v době rozhodnutí prvního stupně</li>
+  <li>Projektová dokumentace zpracovaná podle starého zákona zůstává platná</li>
+  <li>Závazná stanoviska dotčených orgánů vydaná před 1. 7. jsou stále platná</li>
 </ul>
 
-<h3>Pravomocná územní rozhodnutí vydaná před účinností novely</h3>
+<h3>Pravomocná územní rozhodnutí vydaná před 1. 7.</h3>
 <ul>
-  <li>Pravomocná územní rozhodnutí zůstávají platná.</li>
-  <li>Navazující stavební řízení se zahajuje podle nového zákona, pokud žádost přijde
-      po účinnosti novely.</li>
-  <li>Při změně pravomocného rozhodnutí vydaného dříve se postupuje podle nového zákona.</li>
+  <li>Pravomocná územní rozhodnutí vydaná před 1. 7. zůstávají platná</li>
+  <li>Navazující stavební řízení se zahajuje podle nového zákona, pokud žádost přijde po 1. 7.</li>
+  <li>Při změně pravomocného rozhodnutí vydaného před 1. 7. se postupuje podle nového zákona</li>
 </ul>
 
 <h2>Změny pro dotčené orgány</h2>
-<div class="box change">
-  <p>Změny platí pro všechna řízení zahájená od účinnosti novely. Pro řízení zahájená dříve
-  platí dosavadní typ dokumentů (závazné stanovisko podle §149 správního řádu).</p>
+<div class="box hl">
+  <p>Změny platí od 1. 7. 2026 pro všechna nová řízení. Pro řízení zahájená před 1. 7. platí
+  dosavadní typ dokumentů (závazné stanovisko podle §149 správního řádu).</p>
 </div>
 <div class="box edge" data-ico="zadna">
-  <p>Dotčené orgány už nevydávají závazné stanovisko jako samostatný dokument. Jejich vyjádření
-  je součástí koordinovaného stanoviska v rámci integrovaného řízení prostřednictvím Portálu
-  stavebníka. Lhůta pro vydání: 30 dnů od doručení podkladů.</p>
+  <p>Dotčené orgány od 1. 7. nevydávají závazné stanovisko jako samostatný dokument. Jejich
+  vyjádření je součástí koordinovaného stanoviska v rámci integrovaného řízení prostřednictvím
+  Portálu stavebníka. Lhůta pro vydání: 30 dnů od doručení podkladů.</p>
 </div>
 <div class="box edge" data-ico="zadna">
   <p>Jednotné environmentální stanovisko se ruší. Každý dotčený orgán v oblasti životního
   prostředí vydává vyjádření samostatně v rámci koordinovaného stanoviska.</p>
 </div>
-
 <p>Podrobnosti najdete v <a href="{{r}}metodicka-podpora/caste-dotazy-dotcene-organy.html">Často
 kladených otázkách pro dotčené orgány</a>.</p>
 
 <h3>Jak postupovat při přijetí podkladů od stavebního úřadu</h3>
-<p>Podklady k řízení přicházejí přes Portál stavebníka, nikoli e-mailem.</p>
 <ul>
-  <li>Lhůta 30 dnů běží od doručení podkladů — sledujte datum v datové schránce.</li>
-  <li>Pokud jsou podklady neúplné, kontaktujte stavební úřad s žádostí o doplnění — lhůta se staví.</li>
-  <li>Pokud jde věc mimo vaši věcnou příslušnost, informujte stavební úřad neprodleně.</li>
+  <li>Podklady k řízení přicházejí přes Portál stavebníka, nikoli e-mailem</li>
+  <li>Lhůta 30 dnů běží od doručení podkladů — sledujte datum v datové schránce</li>
+  <li>Pokud jsou podklady neúplné, kontaktujte stavební úřad s žádostí o doplnění — lhůta se staví</li>
+  <li>Pokud jde věc mimo vaši věcnou příslušnost, informujte stavební úřad neprodleně</li>
 </ul>
 """
+
 
 
 STANDARDIZACE_DETAIL = """
