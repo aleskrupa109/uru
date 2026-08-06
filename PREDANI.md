@@ -182,6 +182,12 @@ stejnou, jakou má též tlačítko na str. 8.
 
 ## Ze str. 16: žárovka a dvě opravy nástroje
 
+**Box za záložkami se o ně opíral.** V návrhu má zvýrazněný box nad sebou 24 px.
+Za odstavcem to vycházelo samo z okraje odstavce, ale záložky spodní okraj nemají,
+takže box na nich seděl natvrdo. Odměřeno na str. 16 (linka záložek 424, box 448)
+a ověřeno na str. 6 (řádek nad boxem končí 1042, box začíná 1066). Řešeno okrajem
+na `.content > .gov-message`, týká se pěti stránek se záložkami.
+
 **Žlutý box má v návrhu žárovku,** ne výstražný trojúhelník. Ověřeno na str. 4, 6
 i 16 — všude táž vyplněná žárovka 13,7 × 18 px. Vytažena z PDF stejně jako ikony
 souborů, uložena jako `zarovka.png`. Nasazuje se automaticky na každý `box change`,

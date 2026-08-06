@@ -729,6 +729,11 @@ body.editing [data-edit]:focus { outline: 2px solid var(--color-success-600); ba
 /* ---------- zvýrazněné boxy ----------
    Návrh: ikona a text na jednom řádku, nadpis jen tučně a s dvojtečkou.
    Členěná podoba (nadpis + seznam) zůstává pro boxy s více odstavci. */
+/* Zvýrazněný box má v návrhu nad sebou 24 px. U boxů za odstavcem to vycházelo
+   samo z okraje odstavce, ale za záložkami ne — ty spodní okraj nemají a box
+   se o ně opíral. Odměřeno na str. 16 (linka záložek 424, box 448) a ověřeno
+   na str. 6 (řádek nad boxem končí 1042, box začíná 1066). */
+.content > .gov-message { margin: var(--spacing-l) 0; }
 .gov-message__content > p { margin: 0; }
 .gov-message__content > p + p { margin-top: var(--spacing-s); }
 .gov-message__content > h3 { margin: 0 0 var(--spacing-s); font-size: var(--font-size-body-m); }
