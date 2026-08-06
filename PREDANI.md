@@ -98,7 +98,7 @@ dvanáctkrát (6907 px proti 4877).
 zapracovány ikony a rozestupy — potřebuje přeměřit). Ikony z Figmy dorazily
 a jsou nasazené, viz níže.
 
-**Textové pokrytí návrhu:** 70,5 % (`python3 tools/text_diff.py`). Číslo vyskočilo ze 67,5 %
+**Textové pokrytí návrhu:** 71,4 % (`python3 tools/text_diff.py`). Číslo vyskočilo ze 67,5 %
 poté, co porovnání umí párovat bloky podle písmen bez mezer; obsah makety se tím
 nezměnil, jen se přestaly hlásit bloky rozsekané exportem z Figmy.
 
@@ -179,6 +179,23 @@ kde návrh má ikonu, kterou design systém nemá.
 
 Tlačítko „Přejít na Portál stavebníka“ na str. 7 dostalo šipku (třída `btn arrow`),
 stejnou, jakou má též tlačítko na str. 8.
+
+## Ze str. 18: členění přechodného období
+
+Maketa slila tři oddíly návrhu do jednoho modrého boxu „Na co dát pozor“ se sedmi
+odrážkami. Návrh má tři podnadpisy s vlastními seznamy: „Jak poznat datum zahájení
+řízení“, „Co platí pro tato řízení“ a „Pravomocná územní rozhodnutí“. Přeskládáno
+podle návrhu; při tom se našly dvě odrážky, které v maketě úplně chyběly (řízení
+z moci úřední, odvolací řízení podle úpravy platné v době prvního stupně).
+
+Oddíl „Změny pro dotčené orgány“ byl na stránce dvakrát — jednou jako výklad, jednou
+jako odkaz na časté dotazy. Sloučeno do jednoho, obsah převeden do boxů podle návrhu.
+Nadpisy sníženy na `h3` tam, kde má návrh 20 px (výška verzálky 14,4 px).
+
+**Data zůstávají nedotčená.** Návrh píše všude „od 1. 7. 2026“, maketa důsledně
+„přede dnem účinnosti novely“. To vypadá jako záměr, ne opomenutí — souvisí
+s otevřeným rozhodnutím č. 1 o znění infobanneru. Nepřepisoval jsem to ani jedním
+směrem. Jediný zbývající chybějící blok na str. 18 je perex, který datum obsahuje.
 
 ## Ze str. 16: žárovka a dvě opravy nástroje
 

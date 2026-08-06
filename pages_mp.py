@@ -321,8 +321,10 @@ PRECHOD = """
 </div>
 
 <h2>Rozpracovaná řízení</h2>
-<p>Řízení zahájená přede dnem účinnosti novely se dokončují podle dosavadních pravidel,
-není-li v přechodných ustanoveních stanoveno jinak.</p>
+<div class="box change">
+  <p>Řízení zahájená přede dnem účinnosti novely se dokončují podle dosavadní právní úpravy —
+  zákona č. 183/2006 Sb. (starý stavební zákon). Nový zákon se na tato řízení nevztahuje.</p>
+</div>
 """ + M.PRECHOD_DETAIL + """
 
 <h2 id="delimitace">Delimitace — řízení přecházející z obecných stavebních úřadů""" + cmt(45, "Chybí část k delimitaci: co se stane s řízeními, která dnes vede obecný stavební úřad a nově spadnou pod ÚRÚ.") + """</h2>
@@ -334,11 +336,6 @@ není-li v přechodných ustanoveních stanoveno jinak.</p>
   <tr><td>Řízení pravomocně skončené</td><td>—</td><td>Rozhodnutí zůstává v platnosti</td></tr>
   <tr><td>Záměr dosud nepodaný</td><td>ÚRÚ</td><td>Podat rovnou u ÚRÚ</td></tr>
 </table>
-
-<h2>Změny pro dotčené orgány</h2>
-<p>Mění se typ vydávaného dokumentu i způsob jeho zapojení do řízení. Podrobnosti najdete
-v <a href="{{r}}metodicka-podpora/caste-dotazy-dotcene-organy.html">Často kladených otázkách
-pro dotčené orgány</a>.</p>
 
 <h2>Vzory dokumentů ke stažení</h2>
 <p>Vzory a formuláře jsou spravovány na jednom místě v sekci
