@@ -185,6 +185,11 @@ li.open .dropdown { display: block; }
 .content > p { margin: var(--spacing-l) 0; }
 .content h3 { font-size: var(--font-size-headline-s); margin: var(--spacing-l) 0 var(--spacing-s); }
 .content p, .content li { color: var(--text-secondary); }
+/* Seznam v obsahu: návrh má rozestup položek rovný výšce řádku (24 px), design
+   systém přidává pod každou položku 8 px. Odměřeno na str. 18: rozestupy odrážek
+   24 px, od nadpisu k první odrážce 24 px. */
+.content > ul { margin: var(--spacing-l) 0; }
+.content li { margin-bottom: 0; }
 
 /* ---------- obsah stránky ---------- */
 .toc { background: var(--background-primary-subtlest); border-radius: var(--corner-radius-s);

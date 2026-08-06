@@ -548,7 +548,10 @@ def to_ds(html_body):
         color, typ = BOX.get(m.group("kind"), ("neutral", "subtle"))
         inner = m.group("inner")
         own = re.search(r'data-ico="([a-z0-9-]+)"', m.group("attrs") or "")
-        if own:
+        if own and own.group(1) == "zadna":
+            # návrh má i boxy bez ikony (str. 18) — jen levý pruh a text
+            ico_html = None
+        elif own:
             # ikona z návrhu; rozměr a svislé zarovnání řeší design systém
             # přes atribut slot="icon" (--icon-size-l = 18 px)
             ico_html = (f'<img slot="icon" src="{{{{r}}}}assets/img/icons/{own.group(1)}.png"'
@@ -561,8 +564,9 @@ def to_ds(html_body):
             # výčtový box (jen seznam) není varování — dostane informační ikonu
             ico = "info" if re.fullmatch(r"\s*<ul>.*</ul>\s*", inner, re.S) else "warn"
             ico_html = gicon(ico, cls="", slot=True)
+        span = f'<span>{ico_html}</span>' if ico_html else ''
         return (f'<div class="gov-message" data-color="{color}" data-type="{typ}" role="status">'
-                f'<span>{ico_html}</span>'
+                f'{span}'
                 f'<div class="gov-message__content">{box_inner(inner)}</div></div>')
 
     html_body = re.sub(r'<div class="box (?P<kind>[a-z]+)"(?P<attrs>[^>]*)>(?P<inner>.*?)</div>\s*(?=<|$)',

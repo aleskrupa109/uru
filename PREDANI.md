@@ -182,6 +182,18 @@ stejnou, jakou má též tlačítko na str. 8.
 
 ## Ze str. 18: členění přechodného období
 
+**Rozestup odrážek v obsahu byl o 8 px větší.** Design systém dává každé položce
+`margin-bottom: 8px`, návrh má rozestup rovný výšce řádku, tedy 24 px. Odměřeno
+na str. 18: v návrhu 23–25 px mezi odrážkami, v maketě 31–33. Od nadpisu k první
+odrážce má návrh 24 px, maketa měla 16. Týká se to jedenácti stránek. Je to táž
+chyba, kterou jsem dřív opravil uvnitř zvýrazněných boxů — jen tam pochází
+z projektové vrstvy, tady přímo z design systému.
+
+**Box bez ikony.** Na str. 18 má návrh modrý box s levým pruhem, ale bez ikony —
+jen text odsazený o 16 px. Maketa tam dávala výstražný trojúhelník. Řešeno
+atributem `data-ico="zadna"`, který ikonu vypne. Ostatní rozměry boxu jsou shodné
+(pruh 452–456, pozadí od 456,5, text od 468,6).
+
 Maketa slila tři oddíly návrhu do jednoho modrého boxu „Na co dát pozor“ se sedmi
 odrážkami. Návrh má tři podnadpisy s vlastními seznamy: „Jak poznat datum zahájení
 řízení“, „Co platí pro tato řízení“ a „Pravomocná územní rozhodnutí“. Přeskládáno

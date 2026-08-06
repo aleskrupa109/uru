@@ -31,12 +31,12 @@ PRECHOD_DETAIL = """
   <p>Změny platí pro všechna řízení zahájená od účinnosti novely. Pro řízení zahájená dříve
   platí dosavadní typ dokumentů (závazné stanovisko podle §149 správního řádu).</p>
 </div>
-<div class="box edge">
+<div class="box edge" data-ico="zadna">
   <p>Dotčené orgány už nevydávají závazné stanovisko jako samostatný dokument. Jejich vyjádření
   je součástí koordinovaného stanoviska v rámci integrovaného řízení prostřednictvím Portálu
   stavebníka. Lhůta pro vydání: 30 dnů od doručení podkladů.</p>
 </div>
-<div class="box edge">
+<div class="box edge" data-ico="zadna">
   <p>Jednotné environmentální stanovisko se ruší. Každý dotčený orgán v oblasti životního
   prostředí vydává vyjádření samostatně v rámci koordinovaného stanoviska.</p>
 </div>
