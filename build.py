@@ -15,6 +15,8 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 # Razítko sestavení v patičce — aby bylo na první pohled poznat, jestli prohlížeč
 # neukazuje starou verzi z cache nebo z jiné složky.
 BUILD_STAMP = datetime.now().strftime("%d. %m. %Y %H:%M")
+# Jednorázová kontrolní značka pro ověření, že se soubory dostaly až na web.
+BUILD_TOKEN = "KONTROLA-7Q2X"
 
 # --------------------------------------------------------------------------
 # hlavní navigace
@@ -422,7 +424,7 @@ def footer(r):
                '<span>© 2026 Úřad rozvoje území • Informace jsou poskytovány v souladu '
                'se zákonem č. 106/1999 Sb.</span>'
                f'<span><a href="{r}mapa-webu.html">Mapa webu</a></span>'
-               f'<span class="ver">Maketa — design systém gov.cz 4.6.5 · sestaveno {BUILD_STAMP}</span>'
+               f'<span class="ver">Maketa — design systém gov.cz 4.6.5 · sestaveno {BUILD_STAMP} · {BUILD_TOKEN}</span>'
                '</div></div>')
     out.append('</div></footer>')
     return "".join(out)
@@ -451,6 +453,7 @@ TPL = """<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title} — Úřad rozvoje území</title>
+<meta name="uru-kontrola" content="KONTROLA-7Q2X">
 <link rel="stylesheet" href="{r}assets/gov/styles/tokens.css">
 <link rel="stylesheet" href="{r}assets/uru-tokens.css">
 <link rel="stylesheet" href="{r}assets/gov/fonts/roboto.css">

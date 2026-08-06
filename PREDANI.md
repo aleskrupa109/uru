@@ -21,11 +21,9 @@ k připomínkování návrhu od Cognita a jako podklad pro dodavatele.
 Nasazená na `aleskrupa109.github.io/uru`. Aleš pracuje na macOS, klonuje přes
 GitHub Desktop.
 
-**Při výměně souborů pozor na vnořenou složku.** Balíček má soubory přímo
-v kořeni, ne v obalové složce `uru/`. Když obalová složka v zipu je a rozbalí se
-do klonu `uru/`, vznikne `uru/uru/…`: lokálně se otevírá nová verze z podsložky,
-ale GitHub Pages dál servíruje starou z kořene. Pozná se to podle razítka
-v patičce — na nasazeném webu musí být stejné jako lokálně.
+**Kontrola, že prohlížeč čte nové soubory.** V patičce je razítko
+`sestaveno DD. MM. RRRR HH:MM`. Musí být stejné lokálně i na nasazeném webu.
+Když razítko chybí úplně, otevřené soubory nepochází z posledního balíčku.
 
 ## Struktura repozitáře
 
