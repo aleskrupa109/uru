@@ -205,6 +205,12 @@ Nadpis a perex si prohodily role: v návrhu je `h1` „1000 otázek ke stavební
 k zákonu č. 283/2021 Sb.“ a „Heslo: Adresář“ je modrý `h2` pod vyhledávacím polem.
 Maketa to měla naopak. Blok „Máte dotaz k metodickým stanoviskům?“ návrh nemá.
 
+Odpovědi byly v maketě zkrácené. Návrh končí obojí odkazem na adresář —
+„… na adrese: krajské úřady“ a „… na stránkách ÚÚR na adrese: úřady územního
+plánování“. Doplněno včetně odkazů. Drobečková navigace má v návrhu čtyři články
+a poslední je celý název stránky, ne „Seznam hesel / Adresář“. Vyhledávací řádek
+má 715 px (146–861), tlačítko 48 px, výška 40 px.
+
 **Zástupný text pole porovnání nevidí.** „Hledat v otázkách“ je v maketě atribut
 `placeholder`, ne textový uzel, takže ho `text_diff.py` hlásí jako chybějící.
 Zapsáno mezi odchylky s poznámkou, že jde o omezení nástroje.

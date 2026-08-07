@@ -554,7 +554,8 @@ body.editing [data-edit]:focus { outline: 2px solid var(--color-success-600); ba
 /* Str. 24 (heslo v katalogu otázek): stránka nemá postranní nabídku ani bílý
    panel, otázky jsou rozbalené karty na šedém pozadí. Odměřeno: karty 144–1143,
    štítek 254 240 208 = `color-secondary-200`, nadpis otázky modrý. */
-.hledani { display: flex; gap: var(--spacing-s); max-width: 390px;
+/* Vyhledávací řádek má v návrhu 715 px (146–861), tlačítko 48 px, výška 40 px. */
+.hledani { display: flex; gap: var(--spacing-s); max-width: 715px;
   margin: var(--spacing-l) 0; }
 .hledani input { flex: 1; min-width: 0; height: var(--height-component-m);
   padding: 0 var(--spacing-s-nudge); border: 1px solid var(--border-subtle);

@@ -456,7 +456,8 @@ TISIC_HESLO = """
 """ + _otazka(
     "01", "Kde najdu adresy krajských úřadů a jejich odborů s kompetencí pro územní plánování "
           "a stavební řád?",
-    "<p>Adresář krajských úřadů naleznete na stránkách Konzultačního střediska.</p>",
+    "<p>Adresář krajských úřadů naleznete na stránkách Konzultačního střediska na adrese: "
+    '<a href="{{r}}metodicka-podpora/konzultacni-stredisko.html">krajské úřady</a>.</p>',
     '<p class="source"><a href="#q-01">trvalý odkaz na otázku</a> '
     '<button class="btn ghost sm" type="button" onclick="navigator.clipboard&&navigator.clipboard'
     ".writeText(location.origin+location.pathname+'#q-01');this.textContent='Zkopírováno'\">"
@@ -465,7 +466,8 @@ TISIC_HESLO = """
     "02", "Kde najdu adresy úřadů územního plánování?",
     "<p>Seznam najdete ve vyhlášce č. 553/2020 Sb., o seznamu obecních úřadů a úřadů městských "
     "částí nebo městských obvodů, které jsou kontaktními místy veřejné správy, ve znění "
-    "pozdějších předpisů. Adresář úřadů územního plánování naleznete na stránkách úřadu.</p>",
+    "pozdějších předpisů a adresář úřadů územního plánování naleznete na stránkách ÚÚR "
+    'na adrese: <a href="{{r}}uzemni-rozvoj/uzemni-planovani.html">úřady územního plánování</a>.</p>',
     '<p class="source"><a href="#q-02">trvalý odkaz na otázku</a></p>')
 
 
@@ -567,7 +569,7 @@ PAGES = [
     dict(path="metodicka-podpora/tisic-otazek-heslo.html", title="Tisíc otázek — heslo",
          section="metodicka-podpora", sidebar=False,
          crumbs=C + [("Tisíc otázek", "metodicka-podpora/tisic-otazek.html"),
-                     ("Seznam hesel", "metodicka-podpora/tisic-otazek-seznam.html"), ("Adresář", None)],
+                     ("1000 otázek ke stavebnímu právu k zákonu č. 283/2021 Sb.", None)],
          h1="1000 otázek ke stavebnímu právu k zákonu č. 283/2021 Sb.", body=TISIC_HESLO),
     dict(help="metodiky", path="metodicka-podpora/kontakty-na-metodiky.html", title="Kontakty na metodiky",
          section="metodicka-podpora", crumbs=C + [("Kontakty na metodiky", None)],
