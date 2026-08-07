@@ -199,10 +199,14 @@ přes celou šířku karty. Maketa měla prosté dlaždice-odkazy bez štítku, 
 a jiný perex. Přepsáno; nová třída `.katalog` a pomocná funkce `_katalog()`
 v `pages_mp.py`, aby šlo použít `gicon("calendar")`.
 
-Karty mají v návrhu 302 px a mezeru mezi sebou 150 px, tedy ani zdaleka půlku
-sloupce. To je rozvržení z Figmy, ne pravidlo — maketa používá běžný dvousloupec,
-karty jsou proto širší a text se láme dřív. Stejný druh rozdílu jako předčasné
-zalamování řádků na str. 4.
+Rozměry odměřené na návrhu a zapsané do makety: karta 302 px široká, mezera mezi
+kartami 150 px (karty leží na 451–752 a 903–1205 v obsahovém sloupci 452–1203),
+štítek 24 px vysoký, tlačítko 32 px vysoké přes celou vnitřní šířku karty.
+Design systém dává malému štítku 32 px, proto přepisuje `min-height`.
+
+Barvy štítků sedí na tokeny přesně: zelená 226 246 227 je `color-success-100`
+(třída `tag valid`), šedá 231 231 231 je `color-neutral-100` (`tag hist`).
+Maketa měla původně `tag neutral`, což je v mapování modrá.
 
 Blok „Máte dotaz k metodickým stanoviskům?“ na téhle stránce návrh nemá — odstraněn.
 

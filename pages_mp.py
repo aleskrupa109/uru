@@ -394,26 +394,26 @@ zobecňují a zveřejňují v databázi
 <a href="{{r}}metodicka-podpora/tisic-otazek.html">Tisíc otázek ke stavebnímu právu</a>.</p>
 """
 
-def _katalog(tag, nadpis, platnost, popis, odkaz):
+def _katalog(tag, stitek, nadpis, platnost, popis, odkaz):
     """Dlaždice katalogu podle návrhu str. 22: štítek, modrý nadpis, řádek
     platnosti s ikonou kalendáře, popis a tlačítko přes celou šířku."""
-    return (f'<div class="katalog"><span class="tag neutral">{tag}</span>'
+    return (f'<div class="katalog"><span class="tag {stitek}">{tag}</span>'
             f'<h3>{nadpis}</h3>'
             f'<p class="platnost">{gicon("calendar")}{platnost}</p>'
             f'<p>{popis}</p>'
-            f'<div class="btn-row"><a class="btn" href="{odkaz}">Přejít na otázky</a></div></div>')
+            f'<div class="btn-row"><a class="btn sm" href="{odkaz}">Přejít na otázky</a></div></div>')
 
 
 TISIC = """
 <p>Odpovědi jsou odbornými názory, nikoliv právními výklady. Nelze je použít jako oficiální
 dokumenty ve správních nebo soudních řízeních. Od 1. 7. 2024 je katalog rozdělen na dvě části
 odpovídající oběma zákonům.</p>
-<div class="grid g2">
+<div class="katalog-grid">
 """ + _katalog(
-    "Nový zákon", "K zákonu č. 283/2021 Sb.", "Platný od 1.7.2024",
+    "Nový zákon", "valid", "K zákonu č. 283/2021 Sb.", "Platný od 1.7.2024",
     "Nový zákon. Otázky průběžně zařazované tak, jak vyplývají ze zavádění nového stavebního "
     "zákona do praxe.", "{{r}}metodicka-podpora/tisic-otazek-seznam.html") + _katalog(
-    "Starý zákon", "K zákonu č. 183/2006 Sb.", "Platný do 30.6.2024",
+    "Starý zákon", "hist", "K zákonu č. 183/2006 Sb.", "Platný do 30.6.2024",
     "Starý zákon. Otázky k posuzování ukončených činností a k dokončení postupů podle "
     "dosavadních právních předpisů.", "{{r}}metodicka-podpora/tisic-otazek-seznam.html") + """
 </div>

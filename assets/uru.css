@@ -551,6 +551,11 @@ body.editing [data-edit]:focus { outline: 2px solid var(--color-success-600); ba
    řádek platnosti s ikonou kalendáře a tlačítko přes celou šířku karty.
    Odměřeno na návrhu: okraj karty 239 239 239, vnitřní okraj 16 px,
    tlačítko vyplňuje kartu (468–736 uvnitř karty 451–752). */
+/* Dlaždice mají v návrhu 302 px a mezeru 150 px — tedy užší než půlka sloupce.
+   Odměřeno: karty 451–752 a 903–1205 v obsahovém sloupci 452–1203. */
+.katalog-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 150px; margin: var(--spacing-l) 0; }
+@media (max-width: 76.5em) { .katalog-grid { gap: var(--spacing-2xl); } }
 .katalog { background: var(--background-block-primary); border: 1px solid var(--border-subtlest);
   border-radius: var(--corner-radius-s); padding: var(--spacing-m); }
 .katalog h3 { margin: var(--spacing-s) 0 0; color: var(--color-primary-600); }
@@ -561,7 +566,10 @@ body.editing [data-edit]:focus { outline: 2px solid var(--color-success-600); ba
 .katalog > p { font-size: var(--font-size-body-s); margin: 0; }
 .katalog .btn-row { margin-top: var(--spacing-m); }
 .katalog .btn-row .gov-button { display: block; width: 100%; }
-.katalog .btn-row .gov-button .element { width: 100%; justify-content: center; }
+.katalog .btn-row .gov-button .element { width: 100%; justify-content: center;
+  min-height: var(--height-component-s); }
+/* Štítek je v návrhu 24 px vysoký, design systém dává malému štítku 32. */
+.katalog .gov-tag .element { min-height: var(--height-component-xs); }
 
 /* Na str. 21 má kontaktní panel v návrhu světle modré pozadí, ne šedé
    (odměřeno: 229 238 249 proti 246 246 246 u ostatních stránek). */
