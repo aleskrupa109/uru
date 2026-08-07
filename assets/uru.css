@@ -547,6 +547,9 @@ body.editing [data-edit]:focus { outline: 2px solid var(--color-success-600); ba
 /* ---------- opakující se blok „Potřebujete pomoct?" ----------
    Návrh: šedý panel uvnitř bílého obsahu, ikona obálky 48 px, modrý nadpis
    kontaktu, popisný text a e-mail jako odkaz — vše pod sebou. */
+/* Na str. 21 má kontaktní panel v návrhu světle modré pozadí, ne šedé
+   (odměřeno: 229 238 249 proti 246 246 246 u ostatních stránek). */
+.helpbox--modry { background: var(--color-primary-100); }
 .helpbox { background: var(--background-block-secondary); border-radius: var(--corner-radius-s);
   padding: var(--spacing-m-nudge) var(--spacing-l) var(--spacing-l); margin: var(--spacing-m-nudge) 0 0; }
 .helpbox__icon { width: 3rem; height: 3rem; display: block; color: var(--color-primary-600);

@@ -184,3 +184,10 @@ odchylky:
       Sekce „Starý zákon" je v maketě na stránce pod kotvou #stara, protože
       záložka na ni odkazuje. Návrh ukazuje jen záložku Nový zákon, obsah
       staré nikde nemá.
+  - stranka: "metodicka-podpora/konzultacni-stredisko.html"
+    text: "Formulář se odesílá do spisové služby úřadu"
+    duvod: zelena
+    pripominka: 50
+    poznamka: >
+      Vysvětlivka pod formulářem dotazu. Formulář v návrhu není, doplnila ho
+      připomínka 50, takže ani vysvětlivka nemá v návrhu protějšek.

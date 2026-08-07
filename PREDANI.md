@@ -109,7 +109,7 @@ dvanáctkrát (6907 px proti 4877).
 zapracovány ikony a rozestupy — potřebuje přeměřit). Ikony z Figmy dorazily
 a jsou nasazené, viz níže.
 
-**Textové pokrytí návrhu:** 71,6 % (`python3 tools/text_diff.py`). Číslo vyskončilo ze 67,5 %
+**Textové pokrytí návrhu:** 72,5 % (`python3 tools/text_diff.py`). Číslo vyskončilo ze 67,5 %
 poté, co porovnání umí párovat bloky podle písmen bez mezer; obsah makety se tím
 nezměnil, jen se přestaly hlásit bloky rozsekané exportem z Figmy.
 
@@ -190,6 +190,30 @@ kde návrh má ikonu, kterou design systém nemá.
 
 Tlačítko „Přejít na Portál stavebníka“ na str. 7 dostalo šipku (třída `btn arrow`),
 stejnou, jakou má též tlačítko na str. 8.
+
+## Ze str. 19 a 21: řádek souboru a konzultační středisko
+
+**Řádek souboru.** Návrh má rozteč řádků 56 px (odměřeno na pěti řádcích str. 19),
+obsah řádku je vysoký 18 px, tedy 19 px okraje nahoru i dolů. Odkaz je 12 px
+(`body-xs`, výška verzálky 8,6 px), ne 14. Do závorky patří i formát: „(PDF, 296 KB)“.
+Formát se doplňuje v `to_ds()` jen u prostých řádků — bohatší varianta s verzí
+a platností ho nemá, tam formát nese ikona.
+
+**Str. 21 byla přestavěná.** Maketa měla „Komu slouží / neslouží“ ve dvou dlaždicích
+vedle sebe, navíc oddíl „Co musí dotaz obsahovat“, který duplikoval odrážky z „Jak
+podat dotaz“. Návrh má obojí jako prosté seznamy pod sebou. Doplněna chybějící
+odrážka „Laická veřejnost“ a tři odstavce, které maketa vůbec neměla.
+
+Kontaktní panel na konci má na téhle stránce **světle modré pozadí** (229 238 249)
+proti šedému (246 246 246) na ostatních stránkách, jiný nadpis i jinou adresu —
+je to kontakt střediska, ne obecné „Potřebujete pomoct?“. Řešeno třídou
+`helpbox--modry` a blokem přímo v obsahu, aby za ním mohl stát závěrečný odstavec.
+
+**Nadpisy oddílů na str. 21 mají 20 px, ale odstup nad sebou 48 px.** To je jiná
+kombinace než na str. 4, 6 a 18, kde 20px nadpis má nad sebou 24 px. Maketa je sází
+jako `h3` se standardními 24 px — velikost tedy sedí a odstup ne. Vypadá to na
+nejednotnost v návrhu; stálo by za dotaz na Cognito, než se kvůli tomu zavádí
+čtvrtá úroveň nadpisu.
 
 ## Ze str. 18: členění přechodného období
 

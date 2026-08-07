@@ -100,43 +100,37 @@ STANDARDIZACE_DETAIL = """
 """
 
 KONZULTACNI_DETAIL = """
-<p>Konzultační středisko poskytuje metodickou podporu ve věcech územního plánování
-a reaguje formou písemných odborných názorů.</p>
-
-<div class="grid g2">
-  <div class="card"><h3>Komu středisko slouží</h3>
-    <ul>
-      <li>Krajské úřady</li>
-      <li>Obecní a městské úřady</li>
-      <li>Další orgány státní správy a samosprávy</li>
-    </ul></div>
-  <div class="card"><h3>Komu středisko neslouží</h3>
-    <ul>
-      <li>Fyzické a právnické osoby</li>
-      <li>Stavebníci a investoři</li>
-      <li>Projektanti a architekti</li>
-    </ul></div>
-</div>
-<p>Odpovědi na obecné otázky ke stavebnímu právu najdete v databázi
-<a href="{{r}}metodicka-podpora/tisic-otazek.html">Tisíc otázek ke stavebnímu právu</a>.</p>
-
-<h2>Co dostanete</h2>
-<p>Písemný odborný názor k položené otázce. ÚRÚ není ve věcech upravovaných stavebním zákonem
-orgánem veřejné správy ani dotčeným orgánem — odborný názor proto není závazným výkladem
-ani rozhodnutím.</p>
-
-<h2>Co musí dotaz obsahovat</h2>
+<h3>Komu slouží</h3>
 <ul>
-  <li>přesně formulovanou otázku</li>
-  <li>odkaz na konkrétní paragraf nebo zákon</li>
-  <li>popis situace a dosavadního postupu</li>
+  <li>Krajské úřady</li>
+  <li>Úřady územního plánování</li>
+  <li>Obecní a městské úřady</li>
+  <li>Další orgány státní správy a samosprávy</li>
 </ul>
-<div class="box note">
-  <h3>Na co středisko neodpovídá</h3>
-  <p>Na dotazy, jejichž zodpovězení vyžaduje znalost konkrétních podmínek, které jsou
-  předmětem konkrétního správního řízení.</p>
+
+<h3>Komu neslouží</h3>
+<ul>
+  <li>Fyzické a právnické osoby</li>
+  <li>Stavebníci a investoři</li>
+  <li>Projektanti a architekti</li>
+  <li>Laická veřejnost</li>
+</ul>
+<p>Hledáte odpověď jako veřejnost nebo projektant? Využijte
+<a href="{{r}}metodicka-podpora/tisic-otazek.html">Tisíc otázek ke stavebnímu právu</a> —
+veřejně dostupnou databázi zobecněných odpovědí.</p>
+
+<h3>Co dostanete</h3>
+<div class="box edge" data-ico="zadna">
+  <p>Konzultační středisko poskytuje odborné názory, nikoli právní výklady — k výkladu
+  právních předpisů je oprávněn výhradně soud. Odpovědi slouží k sjednocování postupů
+  ve státní správě a nelze je použít jako oficiální dokumenty ve správních nebo soudních
+  řízeních.</p>
 </div>
+<p>ÚRÚ není orgánem veřejné správy ani dotčeným orgánem ve věcech upravovaných stavebním
+zákonem. Konzultační středisko se vyjadřuje v obecné metodické rovině — není příslušné
+k výkladu konkrétních územních plánů ani konkrétních řízení.</p>
 """
+
 
 TISIC_ROZCESTNIK = """
 <p>Databáze otázek a odpovědí ke stavebnímu právu. Slouží ke sjednocování postupů státní

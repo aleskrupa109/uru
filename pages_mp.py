@@ -354,7 +354,7 @@ kontinuitě a probíhajícím řízením.</p>
 """
 
 KONZULTACNI = M.KONZULTACNI_DETAIL + """
-<h2>Jak podat dotaz</h2>
+<h3>Jak podat dotaz</h3>
 <p>Zašlete e-mail na adresu konzultačního střediska. Aby bylo možné dotaz rychle zpracovat,
 uveďte prosím:</p>
 <ul>
@@ -363,8 +363,10 @@ uveďte prosím:</p>
   <li>odkaz na konkrétní paragraf nebo zákon</li>
   <li>přesně formulovanou otázku</li>
 </ul>
+<p>Středisko se nevyjadřuje k dotazům, jejichž zodpovězení vyžaduje znalost konkrétních
+podmínek, které jsou předmětem konkrétního správního řízení.</p>
 
-<h2>Formulář dotazu""" + cmt(50, "Chybí strukturovaný formulář dotazu. Stránka sama vyjmenovává, co musí dotaz obsahovat.") + """</h2>
+<h3>Formulář dotazu""" + cmt(50, "Chybí strukturovaný formulář dotazu. Stránka sama vyjmenovává, co musí dotaz obsahovat.") + """</h2>
 <div class="filters">
   <div class="row">
     <div class="field" style="min-width:260px"><label for="k1">Název orgánu</label><input id="k1" placeholder="Např. Úřad územního plánování…"></div>
@@ -379,6 +381,17 @@ uveďte prosím:</p>
   <div class="btn-row"><button class="btn" type="button">Odeslat dotaz</button></div>
   <p class="hint">Formulář se odesílá do spisové služby úřadu a je mu přiděleno číslo jednací.</p>
 </div>
+
+<h3>Konzultační středisko ÚRÚ</h3>
+<div class="helpbox helpbox--modry">
+  <img class="helpbox__icon" src="{{r}}assets/img/icons/obalka.png" width="48" height="48" alt="" loading="lazy">
+  <h3>Konzultační středisko ÚRÚ</h3>
+  <p>Metodická a konzultační pomoc pro orgány veřejné správy na úseku územního plánování</p>
+  <p class="mail"><a href="mailto:konzultacni-stredisko@uru.gov.cz">konzultacni-stredisko@uru.gov.cz</a></p>
+</div>
+<p>Odpovědi jsou poskytovány výhradně orgánům veřejné správy. Opakující se dotazy se
+zobecňují a zveřejňují v databázi
+<a href="{{r}}metodicka-podpora/tisic-otazek.html">Tisíc otázek ke stavebnímu právu</a>.</p>
 """
 
 TISIC = M.TISIC_ROZCESTNIK
@@ -504,7 +517,7 @@ PAGES = [
          h1="Standardizace územního plánování",
          perex="Standardizační dokumenty pro zpracování územně plánovací dokumentace — metodické pokyny, vzorové struktury, databáze a grafické styly. Obsah je rozdělen podle platné legislativy.",
          body=STANDARDIZACE),
-    dict(help="metodiky", path="metodicka-podpora/konzultacni-stredisko.html", title="Konzultační středisko",
+    dict(path="metodicka-podpora/konzultacni-stredisko.html", title="Konzultační středisko",
          section="metodicka-podpora", crumbs=C + [("Konzultační středisko", None)],
          h1="Konzultační středisko",
          perex="Konzultační středisko poskytuje konzultační a metodickou pomoc orgánům veřejné správy při plnění úkolů ze stavebního zákona na úseku územního plánování. Dotazy zasílejte e-mailem — středisko na ně reaguje formou písemných odborných názorů.",
