@@ -109,7 +109,7 @@ dvanáctkrát (6907 px proti 4877).
 zapracovány ikony a rozestupy — potřebuje přeměřit). Ikony z Figmy dorazily
 a jsou nasazené, viz níže.
 
-**Textové pokrytí návrhu:** 73,6 % (`python3 tools/text_diff.py`). Číslo vyskončilo ze 67,5 %
+**Textové pokrytí návrhu:** 73,8 % (`python3 tools/text_diff.py`). Číslo vyskončilo ze 67,5 %
 poté, co porovnání umí párovat bloky podle písmen bez mezer; obsah makety se tím
 nezměnil, jen se přestaly hlásit bloky rozsekané exportem z Figmy.
 
@@ -190,6 +190,24 @@ kde návrh má ikonu, kterou design systém nemá.
 
 Tlačítko „Přejít na Portál stavebníka“ na str. 7 dostalo šipku (třída `btn arrow`),
 stejnou, jakou má též tlačítko na str. 8.
+
+## Ze str. 24: stránka bez postranní nabídky
+
+Heslo v katalogu otázek nemá v návrhu postranní nabídku ani bílý panel — obsah leží
+přímo na šedém pozadí a karty otázek jsou široké 1000 px (144–1143). Maketa měla
+běžné rozvržení s nabídkou. Řešeno příznakem `sidebar=False`, který už generátor uměl.
+
+Otázky nejsou akordeony, ale rozbalené bílé karty se štítkem data aktualizace,
+modrým číslovaným nadpisem a odpovědí. Štítek má barvu 254 240 208, což je
+`color-secondary-200` — do mapování `TAG_COLOR` přibyl klíč `akt`.
+
+Nadpis a perex si prohodily role: v návrhu je `h1` „1000 otázek ke stavebnímu právu
+k zákonu č. 283/2021 Sb.“ a „Heslo: Adresář“ je modrý `h2` pod vyhledávacím polem.
+Maketa to měla naopak. Blok „Máte dotaz k metodickým stanoviskům?“ návrh nemá.
+
+**Zástupný text pole porovnání nevidí.** „Hledat v otázkách“ je v maketě atribut
+`placeholder`, ne textový uzel, takže ho `text_diff.py` hlásí jako chybějící.
+Zapsáno mezi odchylky s poznámkou, že jde o omezení nástroje.
 
 ## Ze str. 22: dlaždice katalogu
 

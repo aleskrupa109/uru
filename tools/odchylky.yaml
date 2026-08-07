@@ -191,3 +191,10 @@ odchylky:
     poznamka: >
       Vysvětlivka pod formulářem dotazu. Formulář v návrhu není, doplnila ho
       připomínka 50, takže ani vysvětlivka nemá v návrhu protějšek.
+  - stranka: "metodicka-podpora/tisic-otazek-heslo.html"
+    text: "Hledat v otázkách"
+    duvod: navrh_chyba
+    poznamka: >
+      Text je v maketě zástupným textem vyhledávacího pole (atribut placeholder),
+      ne obsahem stránky. Porovnání čte jen textové uzly, takže ho nenajde —
+      omezení nástroje, ne chybějící obsah.

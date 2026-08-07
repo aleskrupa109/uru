@@ -437,30 +437,37 @@ TISIC_SEZNAM = """
     f'<p>{n} otázek</p></li>' for t, n in M.HESLA) + """</ul>
 """
 
+def _otazka(cislo, otazka, odpoved, extra=""):
+    """Otázka podle návrhu str. 24: bílá karta, štítek s datem aktualizace,
+    modrý číslovaný nadpis a rozbalená odpověď — ne akordeon."""
+    return (f'<div class="otazka" data-faq id="q-{cislo}">'
+            f'<span class="tag akt">Aktualizace 7/2024</span>'
+            f'<h3>{cislo}. {otazka}</h3>{odpoved}{extra}</div>')
+
+
 TISIC_HESLO = """
-<div class="filters">
-  <div class="searchrow"><input type="search" placeholder="Hledat v otázkách…"
-    oninput="var q=this.value.toLowerCase();document.querySelectorAll('[data-faq]').forEach(function(d){d.style.display=d.textContent.toLowerCase().indexOf(q)>-1?'':'none'})"></div>
+<div class="hledani">
+  <input type="search" placeholder="Hledat v otázkách"
+    oninput="var q=this.value.toLowerCase();document.querySelectorAll('[data-faq]').forEach(function(d){d.style.display=d.textContent.toLowerCase().indexOf(q)>-1?'':'none'})">
+  <span class="gov-button" data-color="primary" data-type="solid" data-size="m"><button class="element" type="button" aria-label="Hledat">{SEARCH}</button></span>
 </div>
-<h2>Seznam otázek</h2>
-<details class="acc" data-faq open id="q-01">
-  <summary>01. Kde najdu adresy krajských úřadů a jejich odborů s kompetencí pro územní plánování a stavební řád?</summary>
-  <div class="body">
-    <p>Adresář krajských úřadů naleznete na stránkách Konzultačního střediska.</p>
-    <p class="source">Aktualizace 7/2024 · <a href="#q-01">trvalý odkaz na otázku</a>
-    <button class="btn ghost sm" type="button" onclick="navigator.clipboard&&navigator.clipboard.writeText(location.origin+location.pathname+'#q-01');this.textContent='Zkopírováno'">Kopírovat odkaz</button>""" + cmt(54, "Chybí trvalý odkaz na jednotlivou otázku — odpovědi se používají v korespondenci.") + """</p>
-  </div>
-</details>
-<details class="acc" data-faq id="q-02">
-  <summary>02. Kde najdu adresy úřadů územního plánování?</summary>
-  <div class="body">
-    <p>Seznam najdete ve vyhlášce č. 553/2020 Sb., o seznamu obecních úřadů a úřadů městských
-    částí nebo městských obvodů, které jsou kontaktními místy veřejné správy, ve znění
-    pozdějších předpisů. Adresář úřadů územního plánování naleznete na stránkách úřadu.</p>
-    <p class="source">Aktualizace 7/2024 · <a href="#q-02">trvalý odkaz na otázku</a></p>
-  </div>
-</details>
-"""
+<h2 class="heslo">Heslo: Adresář</h2>
+<p class="label">Seznam otázek</p>
+""" + _otazka(
+    "01", "Kde najdu adresy krajských úřadů a jejich odborů s kompetencí pro územní plánování "
+          "a stavební řád?",
+    "<p>Adresář krajských úřadů naleznete na stránkách Konzultačního střediska.</p>",
+    '<p class="source"><a href="#q-01">trvalý odkaz na otázku</a> '
+    '<button class="btn ghost sm" type="button" onclick="navigator.clipboard&&navigator.clipboard'
+    ".writeText(location.origin+location.pathname+'#q-01');this.textContent='Zkopírováno'\">"
+    "Kopírovat odkaz</button>" + cmt(54, "Chybí trvalý odkaz na jednotlivou otázku — odpovědi "
+                                          "se používají v korespondenci.") + "</p>") + _otazka(
+    "02", "Kde najdu adresy úřadů územního plánování?",
+    "<p>Seznam najdete ve vyhlášce č. 553/2020 Sb., o seznamu obecních úřadů a úřadů městských "
+    "částí nebo městských obvodů, které jsou kontaktními místy veřejné správy, ve znění "
+    "pozdějších předpisů. Adresář úřadů územního plánování naleznete na stránkách úřadu.</p>",
+    '<p class="source"><a href="#q-02">trvalý odkaz na otázku</a></p>')
+
 
 KONTAKTY_METODIKY = """
 <p>Kontaktní karty metodiků podle věcné oblasti. Údaje jsou převzaté z centrální stránky
@@ -557,12 +564,11 @@ PAGES = [
          title="Tisíc otázek — seznam hesel", section="metodicka-podpora",
          crumbs=C + [("Tisíc otázek", "metodicka-podpora/tisic-otazek.html"), ("Seznam hesel", None)],
          h1="1000 otázek ke stavebnímu právu k zákonu č. 283/2021 Sb.", body=TISIC_SEZNAM),
-    dict(help="metodiky", path="metodicka-podpora/tisic-otazek-heslo.html", title="Tisíc otázek — heslo",
-         section="metodicka-podpora",
+    dict(path="metodicka-podpora/tisic-otazek-heslo.html", title="Tisíc otázek — heslo",
+         section="metodicka-podpora", sidebar=False,
          crumbs=C + [("Tisíc otázek", "metodicka-podpora/tisic-otazek.html"),
                      ("Seznam hesel", "metodicka-podpora/tisic-otazek-seznam.html"), ("Adresář", None)],
-         h1="Heslo: Adresář",
-         perex="1000 otázek ke stavebnímu právu k zákonu č. 283/2021 Sb.", body=TISIC_HESLO),
+         h1="1000 otázek ke stavebnímu právu k zákonu č. 283/2021 Sb.", body=TISIC_HESLO),
     dict(help="metodiky", path="metodicka-podpora/kontakty-na-metodiky.html", title="Kontakty na metodiky",
          section="metodicka-podpora", crumbs=C + [("Kontakty na metodiky", None)],
          h1="Kontakty na metodiky",

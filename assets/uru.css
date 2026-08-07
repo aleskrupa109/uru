@@ -551,6 +551,23 @@ body.editing [data-edit]:focus { outline: 2px solid var(--color-success-600); ba
    řádek platnosti s ikonou kalendáře a tlačítko přes celou šířku karty.
    Odměřeno na návrhu: okraj karty 239 239 239, vnitřní okraj 16 px,
    tlačítko vyplňuje kartu (468–736 uvnitř karty 451–752). */
+/* Str. 24 (heslo v katalogu otázek): stránka nemá postranní nabídku ani bílý
+   panel, otázky jsou rozbalené karty na šedém pozadí. Odměřeno: karty 144–1143,
+   štítek 254 240 208 = `color-secondary-200`, nadpis otázky modrý. */
+.hledani { display: flex; gap: var(--spacing-s); max-width: 390px;
+  margin: var(--spacing-l) 0; }
+.hledani input { flex: 1; min-width: 0; height: var(--height-component-m);
+  padding: 0 var(--spacing-s-nudge); border: 1px solid var(--border-subtle);
+  border-radius: var(--corner-radius-xs); font: inherit; background: var(--background-block-primary); }
+.heslo { color: var(--color-primary-600); }
+.label { font-size: var(--font-size-body-s); font-weight: 500; margin: var(--spacing-l) 0 var(--spacing-s); }
+.otazka { background: var(--background-block-primary); border-radius: var(--corner-radius-s);
+  padding: var(--spacing-m); margin-bottom: var(--spacing-m); }
+.otazka h3 { margin: var(--spacing-s) 0 var(--spacing-s); color: var(--color-primary-600);
+  font-size: var(--font-size-body-m); }
+.otazka p { font-size: var(--font-size-body-s); margin: 0; }
+.otazka .source { margin-top: var(--spacing-s); color: var(--text-tertiary); }
+
 /* Dlaždice mají v návrhu 302 px a mezeru 150 px — tedy užší než půlka sloupce.
    Odměřeno: karty 451–752 a 903–1205 v obsahovém sloupci 452–1203. */
 .katalog-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));

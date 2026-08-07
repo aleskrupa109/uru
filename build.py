@@ -493,6 +493,7 @@ TPL = """<!doctype html>
 # převod vlastního značkování na komponenty design systému gov
 # --------------------------------------------------------------------------
 TAG_COLOR = {"valid": ("success", "subtle"), "invalid": ("error", "subtle"),
+             "akt": ("secondary", "subtle"),
              "superseded": ("warning", "subtle"), "neutral": ("primary", "subtle"),
              "hist": ("neutral", "subtle")}
 
