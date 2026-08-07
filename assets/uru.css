@@ -557,17 +557,25 @@ body.editing [data-edit]:focus { outline: 2px solid var(--color-success-600); ba
   gap: 150px; margin: var(--spacing-l) 0; }
 @media (max-width: 76.5em) { .katalog-grid { gap: var(--spacing-2xl); } }
 .katalog { background: var(--background-block-primary); border: 1px solid var(--border-subtlest);
-  border-radius: var(--corner-radius-s); padding: var(--spacing-m); }
+  border-radius: var(--corner-radius-s); padding: var(--spacing-m);
+  display: flex; flex-direction: column; }
 .katalog h3 { margin: var(--spacing-s) 0 0; color: var(--color-primary-600); }
 .katalog .platnost { display: flex; align-items: center; gap: var(--spacing-xs);
   font-size: var(--font-size-body-xs); color: var(--text-secondary);
   margin: var(--spacing-xs) 0 var(--spacing-s); }
 .katalog .platnost svg { width: var(--icon-size-m); height: var(--icon-size-m); flex: none; }
 .katalog > p { font-size: var(--font-size-body-s); margin: 0; }
-.katalog .btn-row { margin-top: var(--spacing-m); }
-.katalog .btn-row .gov-button { display: block; width: 100%; }
-.katalog .btn-row .gov-button .element { width: 100%; justify-content: center;
-  min-height: var(--height-component-s); }
+/* Tlačítko sedí u spodní hrany karty, aby bylo u obou karet ve stejné výšce
+   i při různě dlouhém textu (v návrhu obě na 835–866). */
+.katalog .btn-row { margin: var(--spacing-m) 0 0; }
+.katalog > p:last-of-type { margin-bottom: auto; }
+/* Design systém omezuje tlačítko na max-width: max-content — bez zrušení
+   se roztažení na celou šířku karty neprojeví. */
+.katalog .btn-row .gov-button { display: block; width: 100%; max-width: none; padding: 0; }
+/* Vnitřní .element má v design systému záporné vodorovné okraje, aby překryl
+   odsazení obalu. Při roztažení na celou šířku by přetekl, proto se nulují. */
+.katalog .btn-row .gov-button .element { display: flex; width: auto; margin: 0;
+  justify-content: center; height: var(--height-component-s); }
 /* Štítek je v návrhu 24 px vysoký, design systém dává malému štítku 32. */
 .katalog .gov-tag .element { min-height: var(--height-component-xs); }
 
