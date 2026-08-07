@@ -109,7 +109,7 @@ dvanáctkrát (6907 px proti 4877).
 zapracovány ikony a rozestupy — potřebuje přeměřit). Ikony z Figmy dorazily
 a jsou nasazené, viz níže.
 
-**Textové pokrytí návrhu:** 72,5 % (`python3 tools/text_diff.py`). Číslo vyskončilo ze 67,5 %
+**Textové pokrytí návrhu:** 73,6 % (`python3 tools/text_diff.py`). Číslo vyskončilo ze 67,5 %
 poté, co porovnání umí párovat bloky podle písmen bez mezer; obsah makety se tím
 nezměnil, jen se přestaly hlásit bloky rozsekané exportem z Figmy.
 
@@ -190,6 +190,21 @@ kde návrh má ikonu, kterou design systém nemá.
 
 Tlačítko „Přejít na Portál stavebníka“ na str. 7 dostalo šipku (třída `btn arrow`),
 stejnou, jakou má též tlačítko na str. 8.
+
+## Ze str. 22: dlaždice katalogu
+
+Návrh má dvě bílé karty s tenkým okrajem, štítkem („Nový zákon“ / „Starý zákon“),
+modrým nadpisem, řádkem platnosti s ikonou kalendáře a tlačítkem „Přejít na otázky“
+přes celou šířku karty. Maketa měla prosté dlaždice-odkazy bez štítku, data i tlačítka
+a jiný perex. Přepsáno; nová třída `.katalog` a pomocná funkce `_katalog()`
+v `pages_mp.py`, aby šlo použít `gicon("calendar")`.
+
+Karty mají v návrhu 302 px a mezeru mezi sebou 150 px, tedy ani zdaleka půlku
+sloupce. To je rozvržení z Figmy, ne pravidlo — maketa používá běžný dvousloupec,
+karty jsou proto širší a text se láme dřív. Stejný druh rozdílu jako předčasné
+zalamování řádků na str. 4.
+
+Blok „Máte dotaz k metodickým stanoviskům?“ na téhle stránce návrh nemá — odstraněn.
 
 ## Ze str. 19 a 21: řádek souboru a konzultační středisko
 

@@ -4,7 +4,7 @@
 Odchylky od návrhu vycházejí ze zeleně schválených komentářů a jsou označené značkou
 s číslem připomínky.
 """
-from build import cmt
+from build import cmt, gicon
 import content_mp_extra as M
 
 C = [("Metodická podpora", "metodicka-podpora/index.html")]
@@ -394,7 +394,30 @@ zobecňují a zveřejňují v databázi
 <a href="{{r}}metodicka-podpora/tisic-otazek.html">Tisíc otázek ke stavebnímu právu</a>.</p>
 """
 
-TISIC = M.TISIC_ROZCESTNIK
+def _katalog(tag, nadpis, platnost, popis, odkaz):
+    """Dlaždice katalogu podle návrhu str. 22: štítek, modrý nadpis, řádek
+    platnosti s ikonou kalendáře, popis a tlačítko přes celou šířku."""
+    return (f'<div class="katalog"><span class="tag neutral">{tag}</span>'
+            f'<h3>{nadpis}</h3>'
+            f'<p class="platnost">{gicon("calendar")}{platnost}</p>'
+            f'<p>{popis}</p>'
+            f'<div class="btn-row"><a class="btn" href="{odkaz}">Přejít na otázky</a></div></div>')
+
+
+TISIC = """
+<p>Odpovědi jsou odbornými názory, nikoliv právními výklady. Nelze je použít jako oficiální
+dokumenty ve správních nebo soudních řízeních. Od 1. 7. 2024 je katalog rozdělen na dvě části
+odpovídající oběma zákonům.</p>
+<div class="grid g2">
+""" + _katalog(
+    "Nový zákon", "K zákonu č. 283/2021 Sb.", "Platný od 1.7.2024",
+    "Nový zákon. Otázky průběžně zařazované tak, jak vyplývají ze zavádění nového stavebního "
+    "zákona do praxe.", "{{r}}metodicka-podpora/tisic-otazek-seznam.html") + _katalog(
+    "Starý zákon", "K zákonu č. 183/2006 Sb.", "Platný do 30.6.2024",
+    "Starý zákon. Otázky k posuzování ukončených činností a k dokončení postupů podle "
+    "dosavadních právních předpisů.", "{{r}}metodicka-podpora/tisic-otazek-seznam.html") + """
+</div>
+"""
 
 TISIC_SEZNAM = """
 <div class="filters">
@@ -522,10 +545,14 @@ PAGES = [
          h1="Konzultační středisko",
          perex="Konzultační středisko poskytuje konzultační a metodickou pomoc orgánům veřejné správy při plnění úkolů ze stavebního zákona na úseku územního plánování. Dotazy zasílejte e-mailem — středisko na ně reaguje formou písemných odborných názorů.",
          body=KONZULTACNI),
-    dict(help="metodiky", path="metodicka-podpora/tisic-otazek.html",
+    dict(path="metodicka-podpora/tisic-otazek.html",
          title="Tisíc otázek ke stavebnímu právu", section="metodicka-podpora",
          crumbs=C + [("Tisíc otázek ke stavebnímu právu", None)],
-         h1="Tisíc otázek ke stavebnímu právu", body=TISIC),
+         h1="Tisíc otázek ke stavebnímu právu",
+         perex="Otevřený, průběžně aktualizovaný katalog otázek a odpovědí na úseku územního "
+               "plánování. Vychází ze skutečných dotazů Konzultačního střediska — zobecněných tak, "
+               "aby sloužily jako podklad pro sjednocování postupů státní správy.",
+         body=TISIC),
     dict(help="metodiky", path="metodicka-podpora/tisic-otazek-seznam.html",
          title="Tisíc otázek — seznam hesel", section="metodicka-podpora",
          crumbs=C + [("Tisíc otázek", "metodicka-podpora/tisic-otazek.html"), ("Seznam hesel", None)],

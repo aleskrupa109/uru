@@ -547,6 +547,22 @@ body.editing [data-edit]:focus { outline: 2px solid var(--color-success-600); ba
 /* ---------- opakující se blok „Potřebujete pomoct?" ----------
    Návrh: šedý panel uvnitř bílého obsahu, ikona obálky 48 px, modrý nadpis
    kontaktu, popisný text a e-mail jako odkaz — vše pod sebou. */
+/* Dlaždice katalogu (str. 22): bílá karta s tenkým okrajem, štítek, modrý nadpis,
+   řádek platnosti s ikonou kalendáře a tlačítko přes celou šířku karty.
+   Odměřeno na návrhu: okraj karty 239 239 239, vnitřní okraj 16 px,
+   tlačítko vyplňuje kartu (468–736 uvnitř karty 451–752). */
+.katalog { background: var(--background-block-primary); border: 1px solid var(--border-subtlest);
+  border-radius: var(--corner-radius-s); padding: var(--spacing-m); }
+.katalog h3 { margin: var(--spacing-s) 0 0; color: var(--color-primary-600); }
+.katalog .platnost { display: flex; align-items: center; gap: var(--spacing-xs);
+  font-size: var(--font-size-body-xs); color: var(--text-secondary);
+  margin: var(--spacing-xs) 0 var(--spacing-s); }
+.katalog .platnost svg { width: var(--icon-size-m); height: var(--icon-size-m); flex: none; }
+.katalog > p { font-size: var(--font-size-body-s); margin: 0; }
+.katalog .btn-row { margin-top: var(--spacing-m); }
+.katalog .btn-row .gov-button { display: block; width: 100%; }
+.katalog .btn-row .gov-button .element { width: 100%; justify-content: center; }
+
 /* Na str. 21 má kontaktní panel v návrhu světle modré pozadí, ne šedé
    (odměřeno: 229 238 249 proti 246 246 246 u ostatních stránek). */
 .helpbox--modry { background: var(--color-primary-100); }
