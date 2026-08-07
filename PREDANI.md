@@ -23,7 +23,14 @@ GitHub Desktop.
 
 **Kontrola, že prohlížeč čte nové soubory.** V patičce je razítko
 `sestaveno DD. MM. RRRR HH:MM`. Musí být stejné lokálně i na nasazeném webu.
-Když razítko chybí úplně, otevřené soubory nepochází z posledního balíčku.
+Když se liší, není to chyba makety: v srpnu 2026 padala na GitHubu nasazení
+(„pages build and deployment“ končilo po ~10 min timeoutem) a web tiše servíroval
+poslední úspěšnou verzi starou několik dávek. Když nasazená stránka vypadá starě,
+podívej se nejdřív do záložky Actions, jestli je poslední běh zelený.
+
+Při přetažení souborů přes Cmd+A Finder **nevybere skryté soubory** — `.nojekyll`
+a `.gitignore` se tím nepřenášejí. V repozitáři už jsou, ale kdyby někdy zmizely,
+Jekyll začne zpracovávat celý vendorovaný design systém a nasazení spadne.
 
 ## Struktura repozitáře
 
@@ -102,7 +109,7 @@ dvanáctkrát (6907 px proti 4877).
 zapracovány ikony a rozestupy — potřebuje přeměřit). Ikony z Figmy dorazily
 a jsou nasazené, viz níže.
 
-**Textové pokrytí návrhu:** 71,6 % (`python3 tools/text_diff.py`). Číslo vyskočilo ze 67,5 %
+**Textové pokrytí návrhu:** 71,6 % (`python3 tools/text_diff.py`). Číslo vyskončilo ze 67,5 %
 poté, co porovnání umí párovat bloky podle písmen bez mezer; obsah makety se tím
 nezměnil, jen se přestaly hlásit bloky rozsekané exportem z Figmy.
 
