@@ -719,6 +719,18 @@ def to_ds(html_body):
         return (f'<img class="fico" src="{{{{r}}}}assets/img/icons/{name}.png"'
                 f' width="18" height="18" alt="{fmt}" loading="lazy">')
 
+    # Formát patří i do závorky za název: návrh má „(PDF, 296 KB)", ne jen velikost.
+    # Bohatší řádky (verze a platnost, připomínka 23) si popisek nepřidávají —
+    # formát tam nese ikona a závorka se u nich stejně nevykresluje.
+    def fico_meta(m):
+        meta = m.group(3)
+        if "·" not in meta:
+            meta = f'{m.group(1)}, {meta}'
+        return fico(m) + m.group(2) + f'<span class="fmeta">{meta}</span>'
+
+    html_body = re.sub(
+        r'<span class="ft">([A-Za-z]+)</span>(.*?)<span class="fmeta">([^<]*)</span>',
+        fico_meta, html_body, flags=re.S)
     html_body = re.sub(r'<span class="ft">([A-Za-z]+)</span>', fico, html_body)
     html_body = re.sub(r'<span class="name">(.*?)</span>',
                        r'<a class="name" href="#">\1</a>', html_body, flags=re.S)

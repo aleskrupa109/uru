@@ -168,3 +168,19 @@ odchylky:
     text: "Vzory a formuláře jsou spravovány na jednom místě"
     duvod: zelena
     pripominka: 46
+  - stranka: "metodicka-podpora/standardizace.html"
+    text: "Metodický pokyn — struktura a značení"
+    duvod: vypln
+    poznamka: >
+      Návrh má u všech souborů výplňové „Lorem ipsum". Maketa je nahradila
+      názvy skutečných dokumentů; počet řádků v každé sekci sedí.
+  - stranka: "metodicka-podpora/standardizace.html"
+    text: "Vzorová struktura regulačního plánu"
+    duvod: vypln
+  - stranka: "metodicka-podpora/standardizace.html"
+    text: "Materiály k dokumentaci pořizované podle dřívější právní úpravy"
+    duvod: navrh_chyba
+    poznamka: >
+      Sekce „Starý zákon" je v maketě na stránce pod kotvou #stara, protože
+      záložka na ni odkazuje. Návrh ukazuje jen záložku Nový zákon, obsah
+      staré nikde nemá.

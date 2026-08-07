@@ -294,24 +294,28 @@ li.open .dropdown { display: block; }
    ne jako orámovaný řádek s tlačítkem. Bohatší varianta .files.rich zůstává tam,
    kde připomínka č. 23 vyžaduje metadata o platnosti a verzi. */
 .files { list-style: none; padding: 0; margin: var(--spacing-s-nudge) 0; }
+/* Řádek souboru je v návrhu vzdušný: rozteč řádků 56 px (odměřeno na str. 19 —
+   609, 661, 717, 774, 829). Obsah řádku je vysoký 18 px (ikona i řádek textu),
+   na okraje tedy zbývá 19 px nahoru i dolů. Odkaz je 12 px, tedy body-xs;
+   výška verzálky 8,6 px. */
 .files > li {
-  display: flex; align-items: baseline; gap: var(--spacing-s);
-  font-size: var(--font-size-body-s);   /* návrh: odkaz na soubor je menší než text */
+  display: flex; align-items: center; gap: var(--spacing-s);
+  font-size: var(--font-size-body-xs);
   background: none; border: 0; border-radius: 0;
-  padding: var(--spacing-xs) 0; margin: 0;
+  padding: 19px 0; margin: 0;
 }
 .files > li br { display: none; }
 .files .grow { display: inline; }
 .files .name { color: var(--color-primary-700); text-decoration: underline; font-weight: 400; }
 .files > li:hover .name { color: var(--color-primary-600); }
-.files .fmeta { font-size: var(--font-size-body-s); color: var(--text-tertiary); }
+.files .fmeta { font-size: var(--font-size-body-xs); color: var(--text-tertiary);
+  margin-left: var(--spacing-xs); }
 .files .fmeta::before { content: "("; }
 .files .fmeta::after { content: ")"; }
 .files .btn, .files .gov-button { display: none; }
 /* Ikona dokumentu z návrhu (str. 7): list se zahnutým rohem, u PDF s popiskem.
    Vysoká 18 px, tedy --icon-size-l, stejně jako ikony v boxech. */
-.files .fico { width: var(--icon-size-l); height: var(--icon-size-l); flex: none;
-  align-self: flex-start; margin-top: 3px; }
+.files .fico { width: var(--icon-size-l); height: var(--icon-size-l); flex: none; }
 
 /* Bohatší varianta: orámovaný řádek s metadaty a tlačítkem ke stažení. */
 .files.rich > li {
@@ -323,6 +327,7 @@ li.open .dropdown { display: block; }
 .files.rich > li br { display: revert; }
 .files.rich .grow { display: block; flex: 1; }
 .files.rich .fmeta::before, .files.rich .fmeta::after { content: ""; }
+.files.rich .fmeta { margin-left: 0; }
 
 /* ---------- akordeon: nativní details ---------- */
 .gov-accordion-item__summary { cursor: pointer; list-style: none; }
