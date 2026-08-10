@@ -309,8 +309,8 @@ KONTAKTY_ODDELENI = """
 EVIDENCE = """
 <p>Evidence územně plánovací činnosti je prováděna na základě § 162 zákona č. 183/2006 Sb.,
 o územním plánování a stavebním řádu. Postup orgánů územního plánování při evidenci je dále
-upraven Metodikou OÚP MMR pro postup orgánů územního plánování při evidenci územně plánovací
-činnosti (dále jen Metodika OÚP MMR).</p>
+upraven <a href="#">Metodikou OÚP MMR pro postup orgánů územního plánování při evidenci územně
+plánovací činnosti</a>.</p>
 
 <h2>Dvě části evidence</h2>
 <p>Evidence územně plánovací činnosti má dvě relativně samostatné části:</p>
@@ -323,7 +323,9 @@ krajským úřadům zasílají jejich pořizovatelé (obecní úřady). Pracovn�
 prostřednictvím aplikace iLAS pořizují zápis do centrální databáze.</p>
 <p>Evidence ÚPD a ÚPP velkých územních celků probíhá taktéž průběžně, a to prostřednictvím
 aplikace iKAS. Zápis do centrální databáze pořizují pověření pracovníci krajských úřadů.</p>
-<p>Bližší podrobnosti o postupu orgánů územního plánování při evidenci uvádí Metodika OÚP MMR.</p>
+<p>Bližší podrobnosti o postupu orgánů územního plánování při evidenci viz výše uvedená
+Metodika OÚP MMR pro postup orgánu územního plánování při evidenci územně plánovací činnosti
+(dále jen Metodika OÚP MMR).</p>
 
 <h2>Zveřejňování získaných údajů</h2>
 <p>Zveřejňování získaných údajů o územně plánovací činnosti v ČR je prováděno prostřednictvím:</p>
@@ -358,25 +360,34 @@ formou publikací (ročenek) a zejména prostřednictvím internetu zpřístupň
 Monitorování a zveřejňování výsledků evidence chápou ÚÚR a MMR jako službu veřejnosti, pomoc
 prosadit a urychlit investice do území.</p>
 
-<h2>On-line evidence</h2>
-<ul>
-  <li><a href="#">Evidence územně plánovací činnosti obcí – Lokální aktualizační systém - iLAS</a></li>
-  <li><a href="#">Evidence územně plánovací činnosti krajů – Krajský aktualizační systém - iKAS</a></li>
-</ul>
-
-<div data-faqgroup>
-  <details data-faq><summary>Metodiky a příručky</summary>
-    <p>Metodika OÚP MMR pro postup orgánů územního plánování při evidenci územně plánovací
-    činnosti a navazující příručky.</p></details>
-  <details data-faq><summary>Ročenky</summary>
-    <p>Roční přehledy o stavu územně plánovací připravenosti obcí a krajů.</p></details>
-  <details data-faq><summary>Seznam projektantů</summary>
-    <p>Databáze zodpovědných projektantů — autorizovaných architektů.</p></details>
-  <details data-faq><summary>Územní studie</summary>
-    <p>Evidence územních studií pořízených obcemi a kraji.</p></details>
-  <details data-faq><summary>Historie</summary>
-    <p>Vývoj evidence územně plánovací činnosti a starší ročníky přehledů.</p></details>
-</div>
+<details class="acc" open data-faq>
+  <summary>On-line evidence</summary>
+  <div class="body"><ul>
+      <li><a href="#">Evidence územně plánovací činnosti obcí – Lokální aktualizační systém - iLAS</a></li>
+      <li><a href="#">Evidence územně plánovací činnosti krajů – Krajský aktualizační systém - iKAS</a></li>
+    </ul></div>
+</details>
+<details class="acc" data-faq>
+  <summary>Metodiky a příručky</summary>
+  <div class="body"><p>Metodika OÚP MMR pro postup orgánů územního plánování při evidenci územně plánovací
+    činnosti a navazující příručky.</p></div>
+</details>
+<details class="acc" data-faq>
+  <summary>Ročenky</summary>
+  <div class="body"><p>Roční přehledy o stavu územně plánovací připravenosti obcí a krajů.</p></div>
+</details>
+<details class="acc" data-faq>
+  <summary>Seznam projektantů</summary>
+  <div class="body"><p>Databáze zodpovědných projektantů — autorizovaných architektů.</p></div>
+</details>
+<details class="acc" data-faq>
+  <summary>Územní studie</summary>
+  <div class="body"><p>Evidence územních studií pořízených obcemi a kraji.</p></div>
+</details>
+<details class="acc" data-faq>
+  <summary>Historie</summary>
+  <div class="body"><p>Vývoj evidence územně plánovací činnosti a starší ročníky přehledů.</p></div>
+</details>
 """
 
 INFOWEB = """

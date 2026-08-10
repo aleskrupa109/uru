@@ -193,6 +193,17 @@ stejnou, jakou má též tlačítko na str. 8.
 
 ## Ze str. 28: chyběl závěr a rozbalovací obsah
 
+Celá spodní část je akordeon o šesti položkách, včetně **On-line evidence**, která
+je v návrhu **rozbalená** a obsahuje dva odkazy. Zbylých pět je zavřených.
+
+V prvním odstavci je část „Metodikou OÚP MMR pro postup orgánů územního plánování
+při evidenci územně plánovací činnosti“ odkazem — v návrhu podtržená.
+
+Poznámka k zápisu akordeonu: generátor čeká tvar
+`<details class="acc" open data-faq><summary>…</summary><div class="body">…</div></details>`.
+Atribut `open` **nesmí být poslední** — přepíše se jen tehdy, když za ním je
+ještě mezera, ne rovnou `>`.
+
 Maketa měla místo závěrečného oddílu tabulku „Aplikace a související obsah“
 s třemi řádky a seznam čtyř odkazů. Návrh má místo toho oddíl **On-line evidence**
 se dvěma odkazy (iLAS, iKAS) a pod ním **pět rozbalovacích položek** — Metodiky
