@@ -212,9 +212,12 @@ li.open .dropdown { display: block; }
    Velikosti a rozestupy odměřené z návrhu (karta 270 px, odsazení 16 px). */
 .grid > .uru-card {
   background: var(--background-block-primary); border-radius: var(--corner-radius-m);
-  border-bottom: 0; box-shadow: var(--uru-shadow); padding: var(--spacing-m);
+  /* Návrh nemá u dlaždic stín, ale tenký šedý okraj: 1 px, rgb(209 209 209),
+     tedy --color-neutral-200. Odečteno při 600 dpi z hrany karty na str. 27. */
+  border: 1px solid var(--color-neutral-200); box-shadow: none;
+  padding: var(--spacing-m);
 }
-.grid > .uru-card:hover { box-shadow: 0 6px 20px rgb(29 60 93 / 14%); }
+.grid > .uru-card:hover { border-color: var(--color-primary-600); }
 .uru-card [slot="icon"] { display: block; margin-bottom: var(--spacing-l); color: var(--color-primary-600); }
 .uru-card [slot="icon"] .gov-tile__icon-img { width: 3rem; height: auto; }
 .uru-card .gov-tile__title { font-size: var(--font-size-body-xl); line-height: 1.5; }

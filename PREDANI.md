@@ -193,6 +193,15 @@ stejnou, jakou má též tlačítko na str. 8.
 
 ## Ze str. 27: dlaždice pod sebou, ne ve dvou sloupcích
 
+Dlaždice nemají v návrhu stín, ale **tenký šedý okraj** — 1 px, `rgb(209 209 209)`,
+tedy `color-neutral-200`. Odečteno při 600 dpi z hrany karty, kde je barva čistá;
+při 100 dpi vychází 225, což je jen prolínaní s bílou. Při najetí myší se mění
+barva okraje, ne stín.
+
+Poznámka: stín mají dál karty aktualit (`.news`) a karta mapy webu (`.sitemap-card`).
+U těch jsem podobu z návrhu neřešil, takže to nechávám — stojí za ověření,
+až přijdou na řadu příslušné stránky.
+
 Návrh má sedm dlaždic **na celou šířku pod sebou**, bez ikon, s odkazem „Přejít“.
 Maketa je měla ve dvou sloupcích, s ikonami a s popiskem „Zjistit více“. Lišilo se
 i pořadí a všechny popisy — maketa měla vlastní, kratší znění. Přepsáno podle návrhu.
