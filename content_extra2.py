@@ -3,7 +3,7 @@
 
 # ---------------------------------------------------------------- Kariéra
 KARIERA = """
-<div class="btn-row"><a class="btn" href="{{r}}kariera/otevrene-pozice.html">Zobrazit volné pozice</a></div>
+<div class="btn-row"><a class="btn arrow" href="{{r}}kariera/otevrene-pozice.html">Zobrazit volné pozice</a></div>
 
 <h2>Proč pracovat v ÚRÚ</h2>
 <p>ÚRÚ je nová instituce s celostátním dopadem. Budete se podílet na povolování klíčových
@@ -11,7 +11,7 @@ staveb pro rozvoj Česka — dálnic, železnic, energetických sítí i obnovit
 Přidejte se k týmu, který formuje budoucnost české infrastruktury.</p>
 
 <div class="grid g3">
-  <div class="card"><h3>Dovolená nad rámec</h3><p>Nadstandardní dovolená ve veřejné správě.</p></div>
+  <div class="card"><h3>XY týdnů dovolené</h3><p>Nadstandardní dovolená ve veřejné správě.</p></div>
   <div class="card"><h3>Práce z domova</h3><p>Možnost home office podle typu pozice.</p></div>
   <div class="card"><h3>Stabilní zaměstnání</h3><p>Jistota práce ve veřejné správě.</p></div>
   <div class="card"><h3>Smysluplná agenda</h3><p>Přímý dopad na rozvoj celé České republiky.</p></div>
@@ -20,17 +20,23 @@ Přidejte se k týmu, který formuje budoucnost české infrastruktury.</p>
 </div>
 
 <h2>Pracovněprávní vztah vs. státní služba</h2>
-<p>V ÚRÚ nabízíme pozice ve dvou režimech. Státní služba přináší vyšší jistotu zaměstnání —
-služební poměr na dobu neurčitou, delší výpovědní dobu a odměňování podle platové třídy
-a tarifu ze zákona. Pracovněprávní vztah nabízí flexibilnější podmínky podle zákoníku práce.
-Typ poměru je vždy uveden u konkrétní pozice.</p>
+<p>V ÚRÚ nabízíme pozice ve dvou režimech. Hlavní rozdíl, na který se uchazeči ptají
+nejčastěji:</p>
+<ul>
+  <li><strong>Státní služba</strong> přináší vyšší jistotu zaměstnání — služební poměr na dobu
+      neurčitou, delší výpovědní doba a odměňování dle platové třídy a tarifu ze zákona.</li>
+  <li><strong>Pracovněprávní vztah</strong> nabízí flexibilnější podmínky — řídí se zákoníkem
+      práce, standardní výpovědní doba 2 měsíce.</li>
+</ul>
+<p>V obou případech: 5 týdnů dovolené a pružná pracovní doba. Typ poměru je vždy uveden
+u konkrétní pozice.</p>
 <table class="t">
   <tr><th style="width:24%">Parametr</th><th>Pracovněprávní vztah</th><th>Státní služba</th></tr>
-  <tr><td>Zákon</td><td>zákoník práce</td><td>zákon o státní službě</td></tr>
-  <tr><td>Jistota</td><td>standardní</td><td>vyšší — služební poměr na dobu neurčitou</td></tr>
-  <tr><td>Výběrové řízení</td><td>standardní pohovor</td><td>formalizovaný postup dle zákona</td></tr>
-  <tr><td>Výpovědní doba</td><td>2 měsíce</td><td>delší dle služebního zákona</td></tr>
-  <tr><td>Odměňování</td><td>platový výměr</td><td>platová třída a tarif dle zákona</td></tr>
+  <tr><td>Zákon</td><td>Zákoník práce</td><td>Zákon o státní službě</td></tr>
+  <tr><td>Jistota</td><td>Standardní</td><td>Vyšší — služební poměr na dobu neurčitou</td></tr>
+  <tr><td>Výběrové řízení</td><td>Standardní pohovor</td><td>Formalizovaný postup dle zákona</td></tr>
+  <tr><td>Výpovědní doba</td><td>2 měsíce</td><td>Delší dle služebního zákona</td></tr>
+  <tr><td>Odměňování</td><td>Platový výměr</td><td>Platová třída + tarif dle zákona</td></tr>
 </table>
 
 <h2>Jak se přihlásit</h2>
@@ -44,11 +50,16 @@ Typ poměru je vždy uveden u konkrétní pozice.</p>
 </ol>
 
 <h2>Lidé z ÚRÚ</h2>
-<div class="contactcard" style="max-width:44rem">
-  <p>„Přešel jsem z krajského úřadu, kde jsem řešil hlavně rodinné domy. Tady pracuju
-  na dálnicích a železnicích — je to úplně jiný level. Baví mě, že vidím výsledky své práce,
-  které pomáhají tisícům úředníků po celém Česku."</p>
-  <p class="role">Jméno, referentka pro dopravní stavby, Praha</p>
+<div class="citace">
+  <p>„Přešel/a jsem z krajského úřadu, kde jsem řešil/a hlavně rodinné domy. Tady pracuju
+  na dálnicích a železnicích — je to úplně jiný level. Baví mě, že vidím výsledky své práce
+  na mapě."</p>
+  <p class="role"><strong>Jméno</strong>, Referentka pro dopravní stavby, Praha</p>
+</div>
+<div class="citace">
+  <p>„Nový zákoník mě lákal, ale bál jsem se byrokracie. Realita je jiná — tvoříme metodiky,
+  které pomáhají tisícům úředníků po celém Česku. To mě drží."</p>
+  <p class="role"><strong>Jméno</strong>, Metodik stavebního práva, Brno</p>
 </div>
 
 <div class="btn-row">

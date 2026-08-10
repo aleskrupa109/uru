@@ -191,6 +191,23 @@ kde návrh má ikonu, kterou design systém nemá.
 Tlačítko „Přejít na Portál stavebníka“ na str. 7 dostalo šipku (třída `btn arrow`),
 stejnou, jakou má též tlačítko na str. 8.
 
+## Ze str. 32: kariéra bez postranní nabídky
+
+Stránka nemá v návrhu postranní nabídku — obsah jde přes celou šířku. Maketa ji měla,
+takže byl celý obsah posunutý o šířku sloupce doprava. Řešeno `sidebar=False`.
+
+**Citace zaměstnanců jsou plně modré karty** (`color-primary-600`) s bílým textem
+a uvozovkou, ne světlé kontaktní kartičky. Maketa měla jen jednu citaci a navíc
+slitou z obou — začátek první a konec druhé. Návrh má dvě, každou s vlastním
+závěrem a podpisem.
+
+Oddíl o poměrech má v návrhu podobu odstavec + dvě odrážky + shrnutí, ne jeden
+dlouhý odstavec. Hodnoty v tabulce začínají velkým písmenem.
+
+**Hlavičku tabulky extraktor rozsypá** („S á t tní služba“) tak, že se nespáruje
+ani porovnáním podle písmen — písmena jsou přeházená, nejen oddělená mezerami.
+Zapsáno mezi odchylky.
+
 ## Ze str. 31: stránka je v návrhu mnohem kratší
 
 Návrh má jen perex a dvě dlaždice — ESPON a V4+2 — s krátkým popisem a odkazem

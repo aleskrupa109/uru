@@ -399,8 +399,11 @@ MAPA = """
 """
 
 PAGES = [
-    dict(help="hr", path="kariera/index.html", title="Kariéra", section="kariera", crumbs=[("Kariéra", None)],
-         h1="Kariéra v ÚRÚ", perex="Hledáme odborníky na stavební právo, územní plánování a digitalizaci agend.",
+    dict(help="hr", path="kariera/index.html", title="Kariéra", section="kariera", sidebar=False,
+         crumbs=[("Kariéra", None)], h1="Kariéra v ÚRÚ",
+         perex="Úřad rozvoje území vzniká 1. 7. 2026 a hledá odborníky ze stavební správy "
+               "i soukromého sektoru. Nabízíme smysluplnou práci s přímým dopadem na rozvoj "
+               "České republiky — buďte u toho od začátku.",
          body=KARIERA),
     dict(help="hr", path="kariera/otevrene-pozice.html", title="Otevřené pozice", section="kariera",
          crumbs=KAR + [("Otevřené pozice", None)], h1="Otevřené pozice", body=POZICE),

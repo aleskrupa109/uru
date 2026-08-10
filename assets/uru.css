@@ -563,6 +563,17 @@ body.editing [data-edit]:focus { outline: 2px solid var(--color-success-600); ba
    návrhu se nevyskytuje. Viz poznámka v PREDANI.md. */
 .content > p.zvyrazneno { color: rgb(179 34 34); }
 
+/* Citace zaměstnanců (str. 32): plně modrá karta s bílým textem a uvozovkou.
+   Odměřeno: pozadí rgb(35 98 162), tedy `color-primary-600`. */
+.citace { background: var(--color-primary-600); color: var(--text-white-fixed);
+  border-radius: var(--corner-radius-s); padding: var(--spacing-m) var(--spacing-m-nudge);
+  max-width: 44rem; margin: var(--spacing-m) 0; }
+.citace p { color: inherit; margin: 0; font-size: var(--font-size-body-s); }
+.citace p::before { content: "\201C"; display: block; font-size: 2rem; line-height: 1;
+  margin-bottom: var(--spacing-xs); }
+.citace p.role { margin-top: var(--spacing-s); font-size: var(--font-size-body-xs); }
+.citace p.role::before { content: none; }
+
 /* Panel přiložených dokumentů (str. 30): světle modrý pruh přes celou šířku
    obsahu (452–1203), nadpis 20 px modrý, odkazy na soubory 18 px — tedy výrazně
    větší než v prostém seznamu souborů na str. 19 (12 px). Rozteč řádků 56 px.  */

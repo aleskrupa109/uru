@@ -215,3 +215,12 @@ odchylky:
     poznamka: >
       Návrh má v oddílu Kontaktní osoby jen otazník jako výplň. Maketa místo něj
       odkazuje na stránku Kontakty.
+  - stranka: "kariera/index.html"
+    text: "Parametr Pracovněprávní vztah Státní služba"
+    duvod: navrh_chyba
+    poznamka: >
+      Hlavička tabulky. Extraktor u ní rozsype glyfy („S á t tní služba"), takže
+      se nespáruje ani porovnáním podle písmen. Obsah v maketě je správně.
+  - stranka: "kariera/index.html"
+    text: "Zákon Zákoník práce Zákon o státní službě"
+    duvod: navrh_chyba
