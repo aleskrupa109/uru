@@ -191,6 +191,16 @@ kde návrh má ikonu, kterou design systém nemá.
 Tlačítko „Přejít na Portál stavebníka“ na str. 7 dostalo šipku (třída `btn arrow`),
 stejnou, jakou má též tlačítko na str. 8.
 
+## Ze str. 29: odrážky místo odstavců
+
+Návrh má „Základní informace“, „Cíle portálu“ i „Kontaktní osoby“ jako odrážkové
+seznamy, maketa je měla jako odstavce. Tlačítko „Vstup do portálu“ je obtahované
+(bílé s modrým okrajem), ne plné, a má 48 px, tedy velikost `l`. Do generátoru
+proto přibyla třída `btn lg` — do té doby uměl jen `sm` a výchozí `m`.
+
+V oddílu Kontaktní osoby má návrh jen otazník jako výplň; maketa tam odkazuje
+na stránku Kontakty — zapsáno mezi odchylky.
+
 ## Ze str. 28: chyběl závěr a rozbalovací obsah
 
 Celá spodní část je akordeon o šesti položkách, včetně **On-line evidence**, která

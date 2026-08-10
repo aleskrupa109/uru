@@ -391,25 +391,30 @@ prosadit a urychlit investice do území.</p>
 """
 
 INFOWEB = """
-<div class="btn-row"><a class="btn" href="#">Vstup do portálu</a></div>
+<div class="btn-row"><a class="btn ghost lg" href="#">Vstup do portálu</a></div>
 
 <h2>Základní informace</h2>
-<p>Informační web územního plánování je oficiální portál — rozcestník odkazů z oblasti územního
-plánování. Do 31. 12. 2021 fungoval pod názvem Portál územního plánování.</p>
-<p>Od 1. 1. 2022 došlo ke změně názvu Portálu územního plánování na Informační web územního
-plánování (zkratka IWÚP). Nový název více odpovídá zaměření webu — soustředění informací
-v oblasti územního plánování a souvisejících oborů do jednoho místa pro odbornou i laickou
-veřejnost, rozcestník odkazů a prezentace výstupů z činnosti ÚÚR a MMR. Současně je třeba
-předejít případné záměně s Národním geoportálem územního plánování, který připravuje MMR
-dle § 11 odst. 1 písm. d) stavebního zákona.</p>
-<p>Portál územního plánování byl uveden do provozu Ústavem územního rozvoje ve spolupráci
-s Odborem územního plánování Ministerstva pro místní rozvoj ČR v roce 2004.</p>
+<ul>
+  <li>Informační web územního plánování je oficiální portál (rozcestník odkazů) z oblasti
+      územního plánování.</li>
+  <li>Do 31. 12. 2021 fungoval pod názvem Portál územního plánování.</li>
+  <li>Od 1. 1. 2022 došlo ke změně názvu Portálu územního plánování na Informační web územního
+      plánování (zkratka IWÚP). Nový název více odpovídá zaměření webu — soustředění informací
+      v oblasti územního plánování a souvisejících oborů do jednoho místa pro odbornou i laickou
+      veřejnost, rozcestník odkazů a prezentace výstupů z činnosti ÚÚR a MMR. Současně je třeba
+      předejít případné záměně s Národním geoportálem územního plánování, který nově připravuje
+      MMR dle § 11 odst. 1 písm. d) stavebního zákona.</li>
+  <li>Portál územního plánování byl uveden do provozu Ústavem územního rozvoje ve spolupráci
+      s Odborem územního plánování Ministerstva pro místní rozvoj ČR v roce 2004.</li>
+</ul>
 
 <h2>Cíle portálu</h2>
-<p>Cílem portálu je směřovat k vytváření otevřeného a průběžně aktualizovaného systému odkazů
-na relevantní informace v oblasti územního plánování a územního rozvoje, jež vyplývají zejména
-z činností ÚÚR, MMR a ostatních orgánů veřejné správy a odborných institucí.
-Je určen pro veřejnou správu, odbornou i laickou veřejnost.</p>
+<ul>
+  <li>Cílem portálu je směřovat k vytváření otevřeného a průběžně aktualizovaného systému odkazů
+      na relevantní informace v oblasti územního plánování a územního rozvoje, jež vyplývají
+      zejména z činností ÚÚR, MMR a ostatních orgánů veřejné správy a odborných institucí.</li>
+  <li>Je určen pro veřejnou správu, odbornou i laickou veřejnost.</li>
+</ul>
 
 <h2>Základní vize portálu</h2>
 <ul>
@@ -419,7 +424,9 @@ Je určen pro veřejnou správu, odbornou i laickou veřejnost.</p>
 </ul>
 
 <h2>Kontaktní osoby</h2>
-<p>Kontakty na správce portálu najdete v <a href="{{r}}kontakty.html">Kontaktech</a>.</p>
+<ul>
+  <li>Kontakty na správce portálu najdete v <a href="{{r}}kontakty.html">Kontaktech</a>.</li>
+</ul>
 """
 
 PUR_DOKUMENTY = """

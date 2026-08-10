@@ -510,7 +510,7 @@ def to_ds(html_body):
     def btn(m):
         cls, attrs, label = m.group("cls"), m.group("attrs"), m.group("label")
         typ = "outlined" if "ghost" in cls else "solid"
-        size = "s" if " sm" in " " + cls else "m"
+        size = "s" if " sm" in " " + cls else ("l" if " lg" in " " + cls else "m")
         arrow = " arrow" if "arrow" in cls.split() else ""
         href = re.search(r'href="([^"]*)"', attrs)
         if href:

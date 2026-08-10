@@ -209,3 +209,9 @@ odchylky:
   - stranka: "uzemni-rozvoj/index.html"
     text: "Akce pod záštitou úřadu"
     duvod: navrh_chyba
+  - stranka: "uzemni-rozvoj/informacni-web-up.html"
+    text: "Kontakty na správce portálu najdete"
+    duvod: vypln
+    poznamka: >
+      Návrh má v oddílu Kontaktní osoby jen otazník jako výplň. Maketa místo něj
+      odkazuje na stránku Kontakty.
