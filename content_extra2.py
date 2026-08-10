@@ -328,7 +328,7 @@ aplikace iKAS. Zápis do centrální databáze pořizují pověření pracovníc
 <h2>Zveřejňování získaných údajů</h2>
 <p>Zveřejňování získaných údajů o územně plánovací činnosti v ČR je prováděno prostřednictvím:</p>
 <ul>
-  <li>průběžně aktualizovaných dat na webových stránkách úřadu a MMR;</li>
+  <li>průběžně aktualizovaných dat na www stránce ÚÚR a MMR;</li>
   <li>ročních přehledů (internetových prezentací), které obsahují vedle přehledů o stavu územně
       plánovací připravenosti obcí a krajů rovněž některé strukturně vývojové analýzy — schválené
       ÚPD podle velikostních kategorií obcí, počty obcí bez ÚPD podle velikostních kategorií obcí,
@@ -348,23 +348,35 @@ a to nejlépe na základě smlouvy o dílo.</p>
 působností a krajům. Dále pak dovoluje připojení k mapovému podkladu.</p>
 
 <h2>Proč je evidence důležitá</h2>
-<p>Schválený územní plán s jasnými, obecně závaznými pravidly pro využití území významně
-ovlivňuje rozhodování soukromého sektoru o tom, kam vloží své prostředky a jak se bude podílet
-na rozvoji obce nebo kraje. Územně plánovací dokumentace je dále jedním z rozhodujících
-podkladů pro rozhodování veřejné správy.</p>
+<p>Závěrem nutno zdůraznit, že schválený územní plán s jasnými, obecně závaznými pravidly pro
+využití území významně ovlivňuje rozhodování soukromého sektoru o tom, kam vloží své prostředky
+a jak se bude podílet na rozvoji obce nebo kraje. Územně plánovací dokumentace je dále jedním
+z rozhodujících podkladů pro získávání veřejných prostředků a pro posouzení jejich hospodárného
+vynaložení. Přehled o tom, které obce nebo kraje v České republice mají schválenou nebo
+rozpracovanou územně plánovací dokumentaci, je velmi cennou informací, která se zveřejňováním
+formou publikací (ročenek) a zejména prostřednictvím internetu zpřístupňuje široké veřejnosti.
+Monitorování a zveřejňování výsledků evidence chápou ÚÚR a MMR jako službu veřejnosti, pomoc
+prosadit a urychlit investice do území.</p>
 
-<h2>Aplikace a související obsah</h2>
-<table class="t">
-  <tr><th style="width:130px">iLAS</th><td>evidence územně plánovací činnosti obcí</td></tr>
-  <tr><th>iKAS</th><td>evidence územně plánovací činnosti krajů a velkých územních celků</td></tr>
-  <tr><th>RÚIAN</th><td>vazba na registr územní identifikace, adres a nemovitostí</td></tr>
-</table>
+<h2>On-line evidence</h2>
 <ul>
-  <li><a href="#">Metodika OÚP MMR</a></li>
-  <li><a href="#">Roční přehledy evidence</a></li>
-  <li><a href="#">Seznam zodpovědných projektantů</a></li>
-  <li><a href="#">Historie evidence</a></li>
+  <li><a href="#">Evidence územně plánovací činnosti obcí – Lokální aktualizační systém - iLAS</a></li>
+  <li><a href="#">Evidence územně plánovací činnosti krajů – Krajský aktualizační systém - iKAS</a></li>
 </ul>
+
+<div data-faqgroup>
+  <details data-faq><summary>Metodiky a příručky</summary>
+    <p>Metodika OÚP MMR pro postup orgánů územního plánování při evidenci územně plánovací
+    činnosti a navazující příručky.</p></details>
+  <details data-faq><summary>Ročenky</summary>
+    <p>Roční přehledy o stavu územně plánovací připravenosti obcí a krajů.</p></details>
+  <details data-faq><summary>Seznam projektantů</summary>
+    <p>Databáze zodpovědných projektantů — autorizovaných architektů.</p></details>
+  <details data-faq><summary>Územní studie</summary>
+    <p>Evidence územních studií pořízených obcemi a kraji.</p></details>
+  <details data-faq><summary>Historie</summary>
+    <p>Vývoj evidence územně plánovací činnosti a starší ročníky přehledů.</p></details>
+</div>
 """
 
 INFOWEB = """

@@ -191,6 +191,18 @@ kde návrh má ikonu, kterou design systém nemá.
 Tlačítko „Přejít na Portál stavebníka“ na str. 7 dostalo šipku (třída `btn arrow`),
 stejnou, jakou má též tlačítko na str. 8.
 
+## Ze str. 28: chyběl závěr a rozbalovací obsah
+
+Maketa měla místo závěrečného oddílu tabulku „Aplikace a související obsah“
+s třemi řádky a seznam čtyř odkazů. Návrh má místo toho oddíl **On-line evidence**
+se dvěma odkazy (iLAS, iKAS) a pod ním **pět rozbalovacích položek** — Metodiky
+a příručky, Ročenky, Seznam projektantů, Územní studie, Historie. Územní studie
+maketa neměla vůbec.
+
+Odstavec „Proč je evidence důležitá“ byl v maketě zkrácený zhruba na třetinu —
+chyběla část o ročenkách, zpřístupnění veřejnosti a o tom, že ÚÚR a MMR chápou
+monitorování jako službu veřejnosti. Doplněno podle návrhu.
+
 ## Ze str. 27: dlaždice pod sebou, ne ve dvou sloupcích
 
 Dlaždice nemají v návrhu stín, ale **tenký šedý okraj** — 1 px, `rgb(209 209 209)`,
