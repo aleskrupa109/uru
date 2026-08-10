@@ -551,6 +551,14 @@ body.editing [data-edit]:focus { outline: 2px solid var(--color-success-600); ba
    řádek platnosti s ikonou kalendáře a tlačítko přes celou šířku karty.
    Odměřeno na návrhu: okraj karty 239 239 239, vnitřní okraj 16 px,
    tlačítko vyplňuje kartu (468–736 uvnitř karty 451–752). */
+/* Užitečné odkazy (str. 26): bílá karta se štítkem Aplikace / Web,
+   modrým názvem a popisem. Štítek má 231 231 231, tedy `color-neutral-100`. */
+.odkaz { background: var(--background-block-primary); border-radius: var(--corner-radius-s);
+  padding: var(--spacing-m); }
+.odkaz h3 { margin: var(--spacing-s) 0 var(--spacing-xs); color: var(--color-primary-600);
+  font-size: var(--font-size-body-m); }
+.odkaz p { font-size: var(--font-size-body-s); margin: 0; }
+
 /* Str. 24 (heslo v katalogu otázek): stránka nemá postranní nabídku ani bílý
    panel, otázky jsou rozbalené karty na šedém pozadí. Odměřeno: karty 144–1143,
    štítek 254 240 208 = `color-secondary-200`, nadpis otázky modrý. */

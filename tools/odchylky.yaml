@@ -198,3 +198,14 @@ odchylky:
       Text je v maketě zástupným textem vyhledávacího pole (atribut placeholder),
       ne obsahem stránky. Porovnání čte jen textové uzly, takže ho nenajde —
       omezení nástroje, ne chybějící obsah.
+  - stranka: "uzemni-rozvoj/index.html"
+    text: "Stavebně technická prevence"
+    duvod: navrh_chyba
+    poznamka: >
+      Maketa má o dvě dlaždice víc než návrh — Stavebně technická prevence
+      a Konference a semináře. Obě mají v maketě vlastní stránku i položku
+      v nabídce; návrh je nemá ani v rozbalené nabídce na str. 25. Ponecháno,
+      odstranění by osiřelo dvě stránky. K vyjasnění.
+  - stranka: "uzemni-rozvoj/index.html"
+    text: "Akce pod záštitou úřadu"
+    duvod: navrh_chyba

@@ -13,11 +13,11 @@ ROZCESTNIK = """
   <a class="card" href="{{r}}uzemni-rozvoj/mezinarodni-spoluprace.html"><h3>Mezinárodní spolupráce</h3>
     <p>ESPON — průběžně aktualizováno, mezinárodní závazky ČR. V4+2 — Visegrádská spolupráce.</p></a>
   <a class="card" href="{{r}}uzemni-rozvoj/publikacni-cinnost.html"><h3>Publikační činnost</h3>
-    <p>Aktualizované příručky a metodické publikace — cestovní ruch, CORCAP, INKA, Místní akční
-    skupiny, Památka roku a další.</p></a>
+    <p>Aktualizované příručky, metodické publikace ÚÚR. Průběžně aktualizované,
+    různé cykly vydávání.</p></a>
   <a class="card" href="{{r}}uzemni-rozvoj/casopis.html"><h3>Časopis UaÚR</h3>
-    <p>Odborný recenzovaný časopis Urbanismus a územní rozvoj. Indexován SCOPUS a ERIH.
-    Bilingvní. Průběžně aktualizovaný, různé cykly vydávání.</p></a>
+    <p>Odborný recenzovaný časopis Urbanismus a územní rozvoj. Indexován SCOPUS, ERIH.
+    Bilingvní.</p></a>
   <a class="card" href="{{r}}uzemni-rozvoj/knihovna.html"><h3>Knihovna</h3>
     <p>Online katalog knihovního fondu (58 000+ záznamů). Služby, knihovní řád, novinky
     z katalogu.</p></a>
@@ -33,14 +33,14 @@ ROZCESTNIK = """
 </div>
 
 <h2>Užitečné odkazy</h2>
-<table class="t">
-  <tr><th style="width:34%">Aplikace nebo web</th><th>K čemu slouží</th></tr>
-  <tr><td>iLAS</td><td>evidence územně plánovací činnosti obcí</td></tr>
-  <tr><td>iKAS</td><td>evidence územně plánovací činnosti krajů</td></tr>
-  <tr><td>Národní geoportál územního plánování (NGP ÚP)</td><td>celostátní geoportál územního plánování</td></tr>
-  <tr><td>Evidence ÚPČ obcí</td><td><a href="{{r}}uzemni-rozvoj/evidence-upc.html">přehled evidence na tomto webu</a></td></tr>
-  <tr><td>Ministerstvo pro místní rozvoj</td><td>navazující agendy a podkladové materiály</td></tr>
-</table>
+<div class="grid g2">
+  <div class="odkaz"><span class="tag hist">Aplikace</span><h3>iLAS</h3><p>Evidence ÚPČ obcí</p></div>
+  <div class="odkaz"><span class="tag hist">Web</span><h3>NGPÚ</h3><p>Národní geoportál územního plánování</p></div>
+  <div class="odkaz"><span class="tag hist">Aplikace</span><h3>iKAS</h3><p>Evidence ÚPČ krajů</p></div>
+  <div class="odkaz"><span class="tag hist">Web</span><h3>MMR</h3><p>Ministerstvo pro místní rozvoj</p></div>
+  <div class="odkaz"><span class="tag hist">Aplikace</span><h3>iSSTP</h3><p>Systém stavebně technické prevence</p></div>
+  <div class="odkaz"><span class="tag hist">Web</span><h3>Informační web územního plánování</h3><p>Historický web ÚRÚ.</p></div>
+</div>
 <p class="hint">Obsah převzatý z uur.cz je dostupný pod hlavičkou ÚRÚ. Přesměrování z původních
 adres je součástí migrace.""" + cmt(64, "Chybí informace o přesměrování původních adres uur.cz — uživatelé mají odkazy uložené v záložkách a v korespondenci.") + """</p>
 """
@@ -212,7 +212,7 @@ def p(path, title, crumb, h1, body, perex=None):
 PAGES = [
     dict(path="uzemni-rozvoj/index.html", title="Územní rozvoj", section="uzemni-rozvoj",
          crumbs=[("Územní rozvoj", None)], sidebar=False, h1="Územní rozvoj",
-         perex="Agendy, dokumenty a aplikace převzaté od Ústavu územního rozvoje. Obsah pokračuje beze změny rozsahu.",
+         perex="Celostátní dokumenty územního plánování, odborné publikace, časopis, knihovna a mapové nástroje.",
          body=ROZCESTNIK),
     p("uzemni-planovani.html", "Územní plánování", "Územní plánování", "Územní plánování", UP,
       "Strategické dokumenty územního plánování, evidence činnosti a navazující aplikace."),

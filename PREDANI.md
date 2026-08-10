@@ -191,6 +191,28 @@ kde návrh má ikonu, kterou design systém nemá.
 Tlačítko „Přejít na Portál stavebníka“ na str. 7 dostalo šipku (třída `btn arrow`),
 stejnou, jakou má též tlačítko na str. 8.
 
+## Ze str. 26: porovnání slévá sloupce
+
+**Pozor na výsledek porovnání u vícesloupcových stránek.** Rozcestník Územního rozvoje
+má dlaždice ve třech sloupcích a `pdftotext -layout` je slévá do jednoho bloku
+(„Mezinárodní spolupráce Publikační činnost ESPON — průběžně aktualizováno,
+Aktualizované příručky…“). Takový blok se nemůže spárovat s žádným blokem makety
+a stránka vychází na 33 %, i když je obsah v pořádku. Bez `-layout` se sloupce
+rozdělí správně, ale režim se nedal přepnout globálně, aniž by se překopalo
+oddělování postranní nabídky. **U takových stránek se musí číst
+`pdftotext -f N -l N` bez přepínače a porovnat ručně.**
+
+Při tom se našlo, že maketa měla u dvou dlaždic prohozený popis: „Publikační činnost“
+měla text Archivu a „Časopis UaÚŘ“ větu navíc. Opraveno podle návrhu.
+
+Oddíl „Užitečné odkazy“ není tabulka, ale šest karet ve dvou sloupcích se štítkem
+Aplikace / Web (231 231 231 = `color-neutral-100`), modrým názvem a popisem.
+
+**K vyjasnění:** maketa má o dvě dlaždice víc — Stavebně technická prevence
+a Konference a semináře. Návrh je nemá ani v rozbalené nabídce na str. 25; iSSTP
+tam figuruje jen jako aplikace v užitečných odkazech. Ponecháno — odstraněním
+by osiřely dvě existující stránky a položky v nabídce.
+
 ## Ze str. 24: stránka bez postranní nabídky
 
 Heslo v katalogu otázek nemá v návrhu postranní nabídku ani bílý panel — obsah leží
