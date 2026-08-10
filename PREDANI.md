@@ -198,6 +198,13 @@ rozvržení — drobečky začínají na 501 px, ve stejné výšce jako první 
 Generátor proto zná dvě značky: `{{head}}` vloží hlavičku s `h1` a perexem,
 `{{crumbs}}` drobečky (bez obalu `.wrap`, který centruje na šířku stránky).
 
+Drobečky uvnitř sloupce mají **16 px**, ne 14 jako nad stránkou — stejně jako nadpis
+filtru vedle nich; výška verzálky vychází u obou na 11,7 px. Začínají na též úrovni,
+takže se jim ruší horní odsazení 24 px, které mají nad stránkou.
+
+Pozor při měření: drobečky jsou podtržené, takže se do výšky inkoustu počítá
+i podtržení — při prvním měření mi vyšly větší než nadpis, i když jsou stejné.
+
 Seznam má v návrhu deset karet a počtač ukazuje **90 volných míst**, tedy celkový
 počet, ne počet zobrazených. Proto tam není `data-count`, který by ho přepisoval
 počtem viditelných položek.
