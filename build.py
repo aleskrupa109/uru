@@ -671,7 +671,7 @@ def to_ds(html_body):
         if not h3 or "<ul>" in inner:
             return m.group(0)
         desc = p.group(1) if p else ""
-        return (f'<div class="gov-tile" data-size="m" data-orientation="vertical">'
+        return (f'<div class="gov-tile tile-plain" data-size="m" data-orientation="vertical">'
                 f'<div class="gov-tile__content"><div class="gov-tile__text">'
                 f'<div class="gov-tile__title">{h3.group(1)}</div>'
                 f'<div class="gov-tile__annotation">{desc}</div></div></div></div>')

@@ -344,13 +344,15 @@ li.open .dropdown { display: block; }
 .gov-accordion-item__arrow svg { width: var(--icon-size-xl); height: var(--icon-size-xl); }
 
 /* ---------- tabulky ---------- */
+/* Návrh (str. 32) má tabulku bez vnějšího okraje a bez podbarvené hlavičky —
+   jen bílá plocha a tenké linky mezi řádky. Rozteč řádků 48 px. */
 table.t { width: 100%; border-collapse: collapse; background: var(--background-block-primary);
-  border: 1px solid var(--border-subtlest); border-radius: var(--corner-radius-s);
+  border: 0; border-radius: var(--corner-radius-s);
   overflow: hidden; margin: var(--spacing-m) 0; }
 table.t th, table.t td { text-align: left; padding: var(--spacing-s-nudge) var(--spacing-m);
   border-bottom: 1px solid var(--border-subtlest); font-size: var(--font-size-body-m);
   vertical-align: top; color: var(--text-secondary); }
-table.t th { background: var(--background-primary-subtlest); color: var(--text-primary);
+table.t th { background: none; color: var(--text-primary);
   font-size: var(--font-size-body-s); font-weight: 500; }
 table.t tr:last-child td { border-bottom: 0; }
 
@@ -562,6 +564,15 @@ body.editing [data-edit]:focus { outline: 2px solid var(--color-success-600); ba
    v paletě design systému (nejbližší `color-error-700` je 181 8 23) a na jiné straně
    návrhu se nevyskytuje. Viz poznámka v PREDANI.md. */
 .content > p.zvyrazneno { color: rgb(179 34 34); }
+
+/* Dlaždice bez odkazu (výhody na str. 32): bílá karta bez okraje na šedém pozadí,
+   modrý název. Odměřeno: karty 151–504, 543–896, 935–1288, výška 94, mezera 39,
+   řádky po 25. Okraj tu návrh nemá — na rozdíl od dlaždic na bílém panelu (str. 27). */
+.grid > .tile-plain { background: var(--background-block-primary);
+  border-radius: var(--corner-radius-m); padding: var(--spacing-m); }
+.tile-plain .gov-tile__title { color: var(--color-primary-600);
+  font-size: var(--font-size-body-m); margin-bottom: var(--spacing-xs); }
+.tile-plain .gov-tile__annotation { font-size: var(--font-size-body-s); }
 
 /* Citace zaměstnanců (str. 32): plně modrá karta s bílým textem a uvozovkou.
    Odměřeno: pozadí rgb(35 98 162), tedy `color-primary-600`. */

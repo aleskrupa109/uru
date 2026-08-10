@@ -193,6 +193,16 @@ stejnou, jakou má též tlačítko na str. 8.
 
 ## Ze str. 32: kariéra bez postranní nabídky
 
+**Dlaždice bez odkazu se nestylovaly.** Statická `<div class="card">` se převáděla
+na `.gov-tile` bez třídy `uru-card`, takže zůstávala bez pozadí i odsazení. Přibyla
+třída `tile-plain`: bílá karta **bez okraje** (na šedém pozadí stránky ho návrh nemá,
+na rozdíl od dlaždic na bílém panelu na str. 27) s modrým názvem. Odměřeno: karty
+151–504, 543–896, 935–1288, výška 94, mezera 39.
+
+**Tabulka nemá v návrhu vnější okraj ani podbarvenou hlavičku** — jen bílou plochu
+a tenké linky mezi řádky, rozteč 48 px. Maketa měla orámovaný blok se šedou hlavičkou.
+Změna se propisuje do všech tabulek na webu.
+
 Stránka nemá v návrhu postranní nabídku — obsah jde přes celou šířku. Maketa ji měla,
 takže byl celý obsah posunutý o šířku sloupce doprava. Řešeno `sidebar=False`.
 
