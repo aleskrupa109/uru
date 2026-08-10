@@ -447,10 +447,10 @@ PUR_DOKUMENTY = """
 který slouží zejména pro koordinaci územního rozvoje na celostátní úrovni a pro koordinaci
 územně plánovací činnosti krajů a současně jako zdroj důležitých argumentů při prosazování
 zájmů ČR v rámci územního rozvoje Evropské unie.</p>
-<p>Aktuální a závazná od 1. 10. 2025 je Politika územního rozvoje České republiky po Změně č. 8
-Politiky územního rozvoje České republiky.</p>
-<p>Politika územního rozvoje České republiky (Úplné znění závazné od 1. 10. 2025) a brožury
-v české, anglické a německé verzi jsou v části Přiložené dokumenty.</p>
+<p class="zvyrazneno">Aktuální a závazná od 1. 10. 2025 je Politika územního rozvoje České
+republiky po Změně č. 8 Politiky územního rozvoje České republiky.</p>
+<p class="zvyrazneno">Politika územního rozvoje České republiky (Úplné znění závazné
+od 1. 10. 2025) a brožury v české, anglické a německé verzi jsou v části Přiložené dokumenty.</p>
 
 <h2>Evidence podkladů pro Politiku územního rozvoje ČR</h2>
 <p>Politika územního rozvoje – Evidence podkladů je součástí úkolu A.1.08/ÚP – Politika územního

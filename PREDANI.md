@@ -193,6 +193,15 @@ stejnou, jakou má též tlačítko na str. 8.
 
 ## Ze str. 30: tabulka místo historie dokumentu
 
+**Dva odstavce jsou v návrhu červené** — ty o tom, co je aktuálně závazné.
+Barva je `rgb(179 34 34)`, což **není žádný token design systému**; nejbližší
+`color-error-700` je 181 8 23. Prohledal jsem další vykreslené strany návrhu
+(4–7, 16, 18, 19, 21, 22, 24, 26–36) a tahle červená se nikde jinde nevyskytuje.
+
+Zapracováno třídou `zvyrazneno`, ale **stálo by za otázku na Cognito**, jestli jde
+o záměr, nebo o poznámku návrháře. Červený běžný text je na úředním webu
+neobvyklý a barva mimo paletu tomu nasvědčuje.
+
 **Přiložené dokumenty jsou v modrém panelu.** Návrh je sází do světle modrého
 pruhu přes celou šířku obsahu (452–1203) s nadpisem 20 px a odkazy na soubory
 **18 px** — tedy výrazně většími než v prostém seznamu souborů na str. 19, kde mají
