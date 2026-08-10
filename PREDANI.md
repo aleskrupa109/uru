@@ -191,6 +191,18 @@ kde návrh má ikonu, kterou design systém nemá.
 Tlačítko „Přejít na Portál stavebníka“ na str. 7 dostalo šipku (třída `btn arrow`),
 stejnou, jakou má též tlačítko na str. 8.
 
+## Ze str. 30: tabulka místo historie dokumentu
+
+Maketa měla oddíl „Aktualizace a změny“ s tabulkou Dokument / Rok / Stav.
+Návrh má místo toho **Historie dokumentu** — devět odrážek s ročníky — a za nimi
+čtyři odstavce o tom, kdo a proč jednotlivé aktualizace pořídil. Maketa je měla
+shrnuté do jedné věty.
+
+Oddíl „Pracovní výbor pro zpracování“ se v návrhu jmenuje **Konzultační výbor pro
+zpracování Politiky územního rozvoje ČR** a má jiný text plus dva odkazy.
+Na konci stránky je akordeon, jehož první položka „PÚR ČR – Aktualizace č. 1“
+je rozbalená; zbytek je výplňový Lorem ipsum.
+
 ## Ze str. 29: odrážky místo odstavců
 
 Návrh má „Základní informace“, „Cíle portálu“ i „Kontaktní osoby“ jako odrážkové

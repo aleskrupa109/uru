@@ -432,12 +432,12 @@ INFOWEB = """
 PUR_DOKUMENTY = """
 <h2>Přiložené dokumenty</h2>
 <ul class="files">
-  <li><span class="ft">PDF</span><span class="grow"><span class="name">POLITIKA ÚZEMNÍHO ROZVOJE České republiky — úplné znění</span><br>
-    <span class="fmeta">závazné od 1. 10. 2025 · 296 kB</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
+  <li><span class="ft">PDF</span><span class="grow"><span class="name">POLITIKA ÚZEMNÍHO ROZVOJE České republiky od 1.10. 2025</span><br>
+    <span class="fmeta">296 KB</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
+  <li><span class="ft">PDF</span><span class="grow"><span class="name">POLITIKA ÚZEMNÍHO ROZVOJE České republiky od 1.10.2025</span><br>
+    <span class="fmeta">296 KB</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
   <li><span class="ft">PDF</span><span class="grow"><span class="name">SPATIAL DEVELOPMENT POLICY OF THE CZECH REPUBLIC</span><br>
-    <span class="fmeta">anglická verze brožury · 296 kB</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
-  <li><span class="ft">PDF</span><span class="grow"><span class="name">RAUMENTWICKLUNGSPOLITIK DER TSCHECHISCHEN REPUBLIK</span><br>
-    <span class="fmeta">německá verze brožury · 296 kB</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
+    <span class="fmeta">296 KB</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
 </ul>
 
 <h2>O dokumentu</h2>
@@ -445,40 +445,79 @@ PUR_DOKUMENTY = """
 který slouží zejména pro koordinaci územního rozvoje na celostátní úrovni a pro koordinaci
 územně plánovací činnosti krajů a současně jako zdroj důležitých argumentů při prosazování
 zájmů ČR v rámci územního rozvoje Evropské unie.</p>
-<p>Aktuální a závazná od 1. 10. 2025 je Politika územního rozvoje České republiky
-po Změně č. 8 Politiky územního rozvoje České republiky. Úplné znění závazné od 1. 10. 2025
-a brožury v české, anglické a německé verzi jsou v části Přiložené dokumenty.</p>
+<p>Aktuální a závazná od 1. 10. 2025 je Politika územního rozvoje České republiky po Změně č. 8
+Politiky územního rozvoje České republiky.</p>
+<p>Politika územního rozvoje České republiky (Úplné znění závazné od 1. 10. 2025) a brožury
+v české, anglické a německé verzi jsou v části Přiložené dokumenty.</p>
 
 <h2>Evidence podkladů pro Politiku územního rozvoje ČR</h2>
-<p>Evidence podkladů je součástí úkolu A.1.08/ÚP — Politika územního rozvoje ČR a potřebné
-územně plánovací podklady. Úkol zpracovává Ústav územního rozvoje z pověření odboru územního
-plánování Ministerstva pro místní rozvoj.</p>
+<p>Politika územního rozvoje – Evidence podkladů je součástí úkolu A.1.08/ÚP – Politika územního
+rozvoje ČR a potřebné územně plánovací podklady. Úkol zpracovává Ústav územního rozvoje (ÚÚR)
+z pověření odboru územního plánování Ministerstva pro místní rozvoj (OÚP MMR).</p>
 <p>Cílem evidence je shromažďování vstupních podkladů a vedení databáze relevantních podkladů
 pro pořizování aktualizací nebo nového návrhu PÚR ČR.</p>
-<p>Zveřejněný seznam relevantních podkladů PÚR ČR:</p>
+<p>Zveřejněný seznam relevantních podkladů PÚR ČR (ve formátu PDF a XLSX):</p>
 <ul class="files">
-  <li><span class="ft">PDF</span><span class="grow"><span class="name">Seznam relevantních podkladů PÚR ČR</span><br>
-    <span class="fmeta">425 kB</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
-  <li><span class="ft">XLSX</span><span class="grow"><span class="name">Seznam relevantních podkladů PÚR ČR</span><br>
-    <span class="fmeta">138 kB</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
+  <li><span class="ft">PDF</span><span class="grow"><span class="name">Seznam relevantních podkladů PÚR ČR k 1. 7. 2023</span><br>
+    <span class="fmeta">Seznam-relevantnich-podkladu-PUR-CR-2023-07-01.pdf · 425 kB</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
+  <li><span class="ft">XLS</span><span class="grow"><span class="name">Seznam relevantních podkladů PÚR ČR k 1. 7. 2023</span><br>
+    <span class="fmeta">Seznam-relevantnich-podkladu-PUR-CR-2023-07-01.xlsx · 138 kB</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
 </ul>
 
-<h2>Aktualizace a změny</h2>
-<p>Termín pro předložení aktualizace vládě ČR byl prodloužen do 31. 8. 2025. Z důvodu naléhavého
-veřejného zájmu byly z podnětů různých resortů pořízeny mimořádné změny — poslední z nich
-je Změna č. 9 PÚR ČR.</p>
-<table class="t">
-  <tr><th style="width:46%">Dokument</th><th>Rok</th><th>Stav</th></tr>
-  <tr><td>Politika územního rozvoje ČR — Změna č. 9</td><td>2025</td><td><span class="tag valid">Platná</span></td></tr>
-  <tr><td>Politika územního rozvoje ČR po Změně č. 8</td><td>2025</td><td><span class="tag valid">Závazná od 1. 10. 2025</span></td></tr>
-  <tr><td>Politika územního rozvoje ČR — aktualizace č. 1–7</td><td>2015–2024</td><td><span class="tag hist">Historická</span></td></tr>
-  <tr><td>Politika územního rozvoje České republiky 2008</td><td>2009</td><td><span class="tag hist">Historická</span></td></tr>
-</table>
+<h2>Historie dokumentu</h2>
+<ul>
+  <li>Politika územního rozvoje České republiky 2008 (2009)</li>
+  <li>Politika územního rozvoje České republiky – Aktualizace č. 1 (2015)</li>
+  <li>Politika územního rozvoje České republiky – Aktualizace č. 2, 3 (2019)</li>
+  <li>Politika územního rozvoje České republiky – Aktualizace č. 5 (2020)</li>
+  <li>Politika územního rozvoje České republiky – Aktualizace č. 4 (2021)</li>
+  <li>Politika územního rozvoje České republiky – Aktualizace č. 6 (2023)</li>
+  <li>Politika územního rozvoje České republiky – Aktualizace č. 7 (2024)</li>
+  <li>Politika územního rozvoje České republiky – Změna č. 9 (2025)</li>
+  <li>Politika územního rozvoje České republiky – Změna č. 8 (2025)</li>
+</ul>
+<p>Ministerstvo pro místní rozvoj ČR pořídilo první dokument Politiky územního rozvoje České
+republiky (PÚR ČR) v roce 2009.</p>
+<p>Na základě Zprávy o uplatňování PÚR ČR 2008 Ministerstvo pro místní rozvoj pořídilo řádnou
+Aktualizaci č. 1 PÚR ČR, na základě Zprávy o uplatňování Politiky územního rozvoje ČR, ve znění
+Aktualizace č. 1 Ministerstvo pro místní rozvoj pořídilo řádnou Aktualizaci č. 4 PÚR ČR a na
+základě Zprávy o uplatňování Politiky územního rozvoje ČR, po Aktualizaci č. 4 Ministerstvo pro
+místní rozvoj nyní pořizuje řádnou aktualizaci PÚR ČR – návrh Změny č. 8 PÚR ČR (s termínem pro
+předložení vládě ČR do 30. 6. 2025). Na základě požadavku MMR byl termín pro předložení návrhu
+Změny č. 8 PÚR ČR vládě ČR prodloužen do 31. 8. 2025.</p>
+<p>Z důvodu naléhavého veřejného zájmu byly pořízeny z podnětů různých ministerstev mimořádné
+aktualizace PÚR ČR – Aktualizace č. 2, 3, 5, 6 a 7.</p>
+<p>Z důvodu naléhavého veřejného zájmu byla pořízena z podnětu Ministerstva průmyslu a obchodu
+mimořádná změna PÚR ČR – Změna č. 9 PÚR ČR.</p>
 
-<h2>Pracovní výbor pro zpracování</h2>
-<p>Podkladové materiály pro jednotlivá jednání jsou k dispozici členům pracovního výboru
-v neveřejné části webu chráněné heslem. Další podkladové materiály jsou dostupné na webových
-stránkách Ministerstva pro místní rozvoj.</p>
+<h2>Konzultační výbor pro zpracování Politiky územního rozvoje ČR</h2>
+<p>Náplní práce Konzultačního výboru pro zpracování Politiky územního rozvoje ČR je zejména
+zajišťování součinnosti ministerstev a jiných ústředních správních úřadů a krajů při pořizování
+Politiky územního rozvoje ČR, resp. její aktualizace a při poskytování relevantních podkladů.</p>
+<ul>
+  <li><a href="#">Konzultační výbor pro zpracování Politiky územního rozvoje ČR</a> – přístup
+      s heslem, určeno pro členy Konzultačního výboru PÚR ČR. Jsou zde k dispozici podkladové
+      materiály pro jednotlivá jednání.</li>
+  <li><a href="#">Konzultační výbor pro zpracování Politiky územního rozvoje ČR</a> – webové
+      stránky MMR ČR.</li>
+</ul>
+
+<details class="acc" open data-faq>
+  <summary>PÚR ČR – Aktualizace č. 1</summary>
+  <div class="body"><p>Lorem</p></div>
+</details>
+<details class="acc" data-faq>
+  <summary>Lorem ipsum</summary>
+  <div class="body"><p>Lorem ipsum</p></div>
+</details>
+<details class="acc" data-faq>
+  <summary>Lorem ipsum</summary>
+  <div class="body"><p>Lorem ipsum</p></div>
+</details>
+<details class="acc" data-faq>
+  <summary>Lorem ipsum</summary>
+  <div class="body"><p>Lorem ipsum</p></div>
+</details>
 """
 
 MEZINARODNI = """
