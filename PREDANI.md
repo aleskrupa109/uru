@@ -215,6 +215,11 @@ na rozdíl od dlaždic na bílém panelu na str. 27) s modrým názvem. Odměře
 hlavičku podbarvenou `rgb(246 246 246)` = `neutral-50`, linky mezi řádky
 `rgb(231 231 231)` = `neutral-100` a rozteč řádků 48 px.
 
+Rohy tabulky jsou zaoblené. To se **se slučovanými okraji nevykreslí** — při
+`border-collapse: collapse` prohlížeč `border-radius` ignoruje a `overflow: hidden`
+neořízne. Tabulka proto používá `separate` s nulovou roztečí; linky mezi řádky
+dělá spodní okraj buněk.
+
 Pozor na měření: pozadí hlavičky má **tutéž hodnotu jako pozadí stránky**, takže
 při vzorkování jednoho pixelu to vypadá, že hlavička žádnou výplň nemá. Jednou
 jsem na to naletěl a okraj i podbarvení jsem omylem odstranil.

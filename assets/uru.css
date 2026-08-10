@@ -346,8 +346,12 @@ li.open .dropdown { display: block; }
 /* ---------- tabulky ---------- */
 /* Tabulka podle návrhu (str. 32), odečteno při 600 dpi z hran:
    vnější okraj 1 px rgb(176 176 176) = neutral-300, hlavička rgb(246 246 246)
-   = neutral-50, linky mezi řádky rgb(231 231 231) = neutral-100, rozteč 48 px. */
-table.t { width: 100%; border-collapse: collapse; background: var(--background-block-primary);
+   = neutral-50, linky mezi řádky rgb(231 231 231) = neutral-100, rozteč 48 px.
+   Rohy jsou zaoblené (poloměr ~11 px odečtený z náběhu okraje), což se
+   slučovanými okraji (`border-collapse: collapse`) vykreslit nedá — proto
+   `separate` s nulovou roztečí. */
+table.t { width: 100%; border-collapse: separate; border-spacing: 0;
+  background: var(--background-block-primary);
   border: 1px solid var(--color-neutral-300); border-radius: var(--corner-radius-s);
   overflow: hidden; margin: var(--spacing-m) 0; }
 table.t th, table.t td { text-align: left; padding: var(--spacing-s-nudge) var(--spacing-m);
