@@ -191,6 +191,17 @@ kde návrh má ikonu, kterou design systém nemá.
 Tlačítko „Přejít na Portál stavebníka“ na str. 7 dostalo šipku (třída `btn arrow`),
 stejnou, jakou má též tlačítko na str. 8.
 
+## Ze str. 31: stránka je v návrhu mnohem kratší
+
+Návrh má jen perex a dvě dlaždice — ESPON a V4+2 — s krátkým popisem a odkazem
+„Přejít“. Maketa měla delší odstavce, dvě velká tlačítka, varovný box o odchodu
+mimo web a navíc oddíl „Přeshraniční spolupráce“, který návrh nemá. Zkráceno
+podle návrhu; použity též dlaždice s `data-more="Přejít"` jako na str. 27.
+
+**Postranní nabídka se v návrhu mění podle otevřené sekce.** Na str. 31 jsou pod
+„Mezinárodní spoluprácí“ zanořené položky ESPON a V4+2. Doplněno jako kotvy.
+Návrh má v nabídce překlep **„EPSON“** — maketa píše správně ESPON.
+
 ## Ze str. 30: tabulka místo historie dokumentu
 
 **Dva odstavce jsou v návrhu červené** — ty o tom, co je aktuálně závazné.

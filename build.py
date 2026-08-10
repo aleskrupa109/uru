@@ -89,6 +89,10 @@ SUBNAV = {
         ("— Informační web územního plánování", "uzemni-rozvoj/informacni-web-up.html", 1),
         ("Územně analytické podklady", "uzemni-rozvoj/uap.html", 0),
         ("Mezinárodní spolupráce", "uzemni-rozvoj/mezinarodni-spoluprace.html", 0),
+        # Návrh (str. 31) zanořuje pod Mezinárodní spolupráci ESPON a V4+2.
+        # V návrhu je v nabídce překlep „EPSON"; maketa píše správně ESPON.
+        ("— ESPON", "uzemni-rozvoj/mezinarodni-spoluprace.html#espon", 1),
+        ("— V4+2", "uzemni-rozvoj/mezinarodni-spoluprace.html#v42", 1),
         ("Publikační činnost", "uzemni-rozvoj/publikacni-cinnost.html", 0),
         ("Časopis UaÚR", "uzemni-rozvoj/casopis.html", 0),
         ("Knihovna", "uzemni-rozvoj/knihovna.html", 0),

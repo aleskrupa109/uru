@@ -523,19 +523,12 @@ Politiky územního rozvoje ČR, resp. její aktualizace a při poskytování re
 """
 
 MEZINARODNI = """
-<h2>ESPON</h2>
-<p>ÚRÚ zajišťuje funkci národního kontaktního místa programu ESPON — Evropské pozorovací
-sítě pro územní rozvoj a soudržnost. Agenda programu je průběžně aktualizovaná
-a naplňuje mezinárodní závazky ČR.</p>
-<div class="btn-row"><a class="btn ghost" href="#">Přejít na ESPON</a></div>
-
-<h2>V4+2</h2>
-<p>ÚRÚ zabezpečuje spolupráci států Visegrádské skupiny a přidružených států v oblasti
-územního rozvoje. Agenda má uzavřený pracovní intranet a je vedená na samostatné doméně.</p>
-<div class="box note"><p>Odkaz vede mimo web ÚRÚ na samostatnou doménu projektu.
-Zpět se dostanete tlačítkem prohlížeče.</p></div>
-<div class="btn-row"><a class="btn ghost" href="#">Přejít na web V4+2</a></div>
-
-<h2>Přeshraniční spolupráce</h2>
-<p>Česko-polská a další přeshraniční spolupráce v územním plánování.</p>
+<div class="grid hub prejit">
+  <a class="card" href="#" id="espon" data-more="Přejít" data-ico="zadna"><h3>ESPON</h3>
+    <p>Monitorovací síť pro evropské územní plánování. ÚRÚ působí jako národní kontaktní místo
+    programu, průběžně aktualizovaná agenda.</p></a>
+  <a class="card" href="#" id="v42" data-more="Přejít" data-ico="zadna"><h3>V4+2</h3>
+    <p>Spolupráce v oblasti územního rozvoje Visegrádských zemí, Rakouska a Německa. Oživující se
+    agenda s uzavřeným pracovním intranetem.</p></a>
+</div>
 """

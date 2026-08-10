@@ -228,7 +228,9 @@ PAGES = [
     p("uap.html", "Územně analytické podklady", "Územně analytické podklady",
       "Územně analytické podklady ČR", UAP),
     p("mezinarodni-spoluprace.html", "Mezinárodní spolupráce", "Mezinárodní spolupráce",
-      "Mezinárodní spolupráce", MEZINARODNI),
+      "Mezinárodní spolupráce", MEZINARODNI,
+      "ÚRÚ zajišťuje plnění mezinárodních závazků ČR v oblasti územního rozvoje. Je národním "
+      "kontaktním místem programu ESPON a zabezpečuje spolupráci států V4+2."),
     p("publikacni-cinnost.html", "Publikační činnost", "Publikační činnost", "Publikační činnost", PUBLIKACE),
     p("casopis.html", "Časopis UaÚR", "Časopis UaÚR", "Urbanismus a územní rozvoj", CASOPIS,
       "Odborný časopis vydávaný dvakrát ročně, bilingvní."),
