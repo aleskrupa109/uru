@@ -344,15 +344,16 @@ li.open .dropdown { display: block; }
 .gov-accordion-item__arrow svg { width: var(--icon-size-xl); height: var(--icon-size-xl); }
 
 /* ---------- tabulky ---------- */
-/* Návrh (str. 32) má tabulku bez vnějšího okraje a bez podbarvené hlavičky —
-   jen bílá plocha a tenké linky mezi řádky. Rozteč řádků 48 px. */
+/* Tabulka podle návrhu (str. 32), odečteno při 600 dpi z hran:
+   vnější okraj 1 px rgb(176 176 176) = neutral-300, hlavička rgb(246 246 246)
+   = neutral-50, linky mezi řádky rgb(231 231 231) = neutral-100, rozteč 48 px. */
 table.t { width: 100%; border-collapse: collapse; background: var(--background-block-primary);
-  border: 0; border-radius: var(--corner-radius-s);
+  border: 1px solid var(--color-neutral-300); border-radius: var(--corner-radius-s);
   overflow: hidden; margin: var(--spacing-m) 0; }
 table.t th, table.t td { text-align: left; padding: var(--spacing-s-nudge) var(--spacing-m);
-  border-bottom: 1px solid var(--border-subtlest); font-size: var(--font-size-body-m);
+  border-bottom: 1px solid var(--color-neutral-100); font-size: var(--font-size-body-m);
   vertical-align: top; color: var(--text-secondary); }
-table.t th { background: none; color: var(--text-primary);
+table.t th { background: var(--color-neutral-50); color: var(--text-primary);
   font-size: var(--font-size-body-s); font-weight: 500; }
 table.t tr:last-child td { border-bottom: 0; }
 

@@ -211,9 +211,13 @@ třída `tile-plain`: bílá karta **bez okraje** (na šedém pozadí stránky h
 na rozdíl od dlaždic na bílém panelu na str. 27) s modrým názvem. Odměřeno: karty
 151–504, 543–896, 935–1288, výška 94, mezera 39.
 
-**Tabulka nemá v návrhu vnější okraj ani podbarvenou hlavičku** — jen bílou plochu
-a tenké linky mezi řádky, rozteč 48 px. Maketa měla orámovaný blok se šedou hlavičkou.
-Změna se propisuje do všech tabulek na webu.
+**Tabulka** má v návrhu vnější okraj 1 px `rgb(176 176 176)` = `neutral-300`,
+hlavičku podbarvenou `rgb(246 246 246)` = `neutral-50`, linky mezi řádky
+`rgb(231 231 231)` = `neutral-100` a rozteč řádků 48 px.
+
+Pozor na měření: pozadí hlavičky má **tutéž hodnotu jako pozadí stránky**, takže
+při vzorkování jednoho pixelu to vypadá, že hlavička žádnou výplň nemá. Jednou
+jsem na to naletěl a okraj i podbarvení jsem omylem odstranil.
 
 Stránka nemá v návrhu postranní nabídku — obsah jde přes celou šířku. Maketa ji měla,
 takže byl celý obsah posunutý o šířku sloupce doprava. Řešeno `sidebar=False`.
