@@ -787,6 +787,12 @@ def build_page(p):
         body = (f'<div class="cols-side">{render_subnav(p["section"], p["path"], r)}'
                 f'<div class="content">{head}{body}</div></div>')
         head = ""
+    elif "{{head}}" in body:
+        # Návrh někdy sází nadpis stránky dovnitř obsahu (str. 33 ho má
+        # v pravém sloupci vedle filtrů). Značka {{head}} v těle stránky
+        # určí, kam se hlavička vloží.
+        body = f'<div class="content sirka">{body.replace("{{head}}", head)}</div>'
+        head = ""
     else:
         # Stránky bez postranní nabídky měly obsah mimo .content, takže na ně
         # neplatila žádná pravidla pro rozestupy nadpisů, odstavců a seznamů

@@ -193,6 +193,17 @@ stejnou, jakou má též tlačítko na str. 8.
 
 ## Ze str. 33: fasetové filtry místo řádku s výběry
 
+Nadpis stránky patří **dovnitř pravého sloupce**, ne nad celé rozvržení. Generátor
+proto zná značku `{{head}}`: když je v těle stránky, hlavička s `h1` a perexem se
+vloží přesně tam místo před obsah.
+
+Seznam má v návrhu deset karet a počtač ukazuje **90 volných míst**, tedy celkový
+počet, ne počet zobrazených. Proto tam není `data-count`, který by ho přepisoval
+počtem viditelných položek.
+
+Odrážky u zatržítek a karet se musely vypnout — design systém dává každému `li`
+puntík přes `::before` a `list-style: none` na to nestačí.
+
 Otevřené pozice mají v návrhu **vlevo panel s fasetami** — obor se zatržítky a počty,
 lokalita, čas zveřejnění jako přepínače a pět rozbalovacích skupin (Mzda, Typ úvazku,
 Minimální stupeň vzdělání, Požadovaná jazyková znalost, Typ poměru). Maketa měla

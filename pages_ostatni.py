@@ -44,12 +44,13 @@ POZICE = """
   </aside>
 
   <div class="vysledky">
+    {{head}}
     <p class="stitek-pole">Jakou práci hledáte?</p>
     <div class="hledani velke">
       <input type="search" data-q placeholder="Hledejte podle názvu pozice nebo oblasti">
       <span class="gov-button" data-color="primary" data-type="solid" data-size="m"><button class="element" type="button" aria-label="Hledat">{SEARCH}</button></span>
     </div>
-    <div class="resultbar"><span><strong data-count>90</strong> volných míst</span>
+    <div class="resultbar"><span><strong>90</strong> volných míst</span>
       <span class="razeni">Řazení: <strong>Podle data</strong></span></div>
 
     <ul class="pozice" data-list>
@@ -83,6 +84,26 @@ POZICE = """
     <h3><a href="{{r}}kariera/detail-pozice.html">Lorem ipsum</a></h3>
     <p class="kde"><span class="odd">Oddělení dopravních staveb</span><span class="misto">Praha</span></p>
     <div class="tags"><span class="tag valid">35 000 – 55 000 Kč</span><span class="tag neutral">Státní služba</span></div></li>
+  <li data-pomer="sluzebni" data-trida="11" data-obor="provoz" data-lokalita="praha" data-uvazek="plny" data-date="2026-05-20">
+    <p class="akt">Aktualizováno: 26.11.2026</p>
+    <h3><a href="{{r}}kariera/detail-pozice.html">Lorem ipsum</a></h3>
+    <p class="kde"><span class="odd">Oddělení dopravních staveb</span><span class="misto">Praha</span></p>
+    <div class="tags"><span class="tag valid">30 000 – 50 000 Kč</span><span class="tag hist">Možnost práce z domova</span><span class="tag pomer">Státní služba</span></div></li>
+  <li data-pomer="sluzebni" data-trida="11" data-obor="sr" data-lokalita="praha" data-uvazek="plny" data-date="2026-05-15">
+    <p class="akt">Aktualizováno: 26.11.2026</p>
+    <h3><a href="{{r}}kariera/detail-pozice.html">Lorem ipsum</a></h3>
+    <p class="kde"><span class="odd">Oddělení dopravních staveb</span><span class="misto">Praha</span></p>
+    <div class="tags"><span class="tag valid">35 000 – 55 000 Kč</span><span class="tag pomer">Státní služba</span></div></li>
+  <li data-pomer="sluzebni" data-trida="12" data-obor="up" data-lokalita="praha" data-uvazek="plny" data-date="2026-05-10">
+    <p class="akt">Aktualizováno: 26.11.2026</p>
+    <h3><a href="{{r}}kariera/detail-pozice.html">Lorem ipsum</a></h3>
+    <p class="kde"><span class="odd">Oddělení dopravních staveb</span><span class="misto">Praha</span></p>
+    <div class="tags"><span class="tag valid">40 000 – 70 000 Kč</span><span class="tag pomer">Státní služba</span></div></li>
+  <li data-pomer="sluzebni" data-trida="12" data-obor="it" data-lokalita="praha" data-uvazek="plny" data-date="2026-05-05">
+    <p class="akt">Aktualizováno: 26.11.2026</p>
+    <h3><a href="{{r}}kariera/detail-pozice.html">Lorem ipsum</a></h3>
+    <p class="kde"><span class="odd">Oddělení dopravních staveb</span><span class="misto">Praha</span></p>
+    <div class="tags"><span class="tag valid">38 000 – 58 000 Kč</span><span class="tag hist">Možnost práce z domova</span><span class="tag pomer">Státní služba</span></div></li>
     </ul>
     <div class="empty" data-empty style="display:none">Zadanému filtru neodpovídá žádná pozice.</div>
     <p class="vice"><a href="#">Načíst dalších 10</a></p>
