@@ -787,6 +787,13 @@ def build_page(p):
         body = (f'<div class="cols-side">{render_subnav(p["section"], p["path"], r)}'
                 f'<div class="content">{head}{body}</div></div>')
         head = ""
+    else:
+        # Stránky bez postranní nabídky měly obsah mimo .content, takže na ně
+        # neplatila žádná pravidla pro rozestupy nadpisů, odstavců a seznamů
+        # a používaly se výchozí okraje prohlížeče. Obal je proto stejný,
+        # jen bez sloupce s nabídkou a bez bílého panelu (třída sirka).
+        body = f'<div class="content sirka">{head}{body}</div>'
+        head = ""
     html_out = TPL.format(
         title=p["title"], r=r, mockbar=MOCKBAR, mode_script=MODE_SCRIPT,
         nav=render_nav(p.get("section", ""), r),

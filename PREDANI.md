@@ -193,6 +193,18 @@ stejnou, jakou má též tlačítko na str. 8.
 
 ## Ze str. 32: kariéra bez postranní nabídky
 
+**Stránky bez postranní nabídky neměly žádná pravidla rozestupů.** Všechna
+pravidla pro okraje nadpisů, odstavců a seznamů byla navěšená na `.content`,
+což je bílý panel vedle nabídky. Stránky bez nabídky ten obal neměly, takže na nich
+platily **výchozí okraje prohlížeče** — nadpis měl 0,83 em místo 48 / 24 px. Týkalo se
+to třinácti stránek: úvodní, všech rozcestníků sekcí, aktualit, úřední desky,
+mapy webu, kariéry a hesla v katalogu otázek.
+
+Obal je teď `<div class="content sirka">` — táž pravidla, ale bez bílého panelu.
+Nadpisy jsou na těchto stránkách v návrhu **větší**: h1 40 px a h2 32 px proti
+32 a 24 na stránkách s nabídkou, perex 18 px místo 16. Odměřeno z výšky verzálek
+na str. 24 a 32 (28,8 px u h1, 23,0 px u h2).
+
 **Dlaždice bez odkazu se nestylovaly.** Statická `<div class="card">` se převáděla
 na `.gov-tile` bez třídy `uru-card`, takže zůstávala bez pozadí i odsazení. Přibyla
 třída `tile-plain`: bílá karta **bez okraje** (na šedém pozadí stránky ho návrh nemá,

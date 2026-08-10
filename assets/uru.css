@@ -565,6 +565,17 @@ body.editing [data-edit]:focus { outline: 2px solid var(--color-success-600); ba
    návrhu se nevyskytuje. Viz poznámka v PREDANI.md. */
 .content > p.zvyrazneno { color: rgb(179 34 34); }
 
+/* Obsah stránky bez postranní nabídky: táž pravidla rozestupů jako v `.content`,
+   ale bez bílého panelu a přes celou šířku. Nadpisy jsou tu větší — h1 40 px
+   a h2 32 px (odměřeno na str. 24 a 32) — což zajišťují výchozí pravidla
+   design systému, proto se tu velikosti z `.content` ruší. */
+.content.sirka { background: none; padding: 0; box-shadow: none; border-radius: 0;
+  margin-top: var(--spacing-l); }
+.content.sirka h2 { font-size: var(--font-size-headline-l); }
+.content.sirka h3 { font-size: var(--font-size-headline-m); }
+.content.sirka .page-head h1 { font-size: var(--font-size-display-s); }
+.content.sirka .page-head .perex { font-size: var(--font-size-body-l); }
+
 /* Dlaždice bez odkazu (výhody na str. 32): bílá karta bez okraje na šedém pozadí,
    modrý název. Odměřeno: karty 151–504, 543–896, 935–1288, výška 94, mezera 39,
    řádky po 25. Okraj tu návrh nemá — na rozdíl od dlaždic na bílém panelu (str. 27). */
