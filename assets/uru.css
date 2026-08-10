@@ -555,8 +555,18 @@ body.editing [data-edit]:focus { outline: 2px solid var(--color-success-600); ba
    modrým názvem a popisem. Štítek má 231 231 231, tedy `color-neutral-100`. */
 .odkaz { background: var(--background-block-primary); border-radius: var(--corner-radius-s);
   padding: var(--spacing-m); }
-.odkaz h3 { margin: var(--spacing-s) 0 var(--spacing-xs); color: var(--color-primary-600);
+.odkaz h3 { margin: var(--spacing-s-nudge) 0 var(--spacing-s); color: var(--color-primary-600);
   font-size: var(--font-size-body-m); }
+/* Štítek nese ikonu — zařízení u aplikace, řetěz u webu. Kreslí se maskou,
+   aby si vzala barvu textu štítku (u webu jantarovou). */
+.odkaz .gov-tag .element::before { content: ""; width: 12px; height: 12px; flex: none;
+  background: currentColor; margin-right: var(--spacing-xs); }
+.odkaz .gov-tag[data-color="neutral"] .element::before {
+  -webkit-mask: url("img/icons/ico-aplikace.png") no-repeat center / contain;
+  mask: url("img/icons/ico-aplikace.png") no-repeat center / contain; }
+.odkaz .gov-tag[data-color="secondary"] .element::before {
+  -webkit-mask: url("img/icons/ico-web.png") no-repeat center / contain;
+  mask: url("img/icons/ico-web.png") no-repeat center / contain; }
 .odkaz p { font-size: var(--font-size-body-s); margin: 0; }
 
 /* Str. 24 (heslo v katalogu otázek): stránka nemá postranní nabídku ani bílý

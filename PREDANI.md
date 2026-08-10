@@ -205,8 +205,12 @@ oddělování postranní nabídky. **U takových stránek se musí číst
 Při tom se našlo, že maketa měla u dvou dlaždic prohozený popis: „Publikační činnost“
 měla text Archivu a „Časopis UaÚŘ“ větu navíc. Opraveno podle návrhu.
 
-Oddíl „Užitečné odkazy“ není tabulka, ale šest karet ve dvou sloupcích se štítkem
-Aplikace / Web (231 231 231 = `color-neutral-100`), modrým názvem a popisem.
+Oddíl „Užitečné odkazy“ není tabulka, ale šest karet ve dvou sloupcích. Karta má
+125 px, rozteč 150 px, vnitřní okraj 16 px, mezi štítkem a názvem 12 px a mezi
+názvem a popisem 8 px. Štítky nejsou stejné: „Aplikace“ má 231 231 231
+(`color-neutral-100`), „Web“ 254 240 208 (`color-secondary-200`) a jantarový text.
+Každý nese ikonu — zařízení u aplikace, řetěz u webu; vytaženo z PDF jako maska,
+takže si ikona bere barvu textu štítku.
 
 **K vyjasnění:** maketa má o dvě dlaždice víc — Stavebně technická prevence
 a Konference a semináře. Návrh je nemá ani v rozbalené nabídce na str. 25; iSSTP

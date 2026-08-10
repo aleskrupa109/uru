@@ -35,11 +35,11 @@ ROZCESTNIK = """
 <h2>Užitečné odkazy</h2>
 <div class="grid g2">
   <div class="odkaz"><span class="tag hist">Aplikace</span><h3>iLAS</h3><p>Evidence ÚPČ obcí</p></div>
-  <div class="odkaz"><span class="tag hist">Web</span><h3>NGPÚ</h3><p>Národní geoportál územního plánování</p></div>
+  <div class="odkaz"><span class="tag akt">Web</span><h3>NGPÚ</h3><p>Národní geoportál územního plánování</p></div>
   <div class="odkaz"><span class="tag hist">Aplikace</span><h3>iKAS</h3><p>Evidence ÚPČ krajů</p></div>
-  <div class="odkaz"><span class="tag hist">Web</span><h3>MMR</h3><p>Ministerstvo pro místní rozvoj</p></div>
+  <div class="odkaz"><span class="tag akt">Web</span><h3>MMR</h3><p>Ministerstvo pro místní rozvoj</p></div>
   <div class="odkaz"><span class="tag hist">Aplikace</span><h3>iSSTP</h3><p>Systém stavebně technické prevence</p></div>
-  <div class="odkaz"><span class="tag hist">Web</span><h3>Informační web územního plánování</h3><p>Historický web ÚRÚ.</p></div>
+  <div class="odkaz"><span class="tag akt">Web</span><h3>Informační web územního plánování</h3><p>Historický web ÚRÚ.</p></div>
 </div>
 <p class="hint">Obsah převzatý z uur.cz je dostupný pod hlavičkou ÚRÚ. Přesměrování z původních
 adres je součástí migrace.""" + cmt(64, "Chybí informace o přesměrování původních adres uur.cz — uživatelé mají odkazy uložené v záložkách a v korespondenci.") + """</p>
