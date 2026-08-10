@@ -90,67 +90,94 @@ POZICE_FILTRY = """
 """
 
 DETAIL_POZICE = """
-<p class="updated">Oddělení dopravních staveb · aktualizováno 20. 7. 2026</p>
-<div class="tags" style="display:flex;gap:8px;margin-bottom:14px">
-  <span class="tag neutral">Pracovněprávní vztah</span>
-  <span class="tag hist">12. platová třída</span>
+{{crumbs}}
+{{head}}
+<ul class="meta-radky">
+  <li class="ico-cas">Aktualizováno 26.11.2026</li>
+  <li class="ico-odd">Oddělení dopravních staveb</li>
+  <li class="ico-misto">Praha</li>
+</ul>
+<div class="tags">
+  <span class="tag valid">40 000 – 60 000 Kč</span>
   <span class="tag hist">Možnost práce z domova</span>
-  <span class="tag valid">Přihlášky otevřené</span>
+  <span class="tag pomer">Pracovněprávní vztah</span>
+</div>
+<p>Budete se podílet na povolování staveb železničních drah, metra a tramvajových tratí
+celostátního a regionálního významu. Jako součást Oddělení dopravních staveb ÚRÚ budete vést
+správní řízení od podání žádosti po vydání rozhodnutí — v integrovaném procesu podle nového
+stavebního zákona platného od 1. 7. 2026.</p>
+<div class="btn-row">
+  <a class="btn zluty" href="{{r}}kariera/prihlaska.html">Odpovědět{c77}</a>
+  <a class="btn ghost" href="#">Sdílet nabídku</a>
 </div>
 
-<table class="t">
-  <tr><th style="width:230px">Lokalita</th><td>Praha</td></tr>
-  <tr><th>Mzda</th><td>40 000 – 60 000 Kč měsíčně</td></tr>
-  <tr><th>Typ poměru</th><td>pracovněprávní vztah na dobu neurčitou</td></tr>
-  <tr><th>Úvazek</th><td>plný</td></tr>
-  <tr><th>Požadované vzdělání</th><td>bakalářské</td></tr>
-  <tr><th>Jazyky</th><td>angličtina (pokročilá)</td></tr>
-  <tr><th>Vhodné i pro absolventy</th><td>ano</td></tr>
-  <tr><th>Lhůta pro podání přihlášky</th><td>31. 8. 2026</td></tr>
-  <tr><th>Oficiální text výběrového řízení</th>
-      <td><a href="{{r}}uredni-deska.html">Oznámení o vyhlášení výběrového řízení (úřední deska, PDF)</a>{c78}</td></tr>
-</table>
+<div class="detail-cols">
+<div class="detail-obsah">
 
-<h2>O pozici</h2>
-<p>Budete se podílet na povolování staveb železničních drah, metra a tramvajových tratí
-celostátního a regionálního významu. Jako součást Oddělení dopravních staveb ÚRÚ povedete
-řízení o povolení záměru od podání žádosti po vydání rozhodnutí v integrovaném procesu
-podle stavebního zákona.</p>
+<h2 id="co-vas-ceka">Co vás čeká?</h2>
 <ul>
-  <li>Vedení řízení o povolení záměru u drážních staveb</li>
+  <li>Posuzování žádostí o povolení záměru pro stavby drah</li>
   <li>Koordinace vyjádření dotčených orgánů v rámci integrovaného řízení</li>
   <li>Komunikace se stavebníky (Správa železnic, dopravní podniky)</li>
-  <li>Příprava rozhodnutí a dalších správních aktů</li>
+  <li>Příprava rozhodnutí a správních aktů</li>
 </ul>
 
-<h2>Koho hledáme</h2>
+<h2 id="koho-hledame">Koho hledáme?</h2>
 <ul>
   <li>Vysokoškolské vzdělání právního, stavebního nebo technického směru</li>
   <li>Zkušenost s vedením správního řízení nebo s agendou stavebního práva výhodou</li>
-  <li>Znalost stavebního zákona č. 283/2021 Sb. výhodou</li>
+  <li>Znalost nového stavebního zákona (č. 283/2021 Sb.) výhodou</li>
   <li>Schopnost pracovat samostatně i v týmu</li>
   <li>Analytické myšlení a pečlivost</li>
 </ul>
 
-<h2>Co nabízíme</h2>
+<h2 id="co-nabizime">Co nabízíme?</h2>
 <ul>
   <li>Přímý dopad na rozvoj klíčové infrastruktury České republiky</li>
+  <li>Práce z domova dle typu pozice</li>
   <li>Pružná pracovní doba — volitelný začátek a konec pracovního dne</li>
-  <li>Nadstandardní dovolená</li>
+  <li>XY týdnů dovolené</li>
   <li>Příspěvek na stravování</li>
-  <li>Benefity na míru: stravenky, příspěvek na vzdělávání, multisport karta, sick days</li>
+  <li>Benefity na míru:
+    <ul>
+      <li>stravenky,</li>
+      <li>příspěvek na vzdělávání,</li>
+      <li>multisport karta,</li>
+      <li>sick days apod.</li>
+    </ul></li>
 </ul>
 
-<h2>Jak se přihlásit</h2>
-<p>Přihlaste se prostřednictvím online formuláře, nebo si stáhněte PDF a zašlete jej datovou
-schránkou, poštou nebo na kariera@uru.gov.cz. Potvrzení přijetí dostanete e-mailem, ozveme se
-do deseti pracovních dnů. Součástí přihlášky je souhlas se zpracováním osobních údajů
-pro účely tohoto výběrového řízení dle GDPR.</p>
-<p><a href="{{r}}uredni-deska.html">Odkaz na zákonný text výběrového řízení na úřední desce</a></p>
+<h2 id="o-pozici">O pozici</h2>
+
+<h3 id="obecne">Obecné informace</h3>
+<ul class="meta-radky">
+  <li class="ico-odd">Oddělení dopravních staveb</li>
+  <li class="ico-spis">Správní řízení — dráh</li>
+  <li class="ico-misto">Sokolovská 198/541, 190 00 Praha 9</li>
+</ul>
+<div class="mapa-placeholder">Map Placeholder</div>
+
+<h3 id="pomer">Pracovní poměr</h3>
+<ul class="meta-radky">
+  <li class="ico-mzda">40 000 – 60 000 Kč/měsíčně</li>
+  <li class="ico-cas">Práce na plný úvazek</li>
+  <li class="ico-doba">Na dobu neurčitou</li>
+</ul>
+
+<h3 id="vzdelani">Vzdělání a zkušenosti</h3>
+<ul class="meta-radky">
+  <li class="ico-vzdelani">VŠ Bakalářské</li>
+  <li class="ico-jazyk">Angličtina (pokročilá)</li>
+  <li class="ico-info">Vhodné i pro absolventy</li>
+</ul>
+
+<h2 id="prihlasit">Jak se přihlásit?</h2>
+<p>Přihlaste se prostřednictvím online formuláře, nebo si stáhněte PDF přihlášku a zašlete ji
+na kariéra@uru.gov.cz. Potvrzení přijetí dostanete e-mailem, ozveme se do deseti pracovních dnů.
+Součástí přihlášky je souhlas se zpracováním osobních údajů dle GDPR.</p>
 <div class="btn-row">
-  <a class="btn" href="{{r}}kariera/prihlaska.html">Odpovědět na nabídku{c77}</a>
-  <a class="btn ghost" href="{{r}}kontakty.html#hr">Zeptat se HR</a>
-  <a class="btn ghost" href="#">Sdílet nabídku</a>
+  <a class="btn ghost" href="#">Stáhnout přihlášku (PDF)</a>
+  <a class="btn ghost" href="{{r}}uredni-deska.html">Odkaz na zákonný text výběrového řízení</a>
 </div>
 
 <div class="contactcard" style="max-width:34rem">
@@ -158,17 +185,36 @@ pro účely tohoto výběrového řízení dle GDPR.</p>
   <dl><dt>E-mail</dt><dd>kariera@uru.gov.cz</dd><dt>Telefon</dt><dd>+420 000 000 000</dd></dl>
 </div>
 
-<h2>Mohlo by se vám líbit</h2>
-<ul class="doclist">
-  <li><div class="tags"><span class="tag neutral">Služební poměr</span></div>
+<h2 id="libit">Mohlo by se vám líbit</h2>
+<ul class="pozice">
+  <li><div class="tags"><span class="tag pomer">Služební poměr</span></div>
     <h3><a href="{{r}}kariera/detail-pozice.html">Právník — povolování energetických staveb</a></h3>
-    <p>Oddělení energetických staveb</p>
-    <div class="meta"><span>Praha</span><span>plný úvazek</span></div></li>
-  <li><div class="tags"><span class="tag neutral">Služební poměr</span></div>
+    <p class="kde"><span class="odd">Oddělení energetických staveb</span></p>
+    <p class="kde"><span class="misto">Praha</span><span>plný úvazek</span></p></li>
+  <li><div class="tags"><span class="tag pomer">Služební poměr</span></div>
     <h3><a href="{{r}}kariera/detail-pozice.html">Metodik územního plánování</a></h3>
-    <p>Odbor územního plánování</p>
-    <div class="meta"><span>Brno</span><span>plný úvazek</span></div></li>
+    <p class="kde"><span class="odd">Odbor územního plánování</span></p>
+    <p class="kde"><span class="misto">Brno</span><span>plný úvazek</span></p></li>
 </ul>
+</div>
+
+<nav class="detail-nav" aria-label="Obsah stránky">
+  <h2>Obsah</h2>
+  <ul>
+    <li><a href="#co-vas-ceka">Co vás čeká</a></li>
+    <li><a href="#koho-hledame">Koho hledáme?</a></li>
+    <li><a href="#co-nabizime">Co nabízíme?</a></li>
+    <li><a href="#o-pozici">O pozici</a>
+      <ul>
+        <li><a href="#obecne">Obecné informace</a></li>
+        <li><a href="#pomer">Pracovní poměr</a></li>
+        <li><a href="#vzdelani">Vzdělání a zkušenosti</a></li>
+      </ul></li>
+    <li><a href="#prihlasit">Jak se přihlásit?</a></li>
+    <li><a href="#libit">Mohlo by se vám líbit</a></li>
+  </ul>
+</nav>
+</div>
 """
 
 # ---------------------------------------------------------------- O úřadu

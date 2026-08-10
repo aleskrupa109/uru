@@ -572,6 +572,26 @@ body.editing [data-edit]:focus { outline: 2px solid var(--color-success-600); ba
    návrhu se nevyskytuje. Viz poznámka v PREDANI.md. */
 .content > p.zvyrazneno { color: rgb(179 34 34); }
 
+/* Detail pozice (str. 34): obsah v bílé kartě vlevo, vpravo navigace „Obsah".
+   Tlačítko Odpovědět je žluté (secondary), ne modré. */
+.detail-cols { display: grid; grid-template-columns: minmax(0, 1fr) 260px;
+  gap: 48px; align-items: start; margin-top: var(--spacing-l); }
+.detail-obsah { background: var(--background-block-primary);
+  border-radius: var(--corner-radius-m); padding: var(--spacing-xl) var(--spacing-l); }
+.detail-obsah > h2:first-child { margin-top: 0; }
+.detail-nav h2 { font-size: var(--font-size-body-m); margin: 0 0 var(--spacing-m); }
+.detail-nav ul { list-style: none; padding: 0; margin: 0; }
+.detail-nav li::before { display: none !important; content: none !important; }
+.detail-nav li { margin: 0 0 var(--spacing-m); font-size: var(--font-size-body-s); }
+.detail-nav ul ul { margin: var(--spacing-m) 0 0 var(--spacing-m); }
+.meta-radky { list-style: none; padding: 0; margin: 0 0 var(--spacing-m); }
+.meta-radky > li::before { display: none !important; content: none !important; }
+.meta-radky li { font-size: var(--font-size-body-s); margin: 0 0 var(--spacing-xs);
+  color: var(--text-secondary); }
+.mapa-placeholder { background: var(--color-primary-100); border-radius: var(--corner-radius-m);
+  min-height: 200px; display: grid; place-items: center;
+  color: var(--color-primary-600); font-weight: 500; margin: var(--spacing-m) 0; }
+
 /* Otevřené pozice (str. 33): vlevo fasetové filtry, vpravo výsledky.
    Odměřeno: levý sloupec 145–465, výsledky 501–1290, karty bílé na šedém pozadí.
    Štítky: mzda success-100, práce z domova neutral-100, typ poměru plná primary. */

@@ -112,9 +112,8 @@ POZICE = """
 </div>
 """
 
-DETAIL_POZICE = (E.DETAIL_POZICE
-                 .replace("{c78}", cmt(78, "Chybí vazba na PDF s oficiálním textem výběrového řízení na úřední desce."))
-                 .replace("{c77}", cmt(77, "Chybí obrazovka formuláře přihlášky. Tlačítko Odpovědět nemá cíl.")))
+DETAIL_POZICE = E.DETAIL_POZICE.replace(
+    "{c77}", cmt(77, "Chybí obrazovka formuláře přihlášky. Tlačítko Odpovědět nemá cíl."))
 
 PRIHLASKA = """
 <p>Přihlášku lze podat online formulářem, datovou schránkou nebo poštou. Online formulář se odesílá
@@ -457,7 +456,8 @@ PAGES = [
          crumbs=KAR + [("Otevřené pozice", None)], h1="Otevřené pozice", body=POZICE),
     dict(help="hr", path="kariera/detail-pozice.html", title="Detail pozice", section="kariera",
          crumbs=KAR + [("Otevřené pozice", "kariera/otevrene-pozice.html"), ("Detail pozice", None)],
-         h1="Referent stavebního řádu — vyhrazené stavby", body=DETAIL_POZICE),
+         sidebar=False, h1="Referent povolování dopravních staveb — dráhy",
+         body=DETAIL_POZICE),
     dict(help="hr", path="kariera/prihlaska.html", title="Jak podat přihlášku", section="kariera",
          crumbs=KAR + [("Jak podat přihlášku", None)], h1="Jak podat přihlášku", body=PRIHLASKA),
 

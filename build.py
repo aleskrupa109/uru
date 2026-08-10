@@ -514,6 +514,8 @@ def to_ds(html_body):
     def btn(m):
         cls, attrs, label = m.group("cls"), m.group("attrs"), m.group("label")
         typ = "outlined" if "ghost" in cls else "solid"
+        # návrh má na str. 34 hlavní akci žlutou (secondary), ne modrou
+        color = "secondary" if "zluty" in cls.split() else "primary"
         size = "s" if " sm" in " " + cls else ("l" if " lg" in " " + cls else "m")
         arrow = " arrow" if "arrow" in cls.split() else ""
         href = re.search(r'href="([^"]*)"', attrs)
@@ -521,7 +523,7 @@ def to_ds(html_body):
             inner = f'<a class="element{arrow}" href="{href.group(1)}">{label}</a>'
         else:
             inner = f'<button class="element{arrow}" type="button">{label}</button>'
-        return (f'<span class="gov-button" data-color="primary" data-type="{typ}" '
+        return (f'<span class="gov-button" data-color="{color}" data-type="{typ}" '
                 f'data-size="{size}">{inner}</span>')
 
     html_body = re.sub(r'<a class="(?P<cls>btn[^"]*)"(?P<attrs>[^>]*)>(?P<label>.*?)</a>',

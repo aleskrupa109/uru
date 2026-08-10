@@ -191,6 +191,23 @@ kde návrh má ikonu, kterou design systém nemá.
 Tlačítko „Přejít na Portál stavebníka“ na str. 7 dostalo šipku (třída `btn arrow`),
 stejnou, jakou má též tlačítko na str. 8.
 
+## Ze str. 34: detail pozice s obsahem vpravo
+
+Návrh má nad obsahem hlavičku: název, tři řádky s ikonami (aktualizace, oddělení,
+místo), tři štítky (mzda, práce z domova, typ poměru), odstavec a dvě tlačítka.
+Hlavní akce **Odpovědět je žlutá** — `rgb(250 180 19)` = `color-secondary-600`,
+tedy `data-color="secondary"`. Maketa měla modrou. Do generátoru přibyla třída
+`btn zluty`.
+
+Pod hlavičkou jsou dva sloupce: vlevo bílá karta s obsahem, vpravo navigace
+**Obsah** s kotvami na jednotlivé oddíly (včetně zanořených pod „O pozici“).
+Maketa měla obsah v jednom sloupci a místo „O pozici“ tabulku parametrů — návrh
+má místo ní tři pododdíly s ikonovými řádky a **mapový zástupný blok**.
+
+Formulář přihlášky návrh na téhle stránce nemá — odkazuje na samostatnou obrazovku
+(připomínka 77). Nadpis stránky je v návrhu „Referent povolování dopravních staveb
+— dráhy“, ne „Referent stavebního řádu“.
+
 ## Ze str. 33: fasetové filtry místo řádku s výběry
 
 Nadpis stránky **i drobečková navigace** patří dovnitř pravého sloupce, ne nad celé
