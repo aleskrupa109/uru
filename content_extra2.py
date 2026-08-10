@@ -430,7 +430,8 @@ INFOWEB = """
 """
 
 PUR_DOKUMENTY = """
-<h2>Přiložené dokumenty</h2>
+<div class="dokumenty">
+<h3>Přiložené dokumenty</h3>
 <ul class="files">
   <li><span class="ft">PDF</span><span class="grow"><span class="name">POLITIKA ÚZEMNÍHO ROZVOJE České republiky od 1.10. 2025</span><br>
     <span class="fmeta">296 KB</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
@@ -439,6 +440,7 @@ PUR_DOKUMENTY = """
   <li><span class="ft">PDF</span><span class="grow"><span class="name">SPATIAL DEVELOPMENT POLICY OF THE CZECH REPUBLIC</span><br>
     <span class="fmeta">296 KB</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
 </ul>
+</div>
 
 <h2>O dokumentu</h2>
 <p>Politika územního rozvoje ČR (dále také PÚR ČR) je celostátní nástroj územního plánování,
@@ -459,9 +461,9 @@ pro pořizování aktualizací nebo nového návrhu PÚR ČR.</p>
 <p>Zveřejněný seznam relevantních podkladů PÚR ČR (ve formátu PDF a XLSX):</p>
 <ul class="files">
   <li><span class="ft">PDF</span><span class="grow"><span class="name">Seznam relevantních podkladů PÚR ČR k 1. 7. 2023</span><br>
-    <span class="fmeta">Seznam-relevantnich-podkladu-PUR-CR-2023-07-01.pdf · 425 kB</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
+    <span class="fmeta">296 KB</span><span class="fpath">(Seznam-relevantnich-podkladu-PUR-CR-2023-07-01.pdf, 425 kB)</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
   <li><span class="ft">XLS</span><span class="grow"><span class="name">Seznam relevantních podkladů PÚR ČR k 1. 7. 2023</span><br>
-    <span class="fmeta">Seznam-relevantnich-podkladu-PUR-CR-2023-07-01.xlsx · 138 kB</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
+    <span class="fmeta">296 KB</span><span class="fpath">(Seznam-relevantnich-podkladu-PUR-CR-2023-07-01.xlsx, 138 kB)</span></span><a class="btn ghost sm" href="#">Stáhnout</a></li>
 </ul>
 
 <h2>Historie dokumentu</h2>

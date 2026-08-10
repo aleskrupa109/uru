@@ -331,6 +331,10 @@ li.open .dropdown { display: block; }
 .files.rich .grow { display: block; flex: 1; }
 .files.rich .fmeta::before, .files.rich .fmeta::after { content: ""; }
 .files.rich .fmeta { margin-left: 0; }
+/* Druhý řádek s názvem souboru (str. 30) — v návrhu pod odkazem, v závorce. */
+.files .fpath { display: block; font-size: var(--font-size-body-s);
+  color: var(--text-primary); margin-top: var(--spacing-xs); }
+.files > li:has(.fpath) { align-items: flex-start; }
 
 /* ---------- akordeon: nativní details ---------- */
 .gov-accordion-item__summary { cursor: pointer; list-style: none; }
@@ -554,6 +558,14 @@ body.editing [data-edit]:focus { outline: 2px solid var(--color-success-600); ba
    řádek platnosti s ikonou kalendáře a tlačítko přes celou šířku karty.
    Odměřeno na návrhu: okraj karty 239 239 239, vnitřní okraj 16 px,
    tlačítko vyplňuje kartu (468–736 uvnitř karty 451–752). */
+/* Panel přiložených dokumentů (str. 30): světle modrý pruh přes celou šířku
+   obsahu (452–1203), nadpis 20 px modrý, odkazy na soubory 18 px — tedy výrazně
+   větší než v prostém seznamu souborů na str. 19 (12 px). Rozteč řádků 56 px.  */
+.dokumenty { background: var(--color-primary-100); border-radius: var(--corner-radius-s);
+  padding: var(--spacing-m); margin: var(--spacing-l) 0; }
+.dokumenty h3 { margin: 0; color: var(--color-primary-600); }
+.dokumenty .files > li { font-size: var(--font-size-body-l); }
+
 /* Užitečné odkazy (str. 26): bílá karta se štítkem Aplikace / Web,
    modrým názvem a popisem. Štítek má 231 231 231, tedy `color-neutral-100`. */
 .odkaz { background: var(--background-block-primary); border-radius: var(--corner-radius-s);

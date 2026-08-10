@@ -193,6 +193,14 @@ stejnou, jakou má též tlačítko na str. 8.
 
 ## Ze str. 30: tabulka místo historie dokumentu
 
+**Přiložené dokumenty jsou v modrém panelu.** Návrh je sází do světle modrého
+pruhu přes celou šířku obsahu (452–1203) s nadpisem 20 px a odkazy na soubory
+**18 px** — tedy výrazně většími než v prostém seznamu souborů na str. 19, kde mají
+12 px. Jsou to dvě různé podoby téhož prvku, ne nejednotnost — třída `.dokumenty`.
+
+**Druhý seznam má dvouřádkové položky:** odkaz s formátem a velikostí v závorce
+a pod ním samostatný řádek s názvem souboru, také v závorce. Řešeno třídou `fpath`.
+
 Maketa měla oddíl „Aktualizace a změny“ s tabulkou Dokument / Rok / Stav.
 Návrh má místo toho **Historie dokumentu** — devět odrážek s ročníky — a za nimi
 čtyři odstavce o tom, kdo a proč jednotlivé aktualizace pořídil. Maketa je měla
