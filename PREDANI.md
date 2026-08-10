@@ -193,9 +193,10 @@ stejnou, jakou má též tlačítko na str. 8.
 
 ## Ze str. 33: fasetové filtry místo řádku s výběry
 
-Nadpis stránky patří **dovnitř pravého sloupce**, ne nad celé rozvržení. Generátor
-proto zná značku `{{head}}`: když je v těle stránky, hlavička s `h1` a perexem se
-vloží přesně tam místo před obsah.
+Nadpis stránky **i drobečková navigace** patří dovnitř pravého sloupce, ne nad celé
+rozvržení — drobečky začínají na 501 px, ve stejné výšce jako první nadpis filtrů.
+Generátor proto zná dvě značky: `{{head}}` vloží hlavičku s `h1` a perexem,
+`{{crumbs}}` drobečky (bez obalu `.wrap`, který centruje na šířku stránky).
 
 Seznam má v návrhu deset karet a počtač ukazuje **90 volných míst**, tedy celkový
 počet, ne počet zobrazených. Proto tam není `data-count`, který by ho přepisoval

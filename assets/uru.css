@@ -589,6 +589,7 @@ body.editing [data-edit]:focus { outline: 2px solid var(--color-success-600); ba
 .fasety .vice { margin: var(--spacing-s) 0 0; font-size: var(--font-size-body-s); }
 .fasety .gov-accordion { margin-top: var(--spacing-l); }
 
+.vysledky .crumbs { margin: 0 0 var(--spacing-s); }
 .vysledky .page-head { padding: 0; margin: 0 0 var(--spacing-l); }
 .vysledky .stitek-pole { font-size: var(--font-size-body-s); margin: 0 0 var(--spacing-xs); }
 .vysledky .hledani.velke { max-width: none; margin: 0 0 var(--spacing-l); }

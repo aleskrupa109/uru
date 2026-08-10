@@ -800,11 +800,19 @@ def build_page(p):
         # jen bez sloupce s nabídkou a bez bílého panelu (třída sirka).
         body = f'<div class="content sirka">{head}{body}</div>'
         head = ""
+    # Značka {{crumbs}} v těle přesune drobečkovou navigaci dovnitř obsahu —
+    # návrh ji na str. 33 sází do pravého sloupce vedle filtrů, ne nad stránku.
+    crumbs_html = render_crumbs(p.get("crumbs"), r)
+    if "{{crumbs}}" in body:
+        # uvnitř sloupce se obal .wrap nehodí — ten centruje na šířku stránky
+        inline = re.sub(r'^<div class="wrap">|</div>$', "", crumbs_html)
+        body = body.replace("{{crumbs}}", inline)
+        crumbs_html = ""
     html_out = TPL.format(
         title=p["title"], r=r, mockbar=MOCKBAR, mode_script=MODE_SCRIPT,
         nav=render_nav(p.get("section", ""), r),
         banner=banner,
-        crumbs=render_crumbs(p.get("crumbs"), r),
+        crumbs=crumbs_html,
         body=head + body,
         footer=footer(r),
         search_icon=gicon("search"),

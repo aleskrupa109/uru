@@ -44,6 +44,7 @@ POZICE = """
   </aside>
 
   <div class="vysledky">
+    {{crumbs}}
     {{head}}
     <p class="stitek-pole">Jakou práci hledáte?</p>
     <div class="hledani velke">
