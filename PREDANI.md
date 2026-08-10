@@ -191,6 +191,21 @@ kde návrh má ikonu, kterou design systém nemá.
 Tlačítko „Přejít na Portál stavebníka“ na str. 7 dostalo šipku (třída `btn arrow`),
 stejnou, jakou má též tlačítko na str. 8.
 
+## Ze str. 27: dlaždice pod sebou, ne ve dvou sloupcích
+
+Návrh má sedm dlaždic **na celou šířku pod sebou**, bez ikon, s odkazem „Přejít“.
+Maketa je měla ve dvou sloupcích, s ikonami a s popiskem „Zjistit více“. Lišilo se
+i pořadí a všechny popisy — maketa měla vlastní, kratší znění. Přepsáno podle návrhu.
+
+Kvůli tomu přibyly dva atributy dlaždice: `data-more` přepíše popisek odkazu
+a `data-ico="zadna"` ikonu vypne. Obojí se hodí i jinde — popisek byl do té doby
+natvrdo „Zjistit více“.
+
+**Pozor na číslo u téhle stránky:** porovnání hlásilo 0 % pokrytí, protože návrh má
+nadpis a popis dlaždice ve dvou řádcích pod sebou a extraktor je sloučí do jednoho
+bloku, kdežto maketa je má jako `h3` a `p` zvlášť. Stejná třída problému jako
+slévání sloupců na str. 26.
+
 ## Ze str. 26: porovnání slévá sloupce
 
 **Pozor na výsledek porovnání u vícesloupcových stránek.** Rozcestník Územního rozvoje

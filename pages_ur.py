@@ -46,21 +46,21 @@ adres je součástí migrace.""" + cmt(64, "Chybí informace o přesměrování 
 """
 
 UP = """
-<div class="grid g2">
-  <a class="card" href="{{r}}uzemni-rozvoj/politika-uzemniho-rozvoje.html"><h3>Politika územního rozvoje ČR</h3>
-    <p>Aktualizace, usnesení vlády, podklady a brožury.</p></a>
-  <a class="card" href="#"><h3>Politika architektury a stavební kultury ČR</h3>
-    <p>Implementace, pracovní skupiny a výstupy.</p></a>
-  <a class="card" href="#"><h3>Územní rozvojový plán ČR</h3>
-    <p>Živá dokumentace a schválené změny.</p></a>
-  <a class="card" href="{{r}}uzemni-rozvoj/uap.html"><h3>Územně analytické podklady ČR</h3>
-    <p>Aktuální i ukončené ročníky.</p></a>
-  <a class="card" href="{{r}}uzemni-rozvoj/evidence-upc.html"><h3>Evidence územně plánovací činnosti</h3>
-    <p>Informace k evidenci a vstup do aplikací iLAS a iKAS.</p></a>
-  <a class="card" href="{{r}}uzemni-rozvoj/informacni-web-up.html"><h3>Informační web územního plánování</h3>
-    <p>Rozcestník odborných odkazů.</p></a>
-  <a class="card" href="#"><h3>Slovník územního rozvoje</h3>
-    <p>Editovatelná databáze pojmů územního rozvoje.</p></a>
+<div class="grid hub prejit">
+  <a class="card" href="{{r}}uzemni-rozvoj/evidence-upc.html" data-more="Přejít" data-ico="zadna"><h3>Evidence územně plánovací činnosti</h3>
+    <p>Průběžná evidence územně plánovací dokumentace obcí a krajů prostřednictvím aplikací iLAS a iKAS.</p></a>
+  <a class="card" href="{{r}}uzemni-rozvoj/informacni-web-up.html" data-more="Přejít" data-ico="zadna"><h3>Informační web územního plánování</h3>
+    <p>Historický informační portál ÚÚR o nástrojích a procesech územního plánování v ČR.</p></a>
+  <a class="card" href="{{r}}uzemni-rozvoj/politika-uzemniho-rozvoje.html" data-more="Přejít" data-ico="zadna"><h3>Politika územního rozvoje ČR</h3>
+    <p>Celostátní strategický dokument pořizovaný ze zákona. Aktuálně platné úplné znění včetně všech změn, usnesení a podkladů.</p></a>
+  <a class="card" href="#" data-more="Přejít" data-ico="zadna"><h3>Politika architektury a stavební kultury ČR</h3>
+    <p>Vládou schválený dokument zaměřený na rozvoj architektury a stavební kultury. Probíhá průběžná implementace.</p></a>
+  <a class="card" href="#" data-more="Přejít" data-ico="zadna"><h3>Územní rozvojový plán</h3>
+    <p>Nástroj územního plánování celostátní úrovně pořizovaný ze zákona. Živá dokumentace s aktuálně probíhajícími změnami.</p></a>
+  <a class="card" href="{{r}}uzemni-rozvoj/uap.html" data-more="Přejít" data-ico="zadna"><h3>Územně analytické podklady ČR</h3>
+    <p>Podklad pro pořizování Územního rozvojového plánu. Archiv všech ročníků včetně ukončených.</p></a>
+  <a class="card" href="#" data-more="Přejít" data-ico="zadna"><h3>Slovník územního rozvoje</h3>
+    <p>Databáze 2 690 pojmů z oblasti územního plánování a rozvoje území.</p></a>
 </div>
 
 <div class="box edge">
@@ -69,6 +69,7 @@ UP = """
   Přejít na <a href="{{r}}metodicka-podpora/dotcene-organy.html">Přehled dotčených orgánů</a>.""" + cmt(61, "Křížový odkaz na Přehled dotčených orgánů — uživatelé ÚÚR jsou zvyklí hledat ho zde.") + """</p>
 </div>
 """
+
 
 PUR = """
 <div class="box gap">
@@ -215,7 +216,9 @@ PAGES = [
          perex="Celostátní dokumenty územního plánování, odborné publikace, časopis, knihovna a mapové nástroje.",
          body=ROZCESTNIK),
     p("uzemni-planovani.html", "Územní plánování", "Územní plánování", "Územní plánování", UP,
-      "Strategické dokumenty územního plánování, evidence činnosti a navazující aplikace."),
+      "Celostátní nástroje a dokumenty územního plánování, které ÚRÚ pořizuje nebo spravuje "
+      "ze zákona. Zahrnuje strategické dokumenty, evidenci územně plánovací činnosti, "
+      "slovník pojmů a informační web."),
     p("politika-uzemniho-rozvoje.html", "Politika územního rozvoje ČR", "Politika územního rozvoje ČR",
       "Politika územního rozvoje ČR", PUR),
     p("evidence-upc.html", "Evidence územně plánovací činnosti", "Evidence územně plánovací činnosti",

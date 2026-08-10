@@ -614,7 +614,10 @@ def to_ds(html_body):
 
     # ---- Tile (rozcestníky) ----
     def tile(m):
-        href, inner = m.group(1), m.group(2)
+        href, attrs, inner = m.group(1), m.group(2), m.group(3)
+        # popisek odkazu lze u dlaždice přepsat: návrh má na str. 27 „Přejít"
+        more = re.search(r'data-more="([^"]*)"', attrs)
+        more = more.group(1) if more else "Zjistit více"
         order = re.search(r'<span class="order">(.*?)</span>', inner, re.S)
         h3 = re.search(r'<h3>(.*?)</h3>', inner, re.S)
         p = re.search(r'<p>(.*?)</p>', inner, re.S)
@@ -622,7 +625,8 @@ def to_ds(html_body):
             return m.group(0)
         head = f'<span class="tile-order">{order.group(1)}</span>' if order else ""
         desc = p.group(1) if p else ""
-        ico = tile_icon_for(href)
+        # data-ico="zadna" ikonu vypne — návrh ji na str. 27 u dlaždic nemá
+        ico = "" if 'data-ico="zadna"' in attrs else tile_icon_for(href)
         ico = f'<span slot="icon">{ico}</span>' if ico else ""
         # návrh v dlaždicích rozcestníku šipku nemá
         # Návrh má v dlaždicích rozcestníku sekce odkaz „Zjistit více"; na úvodní
@@ -631,7 +635,7 @@ def to_ds(html_body):
                 f'{ico}<div class="gov-tile__content"><div class="gov-tile__text">{head}'
                 f'<div class="gov-tile__title"><a class="gov-tile__link" href="{href}">{h3.group(1)}</a></div>'
                 f'<div class="gov-tile__annotation">{desc}</div>'
-                f'<span class="tile-more">Zjistit více</span>'
+                f'<span class="tile-more">{more}</span>'
                 f'</div></div></div>')
 
     def qlink(m):
@@ -654,7 +658,7 @@ def to_ds(html_body):
     html_body = re.sub(r'<a class="qlink"([^>]*?)href="([^"]*)"([^>]*)>(.*?)</a>',
                        lambda m: qlink(type("M", (), {"group": lambda self, i: [None, m.group(1) + m.group(3), m.group(2), m.group(4)][i]})()),
                        html_body, flags=re.S)
-    html_body = re.sub(r'<a class="card" href="([^"]*)"[^>]*>(.*?)</a>', tile, html_body, flags=re.S)
+    html_body = re.sub(r'<a class="card" href="([^"]*)"([^>]*)>(.*?)</a>', tile, html_body, flags=re.S)
 
     def tile_static(m):
         inner = m.group(1)
