@@ -10,59 +10,84 @@ OU = [("O úřadu", "o-uradu/index.html")]
 KARIERA = E.KARIERA
 
 POZICE = """
-<div class="filters" data-filterable>
-  <div class="searchrow"><input type="search" data-q placeholder="Hledejte podle názvu pozice nebo oblasti"></div>
-  <div class="row">
-    <div class="field"><label for="p-pomer">Typ poměru</label>
-      <select id="p-pomer" data-key="pomer"><option value="">Vše</option>
-        <option value="sluzebni">Služební poměr (státní služba)</option>
-        <option value="pracovni">Pracovní poměr (zákoník práce)</option></select></div>
-    <div class="field"><label for="p-trida">Platová třída</label>
-      <select id="p-trida" data-key="trida"><option value="">Vše</option>
-        <option value="11">11</option><option value="12">12</option><option value="13">13</option></select></div>
-    <div class="field"><label for="p-obor">Obor</label>
-      <select id="p-obor" data-key="obor"><option value="">Vše</option>
-        <option value="sr">Stavební řád</option><option value="up">Územní plánování</option>
-        <option value="it">IT a digitalizace</option><option value="provoz">Provoz a podpora</option></select></div>
-    <div class="field"><label for="p-lok">Lokalita</label>
-      <select id="p-lok" data-key="lokalita"><option value="">Vše</option>
-        <option value="praha">Praha</option><option value="brno">Brno</option></select></div>
-    <div class="field"><label for="p-uvazek">Úvazek</label>
-      <select id="p-uvazek" data-key="uvazek"><option value="">Vše</option>
-        <option value="plny">Plný</option><option value="castecny">Částečný</option></select></div>
-    <div class="field"><label>&nbsp;</label><button class="btn ghost sm" type="button" data-reset>Zrušit filtry</button></div>
-  </div>
-  <div class="chips" data-chips></div>
-  <p class="hint">Typ poměru je uvedený jako první filtr — je to hlavní rozhodovací kritérium uchazečů
-  z jiných úřadů.""" + cmt(75, "Typ poměru je podle person hlavní rozhodovací kritérium, ale ve filtrech je až mezi ostatními.") + """
-  Platová třída je samostatný filtr.""" + cmt(74, "Chybí filtr podle platové třídy, který IA uvádí.") + """</p>
-</div>
+<div class="pozice-cols" data-filterable>
+  <aside class="fasety">
+    <h3>Obor</h3>
+    <div class="hledani"><input type="search" placeholder="Filtrujte obor"></div>
+    <ul class="checky">
+      <li><label><input type="checkbox"> Administrativa <span class="pocet">(10)</span></label></li>
+      <li><label><input type="checkbox"> Dopravní stavby <span class="pocet">(17)</span></label></li>
+      <li><label><input type="checkbox"> Územní rozvoj <span class="pocet">(11)</span></label></li>
+      <li><label><input type="checkbox"> Metodika a právo <span class="pocet">(19)</span></label></li>
+      <li><label><input type="checkbox"> Lorem ipsum <span class="pocet">(21)</span></label></li>
+      <li><label><input type="checkbox"> Lorem ipsum <span class="pocet">(38)</span></label></li>
+      <li><label><input type="checkbox"> Lorem ipsum <span class="pocet">(18)</span></label></li>
+    </ul>
+    <p class="vice"><a href="#">Zobrazit všech 10</a></p>
 
-<div class="resultbar"><span>Nalezeno <strong data-count>0</strong> pozic</span></div>
+    <h3>Lokalita</h3>
+    <div class="hledani"><input type="search" placeholder="např. Praha"></div>
 
-<ul class="doclist" data-list>
-  <li data-pomer="sluzebni" data-trida="12" data-obor="sr" data-lokalita="praha" data-uvazek="plny" data-date="2026-07-01">
-    <div class="tags"><span class="tag neutral">Služební poměr</span><span class="tag hist">12. platová třída</span></div>
+    <h3>Čas zveřejnění</h3>
+    <ul class="checky">
+      <li><label><input type="radio" name="cas" checked> Nezáleží <span class="pocet">(90)</span></label></li>
+      <li><label><input type="radio" name="cas"> Posledních 24 hodin <span class="pocet">(5)</span></label></li>
+      <li><label><input type="radio" name="cas"> Poslední týden <span class="pocet">(21)</span></label></li>
+      <li><label><input type="radio" name="cas"> Poslední měsíc <span class="pocet">(30)</span></label></li>
+    </ul>
+
+    <details class="acc" data-faq><summary>Mzda</summary><div class="body"><p>Rozsah hrubé měsíční mzdy.</p></div></details>
+    <details class="acc" data-faq><summary>Typ úvazku</summary><div class="body"><p>Plný nebo částečný úvazek.</p></div></details>
+    <details class="acc" data-faq><summary>Minimální stupeň vzdělání</summary><div class="body"><p>Středoškolské, bakalářské nebo magisterské.</p></div></details>
+    <details class="acc" data-faq><summary>Požadovaná jazyková znalost</summary><div class="body"><p>Angličtina nebo němčina.</p></div></details>
+    <details class="acc" data-faq><summary>Typ poměru</summary><div class="body"><p>Služební poměr podle zákona o státní službě, nebo pracovní poměr podle zákoníku práce.""" + cmt(75, "Typ poměru je podle person hlavní rozhodovací kritérium, ale ve filtrech je až mezi ostatními.") + """</p></div></details>
+  </aside>
+
+  <div class="vysledky">
+    <p class="stitek-pole">Jakou práci hledáte?</p>
+    <div class="hledani velke">
+      <input type="search" data-q placeholder="Hledejte podle názvu pozice nebo oblasti">
+      <span class="gov-button" data-color="primary" data-type="solid" data-size="m"><button class="element" type="button" aria-label="Hledat">{SEARCH}</button></span>
+    </div>
+    <div class="resultbar"><span><strong data-count>90</strong> volných míst</span>
+      <span class="razeni">Řazení: <strong>Podle data</strong></span></div>
+
+    <ul class="pozice" data-list>
+  <li data-pomer="pracovni" data-trida="12" data-obor="sr" data-lokalita="praha" data-uvazek="plny" data-date="2026-07-01">
+    <p class="akt">Aktualizováno: 26.11.2026</p>
     <h3><a href="{{r}}kariera/detail-pozice.html">Referent povolování dálnic a rychlostních silnic</a></h3>
-    <p>Vedení řízení o povolení záměru u dopravních a energetických staveb.</p>
-    <div class="meta"><span>Praha</span><span>plný úvazek</span><span>přihlášky do 31. 8. 2026</span></div></li>
-  <li data-pomer="sluzebni" data-trida="13" data-obor="up" data-lokalita="brno" data-uvazek="plny" data-date="2026-07-01">
-    <div class="tags"><span class="tag neutral">Služební poměr</span><span class="tag hist">13. platová třída</span></div>
+    <p class="kde"><span class="odd">Oddělení dopravních staveb</span><span class="misto">Praha</span></p>
+    <div class="tags"><span class="tag valid">40 000 – 60 000 Kč</span><span class="tag hist">Možnost práce z domova</span><span class="tag neutral">Pracovněprávní vztah</span></div></li>
+  <li data-pomer="pracovni" data-trida="13" data-obor="up" data-lokalita="praha" data-uvazek="plny" data-date="2026-07-01">
+    <p class="akt">Aktualizováno: 26.11.2026</p>
     <h3><a href="{{r}}kariera/detail-pozice.html">Referent povolování dopravních staveb — dráhy</a></h3>
-    <p>Metodické vedení úřadů územního plánování a zpracování stanovisek.</p>
-    <div class="meta"><span>Brno</span><span>plný úvazek</span><span>přihlášky do 31. 8. 2026</span></div></li>
-  <li data-pomer="pracovni" data-trida="12" data-obor="it" data-lokalita="praha" data-uvazek="plny" data-date="2026-06-15">
-    <div class="tags"><span class="tag neutral">Pracovní poměr</span><span class="tag hist">12. platová třída</span></div>
-    <h3><a href="{{r}}kariera/detail-pozice.html">Specialista digitalizace agend</a></h3>
-    <p>Rozvoj informačních systémů úřadu a integrace na eGovernment služby.</p>
-    <div class="meta"><span>Praha</span><span>plný úvazek</span><span>přihlášky do 15. 8. 2026</span></div></li>
-  <li data-pomer="pracovni" data-trida="11" data-obor="provoz" data-lokalita="praha" data-uvazek="castecny" data-date="2026-06-01">
-    <div class="tags"><span class="tag neutral">Pracovní poměr</span><span class="tag hist">11. platová třída</span></div>
-    <h3><a href="{{r}}kariera/detail-pozice.html">Referent spisové služby</a></h3>
-    <p>Správa dokumentů a podpora agend úřadu.</p>
-    <div class="meta"><span>Praha</span><span>částečný úvazek</span><span>přihlášky do 15. 8. 2026</span></div></li>
-</ul>
-<div class="empty" data-empty style="display:none">Zadanému filtru neodpovídá žádná pozice.</div>
+    <p class="kde"><span class="odd">Oddělení dopravních staveb</span><span class="misto">Praha</span></p>
+    <div class="tags"><span class="tag valid">40 000 – 65 000 Kč</span><span class="tag hist">Možnost práce z domova</span><span class="tag neutral">Pracovněprávní vztah</span></div></li>
+  <li data-pomer="sluzebni" data-trida="12" data-obor="sr" data-lokalita="brno" data-uvazek="plny" data-date="2026-06-15">
+    <p class="akt">Aktualizováno: 26.11.2026</p>
+    <h3><a href="{{r}}kariera/detail-pozice.html">Lorem ipsum</a></h3>
+    <p class="kde"><span class="odd">Oddělení dopravních staveb</span><span class="misto">Brno</span></p>
+    <div class="tags"><span class="tag valid">38 000 – 60 000 Kč</span><span class="tag neutral">Státní služba</span></div></li>
+  <li data-pomer="sluzebni" data-trida="12" data-obor="it" data-lokalita="praha" data-uvazek="plny" data-date="2026-06-15">
+    <p class="akt">Aktualizováno: 26.11.2026</p>
+    <h3><a href="{{r}}kariera/detail-pozice.html">Lorem ipsum</a></h3>
+    <p class="kde"><span class="odd">Oddělení dopravních staveb</span><span class="misto">Praha</span></p>
+    <div class="tags"><span class="tag valid">38 000 – 60 000 Kč</span><span class="tag neutral">Státní služba</span></div></li>
+  <li data-pomer="sluzebni" data-trida="11" data-obor="provoz" data-lokalita="praha" data-uvazek="castecny" data-date="2026-06-01">
+    <p class="akt">Aktualizováno: 26.11.2026</p>
+    <h3><a href="{{r}}kariera/detail-pozice.html">Lorem ipsum</a></h3>
+    <p class="kde"><span class="odd">Oddělení dopravních staveb</span><span class="misto">Praha</span></p>
+    <div class="tags"><span class="tag valid">40 000 – 65 000 Kč</span><span class="tag hist">Možnost práce z domova</span><span class="tag neutral">Státní služba</span></div></li>
+  <li data-pomer="sluzebni" data-trida="11" data-obor="provoz" data-lokalita="praha" data-uvazek="plny" data-date="2026-06-01">
+    <p class="akt">Aktualizováno: 26.11.2026</p>
+    <h3><a href="{{r}}kariera/detail-pozice.html">Lorem ipsum</a></h3>
+    <p class="kde"><span class="odd">Oddělení dopravních staveb</span><span class="misto">Praha</span></p>
+    <div class="tags"><span class="tag valid">35 000 – 55 000 Kč</span><span class="tag neutral">Státní služba</span></div></li>
+    </ul>
+    <div class="empty" data-empty style="display:none">Zadanému filtru neodpovídá žádná pozice.</div>
+    <p class="vice"><a href="#">Načíst dalších 10</a></p>
+  </div>
+</div>
 """
 
 DETAIL_POZICE = (E.DETAIL_POZICE
@@ -406,6 +431,7 @@ PAGES = [
                "České republiky — buďte u toho od začátku.",
          body=KARIERA),
     dict(help="hr", path="kariera/otevrene-pozice.html", title="Otevřené pozice", section="kariera",
+         sidebar=False,
          crumbs=KAR + [("Otevřené pozice", None)], h1="Otevřené pozice", body=POZICE),
     dict(help="hr", path="kariera/detail-pozice.html", title="Detail pozice", section="kariera",
          crumbs=KAR + [("Otevřené pozice", "kariera/otevrene-pozice.html"), ("Detail pozice", None)],

@@ -224,3 +224,15 @@ odchylky:
   - stranka: "kariera/index.html"
     text: "Zákon Zákoník práce Zákon o státní službě"
     duvod: navrh_chyba
+  - stranka: "kariera/otevrene-pozice.html"
+    text: "Hledejte podle názvu pozice nebo oblasti"
+    duvod: navrh_chyba
+    poznamka: >
+      Zástupný text vyhledávacího pole je v maketě atribut placeholder,
+      porovnání čte jen textové uzly. Omezení nástroje, ne chybějící obsah.
+  - stranka: "kariera/otevrene-pozice.html"
+    text: "Zadanému filtru neodpovídá žádná pozice"
+    duvod: zelena
+    pripominka: 74
+    poznamka: >
+      Prázdný stav filtru. Návrh ho neukazuje, protože filtr je vždy vyplněný.

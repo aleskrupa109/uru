@@ -191,6 +191,21 @@ kde návrh má ikonu, kterou design systém nemá.
 Tlačítko „Přejít na Portál stavebníka“ na str. 7 dostalo šipku (třída `btn arrow`),
 stejnou, jakou má též tlačítko na str. 8.
 
+## Ze str. 33: fasetové filtry místo řádku s výběry
+
+Otevřené pozice mají v návrhu **vlevo panel s fasetami** — obor se zatržítky a počty,
+lokalita, čas zveřejnění jako přepínače a pět rozbalovacích skupin (Mzda, Typ úvazku,
+Minimální stupeň vzdělání, Požadovaná jazyková znalost, Typ poměru). Maketa měla
+postranní nabídku sekce a nad seznamem řádek s rozbalovacími výběry.
+
+Vpravo je vyhledávací pole s popiskem „Jakou práci hledáte?“, počet volných míst,
+řazení a karty pozic. Karta má: datum aktualizace, modrý název, řádek s oddělením
+a místem a štítky. Barvy štítků odměřeny: mzda `success-100`, práce z domova
+`neutral-100`, typ poměru **plná modrá** `primary-600` s bílým textem — na to přibyl
+klíč `pomer` do `TAG_COLOR`.
+
+Rozvržení: levý sloupec 145–465, výsledky 501–1290, tedy 320 px a mezera 36 px.
+
 ## Ze str. 32: kariéra bez postranní nabídky
 
 **Stránky bez postranní nabídky neměly žádná pravidla rozestupů.** Všechna
